@@ -1,0 +1,17 @@
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_adminLogin.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_configuration.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_game.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_makeTest.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_setTest.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_launch.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.Properties.Resources.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_test.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_leaderboard.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI_Designs.frm_testResults.resources
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\bin\Debug\GUI Designs.exe
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\bin\Debug\GUI Designs.pdb
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI Designs.exe
+E:\Portable Apps\Documents\Homework\uni\PPSD\Phase 2 - UI Design\GUI Designs\GUI Designs\obj\x86\Debug\GUI Designs.pdb
