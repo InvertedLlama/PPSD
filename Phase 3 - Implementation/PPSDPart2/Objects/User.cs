@@ -7,11 +7,18 @@ namespace PPSDPart2.Objects
 {
     public enum UserAccessLevel
     {
-        Admin, Instructor
+        Admin, Owner, Instructor, CounterStaff
     }
 
     public class User
     {
+        //User permission settings, static, class bound
+        private static bool READ = false,
+                            CREATE = false,
+                            MODIFY = false,
+                             DELETE = false;
+
+
         string strName;
         string strUsername;
         string strPassword;
@@ -50,5 +57,26 @@ namespace PPSDPart2.Objects
             get { return usrAccess; }
             set { usrAccess = value; }
         }
+
+        public virtual bool canRead
+        {
+            get { return READ;}
+        }
+
+        public virtual bool canCreate
+        {
+            get { return CREATE; }
+        }
+
+        public virtual bool canModify
+        {
+            get { return MODIFY; }
+        }
+
+        public virtual bool canDelete
+        {
+            get { return DELETE; }
+        }
+
     }
 }

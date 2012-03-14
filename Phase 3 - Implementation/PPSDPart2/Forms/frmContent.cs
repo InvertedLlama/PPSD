@@ -26,14 +26,5 @@ namespace PPSDPart2
             set { crntUser = value; }
         }
 
-        private void frmContent_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'rentalSystemDataSet1.Staff' table. You can move, or remove it, as needed.
-            this.staffTableAdapter.Fill(this.rentalSystemDataSet1.Staff);
-            // TODO: This line of code loads data into the 'rentalSystemDataSet.Supplier' table. You can move, or remove it, as needed.
-            this.supplierTableAdapter.Fill(this.rentalSystemDataSet.Supplier);
-
-        }
-
     }
 }

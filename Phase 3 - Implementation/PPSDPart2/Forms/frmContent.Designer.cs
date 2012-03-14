@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabContent = new System.Windows.Forms.TabControl();
             this.tbSupplier = new System.Windows.Forms.TabPage();
             this.tbStaff = new System.Windows.Forms.TabPage();
@@ -40,17 +39,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.rentalSystemDataSet = new PPSDPart2.rentalSystemDataSet();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.supplierTableAdapter = new PPSDPart2.rentalSystemDataSetTableAdapters.SupplierTableAdapter();
-            this.rentalSystemDataSet1 = new PPSDPart2.rentalSystemDataSet1();
-            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.staffTableAdapter = new PPSDPart2.rentalSystemDataSet1TableAdapters.StaffTableAdapter();
             this.tabContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalSystemDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalSystemDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabContent
@@ -156,34 +145,6 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // rentalSystemDataSet
-            // 
-            this.rentalSystemDataSet.DataSetName = "rentalSystemDataSet";
-            this.rentalSystemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataMember = "Supplier";
-            this.supplierBindingSource.DataSource = this.rentalSystemDataSet;
-            // 
-            // supplierTableAdapter
-            // 
-            this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // rentalSystemDataSet1
-            // 
-            this.rentalSystemDataSet1.DataSetName = "rentalSystemDataSet1";
-            this.rentalSystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // staffBindingSource
-            // 
-            this.staffBindingSource.DataMember = "Staff";
-            this.staffBindingSource.DataSource = this.rentalSystemDataSet1;
-            // 
-            // staffTableAdapter
-            // 
-            this.staffTableAdapter.ClearBeforeFill = true;
-            // 
             // frmContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,12 +159,7 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "frmContent";
             this.Text = "Rental System - Content";
-            this.Load += new System.EventHandler(this.frmContent_Load);
             this.tabContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rentalSystemDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalSystemDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,11 +178,5 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnEdit;
-        private rentalSystemDataSet rentalSystemDataSet;
-        private System.Windows.Forms.BindingSource supplierBindingSource;
-        private rentalSystemDataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
-        private rentalSystemDataSet1 rentalSystemDataSet1;
-        private System.Windows.Forms.BindingSource staffBindingSource;
-        private rentalSystemDataSet1TableAdapters.StaffTableAdapter staffTableAdapter;
     }
 }
