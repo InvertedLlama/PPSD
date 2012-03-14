@@ -49,9 +49,19 @@ namespace PPSDPart2
                 return false;
             }
 
-            DatabaseTable dt = programDatabase.runQuery("SELECT * FROM USER_TEMP");
+            DatabaseTable dt = null;
+            try
+            {
+                dt = programDatabase.runDataSelectQuery("SELECT * FROM USER_TEMP");
+                Console.WriteLine(dt.ToString());
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+               
 
-            Console.WriteLine(dt.ToString());
+            
                        
             return true;
         }

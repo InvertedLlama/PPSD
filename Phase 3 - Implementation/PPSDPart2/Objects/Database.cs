@@ -9,6 +9,10 @@ using MySql.Data.MySqlClient;
 
 namespace PPSDPart2.Objects
 {
+    //TODO: Set reasonable command timeouts
+    //TODO: Improve string formatting
+    //TODO: Improve error handling
+    //POSS TODO: Make data type sensetive
     class Database
     {
 
@@ -51,25 +55,73 @@ namespace PPSDPart2.Objects
             
             
         }
-
-        public DatabaseTable runQuery(string query)
+        
+        
+        public DatabaseTable runDataSelectQuery(string query)
         {
             using (MySqlConnection sqlConnection = new MySqlConnection(connectionString))
             {
                 MySqlCommand cmd = sqlConnection.CreateCommand();
-                MySqlDataReader sqlReader;
+                MySqlDataReader sqlReader = null;
                 cmd.CommandText = query;
                 
                 //Open the connection
                 sqlConnection.Open();
 
-                //Pull the data
-                sqlReader = cmd.ExecuteReader();
+                DatabaseTable dt = null;
 
-                return new DatabaseTable(sqlReader);
+                //Pull the data
+                try
+                {
+                    sqlReader = cmd.ExecuteReader();
+                    dt = new DatabaseTable(sqlReader);
+                }
+                
+                //If there's an error throw it to the calling function so it can be handled accordingly
+                catch (MySqlException e)
+                {
+                    throw e;
+                }
+                //Make sure to close connections and readers regardless of outcome
+                finally
+                {
+                    if(sqlReader != null)
+                        sqlReader.Close();
+
+                    cmd.Connection.Close();
+                }              
+
+                return dt;
             }            
         }
 
+        //Dont run select queries through this function.
+        public bool runCommandQuery(string query)
+        {
+            using (MySqlConnection sqlConnection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand cmd = sqlConnection.CreateCommand();
+                cmd.CommandText = query;
+
+                try
+                {
+                    sqlConnection.Open();
+                    cmd.ExecuteNonQuery();                    
+                }
+                catch (MySqlException e)
+                {
+                    throw e;
+                }
+                finally
+                {
+
+                    cmd.Connection.Close();
+                    sqlConnection.Close();
+                }
+                                
+            }
+            return true;
+        }
 
         public string ConnectionString
         {
