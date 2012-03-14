@@ -9,6 +9,12 @@ namespace PPSDPart2
 {
     static class Program
     {
+        static Database programDatabase = new Database("SERVER=cfe.no-ip.org;" +
+                                                       "DATABASE=PPSD;" +
+                                                       "UID=ppsdgroup;" +
+                                                       "PASSWORD=ppsdgroup;" +
+                                                       "PORT=7774;");
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -22,7 +28,7 @@ namespace PPSDPart2
             string message = "";
 
             //Attempt to init. If this fails show the user an error message
-            if (init(out message))
+            if (init(ref programDatabase, out message))
                 Application.Run(new frmLogin());
             else
             {
@@ -31,9 +37,22 @@ namespace PPSDPart2
         }
 
         //Opens connection to database, pulls initial data.
-        static bool init(out string message)
+        static bool init(ref Database db, out string message)
         {
-            message = "Failed to initialise database connection";
+            message = "Unknown Error";
+                      
+            
+                          
+            //Attempt to establish a connection to the database
+            if (!db.initalise(ref message))
+            {               
+                return false;
+            }
+
+            DatabaseTable dt = programDatabase.runQuery("SELECT * FROM USER_TEMP");
+
+            Console.WriteLine(dt.ToString());
+                       
             return true;
         }
     }

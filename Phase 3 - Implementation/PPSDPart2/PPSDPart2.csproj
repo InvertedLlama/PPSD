@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D6515410-7E51-4891-8D86-E74034E03968}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PPSDPart2</RootNamespace>
     <AssemblyName>PPSDPart2</AssemblyName>
@@ -37,6 +37,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +64,8 @@
     </Compile>
     <Compile Include="Objects\Admin.cs" />
     <Compile Include="Objects\CounterStaff.cs" />
+    <Compile Include="Objects\Database.cs" />
+    <Compile Include="Objects\DatabaseTable.cs" />
     <Compile Include="Objects\Instructor.cs" />
     <Compile Include="Objects\Owner.cs" />
     <Compile Include="Objects\User.cs" />

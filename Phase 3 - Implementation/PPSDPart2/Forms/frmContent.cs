@@ -26,5 +26,10 @@ namespace PPSDPart2
             set { crntUser = value; }
         }
 
+        private void frmContent_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
