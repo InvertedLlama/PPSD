@@ -9,11 +9,7 @@ namespace PPSDPart2
 {
     static class Program
     {
-        static Database programDatabase = new Database("SERVER=cfe.no-ip.org;" +
-                                                       "DATABASE=PPSD;" +
-                                                       "UID=ppsdgroup;" +
-                                                       "PASSWORD=ppsdgroup;" +
-                                                       "PORT=7774;");
+        static Database programDatabase = new Database("mattryder.co.uk", "ppsd_database", "ppsd_user", "password");
 
         /// <summary>
         /// The main entry point for the application.
@@ -40,9 +36,7 @@ namespace PPSDPart2
         static bool init(ref Database db, out string message)
         {
             message = "Unknown Error";
-                      
-            
-                          
+       
             //Attempt to establish a connection to the database
             if (!db.initalise(ref message))
             {               
@@ -58,11 +52,7 @@ namespace PPSDPart2
             catch (Exception e)
             {
                 MessageBox.Show("Error:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-               
-
-            
-                       
+            }        
             return true;
         }
     }

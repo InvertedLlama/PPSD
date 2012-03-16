@@ -14,7 +14,6 @@ namespace PPSDPart2.Objects
 {
     class DatabaseTable
     {
-
         public struct Field
         {
             public string name;
@@ -31,7 +30,6 @@ namespace PPSDPart2.Objects
         int intFieldCount;
         int intRowCount;
 
-        
         Dictionary<string, List<string>> mData;
 
 
@@ -43,6 +41,7 @@ namespace PPSDPart2.Objects
           
             for(int i = 0; i < dataReader.FieldCount; i++)
             {
+                //Get type of current field in row, create new field
                 Type t = dataReader.GetFieldType(i);
                 mFields.Add(new Field(dataReader.GetName(i), t));
                 
@@ -70,7 +69,7 @@ namespace PPSDPart2.Objects
         }
 
         //TODO: Improve formatting
-        public string ToString()
+        public override string ToString()
         {
             string strOutput = "";            
             string temp;

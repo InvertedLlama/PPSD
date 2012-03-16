@@ -5,6 +5,7 @@ using System.Text;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 
 namespace PPSDPart2.Objects
@@ -15,14 +16,24 @@ namespace PPSDPart2.Objects
     //POSS TODO: Make data type sensetive
     class Database
     {
-
         string connectionString;
-                    
-        public Database(string connectionString)
+        MySqlConnection connection;
+        MySqlCommand command;
+
+        /// <summary>
+        /// Creates an instance of a Database object
+        /// </summary>
+        public Database(string host, string database, string username, string password)
         {
-            this.connectionString = connectionString;
+            connectionString = "SERVER=" + host + ";" +
+                               "DATABASE=" + database + ";" +
+                               "UID=" + username + ";" +
+                               "PASSWORD=" + password + ";";
         }
 
+        /// <summary>
+        /// Initialises the database with the Database object's credentials
+        /// </summary>
         public bool initalise(ref string message)
         {
             //Attempt to open the connection and see if the database is reachable
@@ -46,10 +57,8 @@ namespace PPSDPart2.Objects
                             message = "Unknown Database Error";
                             break;
                     }
-
                     return false;
                 }
-
                 return true;
             }
             
@@ -63,18 +72,16 @@ namespace PPSDPart2.Objects
             {
                 MySqlCommand cmd = sqlConnection.CreateCommand();
                 MySqlDataReader sqlReader = null;
-                cmd.CommandText = query;
-                
-                //Open the connection
-                sqlConnection.Open();
+                DatabaseTable databaseTable;
 
-                DatabaseTable dt = null;
+                cmd.CommandText = query;
+                sqlConnection.Open();
 
                 //Pull the data
                 try
                 {
                     sqlReader = cmd.ExecuteReader();
-                    dt = new DatabaseTable(sqlReader);
+                    databaseTable = new DatabaseTable(sqlReader);
                 }
                 
                 //If there's an error throw it to the calling function so it can be handled accordingly
@@ -91,7 +98,7 @@ namespace PPSDPart2.Objects
                     cmd.Connection.Close();
                 }              
 
-                return dt;
+                return databaseTable;
             }            
         }
 
@@ -127,6 +134,23 @@ namespace PPSDPart2.Objects
         {
             get { return connectionString; }
             set { connectionString = value; }
+        }
+
+        public MySqlConnection Connection
+        {
+            get { return connection; }
+            set { connection = value; }
+        }
+
+        public MySqlCommand Command
+        {
+            get { return command; }
+            set { command = value; }
+        }
+
+        public ConnectionState ConnectionState
+        {
+            get { return connection.State; }
         }
 
 
