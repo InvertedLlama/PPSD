@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace PPSDPart2.Objects
 {
-    class DatabaseTable
+    public class DatabaseTable
     {
         public struct Field
         {
@@ -101,6 +101,12 @@ namespace PPSDPart2.Objects
         public int RowCount
         {
             get { return intRowCount; }
+        }
+
+        public Dictionary<string, List<string>> Data
+        {
+            get { return mData; }
+            set { mData = value; }
         }
     }
 }

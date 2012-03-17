@@ -14,10 +14,17 @@ namespace PPSDPart2
     public partial class frmContent : Form
     {
         private User crntUser;
-        
-        public frmContent()
+        private Database programDatabase;
+
+        public frmContent(Database programDatabase)
         {
-            InitializeComponent();            
+            InitializeComponent();
+            this.programDatabase = programDatabase;
+        }
+
+        public void formClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
 
         public User CurrentUser
@@ -25,11 +32,5 @@ namespace PPSDPart2
             get { return crntUser; }
             set { crntUser = value; }
         }
-
-        private void frmContent_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

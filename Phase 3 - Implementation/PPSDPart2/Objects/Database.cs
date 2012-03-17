@@ -14,11 +14,9 @@ namespace PPSDPart2.Objects
     //TODO: Improve string formatting
     //TODO: Improve error handling
     //POSS TODO: Make data type sensetive
-    class Database
+    public class Database
     {
         string connectionString;
-        MySqlConnection connection;
-        MySqlCommand command;
 
         /// <summary>
         /// Creates an instance of a Database object
@@ -59,6 +57,8 @@ namespace PPSDPart2.Objects
                     }
                     return false;
                 }
+
+                sqlConnection.Close();
                 return true;
             }
             
@@ -91,7 +91,7 @@ namespace PPSDPart2.Objects
                 }
                 //Make sure to close connections and readers regardless of outcome
                 finally
-                {
+                {                    
                     if(sqlReader != null)
                         sqlReader.Close();
 
@@ -135,24 +135,5 @@ namespace PPSDPart2.Objects
             get { return connectionString; }
             set { connectionString = value; }
         }
-
-        public MySqlConnection Connection
-        {
-            get { return connection; }
-            set { connection = value; }
-        }
-
-        public MySqlCommand Command
-        {
-            get { return command; }
-            set { command = value; }
-        }
-
-        public ConnectionState ConnectionState
-        {
-            get { return connection.State; }
-        }
-
-
     }
 }

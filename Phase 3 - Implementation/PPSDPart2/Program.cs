@@ -25,7 +25,7 @@ namespace PPSDPart2
 
             //Attempt to init. If this fails show the user an error message
             if (init(ref programDatabase, out message))
-                Application.Run(new frmLogin());
+                Application.Run(new frmLogin(programDatabase));
             else
             {
                 MessageBox.Show("Error: " + message , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
@@ -42,17 +42,7 @@ namespace PPSDPart2
             {               
                 return false;
             }
-
-            DatabaseTable dt = null;
-            try
-            {
-                dt = programDatabase.runDataSelectQuery("SELECT * FROM USER_TEMP");
-                Console.WriteLine(dt.ToString());
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }        
+           
             return true;
         }
     }

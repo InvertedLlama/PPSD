@@ -14,10 +14,12 @@ namespace PPSDPart2
     public partial class frmLogin : Form
     {
         frmContent contentForm;
+        Database programDatabase;
 
-        public frmLogin()
+        public frmLogin(Database programDatabase)
         {
             InitializeComponent();
+            this.programDatabase = programDatabase;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -30,13 +32,14 @@ namespace PPSDPart2
         //or shows an error message
         private void login(string username, string password)
         {
-            contentForm = new frmContent();
+            contentForm = new frmContent(programDatabase);
             //Database foo
 
 
             //TEMP Show the content form
             contentForm.CurrentUser = new User("TestName", "TestUser", "TestPassword", UserAccessLevel.Admin);
             contentForm.Show(this);
+            this.Hide();
 
         }
     }
