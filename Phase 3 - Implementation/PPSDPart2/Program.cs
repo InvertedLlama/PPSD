@@ -36,7 +36,7 @@ namespace PPSDPart2
         static bool init(ref Database db, out string message)
         {
             message = "Unknown Error";
-       
+
             //Attempt to establish a connection to the database
             if (!db.initalise(ref message))
             {               

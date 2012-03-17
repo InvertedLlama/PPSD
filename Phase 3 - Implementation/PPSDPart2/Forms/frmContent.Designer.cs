@@ -160,6 +160,7 @@
             this.Name = "frmContent";
             this.Text = "Rental System - Content";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formClosed);
+            this.Load += new System.EventHandler(this.frmContent_Load);
             this.tabContent.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -32,5 +32,10 @@ namespace PPSDPart2
             get { return crntUser; }
             set { crntUser = value; }
         }
+
+        private void frmContent_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, CurrentUser.AccessLevel.ToString());
+        }
     }
 }
