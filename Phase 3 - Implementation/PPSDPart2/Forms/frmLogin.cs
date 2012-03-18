@@ -42,7 +42,7 @@ namespace PPSDPart2
 
             try
             {
-                userInfo = programDatabase.runDataSelectQuery("SELECT role, name FROM Staff WHERE staffID = " + username + " AND password = '" + password + "'");
+                userInfo = programDatabase.runDataSelectQuery("SELECT role, name FROM Staff WHERE username = '" + username + "' AND password = '" + password + "'");
             }
             catch (MySqlException e)
             {
