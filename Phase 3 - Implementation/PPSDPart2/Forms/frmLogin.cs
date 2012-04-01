@@ -24,6 +24,10 @@ namespace PPSDPart2
         {
             InitializeComponent();
             this.programDatabase = programDatabase;
+
+            //Set for debug purposes, quicker login:
+            txtUsername.Text = "admin01";
+            txtPassword.Text = "password";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -34,8 +38,10 @@ namespace PPSDPart2
             txtPassword.Clear();
         }
 
-        //Checks username and password against the database and either sends the user to the cotent form
-        //or shows an error message
+        /// <summary>
+        /// Checks username and password against the database and either
+        /// sends the user to the cotent form or shows an error message
+        /// </summary>
         private void login(string username, string password)
         {            
             DatabaseTable userInfo = null;
@@ -85,6 +91,17 @@ namespace PPSDPart2
             contentForm.Show(this);
             this.Hide();
 
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //Run the login fuction
+                login(txtUsername.Text, txtPassword.Text);
+                txtUsername.Clear();
+                txtPassword.Clear();
+            }
         }
     }
 }

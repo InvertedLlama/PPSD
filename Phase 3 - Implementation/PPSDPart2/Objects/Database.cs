@@ -60,12 +60,14 @@ namespace PPSDPart2.Objects
 
                 sqlConnection.Close();
                 return true;
-            }
-            
-            
+            }        
         }
         
-        
+        /// <summary>
+        /// Executes non-DDL statements (SELECT etc) and returns matching rows from the Database
+        /// </summary>
+        /// <param name="query">Query to execute against the database table</param>
+        /// <returns>DatabaseTable containing matching rows</returns>
         public DatabaseTable runDataSelectQuery(string query)
         {
             using (MySqlConnection sqlConnection = new MySqlConnection(connectionString))
@@ -102,7 +104,11 @@ namespace PPSDPart2.Objects
             }            
         }
 
-        //Dont run select queries through this function.
+        /// <summary>
+        /// Executes DDL statements (CREATE, ALTER, DROP etc) on the Database.
+        /// </summary>
+        /// <param name="query">Query to execute against the database table</param>
+        /// <returns>Boolean success of the query</returns>
         public bool runCommandQuery(string query)
         {
             using (MySqlConnection sqlConnection = new MySqlConnection(connectionString))
@@ -121,7 +127,6 @@ namespace PPSDPart2.Objects
                 }
                 finally
                 {
-
                     cmd.Connection.Close();
                     sqlConnection.Close();
                 }
@@ -130,6 +135,9 @@ namespace PPSDPart2.Objects
             return true;
         }
 
+        /// <summary>
+        /// Connection String containing Hostname, Database Name, User and Pass.
+        /// </summary>
         public string ConnectionString
         {
             get { return connectionString; }

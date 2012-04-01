@@ -16,6 +16,12 @@ namespace PPSDPart2
         private User crntUser;
         private Database programDatabase;
 
+        public User CurrentUser
+        {
+            get { return crntUser; }
+            set { crntUser = value; }
+        }
+
         public frmContent(Database programDatabase)
         {
             InitializeComponent();
@@ -27,15 +33,18 @@ namespace PPSDPart2
             Owner.Show();
         }
 
-        public User CurrentUser
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            get { return crntUser; }
-            set { crntUser = value; }
+            string searchQuery = txtSearch.Text;
         }
 
-        private void frmContent_Load(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, CurrentUser.AccessLevel.ToString());
+            if (tabContent.SelectedTab == tbStaff)
+            {
+                frmAddStaff frmAddStaff = new frmAddStaff(programDatabase);
+                frmAddStaff.ShowDialog();
+            }
         }
     }
 }
