@@ -40,9 +40,18 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.dgvSupplier = new System.Windows.Forms.DataGridView();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.dgvRental = new System.Windows.Forms.DataGridView();
             this.tabContent.SuspendLayout();
+            this.tbSupplier.SuspendLayout();
             this.tbStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
+            this.tbProduct.SuspendLayout();
+            this.tbRental.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRental)).BeginInit();
             this.SuspendLayout();
             // 
             // tabContent
@@ -59,6 +68,7 @@
             // 
             // tbSupplier
             // 
+            this.tbSupplier.Controls.Add(this.dgvSupplier);
             this.tbSupplier.Location = new System.Drawing.Point(4, 22);
             this.tbSupplier.Name = "tbSupplier";
             this.tbSupplier.Padding = new System.Windows.Forms.Padding(3);
@@ -92,6 +102,7 @@
             // 
             // tbProduct
             // 
+            this.tbProduct.Controls.Add(this.dgvProduct);
             this.tbProduct.Location = new System.Drawing.Point(4, 22);
             this.tbProduct.Name = "tbProduct";
             this.tbProduct.Padding = new System.Windows.Forms.Padding(3);
@@ -102,6 +113,7 @@
             // 
             // tbRental
             // 
+            this.tbRental.Controls.Add(this.dgvRental);
             this.tbRental.Location = new System.Drawing.Point(4, 22);
             this.tbRental.Name = "tbRental";
             this.tbRental.Padding = new System.Windows.Forms.Padding(3);
@@ -163,6 +175,33 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
+            // dgvSupplier
+            // 
+            this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSupplier.Location = new System.Drawing.Point(3, 3);
+            this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.Size = new System.Drawing.Size(662, 433);
+            this.dgvSupplier.TabIndex = 0;
+            // 
+            // dgvProduct
+            // 
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProduct.Location = new System.Drawing.Point(3, 3);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.Size = new System.Drawing.Size(662, 433);
+            this.dgvProduct.TabIndex = 0;
+            // 
+            // dgvRental
+            // 
+            this.dgvRental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRental.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRental.Location = new System.Drawing.Point(3, 3);
+            this.dgvRental.Name = "dgvRental";
+            this.dgvRental.Size = new System.Drawing.Size(662, 433);
+            this.dgvRental.TabIndex = 0;
+            // 
             // frmContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,8 +218,14 @@
             this.Text = "Rental System - Content";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formClosed);
             this.tabContent.ResumeLayout(false);
+            this.tbSupplier.ResumeLayout(false);
             this.tbStaff.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
+            this.tbProduct.ResumeLayout(false);
+            this.tbRental.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRental)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +245,8 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.DataGridView dgvStaff;
+        private System.Windows.Forms.DataGridView dgvSupplier;
+        private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.DataGridView dgvRental;
     }
 }

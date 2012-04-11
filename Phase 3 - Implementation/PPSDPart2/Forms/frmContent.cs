@@ -37,7 +37,11 @@ namespace PPSDPart2
             dtbRental = new DatabaseTable();
 
             //Register this forms event handling methods with the database tables objects
+            dtbSupplier.DataChanged += updateSupplier;
             dtbStaff.DataChanged += updateStaff;
+            dtbProduct.DataChanged += updateProduct;
+            dtbRental.DataChanged += updateRental;
+            
 
             //Do the initial data pull (may consider doing this with multiple threads)
             while(blnMsgBoxOpt){
@@ -77,18 +81,53 @@ namespace PPSDPart2
         }
 
         /// <summary>
+        /// Called to populate the supplier datagrid view with data when the supplier table is updated
+        /// </summary>
+        /// <param name="sender">object that dispatched the event</param>
+        /// <param name="e">event arguments</param>
+        private void updateSupplier(object sender, EventArgs e)
+        {
+            updateTable(ref dgvSupplier, ref dtbSupplier);
+        }
+
+        /// <summary>
+        /// Called to populate the product datagrid view with data when the product table is updated
+        /// </summary>
+        /// <param name="sender">object that dispatched the event</param>
+        /// <param name="e">event arguments</param>
+        private void updateProduct(object sender, EventArgs e)
+        {
+            updateTable(ref dgvProduct, ref dtbProduct);
+        }
+
+        /// <summary>
+        /// Called to populate the rental datagrid view with data when the rental table is updated
+        /// </summary>
+        /// <param name="sender">object that dispatched the event</param>
+        /// <param name="e">event arguments</param>
+        private void updateRental(object sender, EventArgs e)
+        {
+            updateTable(ref dgvRental, ref dtbRental);
+        }
+
+        /// <summary>
         /// Called to populate the staff datagrid view with data when the staff data table is updated
         /// </summary>
         /// <param name="sender">object that instigated the event</param>
-        /// <param name="e">event arguments</param>
-        void updateStaff(object sender, EventArgs e)
+        /// <param name="e">event arguments</param>                    
+        private void updateStaff(object sender, EventArgs e)
+        {
+            updateTable(ref dgvStaff, ref dtbStaff);
+        }
+
+        private void updateTable(ref DataGridView dgvView, ref DatabaseTable dtbTable)
         {
             //Clear the existing columns
-            dgvStaff.Columns.Clear();
+            dgvView.Columns.Clear();
 
             DataGridViewColumn c;
             //Add the new columns
-            foreach (DatabaseTable.Field f in dtbStaff.Fields)
+            foreach (DatabaseTable.Field f in dtbTable.Fields)
             {
                 c = new DataGridViewColumn();
                 c.Resizable = DataGridViewTriState.True;
@@ -97,28 +136,28 @@ namespace PPSDPart2
                 c.ValueType = typeof(string);
                 c.Visible = true;
                 c.CellTemplate = new DataGridViewTextBoxCell();
-               
-                dgvStaff.Columns.Add(c);
+
+                dgvView.Columns.Add(c);
             }
 
             //Clear existing rows
-            dgvStaff.Rows.Clear();
+            dgvView.Rows.Clear();
 
             DataGridViewRow r;
-            
+
             //Add the new rows
-            for (int i = 0; i < dtbStaff.RowCount; i++)
+            for (int i = 0; i < dtbTable.RowCount; i++)
             {
                 r = new DataGridViewRow();
                 r.Resizable = DataGridViewTriState.True;
                 r.CreateCells(dgvStaff);
 
-                for (int j = 0; j < dtbStaff.FieldCount; j++)
-                {                    
-                    r.Cells[j].Value = dtbStaff.Data[dtbStaff.FieldNames[j]][i];
+                for (int j = 0; j < dtbTable.FieldCount; j++)
+                {
+                    r.Cells[j].Value = dtbTable.Data[dtbTable.FieldNames[j]][i];
                     r.Cells[j].ReadOnly = true;
-                }                
-                dgvStaff.Rows.Add(r);
+                }
+                dgvView.Rows.Add(r);
             }
         }
 
