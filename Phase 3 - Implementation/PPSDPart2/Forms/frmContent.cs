@@ -40,10 +40,23 @@ namespace PPSDPart2
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (tabContent.SelectedTab == tbStaff)
+            if (!crntUser.canCreate)
+            {
+                MessageBox.Show("Insufficient Permissions to add a new record", "Permission Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else if (tabContent.SelectedTab == tbStaff)
             {
                 frmAddStaff frmAddStaff = new frmAddStaff(programDatabase);
                 frmAddStaff.ShowDialog();
+            }
+        }
+
+        public void updateContent()
+        {
+            if (tabContent.SelectedTab == tbStaff)
+            {
+                DatabaseTable dt = programDatabase.runDataSelectQuery("SELCT * FROM STAFF");
             }
         }
     }

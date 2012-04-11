@@ -63,7 +63,9 @@ namespace PPSDPart2
                     txtPassword.Text);
 
                 if (programDatabase.runCommandQuery(insertQuery))
+                {
                     MessageBox.Show("WORKS!");
+                }
                 else
                     MessageBox.Show("FAILED HARD!");
             }

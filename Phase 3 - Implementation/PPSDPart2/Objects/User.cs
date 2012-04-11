@@ -12,13 +12,6 @@ namespace PPSDPart2.Objects
 
     public class User
     {
-        //User permission settings, static, class bound
-        private static bool READ = false,
-                            CREATE = false,
-                            MODIFY = false,
-                             DELETE = false;
-
-
         string strName;
         string strUsername;
         string strPassword;
@@ -60,22 +53,68 @@ namespace PPSDPart2.Objects
 
         public virtual bool canRead
         {
-            get { return READ;}
+            get
+            {
+                switch (usrAccess)
+                {
+                    case UserAccessLevel.Admin:
+                        return true;
+                    case UserAccessLevel.CounterStaff:
+                        return true;
+                    case UserAccessLevel.Instructor:
+                        return true;
+                    case UserAccessLevel.Owner:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
         }
 
         public virtual bool canCreate
         {
-            get { return CREATE; }
+            get
+            {
+                switch (usrAccess)
+                {
+                    case UserAccessLevel.Admin:
+                        return true;
+                    case UserAccessLevel.CounterStaff:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
         }
 
         public virtual bool canModify
         {
-            get { return MODIFY; }
+            get
+            {
+                switch (usrAccess)
+                {
+                    case UserAccessLevel.Admin:
+                        return true;
+                    case UserAccessLevel.CounterStaff:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
         }
 
         public virtual bool canDelete
         {
-            get { return DELETE; }
+            get
+            {
+                switch (usrAccess)
+                {
+                    case UserAccessLevel.Admin:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
         }
 
     }

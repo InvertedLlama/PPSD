@@ -39,11 +39,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.dgvStaff = new System.Windows.Forms.DataGridView();
-            this.lblStaffView = new System.Windows.Forms.Label();
             this.tabContent.SuspendLayout();
-            this.tbStaff.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // tabContent
@@ -70,8 +66,6 @@
             // 
             // tbStaff
             // 
-            this.tbStaff.Controls.Add(this.lblStaffView);
-            this.tbStaff.Controls.Add(this.dgvStaff);
             this.tbStaff.Location = new System.Drawing.Point(4, 22);
             this.tbStaff.Name = "tbStaff";
             this.tbStaff.Padding = new System.Windows.Forms.Padding(3);
@@ -153,25 +147,6 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // dgvStaff
-            // 
-            this.dgvStaff.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvStaff.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Location = new System.Drawing.Point(6, 105);
-            this.dgvStaff.Name = "dgvStaff";
-            this.dgvStaff.Size = new System.Drawing.Size(653, 328);
-            this.dgvStaff.TabIndex = 0;
-            // 
-            // lblStaffView
-            // 
-            this.lblStaffView.AutoSize = true;
-            this.lblStaffView.Location = new System.Drawing.Point(6, 89);
-            this.lblStaffView.Name = "lblStaffView";
-            this.lblStaffView.Size = new System.Drawing.Size(72, 13);
-            this.lblStaffView.TabIndex = 1;
-            this.lblStaffView.Text = "Staff Records";
-            // 
             // frmContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,9 +163,6 @@
             this.Text = "Rental System - Content";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formClosed);
             this.tabContent.ResumeLayout(false);
-            this.tbStaff.ResumeLayout(false);
-            this.tbStaff.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +181,5 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label lblStaffView;
-        private System.Windows.Forms.DataGridView dgvStaff;
     }
 }

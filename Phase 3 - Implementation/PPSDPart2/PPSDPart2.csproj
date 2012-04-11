@@ -79,12 +79,8 @@
     <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Objects\Admin.cs" />
-    <Compile Include="Objects\CounterStaff.cs" />
     <Compile Include="Objects\Database.cs" />
     <Compile Include="Objects\DatabaseTable.cs" />
-    <Compile Include="Objects\Instructor.cs" />
-    <Compile Include="Objects\Owner.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
