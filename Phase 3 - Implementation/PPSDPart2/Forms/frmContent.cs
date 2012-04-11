@@ -15,6 +15,7 @@ namespace PPSDPart2
     {
         private User crntUser;
         private Database programDatabase;
+        private DatabaseTable dtbSupplier, dtbStaff, dtbProduct, dtbRental;
 
         public User CurrentUser
         {
@@ -24,8 +25,39 @@ namespace PPSDPart2
 
         public frmContent(Database programDatabase)
         {
+            bool blnMsgBoxOpt = true;
+
             InitializeComponent();
             this.programDatabase = programDatabase;
+            
+            //Do the initial data pull (may consider doing this with multiple threads)
+            while(blnMsgBoxOpt){
+                try
+                {
+                    dtbSupplier = programDatabase.runDataSelectQuery("SELECT * FROM Supplier");
+                    dtbStaff = programDatabase.runDataSelectQuery("SELECT * FROM Staff");
+                    dtbProduct = programDatabase.runDataSelectQuery("SELECT * FROM Product");
+                    dtbRental = programDatabase.runDataSelectQuery("SELECT * FROM Rental");
+                    //Data retrieval was successful, break the loop and continue
+                    break;
+                }
+                catch
+                {
+                    switch((MessageBox.Show("Critical Error: Failed to get data from database", "ERROR", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error)))
+                    {
+                        //If the user wants to ignore the error and continue then allow it
+                        case System.Windows.Forms.DialogResult.Ignore:
+                            blnMsgBoxOpt = false;
+                            break;
+                        //If the user wants to abort then close the program
+                        case System.Windows.Forms.DialogResult.Abort:
+                            Application.Exit();
+                            break;
+
+                        //Only other possible option is retry. So just let the loop continue
+                    }
+                }
+            }
         }
 
         public void formClosed(object sender, FormClosedEventArgs e)
@@ -52,12 +84,5 @@ namespace PPSDPart2
             }
         }
 
-        public void updateContent()
-        {
-            if (tabContent.SelectedTab == tbStaff)
-            {
-                DatabaseTable dt = programDatabase.runDataSelectQuery("SELCT * FROM STAFF");
-            }
-        }
     }
 }

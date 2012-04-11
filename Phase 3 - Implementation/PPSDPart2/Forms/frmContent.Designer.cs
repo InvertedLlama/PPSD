@@ -39,7 +39,19 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.dgcStaffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcBranchID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabContent.SuspendLayout();
+            this.tbStaff.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // tabContent
@@ -66,6 +78,8 @@
             // 
             // tbStaff
             // 
+            this.tbStaff.AutoScroll = true;
+            this.tbStaff.Controls.Add(this.dgvStaff);
             this.tbStaff.Location = new System.Drawing.Point(4, 22);
             this.tbStaff.Name = "tbStaff";
             this.tbStaff.Padding = new System.Windows.Forms.Padding(3);
@@ -147,6 +161,89 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
+            // dgvStaff
+            // 
+            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgcStaffID,
+            this.dgcBranchID,
+            this.dgcName,
+            this.dgcRole,
+            this.dgcAddress,
+            this.dgcPhoneNumber,
+            this.dgcEmail,
+            this.dgcUsername,
+            this.dgcPassword});
+            this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStaff.Location = new System.Drawing.Point(3, 3);
+            this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.Size = new System.Drawing.Size(662, 433);
+            this.dgvStaff.TabIndex = 0;
+            // 
+            // dgcStaffID
+            // 
+            this.dgcStaffID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcStaffID.HeaderText = "StaffID";
+            this.dgcStaffID.MinimumWidth = 50;
+            this.dgcStaffID.Name = "dgcStaffID";
+            this.dgcStaffID.Width = 65;
+            // 
+            // dgcBranchID
+            // 
+            this.dgcBranchID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcBranchID.HeaderText = "BranchID";
+            this.dgcBranchID.Name = "dgcBranchID";
+            this.dgcBranchID.Width = 77;
+            // 
+            // dgcName
+            // 
+            this.dgcName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcName.HeaderText = "Name";
+            this.dgcName.Name = "dgcName";
+            this.dgcName.Width = 60;
+            // 
+            // dgcRole
+            // 
+            this.dgcRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcRole.HeaderText = "Role";
+            this.dgcRole.Name = "dgcRole";
+            this.dgcRole.Width = 54;
+            // 
+            // dgcAddress
+            // 
+            this.dgcAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcAddress.HeaderText = "Address";
+            this.dgcAddress.Name = "dgcAddress";
+            this.dgcAddress.Width = 70;
+            // 
+            // dgcPhoneNumber
+            // 
+            this.dgcPhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcPhoneNumber.HeaderText = "Phone Number";
+            this.dgcPhoneNumber.Name = "dgcPhoneNumber";
+            this.dgcPhoneNumber.Width = 95;
+            // 
+            // dgcEmail
+            // 
+            this.dgcEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcEmail.HeaderText = "Email";
+            this.dgcEmail.Name = "dgcEmail";
+            this.dgcEmail.Width = 57;
+            // 
+            // dgcUsername
+            // 
+            this.dgcUsername.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcUsername.HeaderText = "Username";
+            this.dgcUsername.Name = "dgcUsername";
+            this.dgcUsername.Width = 80;
+            // 
+            // dgcPassword
+            // 
+            this.dgcPassword.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgcPassword.HeaderText = "Password";
+            this.dgcPassword.Name = "dgcPassword";
+            this.dgcPassword.Width = 78;
+            // 
             // frmContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +260,8 @@
             this.Text = "Rental System - Content";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formClosed);
             this.tabContent.ResumeLayout(false);
+            this.tbStaff.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +280,15 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.DataGridView dgvStaff;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcStaffID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcBranchID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPhoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPassword;
     }
 }

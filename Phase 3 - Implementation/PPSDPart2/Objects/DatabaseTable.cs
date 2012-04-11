@@ -7,13 +7,17 @@ using System.Text;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+using PPSDPart2.Interfaces;
 
 //TODO: Possibly use real data types instead of strings. Should be very possible using dynamic list types
 
 namespace PPSDPart2.Objects
 {
-    public class DatabaseTable
+    public class DatabaseTable : IDataSource
     {
+        public event EventHandler DataChanged;
+        public event EventHandler Destroyed;
+
         public struct Field
         {
             public string name;
@@ -68,6 +72,26 @@ namespace PPSDPart2.Objects
             
         }
 
+        //Event for the data changing.
+        protected virtual void OnDataChanged(EventArgs e)
+        {
+            //Notify the event listeners that the data has changed
+            if (DataChanged != null)
+            {
+                DataChanged(this, e);
+            }
+        }
+
+        //Event for this data source being destroyed.
+        protected virtual void OnDestoryed(EventArgs e)
+        {
+            //Notify any listeners that this source is being destoryed
+            if (Destroyed != null)
+            {
+                Destroyed(this, e);
+            }
+        }
+
         //TODO: Improve formatting
         public override string ToString()
         {
@@ -86,6 +110,12 @@ namespace PPSDPart2.Objects
             }
 
             return strOutput;
+        }
+
+        
+        public List<string> getDataColumn(string field)
+        {
+            return mData["field"];
         }
         
         public List<Field> Fields
@@ -107,6 +137,20 @@ namespace PPSDPart2.Objects
         {
             get { return mData; }
             set { mData = value; }
+        }
+
+        //Required by the IDataSource interface
+        public IList<string> FieldNames
+        {
+            get 
+            {
+                List<string> lstFieldnames = new List<string>();
+                foreach(Field f in mFields)
+                {
+                    lstFieldnames.Add(f.name);
+                }
+                return lstFieldnames;
+            }
         }
     }
 }

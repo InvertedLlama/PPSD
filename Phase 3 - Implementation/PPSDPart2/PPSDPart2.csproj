@@ -79,6 +79,7 @@
     <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IDataSource.cs" />
     <Compile Include="Objects\Database.cs" />
     <Compile Include="Objects\DatabaseTable.cs" />
     <Compile Include="Objects\User.cs" />
