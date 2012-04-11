@@ -30,20 +30,29 @@ namespace PPSDPart2
             InitializeComponent();
             this.programDatabase = programDatabase;
             
+            //Initialise the database table objects
+            dtbSupplier = new DatabaseTable();
+            dtbStaff = new DatabaseTable();
+            dtbProduct = new DatabaseTable();
+            dtbRental = new DatabaseTable();
+
+            //Register this forms event handling methods with the database tables objects
+            dtbStaff.DataChanged += updateStaff;
+
             //Do the initial data pull (may consider doing this with multiple threads)
             while(blnMsgBoxOpt){
                 try
-                {
-                    dtbSupplier = programDatabase.runDataSelectQuery("SELECT * FROM Supplier");
-                    dtbStaff = programDatabase.runDataSelectQuery("SELECT * FROM Staff");
-                    dtbProduct = programDatabase.runDataSelectQuery("SELECT * FROM Product");
-                    dtbRental = programDatabase.runDataSelectQuery("SELECT * FROM Rental");
+                  {                    
+                    programDatabase.runDataSelectQuery("SELECT * FROM Supplier", ref dtbSupplier);
+                    programDatabase.runDataSelectQuery("SELECT staffid, branchid, name, role, address, phonenumber, email, username  FROM Staff", ref dtbStaff);
+                    programDatabase.runDataSelectQuery("SELECT * FROM Product", ref dtbProduct);
+                    programDatabase.runDataSelectQuery("SELECT * FROM Rental", ref dtbRental);
                     //Data retrieval was successful, break the loop and continue
                     break;
-                }
-                catch
-                {
-                    switch((MessageBox.Show("Critical Error: Failed to get data from database", "ERROR", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error)))
+                  }
+                  catch (Exception e)
+                  {
+                    switch((MessageBox.Show("Critical Error: " + e.Message, "ERROR", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error)))
                     {
                         //If the user wants to ignore the error and continue then allow it
                         case System.Windows.Forms.DialogResult.Ignore:
@@ -51,19 +60,68 @@ namespace PPSDPart2
                             break;
                         //If the user wants to abort then close the program
                         case System.Windows.Forms.DialogResult.Abort:
-                            Application.Exit();
+                            blnMsgBoxOpt = false;
+                            Close();
                             break;
-
-                        //Only other possible option is retry. So just let the loop continue
+                        case System.Windows.Forms.DialogResult.Retry:
+                            blnMsgBoxOpt = true;
+                            break;
+                        //Should never be reached
+                        default:
+                            blnMsgBoxOpt = false;
+                            break;                        
                     }
-                }
+
+                  }
+            }            
+        }
+
+        /// <summary>
+        /// Called to populate the staff datagrid view with data when the staff data table is updated
+        /// </summary>
+        /// <param name="sender">object that instigated the event</param>
+        /// <param name="e">event arguments</param>
+        void updateStaff(object sender, EventArgs e)
+        {
+            //Clear the existing columns
+            dgvStaff.Columns.Clear();
+
+            DataGridViewColumn c;
+            //Add the new columns
+            foreach (DatabaseTable.Field f in dtbStaff.Fields)
+            {
+                c = new DataGridViewColumn();
+                c.Resizable = DataGridViewTriState.True;
+                c.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                c.HeaderText = f.name;
+                c.ValueType = typeof(string);
+                c.Visible = true;
+                c.CellTemplate = new DataGridViewTextBoxCell();
+               
+                dgvStaff.Columns.Add(c);
+            }
+
+            //Clear existing rows
+            dgvStaff.Rows.Clear();
+
+            DataGridViewRow r;
+            
+            //Add the new rows
+            for (int i = 0; i < dtbStaff.RowCount; i++)
+            {
+                r = new DataGridViewRow();
+                r.Resizable = DataGridViewTriState.True;
+                r.CreateCells(dgvStaff);
+
+                for (int j = 0; j < dtbStaff.FieldCount; j++)
+                {                    
+                    r.Cells[j].Value = dtbStaff.Data[dtbStaff.FieldNames[j]][i];
+                    r.Cells[j].ReadOnly = true;
+                }                
+                dgvStaff.Rows.Add(r);
             }
         }
 
-        public void formClosed(object sender, FormClosedEventArgs e)
-        {
-            Owner.Show();
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -82,6 +140,11 @@ namespace PPSDPart2
                 frmAddStaff frmAddStaff = new frmAddStaff(programDatabase);
                 frmAddStaff.ShowDialog();
             }
+        }
+
+        public void formClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
 
     }

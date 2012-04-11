@@ -16,7 +16,6 @@ namespace PPSDPart2.Objects
     public class DatabaseTable : IDataSource
     {
         public event EventHandler DataChanged;
-        public event EventHandler Destroyed;
 
         public struct Field
         {
@@ -36,25 +35,37 @@ namespace PPSDPart2.Objects
 
         Dictionary<string, List<string>> mData;
 
+        public DatabaseTable()
+        {
+        }
 
         public DatabaseTable(MySqlDataReader dataReader)
+        {
+            update(dataReader);
+        }
+                
+        /// <summary>
+        /// Call to fill the data dictionary with data from a MySqlDataReader
+        /// </summary>
+        /// <param name="dataReader">MySQLDataReader to read objects from</param>
+        public void update(MySqlDataReader dataReader)
         {
             intFieldCount = dataReader.FieldCount;
             mFields = new List<Field>(dataReader.FieldCount);
             mData = new Dictionary<string, List<string>>();
-          
-            for(int i = 0; i < dataReader.FieldCount; i++)
+            for (int i = 0; i < dataReader.FieldCount; i++)
             {
                 //Get type of current field in row, create new field
                 Type t = dataReader.GetFieldType(i);
                 mFields.Add(new Field(dataReader.GetName(i), t));
-                
+
                 //Add an item to the dictionary. Use the column name as a key and create a dynamically typed list to store the values
                 mData.Add(dataReader.GetName(i), new List<string>());
-            }            
+            }
 
+            
             //Populate the data lists
-
+            intRowCount = 0;
             //Attempt to read in one row
             while (dataReader.Read())
             {                
@@ -70,6 +81,8 @@ namespace PPSDPart2.Objects
                 intRowCount++;
             }
             
+            //Trigger the data update event and notify listening objects
+            OnDataChanged(new EventArgs());
         }
 
         //Event for the data changing.
@@ -82,15 +95,6 @@ namespace PPSDPart2.Objects
             }
         }
 
-        //Event for this data source being destroyed.
-        protected virtual void OnDestoryed(EventArgs e)
-        {
-            //Notify any listeners that this source is being destoryed
-            if (Destroyed != null)
-            {
-                Destroyed(this, e);
-            }
-        }
 
         //TODO: Improve formatting
         public override string ToString()

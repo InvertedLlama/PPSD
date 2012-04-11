@@ -62,8 +62,11 @@ namespace PPSDPart2
                 return;
             }
                         
-            //TEMP Show the content form
+            //TEMP Show the content form            
             contentForm = new frmContent(programDatabase);
+
+            if (contentForm.IsDisposed)
+                return;
 
             UserAccessLevel accessLevel;
 

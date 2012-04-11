@@ -67,7 +67,7 @@ namespace PPSDPart2.Objects
         /// <summary>
         /// Executes non-DDL statements (SELECT etc) and returns matching rows from the Database
         /// </summary>
-        /// <param name="query">Query to execute against the database table</param>
+        /// <param name="query">Query to execute against the database</param>
         /// <returns>DatabaseTable containing matching rows</returns>
         public DatabaseTable runDataSelectQuery(string query)
         {
@@ -103,6 +103,47 @@ namespace PPSDPart2.Objects
 
                 return databaseTable;
             }            
+        }
+
+        /// <summary>
+        /// Executes non-DDL statements (SELECT etc) and returns matching rows from the Database
+        /// but puts them into an existing DatabaseTable object
+        /// </summary>
+        /// <param name="query">Query to execute against the database</param>
+        /// <param name="table">Table to put the data into</param>
+        /// <returns>DatabaseTable containing matching rows</returns>
+        public void runDataSelectQuery(string query, ref DatabaseTable table)
+        {
+            using (MySqlConnection sqlConnection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand cmd = sqlConnection.CreateCommand();
+                MySqlDataReader sqlReader = null;
+
+                cmd.CommandText = query;
+                sqlConnection.Open();
+
+                //Pull the data
+                try
+                {
+                    sqlReader = cmd.ExecuteReader();
+                    table.update(sqlReader);
+                }
+
+                //If there's an error throw it to the calling function so it can be handled accordingly
+                catch (MySqlException e)
+                {
+                    throw e;
+                }
+                //Make sure to close connections and readers regardless of outcome
+                finally
+                {
+                    if (sqlReader != null)
+                        sqlReader.Close();
+
+                    cmd.Connection.Close();
+                }
+
+            }
         }
 
         /// <summary>
