@@ -87,7 +87,7 @@
     </Compile>
     <Compile Include="Interfaces\IDataSource.cs" />
     <Compile Include="Objects\Database.cs" />
-    <Compile Include="Objects\DatabaseTable.cs" />
+    <Compile Include="Objects\DataBinding.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

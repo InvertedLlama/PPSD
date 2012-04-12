@@ -93,7 +93,6 @@
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.search);
             // 
             // btnRemove
             // 
@@ -216,7 +215,6 @@
             this.tabContent.SelectedIndex = 0;
             this.tabContent.Size = new System.Drawing.Size(676, 465);
             this.tabContent.TabIndex = 0;
-            this.tabContent.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabSelected);
             // 
             // frmContent
             // 

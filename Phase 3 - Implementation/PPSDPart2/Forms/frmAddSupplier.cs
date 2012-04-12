@@ -32,16 +32,7 @@ namespace PPSDPart2
                     txtAddress.Text,
                     txtTelephone.Text,
                     txtEmail.Text);
-
-                if (programDatabase.runCommandQuery(insertQuery))
-                {
-                    MessageBox.Show("Supplier Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show(this, "Error adding supplier", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+               
             }
         }
 

@@ -27,17 +27,6 @@ namespace PPSDPart2
         /// </summary>
         private void setBranchData()
         {
-            string query = "SELECT branchID FROM Branch;";
-            DatabaseTable result = programDatabase.runDataSelectQuery(query);
-
-            for (int i = 0; i < result.RowCount; i++)
-            {
-                cboBranch.Items.Add(result.Data["branchID"][i]);
-            }
-
-            //Set selected item to first one in combobox, if 1+ exists:
-            if (cboBranch.Items.Count > 0)
-                cboBranch.SelectedItem = cboBranch.Items[0];
         }
 
         /// <summary>
@@ -60,12 +49,6 @@ namespace PPSDPart2
                     txtUsername.Text,
                     txtPassword.Text);
 
-                if (programDatabase.runCommandQuery(insertQuery))
-                {
-                    MessageBox.Show("WORKS!");
-                }
-                else
-                    MessageBox.Show("FAILED HARD!");
             }
         }
 
