@@ -13,11 +13,13 @@ namespace PPSDPart2
     public partial class frmAddStaff : Form
     {
         Database programDatabase;
+        DataBinding dataBinding;
 
-        public frmAddStaff(Database database)
+        public frmAddStaff(Database database, DataBinding binding)
         {
             InitializeComponent();
-            this.programDatabase = database;
+            programDatabase = database;
+            dataBinding = binding;
 
             setBranchData();
         }
@@ -27,6 +29,13 @@ namespace PPSDPart2
         /// </summary>
         private void setBranchData()
         {
+            cboBranch.Items.Clear();
+                        
+            foreach(DataRow r in programDatabase.selectData("SELECT branchID FROM Branch").Rows)
+            {
+                //There should only be one column so this is correct
+                cboBranch.Items.Add(r.ItemArray[0]);
+            }
         }
 
         /// <summary>
@@ -35,20 +44,28 @@ namespace PPSDPart2
         private void btnAddStaffMember_Click(object sender, EventArgs e)
         {
             if (validateInformation())
-            {
-                //This is the insert query for a new staff member. Not fun to write.
+            {               
+                //We really shouldn't be writing to the database each and every time we do this but for now it gets us around the issues with auto-increments
+                //Also it's pretty exspensive to empty the DataTable every single time
+                                
+                //This is the insert query for a new staff member. Not fun to write.     
                 string insertQuery = String.Format(
                     "INSERT INTO Staff (branchID, name, role, address, phoneNumber, email, username, password)\n" +
-                    "VALUES ({0}, \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", \"{7}\");",
-                    (string)cboBranch.SelectedItem,
-                    txtName.Text,
-                    (string)cboRole.SelectedItem,
-                    txtAddress.Text,
-                    txtTelephone.Text,
-                    txtEmail.Text,
-                    txtUsername.Text,
-                    txtPassword.Text);
+                    "VALUES ({0}, \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", \"{7}\")",                    
+                        cboBranch.SelectedItem,
+                        txtName.Text,
+                        (string)cboRole.SelectedItem,
+                        txtAddress.Text,
+                        txtTelephone.Text,
+                        txtEmail.Text,
+                        txtUsername.Text,
+                        txtPassword.Text);
 
+                programDatabase.runCommandQuery(insertQuery);
+                dataBinding.update();
+
+                Close();
+               
             }
         }
 
@@ -67,9 +84,12 @@ namespace PPSDPart2
             string email_pattern = "^[0-9A-Za-z]+[@][0-9A-Za-z]+[.][A-Za-z.]+$";
 
             //Check a Branch has been selected, will be triggered if no Branches exist:
-            if ((string)cboBranch.SelectedItem == string.Empty)
+            if (cboBranch.SelectedItem == string.Empty)
                 message += "* No Branch selected\n";
 
+            //Check a Role has been selected (you forgot this one matt :p
+            if (cboRole.SelectedItem == null)
+                message += "* No Role Selected\n";
 
             regex = new Regex(username_pattern);
 

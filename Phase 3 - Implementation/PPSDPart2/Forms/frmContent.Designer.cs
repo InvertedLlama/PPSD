@@ -215,6 +215,7 @@
             this.tabContent.SelectedIndex = 0;
             this.tabContent.Size = new System.Drawing.Size(676, 465);
             this.tabContent.TabIndex = 0;
+            this.tabContent.SelectedIndexChanged += new System.EventHandler(this.tabContent_SelectedIndexChanged);
             // 
             // frmContent
             // 
@@ -232,6 +233,7 @@
             this.Name = "frmContent";
             this.Text = "Rental System - Content";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formClosed);
+            this.Load += new System.EventHandler(this.frmContentLoad);
             this.tbRental.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRental)).EndInit();
             this.tbProduct.ResumeLayout(false);

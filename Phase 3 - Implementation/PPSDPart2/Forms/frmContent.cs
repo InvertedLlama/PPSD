@@ -6,8 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
 using System.Text.RegularExpressions;
+
+using MySql.Data.MySqlClient;
 
 namespace PPSDPart2
 {
@@ -15,16 +16,62 @@ namespace PPSDPart2
     {
         private User crntUser;
         private Database programDatabase;
+        private DataBinding dbiStaff, dbiProduct, dbiRental, dbiSupplier;
 
         public frmContent(Database programDatabase)
         {
             InitializeComponent();
             this.programDatabase = programDatabase;
 
+                       
+            dbiStaff = programDatabase.selectDataBinding("SELECT staffID, branchID, name, role, address, phoneNumber, email, username FROM Staff");                        
+            dbiProduct = programDatabase.selectDataBinding("SELECT * FROM Product");
+            dbiRental = programDatabase.selectDataBinding("SELECT * FROM Rental");
+            dbiSupplier = programDatabase.selectDataBinding("SELECT * FROM Supplier");                                
+                   
+            //Password shouldn't be visible to anybody regardless of access level so hide it
             dgvStaff.AutoGenerateColumns = true;
-            dgvStaff.DataSource = programDatabase.selectDataBinding("SELECT * FROM Staff").bind();
-        }     
+            dgvStaff.DataSource = dbiStaff.Data;           
 
+            dgvRental.AutoGenerateColumns = true;
+            dgvRental.DataSource = dbiRental.Data;
+
+            dgvProduct.AutoGenerateColumns = true;
+            dgvProduct.DataSource = dbiProduct.Data;
+
+            dgvSupplier.AutoGenerateColumns = true;
+            dgvSupplier.DataSource = dbiSupplier.Data;
+        }
+
+        private DataTable getCurrentData()
+        {
+            if (tabContent.SelectedTab == tbProduct)
+                return dbiProduct.Data;
+            else if (tabContent.SelectedTab == tbRental)
+                return dbiRental.Data;
+            else if (tabContent.SelectedTab == tbStaff)
+                return dbiStaff.Data;
+            else if (tabContent.SelectedTab == tbSupplier)
+                return dbiSupplier.Data;
+
+            return null;
+        }
+
+        private void populateSearchFields()
+        {
+            DataTable temp = getCurrentData();
+            if (temp == null)
+            {
+                MessageBox.Show(this, "Error: Invalid Tab Selection", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            cmbField.Items.Clear();
+            foreach(DataColumn c in temp.Columns)
+            {
+                cmbField.Items.Add(c.ColumnName);
+            }
+        }
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -35,9 +82,15 @@ namespace PPSDPart2
             }
             else if (tabContent.SelectedTab == tbStaff)
             {
-                frmAddStaff frmAddStaff = new frmAddStaff(programDatabase);
+                frmAddStaff frmAddStaff = new frmAddStaff(programDatabase, dbiStaff);
                 frmAddStaff.ShowDialog();
             }
+        }
+
+        private void frmContentLoad(object sender, EventArgs e)
+        {
+            //Populate the search field combo box for the first time
+            populateSearchFields();
         }
 
         public void formClosed(object sender, FormClosedEventArgs e)
@@ -51,5 +104,9 @@ namespace PPSDPart2
             set { crntUser = value; }
         }
 
+        private void tabContent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            populateSearchFields();
+        }
     }
 }

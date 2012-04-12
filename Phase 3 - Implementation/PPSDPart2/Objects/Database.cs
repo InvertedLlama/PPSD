@@ -79,6 +79,23 @@ namespace PPSDPart2
             return binding;
         }
 
+        public bool runCommandQuery(string query)
+        {
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, sqlConnection))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Call to cleanup any services and references the database object is using
         /// also destroys any DataBindings that rely on this

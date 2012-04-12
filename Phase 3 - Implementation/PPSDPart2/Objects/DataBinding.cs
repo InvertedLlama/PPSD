@@ -25,23 +25,32 @@ namespace PPSDPart2
             data = new DataTable();
 
             this.sqlAdapter = adapter;
+            sqlAdapter.MissingSchemaAction = MissingSchemaAction.Add;
+            sqlAdapter.AcceptChangesDuringUpdate = true;
             sqlAdapter.Fill(data);
-
-
-            //This will only work for simple tables. May need to rework it if we want to do anything complicated
+            
+            //This will only work for simple tables. May need to rework it if we want to do anything complicated            
             sqlAdapter.UpdateCommand = cmdBldr.GetUpdateCommand();
+            sqlAdapter.UpdateCommand.UpdatedRowSource = UpdateRowSource.Both;
             sqlAdapter.InsertCommand = cmdBldr.GetInsertCommand();
             sqlAdapter.DeleteCommand = cmdBldr.GetDeleteCommand();
         }
 
-        public BindingSource bind()
+        public void update()
         {
-            BindingSource binding = new BindingSource();
-            binding.DataSource = data;
-
-            return binding;
+            data.Clear();
+            sqlAdapter.Fill(data);
         }
 
+        public DataTable Data
+        {
+            get { return data; }
+        }
+
+        public MySqlDataAdapter Adapater
+        {
+            get { return sqlAdapter; }
+        }
 
     }
 }
