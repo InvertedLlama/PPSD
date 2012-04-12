@@ -11,8 +11,6 @@ using MySql;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-using PPSDPart2.Objects;
-
 namespace PPSDPart2
 {
     public partial class frmLogin : Form

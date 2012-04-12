@@ -11,7 +11,7 @@ using PPSDPart2.Interfaces;
 
 //TODO: Possibly use real data types instead of strings. Should be very possible using dynamic list types
 
-namespace PPSDPart2.Objects
+namespace PPSDPart2
 {
     public class DatabaseTable : IDataSource
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PPSDPart2.Objects
+namespace PPSDPart2
 {
     public enum UserAccessLevel
     {

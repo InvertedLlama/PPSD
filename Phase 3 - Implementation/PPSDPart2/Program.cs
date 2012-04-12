@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-using PPSDPart2.Objects;
-
 namespace PPSDPart2
 {
     static class Program

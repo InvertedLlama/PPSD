@@ -9,7 +9,7 @@ using System.Data;
 
 
 
-namespace PPSDPart2.Objects
+namespace PPSDPart2
 {
     //TODO: Set reasonable command timeouts
     //TODO: Improve string formatting

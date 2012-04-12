@@ -9,8 +9,6 @@ using System.Windows.Forms;
 
 using System.Text.RegularExpressions;
 
-using PPSDPart2.Objects;
-
 namespace PPSDPart2
 {
     public partial class frmContent : Form
@@ -260,7 +258,7 @@ namespace PPSDPart2
             {
                 r = new DataGridViewRow();
                 r.Resizable = DataGridViewTriState.True;
-                r.CreateCells(dgvStaff);
+                r.CreateCells(dgvView);
 
                 for (int j = 0; j < dtbTable.FieldCount; j++)
                 {
