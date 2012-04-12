@@ -39,6 +39,8 @@
             // 
             // lblUsername
             // 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Location = new System.Drawing.Point(38, 155);
@@ -50,6 +52,8 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.Location = new System.Drawing.Point(102, 152);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtUsername.Name = "txtUsername";
@@ -59,6 +63,9 @@
             // 
             // picLogoImage
             // 
+            this.picLogoImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogoImage.BackgroundImage = global::PPSDPart2.Properties.Resources.Segfault_software_logo;
             this.picLogoImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picLogoImage.Location = new System.Drawing.Point(12, 3);
@@ -70,6 +77,8 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(102, 180);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPassword.Name = "txtPassword";
@@ -79,6 +88,8 @@
             // 
             // lblPassword
             // 
+            this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Location = new System.Drawing.Point(38, 183);
@@ -90,6 +101,8 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogin.Location = new System.Drawing.Point(127, 208);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnLogin.Name = "btnLogin";
@@ -112,7 +125,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblUsername);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximizeBox = false;
             this.Name = "frmLogin";

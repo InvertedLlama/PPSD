@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Text.RegularExpressions;
+
 using PPSDPart2.Objects;
 
 namespace PPSDPart2
@@ -15,7 +17,7 @@ namespace PPSDPart2
     {
         private User crntUser;
         private Database programDatabase;
-        private DatabaseTable dtbSupplier, dtbStaff, dtbProduct, dtbRental;
+        private DatabaseTable dtbSupplier, dtbStaff, dtbProduct, dtbRental, dtbSelected;
 
         public User CurrentUser
         {
@@ -36,7 +38,7 @@ namespace PPSDPart2
             dtbProduct = new DatabaseTable();
             dtbRental = new DatabaseTable();
 
-            //Register this forms event handling methods with the database tables objects
+            //Register this forms event handling methods with the database table objects
             dtbSupplier.DataChanged += updateSupplier;
             dtbStaff.DataChanged += updateStaff;
             dtbProduct.DataChanged += updateProduct;
@@ -48,9 +50,13 @@ namespace PPSDPart2
                 try
                   {                    
                     programDatabase.runDataSelectQuery("SELECT * FROM Supplier", ref dtbSupplier);
+                    dtbSupplier.TableName = "Supplier";
                     programDatabase.runDataSelectQuery("SELECT staffid, branchid, name, role, address, phonenumber, email, username  FROM Staff", ref dtbStaff);
+                    dtbStaff.TableName = "Staff";
                     programDatabase.runDataSelectQuery("SELECT * FROM Product", ref dtbProduct);
+                    dtbProduct.TableName = "Product";
                     programDatabase.runDataSelectQuery("SELECT * FROM Rental", ref dtbRental);
+                    dtbRental.TableName = "Rental";
                     //Data retrieval was successful, break the loop and continue
                     break;
                   }
@@ -77,7 +83,111 @@ namespace PPSDPart2
                     }
 
                   }
-            }            
+            }
+            
+            //Populate the search field combobox for the first time. After this it's handled by the tab control selected event            
+            switch ((string)tabContent.SelectedTab.Tag)
+            {
+                case "SUPPLIER_TAB":
+                    dtbSelected = dtbSupplier;
+                    break;
+                case "STAFF_TAB":
+                    dtbSelected = dtbStaff;
+                    break;
+                case "PRODUCT_TAB":
+                    dtbSelected = dtbProduct;
+                    break;
+                case "RENTAL_TAB":
+                    dtbSelected = dtbRental;
+                    break;
+                default:
+                    MessageBox.Show("Fatal Error: Unexpected Tab Selection", "Fatal Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                    break;
+            }
+            populateSearchFieldList();
+        }
+
+        private void populateSearchFieldList()
+        {
+            //Select the database table object referring to whichever tab the form is currently on            
+
+
+            //Populate the list
+            cmbField.Items.Clear();
+            cmbField.Text = "";
+            cmbField.SelectedIndex = -1;
+            foreach (string s in dtbSelected.FieldNames)
+            {
+                cmbField.Items.Add(s);
+            }
+        }
+
+        /// <summary>
+        /// Handles the click event of the search button
+        /// When this method is run it will create a query based upon the state of the form
+        /// and repopulate the selected tabs dataview with filtered data
+        /// </summary>
+        /// <param name="sender">object that dispatched the event</param>
+        /// <param name="e">event arguments</param>
+        private void search(object sender, EventArgs e)
+        {
+            string searchquery = "";
+            string searchstring = txtSearch.Text;
+
+            //Make sure a valid field has been selected
+            if (cmbField.SelectedIndex < 0)
+            {
+                MessageBox.Show(this, "Please select a search field", "Information: Search Field not Set", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //If the search string is blank then query to select everything from the table
+            if (searchstring.Length < 1)
+            {
+                searchquery = String.Format("SELECT {0} FROM {1}", dtbSelected.FieldsList, dtbSelected.TableName);
+                programDatabase.runDataSelectQuery(searchquery, ref dtbSelected);
+                return;
+            }
+
+            //Disable the controls so the user can't change anything
+            txtSearch.Enabled = false;
+            btnSearch.Enabled = false;
+            cmbField.Enabled = false;
+
+            //Disallow qoutation marks to avoid any issues with string escape characters
+            Regex regex = new Regex("['\"]");
+
+            if (regex.IsMatch(searchstring))
+            {
+                MessageBox.Show(this, "Qoutation marks ('\") are disallowed in the search field", "Warning: Unacceptable Search", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+                                  
+            //If the search field type is a string then use like instead of equals
+            if (dtbSelected.Fields[cmbField.SelectedIndex].type.Equals(typeof(string)))
+            {
+                searchquery =
+                    String.Format("SELECT {0} FROM {1} WHERE UPPER({2}) LIKE UPPER(\'%{3}%\')", dtbSelected.FieldsList, dtbSelected.TableName, cmbField.SelectedItem.ToString(), searchstring);
+            }
+            else
+            {
+                //Otherwise build the query with mathematical equals
+                searchquery =
+                    String.Format("SELECT {0} FROM {1} WHERE {2} = {3}", dtbSelected.FieldsList, dtbSelected.TableName, cmbField.SelectedItem.ToString(), searchstring);
+            }
+
+
+            //Run the query and update the table
+            programDatabase.runDataSelectQuery(searchquery, ref dtbSelected);
+
+
+
+            //Re-enable the controls
+            txtSearch.Enabled = true;
+            btnSearch.Enabled = true;
+            cmbField.Enabled = true;
+            
         }
 
         /// <summary>
@@ -162,9 +272,33 @@ namespace PPSDPart2
         }
 
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Handles the tab selected event (last event in the tab switch chain)
+        /// </summary>
+        /// <param name="sender">object that dispatched the event</param>
+        /// <param name="e">TabControl specialised event arguments</param>
+        private void tabSelected(object sender, TabControlEventArgs e)
         {
-            string searchQuery = txtSearch.Text;
+            switch ((string)tabContent.SelectedTab.Tag)
+            {
+                case "SUPPLIER_TAB":
+                    dtbSelected = dtbSupplier;
+                    break;
+                case "STAFF_TAB":
+                    dtbSelected = dtbStaff;
+                    break;
+                case "PRODUCT_TAB":
+                    dtbSelected = dtbProduct;
+                    break;
+                case "RENTAL_TAB":
+                    dtbSelected = dtbRental;
+                    break;
+                default:
+                    MessageBox.Show("Fatal Error: Unexpected Tab Selection", "Fatal Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                    break;
+            }
+            populateSearchFieldList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

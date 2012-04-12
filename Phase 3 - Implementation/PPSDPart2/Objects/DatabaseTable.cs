@@ -32,6 +32,7 @@ namespace PPSDPart2.Objects
         List<Field> mFields;
         int intFieldCount;
         int intRowCount;
+        string strTableName;
 
         Dictionary<string, List<string>> mData;
 
@@ -40,7 +41,7 @@ namespace PPSDPart2.Objects
         }
 
         public DatabaseTable(MySqlDataReader dataReader)
-        {
+        {            
             update(dataReader);
         }
                 
@@ -154,6 +155,35 @@ namespace PPSDPart2.Objects
                     lstFieldnames.Add(f.name);
                 }
                 return lstFieldnames;
+            }
+        }
+
+
+
+        public string FieldsList
+        {
+            get
+            {
+                string fl = "";
+
+                foreach(Field f in mFields)
+                {
+                    fl += f.name + ", ";
+                }
+                //Trim the trailing comma                
+                return fl.Substring(0, fl.Length - 2);
+            }
+        }
+
+        public string TableName
+        {
+            get
+            {
+                return strTableName;
+            }
+            set
+            {
+                strTableName = value; ;
             }
         }
     }

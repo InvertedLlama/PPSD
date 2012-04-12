@@ -38,6 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.grpStaffDetails = new System.Windows.Forms.GroupBox();
+            this.cboRole = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelephone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnAddStaffMember = new System.Windows.Forms.Button();
-            this.cboRole = new System.Windows.Forms.ComboBox();
             this.grpStaffDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,6 +154,20 @@
             this.grpStaffDetails.TabIndex = 11;
             this.grpStaffDetails.TabStop = false;
             // 
+            // cboRole
+            // 
+            this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRole.FormattingEnabled = true;
+            this.cboRole.Items.AddRange(new object[] {
+            "Administrator",
+            "Instructor",
+            "Sales Assistant",
+            "Repairs Engineer"});
+            this.cboRole.Location = new System.Drawing.Point(56, 43);
+            this.cboRole.Name = "cboRole";
+            this.cboRole.Size = new System.Drawing.Size(198, 21);
+            this.cboRole.TabIndex = 19;
+            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(73, 226);
@@ -212,20 +226,6 @@
             this.btnAddStaffMember.UseVisualStyleBackColor = true;
             this.btnAddStaffMember.Click += new System.EventHandler(this.btnAddStaffMember_Click);
             // 
-            // cboRole
-            // 
-            this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboRole.FormattingEnabled = true;
-            this.cboRole.Items.AddRange(new object[] {
-            "Administrator",
-            "Instructor",
-            "Sales Assistant",
-            "Repairs Engineer"});
-            this.cboRole.Location = new System.Drawing.Point(56, 43);
-            this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(198, 21);
-            this.cboRole.TabIndex = 19;
-            // 
             // frmAddStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +233,7 @@
             this.ClientSize = new System.Drawing.Size(284, 324);
             this.Controls.Add(this.btnAddStaffMember);
             this.Controls.Add(this.grpStaffDetails);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmAddStaff";
             this.Text = "Add New Staff Member";
             this.grpStaffDetails.ResumeLayout(false);
