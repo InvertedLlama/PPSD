@@ -18,7 +18,10 @@ namespace PPSDPart2
         private MySqlDataAdapter sqlAdapter;
         private DataTable data;
 
-
+        /// <summary>
+        /// Create a DataBinding object based around the data in the adapter passed
+        /// </summary>
+        /// <param name="adapter">MySQLDataAdapter containing Data for this binding</param>
         public DataBinding(MySqlDataAdapter adapter)
         {
             MySqlCommandBuilder cmdBldr = new MySqlCommandBuilder(adapter);
@@ -26,18 +29,19 @@ namespace PPSDPart2
 
             this.sqlAdapter = adapter;
             sqlAdapter.MissingSchemaAction = MissingSchemaAction.Add;
-            sqlAdapter.AcceptChangesDuringUpdate = true;
+            sqlAdapter.AcceptChangesDuringUpdate = true;            
             sqlAdapter.Fill(data);
             
             //This will only work for simple tables. May need to rework it if we want to do anything complicated            
-            sqlAdapter.UpdateCommand = cmdBldr.GetUpdateCommand();
-            sqlAdapter.UpdateCommand.UpdatedRowSource = UpdateRowSource.Both;
+            sqlAdapter.UpdateCommand = cmdBldr.GetUpdateCommand();            
             sqlAdapter.InsertCommand = cmdBldr.GetInsertCommand();
+            sqlAdapter.InsertCommand.UpdatedRowSource = UpdateRowSource.FirstReturnedRecord;
             sqlAdapter.DeleteCommand = cmdBldr.GetDeleteCommand();
         }
 
         public void update()
         {
+            sqlAdapter.Update(data);
             data.Clear();
             sqlAdapter.Fill(data);
         }

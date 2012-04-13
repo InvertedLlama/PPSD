@@ -18,20 +18,24 @@ namespace PPSDPart2
         private Database programDatabase;
         private DataBinding dbiStaff, dbiProduct, dbiRental, dbiSupplier;
 
-        public frmContent(Database programDatabase)
-        {
+        public frmContent(Database programDatabase, User currentUser)
+        {            
             InitializeComponent();
-            this.programDatabase = programDatabase;
-
+            crntUser = currentUser;
+            this.programDatabase = programDatabase;                        
                        
-            dbiStaff = programDatabase.selectDataBinding("SELECT staffID, branchID, name, role, address, phoneNumber, email, username FROM Staff");                        
+            dbiStaff = programDatabase.selectDataBinding("SELECT * FROM Staff");                        
             dbiProduct = programDatabase.selectDataBinding("SELECT * FROM Product");
             dbiRental = programDatabase.selectDataBinding("SELECT * FROM Rental");
-            dbiSupplier = programDatabase.selectDataBinding("SELECT * FROM Supplier");                                
-                   
+            dbiSupplier = programDatabase.selectDataBinding("SELECT * FROM Supplier");
+
+            dbiStaff.Adapater.InsertCommand.CommandText += "; SELECT staffID FROM Staff WHERE staffID = LAST_INSERT_ID();";
+            
+
             //Password shouldn't be visible to anybody regardless of access level so hide it
-            dgvStaff.AutoGenerateColumns = true;
-            dgvStaff.DataSource = dbiStaff.Data;           
+            dgvStaff.AutoGenerateColumns = true;            
+            dgvStaff.DataSource = dbiStaff.Data;
+            dgvStaff.Columns["password"].Visible = false;
 
             dgvRental.AutoGenerateColumns = true;
             dgvRental.DataSource = dbiRental.Data;

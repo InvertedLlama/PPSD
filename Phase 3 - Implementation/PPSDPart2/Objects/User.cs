@@ -7,7 +7,7 @@ namespace PPSDPart2
 {
     public enum UserAccessLevel
     {
-        Admin, Owner, Instructor, CounterStaff
+        Admin, Owner, Instructor, CounterStaff, None
     }
 
     public class User

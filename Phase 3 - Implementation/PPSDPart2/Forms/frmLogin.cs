@@ -42,10 +42,47 @@ namespace PPSDPart2
         /// </summary>
         private void login(string username, string password)
         {
-            contentForm = new frmContent(programDatabase);
-            contentForm.CurrentUser = new User("Bob", "admin001", "password", UserAccessLevel.Admin);
-            contentForm.Show(this);
-            this.Hide();
+            string strQuery = string.Format("SELECT * FROM Staff WHERE username = \'{0}\' AND password = \'{1}';",
+                                                username,
+                                                password);            
+
+            DataTable userInfo = programDatabase.selectData(strQuery);
+
+            if (userInfo.Rows.Count > 0)
+            {
+                DataRow dtrRow = userInfo.Rows[0];
+
+                UserAccessLevel accessLvl = UserAccessLevel.None;
+                switch ((string)dtrRow["role"])
+                {
+                    case "Admin":
+                        accessLvl = UserAccessLevel.Admin;
+                        break;
+                    case "Instructor":
+                        accessLvl = UserAccessLevel.Instructor;
+                        break;
+                    case "CounterStaff":
+                        accessLvl = UserAccessLevel.CounterStaff;
+                        break;
+                    case "Owner":
+                        accessLvl = UserAccessLevel.Owner;
+                        break;
+                    default:
+                        MessageBox.Show(this, "Database error.\n Unexpected value in Staff.Role. Notify an administrator.",
+                                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Application.Exit();
+                        break;
+                }
+
+                contentForm = new frmContent(programDatabase, new User((string)dtrRow["name"], (string)dtrRow["username"], (string)dtrRow["password"], accessLvl));
+
+                contentForm.Show(this);
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show(this, "Invalid Login Information. Please try again", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
 

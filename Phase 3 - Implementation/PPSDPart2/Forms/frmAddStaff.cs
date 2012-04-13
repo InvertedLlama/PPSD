@@ -46,10 +46,9 @@ namespace PPSDPart2
             if (validateInformation())
             {               
                 //We really shouldn't be writing to the database each and every time we do this but for now it gets us around the issues with auto-increments
-                //Also it's pretty exspensive to empty the DataTable every single time
                                 
                 //This is the insert query for a new staff member. Not fun to write.     
-                string insertQuery = String.Format(
+              /*  string insertQuery = String.Format(
                     "INSERT INTO Staff (branchID, name, role, address, phoneNumber, email, username, password)\n" +
                     "VALUES ({0}, \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", \"{7}\")",                    
                         cboBranch.SelectedItem,
@@ -63,6 +62,22 @@ namespace PPSDPart2
 
                 programDatabase.runCommandQuery(insertQuery);
                 dataBinding.update();
+                */
+
+                DataRow nr = dataBinding.Data.NewRow();
+                nr["branchID"] = cboBranch.SelectedItem;
+                nr["name"] = txtName.Text;
+                nr["role"] = cboRole.SelectedItem;
+                nr["address"] = txtAddress.Text;
+                nr["phoneNumber"] = txtTelephone.Text;
+                nr["email"] = txtEmail.Text;
+                nr["password"] = txtPassword.Text;
+                nr["username"] = txtUsername.Text;
+
+                dataBinding.Data.Rows.Add(nr);
+
+                dataBinding.update();
+
 
                 Close();
                
