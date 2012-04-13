@@ -43,6 +43,7 @@
             this.tbSupplier = new System.Windows.Forms.TabPage();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
             this.tabContent = new System.Windows.Forms.TabControl();
+            this.lblSearchMsg = new System.Windows.Forms.Label();
             this.tbRental.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRental)).BeginInit();
             this.tbProduct.SuspendLayout();
@@ -93,6 +94,7 @@
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnRemove
             // 
@@ -217,11 +219,26 @@
             this.tabContent.TabIndex = 0;
             this.tabContent.SelectedIndexChanged += new System.EventHandler(this.tabContent_SelectedIndexChanged);
             // 
+            // lblSearchMsg
+            // 
+            this.lblSearchMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSearchMsg.AutoSize = true;
+            this.lblSearchMsg.BackColor = System.Drawing.SystemColors.Info;
+            this.lblSearchMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchMsg.Location = new System.Drawing.Point(261, 510);
+            this.lblSearchMsg.Name = "lblSearchMsg";
+            this.lblSearchMsg.Size = new System.Drawing.Size(427, 13);
+            this.lblSearchMsg.TabIndex = 1;
+            this.lblSearchMsg.Text = "Data is currently being filtered. Search with an empty search field to return to " +
+    "normal view.";
+            this.lblSearchMsg.Visible = false;
+            // 
             // frmContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 533);
+            this.Controls.Add(this.lblSearchMsg);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.tabContent);
@@ -265,5 +282,6 @@
         private System.Windows.Forms.TabPage tbSupplier;
         private System.Windows.Forms.DataGridView dgvSupplier;
         private System.Windows.Forms.TabControl tabContent;
+        private System.Windows.Forms.Label lblSearchMsg;
     }
 }

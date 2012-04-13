@@ -28,10 +28,7 @@ namespace PPSDPart2
             dbiProduct = programDatabase.selectDataBinding("SELECT * FROM Product");
             dbiRental = programDatabase.selectDataBinding("SELECT * FROM Rental");
             dbiSupplier = programDatabase.selectDataBinding("SELECT * FROM Supplier");
-
-            dbiStaff.Adapater.InsertCommand.CommandText += "; SELECT staffID FROM Staff WHERE staffID = LAST_INSERT_ID();";
-            
-
+                                   
             //Password shouldn't be visible to anybody regardless of access level so hide it
             dgvStaff.AutoGenerateColumns = true;            
             dgvStaff.DataSource = dbiStaff.Data;
@@ -111,6 +108,68 @@ namespace PPSDPart2
         private void tabContent_SelectedIndexChanged(object sender, EventArgs e)
         {
             populateSearchFields();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (cmbField.SelectedItem == null)
+            {
+                MessageBox.Show(this, "Please select a search field", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            DataBinding dbiCurrent = null;
+            DataGridView dgvCurrent = null;
+            string searchQuery = string.Empty;
+            string tableName = string.Empty;
+
+            if (tabContent.SelectedTab == tbProduct)
+            {
+                dgvCurrent = dgvProduct;
+                dbiCurrent = dbiProduct;
+                tableName = "Product";
+            }
+            else if (tabContent.SelectedTab == tbRental)
+            {
+                dgvCurrent = dgvRental;
+                dbiCurrent = dbiRental;
+                tableName = "Rental";
+            }
+            else if (tabContent.SelectedTab == tbStaff)
+            {
+                dgvCurrent = dgvStaff;
+                dbiCurrent = dbiStaff;
+                tableName = "Staff";
+            }
+            else if (tabContent.SelectedTab == tbSupplier)
+            {
+                dgvCurrent = dgvSupplier;
+                dbiCurrent = dbiSupplier;
+                tableName = "Supplier";
+            }
+            else
+            {
+                MessageBox.Show(this, "Programatical error: frmContent.Search.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //If there's no search string then revert to using the full databinding
+            if (txtSearch.Text == string.Empty)
+            {
+                lblSearchMsg.Hide();
+                dgvCurrent.DataSource = dbiCurrent.Data;
+                return;
+            }
+
+            //Select data from the underlying Database that matches the entered text with the search field
+            //*WARNING* Don't edit the databinding or you'll delete unselected records.
+            if (dgvCurrent.Columns[cmbField.SelectedItem.ToString()].ValueType == typeof(string))                
+                searchQuery = string.Format("SELECT * FROM {0} WHERE UPPER({1}) LIKE UPPER(\'%{2}%\')", tableName, cmbField.SelectedItem.ToString(), txtSearch.Text);
+            else
+                searchQuery = string.Format("SELECT * FROM {0} WHERE {1} = {2}", tableName, cmbField.SelectedItem.ToString(), txtSearch.Text);
+
+            lblSearchMsg.Show();
+            dgvCurrent.DataSource = programDatabase.selectData(searchQuery);
         }
     }
 }

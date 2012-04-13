@@ -76,8 +76,8 @@ namespace PPSDPart2
 
                 contentForm = new frmContent(programDatabase, new User((string)dtrRow["name"], (string)dtrRow["username"], (string)dtrRow["password"], accessLvl));
 
-                contentForm.Show(this);
                 this.Hide();
+                contentForm.Show(this);                
             }
             else
             {

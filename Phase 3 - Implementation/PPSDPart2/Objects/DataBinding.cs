@@ -17,7 +17,8 @@ namespace PPSDPart2
     {
         private MySqlDataAdapter sqlAdapter;
         private DataTable data;
-
+        private string selectCommand;
+                
         /// <summary>
         /// Create a DataBinding object based around the data in the adapter passed
         /// </summary>
@@ -26,8 +27,8 @@ namespace PPSDPart2
         {
             MySqlCommandBuilder cmdBldr = new MySqlCommandBuilder(adapter);
             data = new DataTable();
-
             this.sqlAdapter = adapter;
+            selectCommand = sqlAdapter.SelectCommand.CommandText;
             sqlAdapter.MissingSchemaAction = MissingSchemaAction.Add;
             sqlAdapter.AcceptChangesDuringUpdate = true;            
             sqlAdapter.Fill(data);
@@ -40,7 +41,7 @@ namespace PPSDPart2
         }
 
         public void update()
-        {
+        {            
             sqlAdapter.Update(data);
             data.Clear();
             sqlAdapter.Fill(data);
