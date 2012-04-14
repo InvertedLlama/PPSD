@@ -15,7 +15,7 @@ namespace PPSDPart2
 {
     public partial class frmLogin : Form
     {
-        frmContent contentForm;
+        frmMain contentForm;
         Database programDatabase;
         frmWorking loadingScreen;
 
@@ -102,7 +102,7 @@ namespace PPSDPart2
                     Application.Exit();
                     break;
             }
-            contentForm = new frmContent(programDatabase, new User((string)dtrRow["name"], (string)dtrRow["username"], (string)dtrRow["password"], accessLvl));
+            contentForm = new frmMain(programDatabase, new User((string)dtrRow["name"], (string)dtrRow["username"], (string)dtrRow["password"], accessLvl));
         }
 
         private void bgwInit_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
