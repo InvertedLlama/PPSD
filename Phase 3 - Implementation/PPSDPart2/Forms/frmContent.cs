@@ -22,8 +22,8 @@ namespace PPSDPart2
         {            
             InitializeComponent();
             crntUser = currentUser;
-            this.programDatabase = programDatabase;                        
-                       
+            this.programDatabase = programDatabase;                                   
+            
             dbiStaff = programDatabase.selectDataBinding("SELECT * FROM Staff");                        
             dbiProduct = programDatabase.selectDataBinding("SELECT * FROM Product");
             dbiRental = programDatabase.selectDataBinding("SELECT * FROM Rental");

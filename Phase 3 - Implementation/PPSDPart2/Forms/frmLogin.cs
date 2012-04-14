@@ -17,6 +17,7 @@ namespace PPSDPart2
     {
         frmContent contentForm;
         Database programDatabase;
+        frmWorking loadingScreen;
 
         public frmLogin(Database programDatabase)
         {
@@ -50,34 +51,13 @@ namespace PPSDPart2
 
             if (userInfo.Rows.Count > 0)
             {
-                DataRow dtrRow = userInfo.Rows[0];
-
-                UserAccessLevel accessLvl = UserAccessLevel.None;
-                switch ((string)dtrRow["role"])
-                {
-                    case "Admin":
-                        accessLvl = UserAccessLevel.Admin;
-                        break;
-                    case "Instructor":
-                        accessLvl = UserAccessLevel.Instructor;
-                        break;
-                    case "CounterStaff":
-                        accessLvl = UserAccessLevel.CounterStaff;
-                        break;
-                    case "Owner":
-                        accessLvl = UserAccessLevel.Owner;
-                        break;
-                    default:
-                        MessageBox.Show(this, "Database error.\n Unexpected value in Staff.Role. Notify an administrator.",
-                                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Application.Exit();
-                        break;
-                }
-
-                contentForm = new frmContent(programDatabase, new User((string)dtrRow["name"], (string)dtrRow["username"], (string)dtrRow["password"], accessLvl));
-
+                bgwInit.RunWorkerAsync(userInfo.Rows[0]);
                 this.Hide();
-                contentForm.Show(this);                
+
+                loadingScreen = new frmWorking();
+                loadingScreen.setProgressStyle(ProgressBarStyle.Marquee);
+                loadingScreen.setMessage("Preparing Data....");
+                loadingScreen.Show();
             }
             else
             {
@@ -96,5 +76,40 @@ namespace PPSDPart2
                 txtPassword.Clear();
             }
         }
+
+        private void bgwInit_DoWork(object sender, DoWorkEventArgs e)
+        {
+            UserAccessLevel accessLvl = UserAccessLevel.None;
+            DataRow dtrRow = (DataRow)e.Argument;
+
+            switch ((string)dtrRow["role"])
+            {
+                case "Admin":
+                    accessLvl = UserAccessLevel.Admin;
+                    break;
+                case "Instructor":
+                    accessLvl = UserAccessLevel.Instructor;
+                    break;
+                case "CounterStaff":
+                    accessLvl = UserAccessLevel.CounterStaff;
+                    break;
+                case "Owner":
+                    accessLvl = UserAccessLevel.Owner;
+                    break;
+                default:
+                    MessageBox.Show(this, "Database error.\n Unexpected value in Staff.Role. Notify an administrator.",
+                                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                    break;
+            }
+            contentForm = new frmContent(programDatabase, new User((string)dtrRow["name"], (string)dtrRow["username"], (string)dtrRow["password"], accessLvl));
+        }
+
+        private void bgwInit_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {  
+            contentForm.Show(this);
+            loadingScreen.Dispose();
+        }
+       
     }
 }

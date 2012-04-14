@@ -13,7 +13,7 @@ namespace PPSDPart2
 {
     public class Database : IDisposable
     {
-        string connectionString;
+        string connectionString;        
         MySqlConnection sqlConnection;
 
         /// <summary>
@@ -24,7 +24,10 @@ namespace PPSDPart2
             connectionString = "SERVER=" + host + ";" +
                                "DATABASE=" + database + ";" +
                                "UID=" + username + ";" +
-                               "PASSWORD=" + password + ";";
+                               "PASSWORD=" + password + ";"+
+                               "POOLING=true;" +
+                               "Min Pool Size=0;"+
+                               "Max Pool Size=100;";
         }
 
         /// <summary>

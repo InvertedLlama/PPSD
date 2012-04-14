@@ -34,6 +34,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.bgwInit = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +113,11 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // bgwInit
+            // 
+            this.bgwInit.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwInit_DoWork);
+            this.bgwInit.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwInit_RunWorkerCompleted);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -144,6 +150,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.ComponentModel.BackgroundWorker bgwInit;
     }
 }
 
