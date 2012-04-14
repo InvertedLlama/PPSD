@@ -64,7 +64,7 @@ namespace PPSDPart2
                 dataBinding.update();
                 */
 
-                DataRow nr = dataBinding.Data.NewRow();
+                DataRow nr = dataBinding.Data.NewRow();                
                 nr["branchID"] = cboBranch.SelectedItem;
                 nr["name"] = txtName.Text;
                 nr["role"] = cboRole.SelectedItem;
@@ -75,10 +75,7 @@ namespace PPSDPart2
                 nr["username"] = txtUsername.Text;
 
                 dataBinding.Data.Rows.Add(nr);
-
-                dataBinding.update();
-
-
+                dataBinding.Data.AcceptChanges();
                 Close();
                
             }

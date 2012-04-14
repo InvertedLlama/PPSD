@@ -27,12 +27,23 @@ namespace PPSDPart2
             dbiStaff = programDatabase.selectDataBinding("SELECT * FROM Staff");                        
             dbiProduct = programDatabase.selectDataBinding("SELECT * FROM Product");
             dbiRental = programDatabase.selectDataBinding("SELECT * FROM Rental");
-            dbiSupplier = programDatabase.selectDataBinding("SELECT * FROM Supplier");
-                                   
-            //Password shouldn't be visible to anybody regardless of access level so hide it
+            dbiSupplier = programDatabase.selectDataBinding("SELECT * FROM Supplier");                                 
+            
             dgvStaff.AutoGenerateColumns = true;            
             dgvStaff.DataSource = dbiStaff.Data;
+            //Password shouldn't be visible to anybody regardless of access level so hide it
             dgvStaff.Columns["password"].Visible = false;
+
+            //Set column names
+            dgvStaff.Columns["staffID"].HeaderText = "Staff ID";
+            dgvStaff.Columns["branchID"].HeaderText = "Branch ID";
+            dgvStaff.Columns["role"].HeaderText = "Role";
+            dgvStaff.Columns["name"].HeaderText = "Name";
+            dgvStaff.Columns["username"].HeaderText = "Username";
+            dgvStaff.Columns["address"].HeaderText = "Address";
+            dgvStaff.Columns["phoneNumber"].HeaderText = "Tel.";
+            dgvStaff.Columns["email"].HeaderText = "E-Mail";
+
 
             dgvRental.AutoGenerateColumns = true;
             dgvRental.DataSource = dbiRental.Data;

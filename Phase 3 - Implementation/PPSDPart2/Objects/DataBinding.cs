@@ -29,8 +29,7 @@ namespace PPSDPart2
             data = new DataTable();
             this.sqlAdapter = adapter;
             selectCommand = sqlAdapter.SelectCommand.CommandText;
-            sqlAdapter.MissingSchemaAction = MissingSchemaAction.Add;
-            sqlAdapter.AcceptChangesDuringUpdate = true;            
+            sqlAdapter.MissingSchemaAction = MissingSchemaAction.Add;         
             sqlAdapter.Fill(data);
             
             //This will only work for simple tables. May need to rework it if we want to do anything complicated            
@@ -41,7 +40,7 @@ namespace PPSDPart2
         }
 
         public void update()
-        {            
+        {                      
             sqlAdapter.Update(data);
             data.Clear();
             sqlAdapter.Fill(data);

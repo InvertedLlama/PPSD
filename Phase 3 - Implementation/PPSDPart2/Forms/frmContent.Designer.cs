@@ -130,10 +130,13 @@
             // 
             // dgvRental
             // 
+            this.dgvRental.AllowUserToAddRows = false;
+            this.dgvRental.AllowUserToDeleteRows = false;
             this.dgvRental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRental.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRental.Location = new System.Drawing.Point(3, 3);
             this.dgvRental.Name = "dgvRental";
+            this.dgvRental.ReadOnly = true;
             this.dgvRental.Size = new System.Drawing.Size(662, 433);
             this.dgvRental.TabIndex = 0;
             // 
@@ -151,10 +154,13 @@
             // 
             // dgvProduct
             // 
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProduct.Location = new System.Drawing.Point(3, 3);
             this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
             this.dgvProduct.Size = new System.Drawing.Size(662, 433);
             this.dgvProduct.TabIndex = 0;
             // 
@@ -179,6 +185,7 @@
             this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStaff.Location = new System.Drawing.Point(3, 3);
             this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.ReadOnly = true;
             this.dgvStaff.Size = new System.Drawing.Size(662, 433);
             this.dgvStaff.TabIndex = 0;
             // 
@@ -196,10 +203,13 @@
             // 
             // dgvSupplier
             // 
+            this.dgvSupplier.AllowUserToAddRows = false;
+            this.dgvSupplier.AllowUserToDeleteRows = false;
             this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSupplier.Location = new System.Drawing.Point(3, 3);
             this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.ReadOnly = true;
             this.dgvSupplier.Size = new System.Drawing.Size(662, 433);
             this.dgvSupplier.TabIndex = 0;
             // 
