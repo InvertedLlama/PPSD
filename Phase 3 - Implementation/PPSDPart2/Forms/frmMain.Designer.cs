@@ -48,28 +48,28 @@
             this.txtMemberID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMembersFilter = new System.Windows.Forms.TextBox();
             this.btnNewMember = new System.Windows.Forms.Button();
             this.lstMembers = new System.Windows.Forms.ListBox();
-            this.txtMembersFilter = new System.Windows.Forms.MaskedTextBox();
             this.tpgProduct = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.lblSupplierLink = new System.Windows.Forms.LinkLabel();
+            this.cboSupplier = new System.Windows.Forms.ComboBox();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.txtProductID = new System.Windows.Forms.TextBox();
+            this.txtProductRentalFee = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtProductFilter = new System.Windows.Forms.TextBox();
+            this.btnNewProduct = new System.Windows.Forms.Button();
+            this.lstProducts = new System.Windows.Forms.ListBox();
             this.tpgStaff = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -349,15 +349,23 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMembersFilter);
             this.groupBox1.Controls.Add(this.btnNewMember);
             this.groupBox1.Controls.Add(this.lstMembers);
-            this.groupBox1.Controls.Add(this.txtMembersFilter);
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(148, 414);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Members";
+            // 
+            // txtMembersFilter
+            // 
+            this.txtMembersFilter.Location = new System.Drawing.Point(8, 20);
+            this.txtMembersFilter.Name = "txtMembersFilter";
+            this.txtMembersFilter.Size = new System.Drawing.Size(133, 20);
+            this.txtMembersFilter.TabIndex = 5;
+            this.txtMembersFilter.TextChanged += new System.EventHandler(this.txtMembersFilter_TextChanged);
             // 
             // btnNewMember
             // 
@@ -375,14 +383,6 @@
             this.lstMembers.Name = "lstMembers";
             this.lstMembers.Size = new System.Drawing.Size(133, 329);
             this.lstMembers.TabIndex = 1;
-            // 
-            // txtMembersFilter
-            // 
-            this.txtMembersFilter.Location = new System.Drawing.Point(8, 19);
-            this.txtMembersFilter.Name = "txtMembersFilter";
-            this.txtMembersFilter.Size = new System.Drawing.Size(133, 20);
-            this.txtMembersFilter.TabIndex = 0;
-            this.txtMembersFilter.TextChanged += new System.EventHandler(this.txtMembersFilter_TextChanged);
             // 
             // tpgProduct
             // 
@@ -417,12 +417,12 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.linkLabel1);
-            this.groupBox5.Controls.Add(this.comboBox3);
-            this.groupBox5.Controls.Add(this.comboBox1);
-            this.groupBox5.Controls.Add(this.textBox8);
-            this.groupBox5.Controls.Add(this.textBox9);
-            this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.lblSupplierLink);
+            this.groupBox5.Controls.Add(this.cboSupplier);
+            this.groupBox5.Controls.Add(this.cboCategory);
+            this.groupBox5.Controls.Add(this.txtProductID);
+            this.groupBox5.Controls.Add(this.txtProductRentalFee);
+            this.groupBox5.Controls.Add(this.txtProductName);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.label8);
@@ -435,52 +435,55 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Product Information";
             // 
-            // linkLabel1
+            // lblSupplierLink
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(402, 48);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(71, 13);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "View Supplier";
+            this.lblSupplierLink.AutoSize = true;
+            this.lblSupplierLink.Location = new System.Drawing.Point(402, 48);
+            this.lblSupplierLink.Name = "lblSupplierLink";
+            this.lblSupplierLink.Size = new System.Drawing.Size(71, 13);
+            this.lblSupplierLink.TabIndex = 4;
+            this.lblSupplierLink.TabStop = true;
+            this.lblSupplierLink.Text = "View Supplier";
             // 
-            // comboBox3
+            // cboSupplier
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(314, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(159, 21);
-            this.comboBox3.TabIndex = 3;
+            this.cboSupplier.FormattingEnabled = true;
+            this.cboSupplier.Location = new System.Drawing.Point(314, 19);
+            this.cboSupplier.Name = "cboSupplier";
+            this.cboSupplier.Size = new System.Drawing.Size(159, 21);
+            this.cboSupplier.TabIndex = 3;
             // 
-            // comboBox1
+            // cboCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(78, 45);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(121, 21);
+            this.cboCategory.TabIndex = 3;
             // 
-            // textBox8
+            // txtProductID
             // 
-            this.textBox8.Location = new System.Drawing.Point(78, 19);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(121, 20);
-            this.textBox8.TabIndex = 1;
+            this.txtProductID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtProductID.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtProductID.Location = new System.Drawing.Point(78, 19);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.ReadOnly = true;
+            this.txtProductID.Size = new System.Drawing.Size(121, 20);
+            this.txtProductID.TabIndex = 1;
             // 
-            // textBox9
+            // txtProductRentalFee
             // 
-            this.textBox9.Location = new System.Drawing.Point(78, 98);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(121, 20);
-            this.textBox9.TabIndex = 1;
+            this.txtProductRentalFee.Location = new System.Drawing.Point(78, 98);
+            this.txtProductRentalFee.Name = "txtProductRentalFee";
+            this.txtProductRentalFee.Size = new System.Drawing.Size(121, 20);
+            this.txtProductRentalFee.TabIndex = 1;
             // 
-            // textBox7
+            // txtProductName
             // 
-            this.textBox7.Location = new System.Drawing.Point(78, 72);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 20);
-            this.textBox7.TabIndex = 1;
+            this.txtProductName.Location = new System.Drawing.Point(78, 72);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(121, 20);
+            this.txtProductName.TabIndex = 1;
             // 
             // label11
             // 
@@ -529,9 +532,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.listBox2);
-            this.groupBox4.Controls.Add(this.maskedTextBox2);
+            this.groupBox4.Controls.Add(this.txtProductFilter);
+            this.groupBox4.Controls.Add(this.btnNewProduct);
+            this.groupBox4.Controls.Add(this.lstProducts);
             this.groupBox4.Location = new System.Drawing.Point(8, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(148, 414);
@@ -539,29 +542,29 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Products";
             // 
-            // button2
+            // txtProductFilter
             // 
-            this.button2.Location = new System.Drawing.Point(34, 380);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "New";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtProductFilter.Location = new System.Drawing.Point(9, 22);
+            this.txtProductFilter.Name = "txtProductFilter";
+            this.txtProductFilter.Size = new System.Drawing.Size(132, 20);
+            this.txtProductFilter.TabIndex = 5;
             // 
-            // listBox2
+            // btnNewProduct
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(8, 45);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(133, 329);
-            this.listBox2.TabIndex = 1;
+            this.btnNewProduct.Location = new System.Drawing.Point(34, 380);
+            this.btnNewProduct.Name = "btnNewProduct";
+            this.btnNewProduct.Size = new System.Drawing.Size(75, 23);
+            this.btnNewProduct.TabIndex = 4;
+            this.btnNewProduct.Text = "New";
+            this.btnNewProduct.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox2
+            // lstProducts
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(8, 19);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox2.TabIndex = 0;
+            this.lstProducts.FormattingEnabled = true;
+            this.lstProducts.Location = new System.Drawing.Point(8, 45);
+            this.lstProducts.Name = "lstProducts";
+            this.lstProducts.Size = new System.Drawing.Size(133, 329);
+            this.lstProducts.TabIndex = 1;
             // 
             // tpgStaff
             // 
@@ -1224,7 +1227,6 @@
         private System.Windows.Forms.TabPage tpgBranch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox lstMembers;
-        private System.Windows.Forms.MaskedTextBox txtMembersFilter;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtMemberName;
@@ -1247,17 +1249,16 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.Button btnNewProduct;
+        private System.Windows.Forms.ListBox lstProducts;
         private System.Windows.Forms.TabPage tpgSupplier;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtProductRentalFee;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -1288,9 +1289,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lblSupplierLink;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboSupplier;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TreeView treeView2;
         private System.Windows.Forms.GroupBox groupBox12;
@@ -1325,5 +1326,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button btnMemberCancel;
         private System.Windows.Forms.Button btnMemberApply;
+        private System.Windows.Forms.TextBox txtMembersFilter;
+        private System.Windows.Forms.TextBox txtProductFilter;
     }
 }

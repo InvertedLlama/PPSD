@@ -22,6 +22,7 @@ namespace PPSDPart2
 
             //Prepare the tabs
             initialiseMemberData();
+            initaliseProductData();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -29,8 +30,8 @@ namespace PPSDPart2
             Owner.Show();
 
             //Sometimes the controls weren't drawing when the login form came back up
-            //this should fix it
-            Owner.Invalidate();
+            //this should fix it            
+            Owner.Refresh();
         }
 
     }
