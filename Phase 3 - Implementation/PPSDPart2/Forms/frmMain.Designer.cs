@@ -31,6 +31,7 @@
             this.tbcContent = new System.Windows.Forms.TabControl();
             this.tpgMember = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,18 +48,6 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.tpgProduct = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -97,6 +86,10 @@
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.tpgBranch = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -106,22 +99,47 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.treeView3 = new System.Windows.Forms.TreeView();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.treeView4 = new System.Windows.Forms.TreeView();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.tbcContent.SuspendLayout();
             this.tpgMember.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tpgProduct.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tpgStaff.SuspendLayout();
@@ -129,11 +147,16 @@
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tpgBranch.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.tpgSupplier.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcContent
@@ -173,13 +196,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rentals";
             // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(3, 16);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(473, 191);
+            this.treeView1.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.textBox13);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
@@ -322,122 +355,15 @@
             this.tpgProduct.Text = "Product";
             this.tpgProduct.UseVisualStyleBackColor = true;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.button3);
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.label11);
-            this.groupBox6.Controls.Add(this.textBox11);
-            this.groupBox6.Controls.Add(this.textBox12);
-            this.groupBox6.Controls.Add(this.textBox13);
-            this.groupBox6.Controls.Add(this.label12);
-            this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.textBox14);
-            this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Location = new System.Drawing.Point(162, 159);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(479, 260);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Supplier Information";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(397, 227);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "View";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(60, 71);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(192, 121);
-            this.textBox10.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 74);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Address:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(299, 19);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(173, 20);
-            this.textBox11.TabIndex = 1;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(299, 45);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(173, 20);
-            this.textBox12.TabIndex = 1;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(60, 45);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(192, 20);
-            this.textBox13.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(258, 22);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Email:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(265, 48);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Tel.:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 48);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Name:";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(60, 19);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(192, 20);
-            this.textBox14.TabIndex = 1;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(30, 22);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(24, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "ID :";
-            // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.linkLabel1);
+            this.groupBox5.Controls.Add(this.comboBox3);
             this.groupBox5.Controls.Add(this.comboBox1);
             this.groupBox5.Controls.Add(this.textBox8);
             this.groupBox5.Controls.Add(this.textBox9);
             this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.label9);
@@ -776,6 +702,8 @@
             // 
             // tpgBranch
             // 
+            this.tpgBranch.Controls.Add(this.groupBox13);
+            this.tpgBranch.Controls.Add(this.groupBox12);
             this.tpgBranch.Controls.Add(this.groupBox10);
             this.tpgBranch.Location = new System.Drawing.Point(4, 22);
             this.tpgBranch.Name = "tpgBranch";
@@ -784,9 +712,47 @@
             this.tpgBranch.Text = "Branch";
             this.tpgBranch.UseVisualStyleBackColor = true;
             // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.button6);
+            this.groupBox10.Controls.Add(this.listBox4);
+            this.groupBox10.Controls.Add(this.maskedTextBox4);
+            this.groupBox10.Location = new System.Drawing.Point(8, 5);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(148, 414);
+            this.groupBox10.TabIndex = 3;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Branches";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(34, 380);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "New";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(8, 45);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(133, 329);
+            this.listBox4.TabIndex = 1;
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(8, 19);
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(133, 20);
+            this.maskedTextBox4.TabIndex = 0;
+            // 
             // tpgSupplier
             // 
+            this.tpgSupplier.Controls.Add(this.groupBox14);
             this.tpgSupplier.Controls.Add(this.groupBox11);
+            this.tpgSupplier.Controls.Add(this.groupBox15);
             this.tpgSupplier.Location = new System.Drawing.Point(4, 22);
             this.tpgSupplier.Name = "tpgSupplier";
             this.tpgSupplier.Padding = new System.Windows.Forms.Padding(3);
@@ -857,70 +823,205 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // treeView1
+            // label11
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(3, 16);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(473, 191);
-            this.treeView1.TabIndex = 0;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(260, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Supplier:";
             // 
-            // groupBox10
+            // linkLabel1
             // 
-            this.groupBox10.Controls.Add(this.button6);
-            this.groupBox10.Controls.Add(this.listBox4);
-            this.groupBox10.Controls.Add(this.maskedTextBox4);
-            this.groupBox10.Location = new System.Drawing.Point(8, 5);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(148, 414);
-            this.groupBox10.TabIndex = 3;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Branches";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(402, 48);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(71, 13);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "View Supplier";
             // 
-            // button6
+            // comboBox3
             // 
-            this.button6.Location = new System.Drawing.Point(34, 380);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "New";
-            this.button6.UseVisualStyleBackColor = true;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(314, 19);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(159, 21);
+            this.comboBox3.TabIndex = 3;
             // 
-            // listBox4
+            // groupBox6
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(8, 45);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(133, 329);
-            this.listBox4.TabIndex = 1;
+            this.groupBox6.Controls.Add(this.treeView2);
+            this.groupBox6.Location = new System.Drawing.Point(162, 159);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(473, 260);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Stock";
             // 
-            // maskedTextBox4
+            // treeView2
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(8, 19);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox4.TabIndex = 0;
+            this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView2.Location = new System.Drawing.Point(3, 16);
+            this.treeView2.Name = "treeView2";
+            this.treeView2.Size = new System.Drawing.Size(467, 241);
+            this.treeView2.TabIndex = 0;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.textBox10);
+            this.groupBox12.Controls.Add(this.label12);
+            this.groupBox12.Controls.Add(this.textBox11);
+            this.groupBox12.Controls.Add(this.textBox12);
+            this.groupBox12.Controls.Add(this.label13);
+            this.groupBox12.Controls.Add(this.label14);
+            this.groupBox12.Controls.Add(this.textBox14);
+            this.groupBox12.Controls.Add(this.label23);
+            this.groupBox12.Location = new System.Drawing.Point(162, 5);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(479, 176);
+            this.groupBox12.TabIndex = 4;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Branch Information";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(60, 48);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(192, 121);
+            this.textBox10.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Address:";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(299, 19);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(173, 20);
+            this.textBox11.TabIndex = 1;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(299, 45);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(173, 20);
+            this.textBox12.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(258, 22);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Email:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(265, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Tel.:";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(60, 19);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(192, 20);
+            this.textBox14.TabIndex = 1;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(30, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(24, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "ID :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(262, 71);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(31, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Mob:";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(299, 67);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(173, 20);
+            this.textBox13.TabIndex = 1;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.treeView3);
+            this.groupBox13.Location = new System.Drawing.Point(162, 187);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(479, 232);
+            this.groupBox13.TabIndex = 5;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Products";
+            // 
+            // treeView3
+            // 
+            this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView3.Location = new System.Drawing.Point(3, 16);
+            this.treeView3.Name = "treeView3";
+            this.treeView3.Size = new System.Drawing.Size(473, 213);
+            this.treeView3.TabIndex = 0;
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.button7);
-            this.groupBox11.Controls.Add(this.listBox5);
-            this.groupBox11.Controls.Add(this.maskedTextBox5);
-            this.groupBox11.Location = new System.Drawing.Point(6, 7);
+            this.groupBox11.Controls.Add(this.treeView4);
+            this.groupBox11.Location = new System.Drawing.Point(162, 204);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(148, 414);
-            this.groupBox11.TabIndex = 3;
+            this.groupBox11.Size = new System.Drawing.Size(479, 216);
+            this.groupBox11.TabIndex = 8;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Suppliers";
+            this.groupBox11.Text = "Products";
             // 
-            // button7
+            // treeView4
             // 
-            this.button7.Location = new System.Drawing.Point(34, 380);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "New";
-            this.button7.UseVisualStyleBackColor = true;
+            this.treeView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView4.Location = new System.Drawing.Point(3, 16);
+            this.treeView4.Name = "treeView4";
+            this.treeView4.Size = new System.Drawing.Size(473, 197);
+            this.treeView4.TabIndex = 0;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.button3);
+            this.groupBox15.Controls.Add(this.listBox5);
+            this.groupBox15.Controls.Add(this.maskedTextBox5);
+            this.groupBox15.Location = new System.Drawing.Point(8, 6);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(148, 414);
+            this.groupBox15.TabIndex = 6;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Suppliers";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(34, 380);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "New";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // listBox5
             // 
@@ -936,6 +1037,106 @@
             this.maskedTextBox5.Name = "maskedTextBox5";
             this.maskedTextBox5.Size = new System.Drawing.Size(133, 20);
             this.maskedTextBox5.TabIndex = 0;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.textBox21);
+            this.groupBox14.Controls.Add(this.label24);
+            this.groupBox14.Controls.Add(this.textBox22);
+            this.groupBox14.Controls.Add(this.textBox24);
+            this.groupBox14.Controls.Add(this.textBox25);
+            this.groupBox14.Controls.Add(this.label26);
+            this.groupBox14.Controls.Add(this.label27);
+            this.groupBox14.Controls.Add(this.label28);
+            this.groupBox14.Controls.Add(this.textBox26);
+            this.groupBox14.Controls.Add(this.label29);
+            this.groupBox14.Location = new System.Drawing.Point(164, 6);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(479, 198);
+            this.groupBox14.TabIndex = 9;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Supplier Information";
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(60, 71);
+            this.textBox21.Multiline = true;
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(192, 121);
+            this.textBox21.TabIndex = 1;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 74);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Address:";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(299, 19);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(173, 20);
+            this.textBox22.TabIndex = 1;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(299, 45);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(173, 20);
+            this.textBox24.TabIndex = 1;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Location = new System.Drawing.Point(60, 45);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(192, 20);
+            this.textBox25.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(258, 22);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(35, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Email:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(265, 48);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(28, 13);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Tel.:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(16, 48);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(38, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Name:";
+            // 
+            // textBox26
+            // 
+            this.textBox26.Location = new System.Drawing.Point(60, 19);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(192, 20);
+            this.textBox26.TabIndex = 1;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(30, 22);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(24, 13);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "ID :";
             // 
             // frmMain
             // 
@@ -956,8 +1157,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tpgProduct.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -970,14 +1169,21 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.tpgBranch.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.tpgSupplier.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1028,18 +1234,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label21;
@@ -1068,9 +1262,40 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.TreeView treeView3;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TreeView treeView4;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.Label label29;
     }
 }
