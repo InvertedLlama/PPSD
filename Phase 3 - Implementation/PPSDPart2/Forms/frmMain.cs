@@ -19,14 +19,19 @@ namespace PPSDPart2
             InitializeComponent();
             this.mDatabase = programDatabase;
             this.muser = currentuser;
+
+            //Prepare the tabs
+            initialiseMemberData();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Owner.Show();
+
+            //Sometimes the controls weren't drawing when the login form came back up
+            //this should fix it
+            Owner.Invalidate();
         }
-
-
 
     }
 }

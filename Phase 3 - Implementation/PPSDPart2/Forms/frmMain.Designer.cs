@@ -30,29 +30,38 @@
         {
             this.tbcContent = new System.Windows.Forms.TabControl();
             this.tpgMember = new System.Windows.Forms.TabPage();
+            this.btnMemberCancel = new System.Windows.Forms.Button();
+            this.btnMemberApply = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.trvMemberRentals = new System.Windows.Forms.TreeView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMemberAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMemberEmail = new System.Windows.Forms.TextBox();
+            this.txtMemberMob = new System.Windows.Forms.TextBox();
+            this.txtMemberTel = new System.Windows.Forms.TextBox();
+            this.txtMemberName = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMemberID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.btnNewMember = new System.Windows.Forms.Button();
+            this.lstMembers = new System.Windows.Forms.ListBox();
+            this.txtMembersFilter = new System.Windows.Forms.MaskedTextBox();
             this.tpgProduct = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.treeView2 = new System.Windows.Forms.TreeView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -86,24 +95,8 @@
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.tpgBranch = new System.Windows.Forms.TabPage();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.tpgSupplier = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label11 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.treeView3 = new System.Windows.Forms.TreeView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -113,16 +106,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.treeView3 = new System.Windows.Forms.TreeView();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.treeView4 = new System.Windows.Forms.TreeView();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -134,12 +122,27 @@
             this.label28 = new System.Windows.Forms.Label();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.treeView4 = new System.Windows.Forms.TreeView();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbcContent.SuspendLayout();
             this.tpgMember.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tpgProduct.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tpgStaff.SuspendLayout();
@@ -147,16 +150,15 @@
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tpgBranch.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.tpgSupplier.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox13.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox15.SuspendLayout();
-            this.groupBox14.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcContent
@@ -175,6 +177,8 @@
             // 
             // tpgMember
             // 
+            this.tpgMember.Controls.Add(this.btnMemberCancel);
+            this.tpgMember.Controls.Add(this.btnMemberApply);
             this.tpgMember.Controls.Add(this.groupBox3);
             this.tpgMember.Controls.Add(this.groupBox2);
             this.tpgMember.Controls.Add(this.groupBox1);
@@ -186,37 +190,55 @@
             this.tpgMember.Text = "Member";
             this.tpgMember.UseVisualStyleBackColor = true;
             // 
+            // btnMemberCancel
+            // 
+            this.btnMemberCancel.Location = new System.Drawing.Point(246, 386);
+            this.btnMemberCancel.Name = "btnMemberCancel";
+            this.btnMemberCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnMemberCancel.TabIndex = 3;
+            this.btnMemberCancel.Text = "Cancel";
+            this.btnMemberCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnMemberApply
+            // 
+            this.btnMemberApply.Location = new System.Drawing.Point(165, 386);
+            this.btnMemberApply.Name = "btnMemberApply";
+            this.btnMemberApply.Size = new System.Drawing.Size(75, 23);
+            this.btnMemberApply.TabIndex = 3;
+            this.btnMemberApply.Text = "Apply";
+            this.btnMemberApply.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.treeView1);
+            this.groupBox3.Controls.Add(this.trvMemberRentals);
             this.groupBox3.Location = new System.Drawing.Point(162, 210);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(479, 210);
+            this.groupBox3.Size = new System.Drawing.Size(479, 170);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rentals";
             // 
-            // treeView1
+            // trvMemberRentals
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(3, 16);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(473, 191);
-            this.treeView1.TabIndex = 0;
+            this.trvMemberRentals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvMemberRentals.Location = new System.Drawing.Point(3, 16);
+            this.trvMemberRentals.Name = "trvMemberRentals";
+            this.trvMemberRentals.Size = new System.Drawing.Size(473, 151);
+            this.trvMemberRentals.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtMemberAddress);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox13);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtMemberEmail);
+            this.groupBox2.Controls.Add(this.txtMemberMob);
+            this.groupBox2.Controls.Add(this.txtMemberTel);
+            this.groupBox2.Controls.Add(this.txtMemberName);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtMemberID);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(162, 6);
             this.groupBox2.Name = "groupBox2";
@@ -225,13 +247,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Personal Information";
             // 
-            // textBox3
+            // txtMemberAddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(60, 71);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 121);
-            this.textBox3.TabIndex = 1;
+            this.txtMemberAddress.Location = new System.Drawing.Point(60, 71);
+            this.txtMemberAddress.Multiline = true;
+            this.txtMemberAddress.Name = "txtMemberAddress";
+            this.txtMemberAddress.Size = new System.Drawing.Size(192, 121);
+            this.txtMemberAddress.TabIndex = 1;
             // 
             // label3
             // 
@@ -242,26 +264,42 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Address:";
             // 
-            // textBox5
+            // txtMemberEmail
             // 
-            this.textBox5.Location = new System.Drawing.Point(299, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(173, 20);
-            this.textBox5.TabIndex = 1;
+            this.txtMemberEmail.Location = new System.Drawing.Point(299, 19);
+            this.txtMemberEmail.Name = "txtMemberEmail";
+            this.txtMemberEmail.Size = new System.Drawing.Size(173, 20);
+            this.txtMemberEmail.TabIndex = 1;
             // 
-            // textBox4
+            // txtMemberMob
             // 
-            this.textBox4.Location = new System.Drawing.Point(299, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(173, 20);
-            this.textBox4.TabIndex = 1;
+            this.txtMemberMob.Location = new System.Drawing.Point(299, 67);
+            this.txtMemberMob.Name = "txtMemberMob";
+            this.txtMemberMob.Size = new System.Drawing.Size(173, 20);
+            this.txtMemberMob.TabIndex = 1;
             // 
-            // textBox2
+            // txtMemberTel
             // 
-            this.textBox2.Location = new System.Drawing.Point(60, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtMemberTel.Location = new System.Drawing.Point(299, 45);
+            this.txtMemberTel.Name = "txtMemberTel";
+            this.txtMemberTel.Size = new System.Drawing.Size(173, 20);
+            this.txtMemberTel.TabIndex = 1;
+            // 
+            // txtMemberName
+            // 
+            this.txtMemberName.Location = new System.Drawing.Point(60, 45);
+            this.txtMemberName.Name = "txtMemberName";
+            this.txtMemberName.Size = new System.Drawing.Size(192, 20);
+            this.txtMemberName.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(262, 71);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(31, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Mob:";
             // 
             // label5
             // 
@@ -290,12 +328,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name:";
             // 
-            // textBox1
+            // txtMemberID
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtMemberID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtMemberID.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtMemberID.Location = new System.Drawing.Point(60, 19);
+            this.txtMemberID.Name = "txtMemberID";
+            this.txtMemberID.ReadOnly = true;
+            this.txtMemberID.Size = new System.Drawing.Size(192, 20);
+            this.txtMemberID.TabIndex = 1;
             // 
             // label1
             // 
@@ -308,9 +349,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.btnNewMember);
+            this.groupBox1.Controls.Add(this.lstMembers);
+            this.groupBox1.Controls.Add(this.txtMembersFilter);
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(148, 414);
@@ -318,29 +359,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Members";
             // 
-            // button1
+            // btnNewMember
             // 
-            this.button1.Location = new System.Drawing.Point(34, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "New";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNewMember.Location = new System.Drawing.Point(34, 380);
+            this.btnNewMember.Name = "btnNewMember";
+            this.btnNewMember.Size = new System.Drawing.Size(75, 23);
+            this.btnNewMember.TabIndex = 4;
+            this.btnNewMember.Text = "New";
+            this.btnNewMember.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lstMembers
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(8, 45);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(133, 329);
-            this.listBox1.TabIndex = 1;
+            this.lstMembers.FormattingEnabled = true;
+            this.lstMembers.Location = new System.Drawing.Point(8, 45);
+            this.lstMembers.Name = "lstMembers";
+            this.lstMembers.Size = new System.Drawing.Size(133, 329);
+            this.lstMembers.TabIndex = 1;
             // 
-            // maskedTextBox1
+            // txtMembersFilter
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(8, 19);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox1.TabIndex = 0;
+            this.txtMembersFilter.Location = new System.Drawing.Point(8, 19);
+            this.txtMembersFilter.Name = "txtMembersFilter";
+            this.txtMembersFilter.Size = new System.Drawing.Size(133, 20);
+            this.txtMembersFilter.TabIndex = 0;
+            this.txtMembersFilter.TextChanged += new System.EventHandler(this.txtMembersFilter_TextChanged);
             // 
             // tpgProduct
             // 
@@ -354,6 +396,24 @@
             this.tpgProduct.TabIndex = 1;
             this.tpgProduct.Text = "Product";
             this.tpgProduct.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.treeView2);
+            this.groupBox6.Location = new System.Drawing.Point(162, 159);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(473, 260);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Stock";
+            // 
+            // treeView2
+            // 
+            this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView2.Location = new System.Drawing.Point(3, 16);
+            this.treeView2.Name = "treeView2";
+            this.treeView2.Size = new System.Drawing.Size(467, 241);
+            this.treeView2.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -374,6 +434,24 @@
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Product Information";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(402, 48);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(71, 13);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "View Supplier";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(314, 19);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(159, 21);
+            this.comboBox3.TabIndex = 3;
             // 
             // comboBox1
             // 
@@ -403,6 +481,15 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(121, 20);
             this.textBox7.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(260, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Supplier:";
             // 
             // label10
             // 
@@ -712,161 +799,23 @@
             this.tpgBranch.Text = "Branch";
             this.tpgBranch.UseVisualStyleBackColor = true;
             // 
-            // groupBox10
+            // groupBox13
             // 
-            this.groupBox10.Controls.Add(this.button6);
-            this.groupBox10.Controls.Add(this.listBox4);
-            this.groupBox10.Controls.Add(this.maskedTextBox4);
-            this.groupBox10.Location = new System.Drawing.Point(8, 5);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(148, 414);
-            this.groupBox10.TabIndex = 3;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Branches";
+            this.groupBox13.Controls.Add(this.treeView3);
+            this.groupBox13.Location = new System.Drawing.Point(162, 187);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(479, 232);
+            this.groupBox13.TabIndex = 5;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Products";
             // 
-            // button6
+            // treeView3
             // 
-            this.button6.Location = new System.Drawing.Point(34, 380);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "New";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(8, 45);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(133, 329);
-            this.listBox4.TabIndex = 1;
-            // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(8, 19);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox4.TabIndex = 0;
-            // 
-            // tpgSupplier
-            // 
-            this.tpgSupplier.Controls.Add(this.groupBox14);
-            this.tpgSupplier.Controls.Add(this.groupBox11);
-            this.tpgSupplier.Controls.Add(this.groupBox15);
-            this.tpgSupplier.Location = new System.Drawing.Point(4, 22);
-            this.tpgSupplier.Name = "tpgSupplier";
-            this.tpgSupplier.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgSupplier.Size = new System.Drawing.Size(649, 427);
-            this.tpgSupplier.TabIndex = 4;
-            this.tpgSupplier.Text = "Supplier";
-            this.tpgSupplier.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tbcContent);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(657, 453);
-            this.panel1.TabIndex = 1;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(657, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.newToolStripMenuItem.Text = "New";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(260, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Supplier:";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(402, 48);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(71, 13);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "View Supplier";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(314, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(159, 21);
-            this.comboBox3.TabIndex = 3;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.treeView2);
-            this.groupBox6.Location = new System.Drawing.Point(162, 159);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(473, 260);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Stock";
-            // 
-            // treeView2
-            // 
-            this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView2.Location = new System.Drawing.Point(3, 16);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(467, 241);
-            this.treeView2.TabIndex = 0;
+            this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView3.Location = new System.Drawing.Point(3, 16);
+            this.treeView3.Name = "treeView3";
+            this.treeView3.Size = new System.Drawing.Size(473, 213);
+            this.treeView3.TabIndex = 0;
             // 
             // groupBox12
             // 
@@ -950,93 +899,54 @@
             this.label23.TabIndex = 0;
             this.label23.Text = "ID :";
             // 
-            // label15
+            // groupBox10
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(262, 71);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(31, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Mob:";
+            this.groupBox10.Controls.Add(this.button6);
+            this.groupBox10.Controls.Add(this.listBox4);
+            this.groupBox10.Controls.Add(this.maskedTextBox4);
+            this.groupBox10.Location = new System.Drawing.Point(8, 5);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(148, 414);
+            this.groupBox10.TabIndex = 3;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Branches";
             // 
-            // textBox13
+            // button6
             // 
-            this.textBox13.Location = new System.Drawing.Point(299, 67);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(173, 20);
-            this.textBox13.TabIndex = 1;
+            this.button6.Location = new System.Drawing.Point(34, 380);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "New";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // groupBox13
+            // listBox4
             // 
-            this.groupBox13.Controls.Add(this.treeView3);
-            this.groupBox13.Location = new System.Drawing.Point(162, 187);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(479, 232);
-            this.groupBox13.TabIndex = 5;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Products";
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(8, 45);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(133, 329);
+            this.listBox4.TabIndex = 1;
             // 
-            // treeView3
+            // maskedTextBox4
             // 
-            this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView3.Location = new System.Drawing.Point(3, 16);
-            this.treeView3.Name = "treeView3";
-            this.treeView3.Size = new System.Drawing.Size(473, 213);
-            this.treeView3.TabIndex = 0;
+            this.maskedTextBox4.Location = new System.Drawing.Point(8, 19);
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(133, 20);
+            this.maskedTextBox4.TabIndex = 0;
             // 
-            // groupBox11
+            // tpgSupplier
             // 
-            this.groupBox11.Controls.Add(this.treeView4);
-            this.groupBox11.Location = new System.Drawing.Point(162, 204);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(479, 216);
-            this.groupBox11.TabIndex = 8;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Products";
-            // 
-            // treeView4
-            // 
-            this.treeView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView4.Location = new System.Drawing.Point(3, 16);
-            this.treeView4.Name = "treeView4";
-            this.treeView4.Size = new System.Drawing.Size(473, 197);
-            this.treeView4.TabIndex = 0;
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.button3);
-            this.groupBox15.Controls.Add(this.listBox5);
-            this.groupBox15.Controls.Add(this.maskedTextBox5);
-            this.groupBox15.Location = new System.Drawing.Point(8, 6);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(148, 414);
-            this.groupBox15.TabIndex = 6;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Suppliers";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(34, 380);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "New";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // listBox5
-            // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(8, 45);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(133, 329);
-            this.listBox5.TabIndex = 1;
-            // 
-            // maskedTextBox5
-            // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(8, 19);
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox5.TabIndex = 0;
+            this.tpgSupplier.Controls.Add(this.groupBox14);
+            this.tpgSupplier.Controls.Add(this.groupBox11);
+            this.tpgSupplier.Controls.Add(this.groupBox15);
+            this.tpgSupplier.Location = new System.Drawing.Point(4, 22);
+            this.tpgSupplier.Name = "tpgSupplier";
+            this.tpgSupplier.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgSupplier.Size = new System.Drawing.Size(649, 427);
+            this.tpgSupplier.TabIndex = 4;
+            this.tpgSupplier.Text = "Supplier";
+            this.tpgSupplier.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
@@ -1138,6 +1048,122 @@
             this.label29.TabIndex = 0;
             this.label29.Text = "ID :";
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.treeView4);
+            this.groupBox11.Location = new System.Drawing.Point(162, 204);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(479, 216);
+            this.groupBox11.TabIndex = 8;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Products";
+            // 
+            // treeView4
+            // 
+            this.treeView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView4.Location = new System.Drawing.Point(3, 16);
+            this.treeView4.Name = "treeView4";
+            this.treeView4.Size = new System.Drawing.Size(473, 197);
+            this.treeView4.TabIndex = 0;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.button3);
+            this.groupBox15.Controls.Add(this.listBox5);
+            this.groupBox15.Controls.Add(this.maskedTextBox5);
+            this.groupBox15.Location = new System.Drawing.Point(8, 6);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(148, 414);
+            this.groupBox15.TabIndex = 6;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Suppliers";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(34, 380);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "New";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.Location = new System.Drawing.Point(8, 45);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(133, 329);
+            this.listBox5.TabIndex = 1;
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.Location = new System.Drawing.Point(8, 19);
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(133, 20);
+            this.maskedTextBox5.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tbcContent);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(657, 453);
+            this.panel1.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(657, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.newToolStripMenuItem.Text = "New";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1157,6 +1183,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tpgProduct.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1169,21 +1196,20 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.tpgBranch.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.tpgSupplier.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1197,21 +1223,21 @@
         private System.Windows.Forms.TabPage tpgStaff;
         private System.Windows.Forms.TabPage tpgBranch;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.ListBox lstMembers;
+        private System.Windows.Forms.MaskedTextBox txtMembersFilter;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMemberName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMemberID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMemberAddress;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtMemberEmail;
+        private System.Windows.Forms.TextBox txtMemberTel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNewMember;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -1257,7 +1283,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView trvMemberRentals;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListBox listBox4;
@@ -1276,7 +1302,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtMemberMob;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TreeView treeView3;
@@ -1297,5 +1323,7 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button btnMemberCancel;
+        private System.Windows.Forms.Button btnMemberApply;
     }
 }

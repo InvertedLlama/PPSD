@@ -69,17 +69,11 @@ namespace PPSDPart2
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, sqlConnection);
             DataTable table = new DataTable();
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adapter.Fill(table);
 
             adapter.Dispose();            
             return table;
-        }
-
-        public DataBinding selectDataBinding(string query)
-        {
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, sqlConnection);
-            DataBinding binding = new DataBinding(adapter);
-            return binding;
         }
 
         public bool runCommandQuery(string query)

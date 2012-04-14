@@ -74,6 +74,10 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmMain.Member.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmWorking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,7 +85,6 @@
       <DependentUpon>frmWorking.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\Database.cs" />
-    <Compile Include="Objects\DataBinding.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
