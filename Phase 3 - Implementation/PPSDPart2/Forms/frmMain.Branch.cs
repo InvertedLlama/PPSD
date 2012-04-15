@@ -9,6 +9,7 @@ namespace PPSDPart2
 {
     public partial class frmMain
     {
+        DataRow branchData;
         BindingSource bisBranchListBinding;
 
         private void initialiseBranchData()
@@ -35,9 +36,8 @@ namespace PPSDPart2
             try
             {
                 //Get the data. IDs are unique so unless something has gone horribly wrong there should only be one row
-                DataRow branchData = dtbBranch.Select("branchID + '' = '" + lstBranches.SelectedValue + "'")[0];                               
-                
-
+                branchData = dtbBranch.Select("branchID + '' = '" + lstBranches.SelectedValue + "'")[0];
+               
                 txtBranchID.Text = branchData["branchID"].ToString();
                 txtBranchAddress.Text = branchData["address"] as string;
                 txtBranchTel.Text = branchData["phoneNumber"] as string;
@@ -70,5 +70,52 @@ namespace PPSDPart2
             TextBox sndr = (TextBox)sender;
             bisBranchListBinding.Filter = "branchID + '' LIKE '%" + sndr.Text + "%'";
         }
+
+        private void btnBranchApply_Click(object sender, EventArgs e)
+        {
+            string message = string.Empty;
+            if (txtBranchEmail.Text != branchData["email"].ToString())
+            {
+                if (!validateInformation(txtBranchEmail.Text, RegexPattern.EmailString))
+                    message += "* Email\n";
+            }
+
+            if (txtBranchTel.Text != branchData["phoneNumber"].ToString())
+            {
+                if (!validateInformation(txtBranchTel.Text, RegexPattern.NumericalString))
+                    message += "* Telephone Number\n";
+            }
+
+            if (message != string.Empty)
+                MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                string insertQuery = String.Format(
+                    "UPDATE Branch\n"+
+                    "SET address=\"{0}\", email=\"{1}\", phoneNumber=\"{2}\""+
+                    "WHERE branchID=\"{3}\"", txtBranchAddress.Text, txtBranchEmail.Text, txtBranchTel.Text, txtBranchID.Text);
+
+                if (mDatabase.runCommandQuery(insertQuery))
+                {
+                    //changes applied! Reload data in GUI:
+                    dtbBranch = mDatabase.selectData("SELECT * FROM Branch");
+                    initialiseBranchData();
+                    if (lstBranches.Items.Count > 0) //set selected item to first entry:
+                    {
+                        lstBranches.SelectedItem = lstBranches.Items[0];
+                        fillBranchDataFields();
+                    }
+                    MessageBox.Show("Changes applied successfully");
+                }
+                else
+                    MessageBox.Show("Failed to apply changes");
+            }
+        }
+
+        private void btnBranchCancel_Click(object sender, EventArgs e)
+        {
+            fillBranchDataFields();
+        }
+
     }
 }

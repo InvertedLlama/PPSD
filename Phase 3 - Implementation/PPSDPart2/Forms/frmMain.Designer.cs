@@ -53,7 +53,7 @@
             this.btnNewMember = new System.Windows.Forms.Button();
             this.lstMembers = new System.Windows.Forms.ListBox();
             this.tpgProduct = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnProductCancel = new System.Windows.Forms.Button();
             this.btnProductApply = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.trvProductStock = new System.Windows.Forms.TreeView();
@@ -103,8 +103,8 @@
             this.lstStaff = new System.Windows.Forms.ListBox();
             this.tpgBranch = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnBranchCancel = new System.Windows.Forms.Button();
+            this.btnBranchApply = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.treeView3 = new System.Windows.Forms.TreeView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -407,7 +407,7 @@
             // 
             // tpgProduct
             // 
-            this.tpgProduct.Controls.Add(this.button1);
+            this.tpgProduct.Controls.Add(this.btnProductCancel);
             this.tpgProduct.Controls.Add(this.btnProductApply);
             this.tpgProduct.Controls.Add(this.groupBox6);
             this.tpgProduct.Controls.Add(this.groupBox5);
@@ -420,14 +420,15 @@
             this.tpgProduct.Text = "Product";
             this.tpgProduct.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnProductCancel
             // 
-            this.button1.Location = new System.Drawing.Point(243, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnProductCancel.Location = new System.Drawing.Point(243, 386);
+            this.btnProductCancel.Name = "btnProductCancel";
+            this.btnProductCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnProductCancel.TabIndex = 5;
+            this.btnProductCancel.Text = "Cancel";
+            this.btnProductCancel.UseVisualStyleBackColor = true;
+            this.btnProductCancel.Click += new System.EventHandler(this.btnProductCancel_Click);
             // 
             // btnProductApply
             // 
@@ -883,8 +884,8 @@
             // tpgBranch
             // 
             this.tpgBranch.Controls.Add(this.button6);
-            this.tpgBranch.Controls.Add(this.button4);
-            this.tpgBranch.Controls.Add(this.button5);
+            this.tpgBranch.Controls.Add(this.btnBranchCancel);
+            this.tpgBranch.Controls.Add(this.btnBranchApply);
             this.tpgBranch.Controls.Add(this.groupBox13);
             this.tpgBranch.Controls.Add(this.groupBox12);
             this.tpgBranch.Controls.Add(this.groupBox10);
@@ -904,23 +905,25 @@
             this.button6.Text = "Add Stock";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnBranchCancel
             // 
-            this.button4.Location = new System.Drawing.Point(243, 385);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Cancel";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBranchCancel.Location = new System.Drawing.Point(243, 385);
+            this.btnBranchCancel.Name = "btnBranchCancel";
+            this.btnBranchCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnBranchCancel.TabIndex = 7;
+            this.btnBranchCancel.Text = "Cancel";
+            this.btnBranchCancel.UseVisualStyleBackColor = true;
+            this.btnBranchCancel.Click += new System.EventHandler(this.btnBranchCancel_Click);
             // 
-            // button5
+            // btnBranchApply
             // 
-            this.button5.Location = new System.Drawing.Point(162, 385);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Apply";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnBranchApply.Location = new System.Drawing.Point(162, 385);
+            this.btnBranchApply.Name = "btnBranchApply";
+            this.btnBranchApply.Size = new System.Drawing.Size(75, 23);
+            this.btnBranchApply.TabIndex = 6;
+            this.btnBranchApply.Text = "Apply";
+            this.btnBranchApply.UseVisualStyleBackColor = true;
+            this.btnBranchApply.Click += new System.EventHandler(this.btnBranchApply_Click);
             // 
             // groupBox13
             // 
@@ -1457,10 +1460,10 @@
         private System.Windows.Forms.TextBox txtSupplierFilter;
         private System.Windows.Forms.TextBox txtProductCost;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnProductCancel;
         private System.Windows.Forms.Button btnProductApply;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBranchCancel;
+        private System.Windows.Forms.Button btnBranchApply;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
     }

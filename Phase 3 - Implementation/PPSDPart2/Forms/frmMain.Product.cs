@@ -161,5 +161,11 @@ namespace PPSDPart2
                     MessageBox.Show("Failed to apply changes");
             }
         }
+
+        private void btnProductCancel_Click(object sender, EventArgs e)
+        {
+            fillProductDataFields();
+        }
+
     }
 }
