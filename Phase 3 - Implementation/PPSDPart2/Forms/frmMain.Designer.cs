@@ -72,28 +72,30 @@
             this.lstProducts = new System.Windows.Forms.ListBox();
             this.tpgStaff = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnStaffPasswordSet = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtStaffPassword = new System.Windows.Forms.TextBox();
+            this.txtStaffUsername = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cboStaffBranch = new System.Windows.Forms.ComboBox();
+            this.cboStaffRole = new System.Windows.Forms.ComboBox();
+            this.txtStaffAddress = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtStaffEmail = new System.Windows.Forms.TextBox();
+            this.txtStaffTel = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtStaffName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.txtStaffID = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.txtStaffFilter = new System.Windows.Forms.TextBox();
+            this.btnStaffNew = new System.Windows.Forms.Button();
+            this.lstStaff = new System.Windows.Forms.ListBox();
             this.tpgBranch = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.treeView3 = new System.Windows.Forms.TreeView();
@@ -447,6 +449,7 @@
             // 
             // cboSupplier
             // 
+            this.cboSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSupplier.FormattingEnabled = true;
             this.cboSupplier.Location = new System.Drawing.Point(314, 19);
             this.cboSupplier.Name = "cboSupplier";
@@ -455,6 +458,7 @@
             // 
             // cboCategory
             // 
+            this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(78, 45);
             this.cboCategory.Name = "cboCategory";
@@ -580,12 +584,10 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.button5);
-            this.groupBox9.Controls.Add(this.comboBox2);
+            this.groupBox9.Controls.Add(this.btnStaffPasswordSet);
             this.groupBox9.Controls.Add(this.label22);
-            this.groupBox9.Controls.Add(this.label21);
-            this.groupBox9.Controls.Add(this.textBox20);
-            this.groupBox9.Controls.Add(this.textBox19);
+            this.groupBox9.Controls.Add(this.txtStaffPassword);
+            this.groupBox9.Controls.Add(this.txtStaffUsername);
             this.groupBox9.Controls.Add(this.label20);
             this.groupBox9.Location = new System.Drawing.Point(162, 210);
             this.groupBox9.Name = "groupBox9";
@@ -594,23 +596,14 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "User Details";
             // 
-            // button5
+            // btnStaffPasswordSet
             // 
-            this.button5.Location = new System.Drawing.Point(299, 79);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Set";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(92, 39);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(192, 21);
-            this.comboBox2.TabIndex = 2;
+            this.btnStaffPasswordSet.Location = new System.Drawing.Point(299, 79);
+            this.btnStaffPasswordSet.Name = "btnStaffPasswordSet";
+            this.btnStaffPasswordSet.Size = new System.Drawing.Size(75, 23);
+            this.btnStaffPasswordSet.TabIndex = 3;
+            this.btnStaffPasswordSet.Text = "Set";
+            this.btnStaffPasswordSet.UseVisualStyleBackColor = true;
             // 
             // label22
             // 
@@ -621,34 +614,25 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Password:";
             // 
-            // label21
+            // txtStaffPassword
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(16, 42);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 13);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Access level:";
+            this.txtStaffPassword.Location = new System.Drawing.Point(92, 81);
+            this.txtStaffPassword.Name = "txtStaffPassword";
+            this.txtStaffPassword.Size = new System.Drawing.Size(192, 20);
+            this.txtStaffPassword.TabIndex = 1;
+            this.txtStaffPassword.UseSystemPasswordChar = true;
             // 
-            // textBox20
+            // txtStaffUsername
             // 
-            this.textBox20.Location = new System.Drawing.Point(92, 81);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(192, 20);
-            this.textBox20.TabIndex = 1;
-            this.textBox20.UseSystemPasswordChar = true;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(92, 13);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(192, 20);
-            this.textBox19.TabIndex = 1;
+            this.txtStaffUsername.Location = new System.Drawing.Point(92, 55);
+            this.txtStaffUsername.Name = "txtStaffUsername";
+            this.txtStaffUsername.Size = new System.Drawing.Size(192, 20);
+            this.txtStaffUsername.TabIndex = 1;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(28, 16);
+            this.label20.Location = new System.Drawing.Point(28, 58);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(58, 13);
             this.label20.TabIndex = 0;
@@ -656,15 +640,19 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.textBox6);
+            this.groupBox7.Controls.Add(this.cboStaffBranch);
+            this.groupBox7.Controls.Add(this.cboStaffRole);
+            this.groupBox7.Controls.Add(this.txtStaffAddress);
+            this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Controls.Add(this.textBox15);
-            this.groupBox7.Controls.Add(this.textBox16);
-            this.groupBox7.Controls.Add(this.textBox17);
+            this.groupBox7.Controls.Add(this.txtStaffEmail);
+            this.groupBox7.Controls.Add(this.txtStaffTel);
+            this.groupBox7.Controls.Add(this.label25);
+            this.groupBox7.Controls.Add(this.txtStaffName);
             this.groupBox7.Controls.Add(this.label16);
             this.groupBox7.Controls.Add(this.label17);
             this.groupBox7.Controls.Add(this.label18);
-            this.groupBox7.Controls.Add(this.textBox18);
+            this.groupBox7.Controls.Add(this.txtStaffID);
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Location = new System.Drawing.Point(162, 6);
             this.groupBox7.Name = "groupBox7";
@@ -673,13 +661,45 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Personal Information";
             // 
-            // textBox6
+            // cboStaffBranch
             // 
-            this.textBox6.Location = new System.Drawing.Point(60, 71);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(192, 121);
-            this.textBox6.TabIndex = 1;
+            this.cboStaffBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStaffBranch.FormattingEnabled = true;
+            this.cboStaffBranch.Location = new System.Drawing.Point(300, 19);
+            this.cboStaffBranch.Name = "cboStaffBranch";
+            this.cboStaffBranch.Size = new System.Drawing.Size(172, 21);
+            this.cboStaffBranch.TabIndex = 2;
+            // 
+            // cboStaffRole
+            // 
+            this.cboStaffRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStaffRole.FormattingEnabled = true;
+            this.cboStaffRole.Items.AddRange(new object[] {
+            "Admin",
+            "Instructor",
+            "Counter Staff",
+            "Owner"});
+            this.cboStaffRole.Location = new System.Drawing.Point(299, 46);
+            this.cboStaffRole.Name = "cboStaffRole";
+            this.cboStaffRole.Size = new System.Drawing.Size(173, 21);
+            this.cboStaffRole.TabIndex = 2;
+            // 
+            // txtStaffAddress
+            // 
+            this.txtStaffAddress.Location = new System.Drawing.Point(60, 71);
+            this.txtStaffAddress.Multiline = true;
+            this.txtStaffAddress.Name = "txtStaffAddress";
+            this.txtStaffAddress.Size = new System.Drawing.Size(184, 121);
+            this.txtStaffAddress.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(262, 49);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(32, 13);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Role:";
             // 
             // label6
             // 
@@ -690,31 +710,40 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Address:";
             // 
-            // textBox15
+            // txtStaffEmail
             // 
-            this.textBox15.Location = new System.Drawing.Point(299, 19);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(173, 20);
-            this.textBox15.TabIndex = 1;
+            this.txtStaffEmail.Location = new System.Drawing.Point(299, 73);
+            this.txtStaffEmail.Name = "txtStaffEmail";
+            this.txtStaffEmail.Size = new System.Drawing.Size(173, 20);
+            this.txtStaffEmail.TabIndex = 1;
             // 
-            // textBox16
+            // txtStaffTel
             // 
-            this.textBox16.Location = new System.Drawing.Point(299, 45);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(173, 20);
-            this.textBox16.TabIndex = 1;
+            this.txtStaffTel.Location = new System.Drawing.Point(299, 99);
+            this.txtStaffTel.Name = "txtStaffTel";
+            this.txtStaffTel.Size = new System.Drawing.Size(173, 20);
+            this.txtStaffTel.TabIndex = 1;
             // 
-            // textBox17
+            // label25
             // 
-            this.textBox17.Location = new System.Drawing.Point(60, 45);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(192, 20);
-            this.textBox17.TabIndex = 1;
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(250, 22);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(44, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Branch:";
+            // 
+            // txtStaffName
+            // 
+            this.txtStaffName.Location = new System.Drawing.Point(60, 45);
+            this.txtStaffName.Name = "txtStaffName";
+            this.txtStaffName.Size = new System.Drawing.Size(184, 20);
+            this.txtStaffName.TabIndex = 1;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(258, 22);
+            this.label16.Location = new System.Drawing.Point(257, 76);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(35, 13);
             this.label16.TabIndex = 0;
@@ -723,7 +752,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(265, 48);
+            this.label17.Location = new System.Drawing.Point(265, 102);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(28, 13);
             this.label17.TabIndex = 0;
@@ -738,12 +767,15 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Name:";
             // 
-            // textBox18
+            // txtStaffID
             // 
-            this.textBox18.Location = new System.Drawing.Point(60, 19);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(192, 20);
-            this.textBox18.TabIndex = 1;
+            this.txtStaffID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtStaffID.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtStaffID.Location = new System.Drawing.Point(60, 19);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.ReadOnly = true;
+            this.txtStaffID.Size = new System.Drawing.Size(184, 20);
+            this.txtStaffID.TabIndex = 1;
             // 
             // label19
             // 
@@ -756,9 +788,9 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.button4);
-            this.groupBox8.Controls.Add(this.listBox3);
-            this.groupBox8.Controls.Add(this.maskedTextBox3);
+            this.groupBox8.Controls.Add(this.txtStaffFilter);
+            this.groupBox8.Controls.Add(this.btnStaffNew);
+            this.groupBox8.Controls.Add(this.lstStaff);
             this.groupBox8.Location = new System.Drawing.Point(8, 6);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(148, 414);
@@ -766,29 +798,29 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Staff";
             // 
-            // button4
+            // txtStaffFilter
             // 
-            this.button4.Location = new System.Drawing.Point(34, 380);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "New";
-            this.button4.UseVisualStyleBackColor = true;
+            this.txtStaffFilter.Location = new System.Drawing.Point(10, 19);
+            this.txtStaffFilter.Name = "txtStaffFilter";
+            this.txtStaffFilter.Size = new System.Drawing.Size(132, 20);
+            this.txtStaffFilter.TabIndex = 6;
             // 
-            // listBox3
+            // btnStaffNew
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(8, 45);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(133, 329);
-            this.listBox3.TabIndex = 1;
+            this.btnStaffNew.Location = new System.Drawing.Point(34, 380);
+            this.btnStaffNew.Name = "btnStaffNew";
+            this.btnStaffNew.Size = new System.Drawing.Size(75, 23);
+            this.btnStaffNew.TabIndex = 4;
+            this.btnStaffNew.Text = "New";
+            this.btnStaffNew.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox3
+            // lstStaff
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(8, 19);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox3.TabIndex = 0;
+            this.lstStaff.FormattingEnabled = true;
+            this.lstStaff.Location = new System.Drawing.Point(8, 45);
+            this.lstStaff.Name = "lstStaff";
+            this.lstStaff.Size = new System.Drawing.Size(133, 329);
+            this.lstStaff.TabIndex = 1;
             // 
             // tpgBranch
             // 
@@ -1262,28 +1294,27 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboStaffRole;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtStaffUsername;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtStaffAddress;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtStaffEmail;
+        private System.Windows.Forms.TextBox txtStaffTel;
+        private System.Windows.Forms.TextBox txtStaffName;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnStaffNew;
+        private System.Windows.Forms.ListBox lstStaff;
+        private System.Windows.Forms.Button btnStaffPasswordSet;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtStaffPassword;
         private System.Windows.Forms.TreeView trvMemberRentals;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button button6;
@@ -1328,5 +1359,8 @@
         private System.Windows.Forms.Button btnMemberApply;
         private System.Windows.Forms.TextBox txtMembersFilter;
         private System.Windows.Forms.TextBox txtProductFilter;
+        private System.Windows.Forms.TextBox txtStaffFilter;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox cboStaffBranch;
     }
 }

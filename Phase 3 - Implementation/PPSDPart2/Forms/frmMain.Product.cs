@@ -12,7 +12,7 @@ namespace PPSDPart2
         DataTable dtbProduct, dtbCategory;
         BindingSource bisProductListBinding, bisCategoryBoxBinding;
 
-        public void initaliseProductData()
+        public void initialiseProductData()
         {
             bisProductListBinding = new BindingSource();
             bisCategoryBoxBinding = new BindingSource();
@@ -47,18 +47,16 @@ namespace PPSDPart2
 
         private void fillProductDataFields()
         {
-            //Get the data. MemberIDs are unique so unless something has gone horribly wrong there should only be one row
+            //Get the data. IDs are unique so unless something has gone horribly wrong there should only be one row
             DataRow productData = dtbProduct.Select("productID + '' = '" + lstProducts.SelectedValue + "'")[0];
 
             txtProductID.Text = productData["productID"].ToString();
 
-            for (int i = 0; i < cboCategory.Items.Count; i++)
-            {
-                DataRowView r = (DataRowView)cboCategory.Items[i];
-
+            foreach (DataRowView r in cboCategory.Items)
+            {               
                 if (r["categoryID"].ToString() == productData["categoryID"].ToString())
                 {
-                    cboCategory.SelectedIndex = i;
+                    cboCategory.SelectedIndex = cboCategory.Items.IndexOf(r);
                 }
             }
 

@@ -30,7 +30,7 @@ namespace PPSDPart2
 
             //register the event handler method for a new list item being selected manually.
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
-            lstMembers.SelectedValueChanged += lstMembers_SelectedValueChanged;
+            lstMembers.SelectedValueChanged += lstMember_SelectedValueChanged;
         }
 
         private void fillMemberDataFields()
@@ -54,7 +54,7 @@ namespace PPSDPart2
             
         }
 
-        private void lstMembers_SelectedValueChanged(object sender, EventArgs e)
+        private void lstMember_SelectedValueChanged(object sender, EventArgs e)
         {
             ListBox sndr = (ListBox)sender;
             if(sndr.SelectedValue != null)

@@ -22,7 +22,8 @@ namespace PPSDPart2
 
             //Prepare the tabs
             initialiseMemberData();
-            initaliseProductData();
+            initialiseProductData();
+            initialiseStaffData();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
