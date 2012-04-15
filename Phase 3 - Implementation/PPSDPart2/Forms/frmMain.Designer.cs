@@ -227,6 +227,7 @@
             this.btnMemberApply.TabIndex = 3;
             this.btnMemberApply.Text = "Apply";
             this.btnMemberApply.UseVisualStyleBackColor = true;
+            this.btnMemberApply.Click += new System.EventHandler(this.btnMemberApply_Click);
             // 
             // groupBox3
             // 

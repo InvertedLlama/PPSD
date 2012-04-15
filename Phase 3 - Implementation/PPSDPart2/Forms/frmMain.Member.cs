@@ -16,8 +16,6 @@ namespace PPSDPart2
         {
             bisMemberListBinding = new BindingSource();
 
-
-
             bisMemberListBinding.DataSource = dtbMember;
 
             lstMembers.DataSource = bisMemberListBinding;
@@ -59,7 +57,6 @@ namespace PPSDPart2
 
                 foreach (DataRow rental in memberRentals)
                 {
-                    
                     crntNode = new TreeNode(string.Format("Rental: {0}, Cost: £{1}", rental["rentalID"], rental["totalCost"]));
                     rentalItems = dtbRentalItem.Select("rentalID = " + rental["rentalID"]);
 
@@ -71,9 +68,7 @@ namespace PPSDPart2
                     }
 
                     trvMemberRentals.Nodes.Add(crntNode);
-                }
-                
-                
+                }  
             }
             catch (Exception e)
             {
@@ -113,6 +108,69 @@ namespace PPSDPart2
                 
                 lstProducts.SelectedValue = ((ValueTreeNode)e.Node).Value;
             }
+        }
+
+        /* APPLY BUTTON */
+        private void btnMemberApply_Click(object sender, EventArgs e)
+        {
+            //Check all fields for diff changes against the DB
+            //If any fields are changed, validate
+            //If valid, commit
+
+            string message = string.Empty;
+            DataTable memberData = mDatabase.selectData("SELECT * FROM Member WHERE memberID = " + txtMemberID.Text);
+
+            if (txtMemberName.Text != (string)memberData.Rows[0]["name"])
+            {
+                if (!validateInformation(txtMemberName.Text, "^[A-Za-z -]+$"))
+                    message += "* Name\n";
+            }
+
+            if (txtMemberEmail.Text != (string)memberData.Rows[0]["email"])
+            {
+                if (!validateInformation(txtMemberEmail.Text, "^[0-9A-Za-z]+[@][0-9A-Za-z]+[.][A-Za-z.]+$"))
+                    message += "* Email\n";
+            }
+
+            if (txtMemberTel.Text != (string)memberData.Rows[0]["phoneNumber"])
+            {
+                if (!validateInformation(txtMemberTel.Text, "^[0-9]+$"))
+                    message += "* Telephone Number\n";
+            }
+
+            if (txtMemberMob.Text != (string)memberData.Rows[0]["mobileNumber"].ToString()) //Null attribute, cast to string
+            {
+                if (!validateInformation(txtMemberMob.Text, "^[0-9]+$"))
+                    message += "* Mobile Number\n";
+            }
+
+            if (message != string.Empty)
+                MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                string insertQuery = String.Format(
+                    "UPDATE Member\n" +
+                    "SET name=\"{0}\", address=\"{1}\", phoneNumber=\"{2}\", mobileNumber=\"{3}\", email=\"{4}\"" +
+                    "WHERE memberID ={5}", txtMemberName.Text, txtMemberAddress.Text, txtMemberTel.Text,
+                    txtMemberMob.Text, txtMemberEmail.Text, txtMemberID.Text);
+
+                if (mDatabase.runCommandQuery(insertQuery))
+                {
+                    dtbMember = mDatabase.selectData("SELECT * FROM Member");
+                    initialiseMemberData();
+                    if (lstMembers.Items.Count > 0) //set selected item to first entry:
+                    {
+                        lstMembers.SelectedItem = lstMembers.Items[0];
+                        fillMemberDataFields();
+                    }
+
+
+                    MessageBox.Show("Changes applied successfully");
+                }
+                else
+                    MessageBox.Show("Failed to apply changes");
+            }
+
         }
         
     }

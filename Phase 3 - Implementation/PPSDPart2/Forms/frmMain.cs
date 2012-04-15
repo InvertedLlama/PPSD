@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace PPSDPart2
 {
@@ -52,5 +53,15 @@ namespace PPSDPart2
             //this should fix it            
             Owner.Refresh();
         }
+
+        /// <summary>
+        /// Validates the information given on the form to the DB constraints
+        /// </summary>
+        /// <remarks>More Info: http://gist.github.com/2391792 </remarks>
+        private bool validateInformation(string data, string regexPattern)
+        {
+            return new Regex(regexPattern).IsMatch(data);
+        }
+
     }
 }
