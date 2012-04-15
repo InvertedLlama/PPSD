@@ -10,7 +10,7 @@ namespace PPSDPart2
     //Partial section of frmMain for dealing with the Member tab
     public partial class frmMain
     {
-        DataTable dtbMember;
+        DataTable dtbMember, dtbRental, dtbRentalItem;
         BindingSource bisMemberListBinding;
 
         private void initialiseMemberData()
@@ -18,6 +18,9 @@ namespace PPSDPart2
             bisMemberListBinding = new BindingSource();
 
             dtbMember = mDatabase.selectData("SELECT * FROM Member");
+            dtbRental = mDatabase.selectData("SELECT * FROM Rental");
+            dtbRentalItem = mDatabase.selectData("SELECT * FROM RentalItem");
+
             bisMemberListBinding.DataSource = dtbMember;
 
             lstMembers.DataSource = bisMemberListBinding;
@@ -47,6 +50,31 @@ namespace PPSDPart2
                 txtMemberTel.Text = memberData["phoneNumber"].ToString();
                 txtMemberMob.Text = memberData["mobileNumber"].ToString();
                 txtMemberAddress.Text = memberData["address"].ToString();
+
+                DataRow[] memberRentals = dtbRental.Select("memberID = " + memberData["memberID"]);
+                DataRow[] rentalItems;
+                DataRow productInfo;
+                TreeNode crntNode;
+
+                //Clear out the tree view before adding new values
+                trvMemberRentals.Nodes.Clear();
+
+                foreach (DataRow rental in memberRentals)
+                {
+                    
+                    crntNode = new TreeNode(string.Format("Rental: {0}, Cost: £{1}", rental["rentalID"], rental["totalCost"]));
+                    rentalItems = dtbRentalItem.Select("rentalID = " + rental["rentalID"]);
+
+                    foreach (DataRow rentalItem in rentalItems)
+                    {
+                        productInfo = dtbProduct.Select("productID = " + rentalItem["productID"])[0];
+                        crntNode.Nodes.Add(string.Format("Item: {0}, Cost: £{1}", productInfo["name"] , rentalItem["cost"]));
+                    }
+
+                    trvMemberRentals.Nodes.Add(crntNode);
+                }
+                
+                
             }
             catch (Exception e)
             {
@@ -68,6 +96,7 @@ namespace PPSDPart2
                 txtMemberTel.Text = string.Empty;
                 txtMemberMob.Text = string.Empty;
                 txtMemberAddress.Text = string.Empty;
+                trvMemberRentals.Nodes.Clear();
             }
         }
 

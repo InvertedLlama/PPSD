@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
+using System.Windows.Forms;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 
 
@@ -69,9 +70,15 @@ namespace PPSDPart2
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, sqlConnection);
             DataTable table = new DataTable();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(table);
-
+            try
+            {                
+                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adapter.Fill(table);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
             adapter.Dispose();            
             return table;
         }

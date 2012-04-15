@@ -30,8 +30,6 @@ namespace PPSDPart2
             txtBranchFilter.TextChanged += txtBranchFilter_TextChanged;
 
             lstBranches.ClearSelected();
-
-            Console.WriteLine(dtbBranch.Rows[0]["email"]);
         }
 
         private void fillBranchDataFields()
