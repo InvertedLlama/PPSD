@@ -100,36 +100,35 @@
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.treeView3 = new System.Windows.Forms.TreeView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtBranchAddress = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtBranchEmail = new System.Windows.Forms.TextBox();
+            this.txtBranchTel = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtBranchID = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.txtBranchFilter = new System.Windows.Forms.TextBox();
+            this.btnNewBranch = new System.Windows.Forms.Button();
+            this.lstBranches = new System.Windows.Forms.ListBox();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.txtSupplierAddress = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.txtSupplierEmail = new System.Windows.Forms.TextBox();
+            this.txtSupplierTel = new System.Windows.Forms.TextBox();
+            this.txtSupplierName = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.txtSupplierID = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.treeView4 = new System.Windows.Forms.TreeView();
+            this.trvSupplierProducts = new System.Windows.Forms.TreeView();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.lstSuppliers = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,6 +137,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtSupplierFilter = new System.Windows.Forms.TextBox();
             this.tbcContent.SuspendLayout();
             this.tpgMember.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -854,13 +854,13 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.textBox10);
+            this.groupBox12.Controls.Add(this.txtBranchAddress);
             this.groupBox12.Controls.Add(this.label12);
-            this.groupBox12.Controls.Add(this.textBox11);
-            this.groupBox12.Controls.Add(this.textBox12);
+            this.groupBox12.Controls.Add(this.txtBranchEmail);
+            this.groupBox12.Controls.Add(this.txtBranchTel);
             this.groupBox12.Controls.Add(this.label13);
             this.groupBox12.Controls.Add(this.label14);
-            this.groupBox12.Controls.Add(this.textBox14);
+            this.groupBox12.Controls.Add(this.txtBranchID);
             this.groupBox12.Controls.Add(this.label23);
             this.groupBox12.Location = new System.Drawing.Point(162, 5);
             this.groupBox12.Name = "groupBox12";
@@ -869,13 +869,13 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Branch Information";
             // 
-            // textBox10
+            // txtBranchAddress
             // 
-            this.textBox10.Location = new System.Drawing.Point(60, 48);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(192, 121);
-            this.textBox10.TabIndex = 1;
+            this.txtBranchAddress.Location = new System.Drawing.Point(60, 48);
+            this.txtBranchAddress.Multiline = true;
+            this.txtBranchAddress.Name = "txtBranchAddress";
+            this.txtBranchAddress.Size = new System.Drawing.Size(192, 121);
+            this.txtBranchAddress.TabIndex = 1;
             // 
             // label12
             // 
@@ -886,19 +886,19 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Address:";
             // 
-            // textBox11
+            // txtBranchEmail
             // 
-            this.textBox11.Location = new System.Drawing.Point(299, 19);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(173, 20);
-            this.textBox11.TabIndex = 1;
+            this.txtBranchEmail.Location = new System.Drawing.Point(299, 19);
+            this.txtBranchEmail.Name = "txtBranchEmail";
+            this.txtBranchEmail.Size = new System.Drawing.Size(173, 20);
+            this.txtBranchEmail.TabIndex = 1;
             // 
-            // textBox12
+            // txtBranchTel
             // 
-            this.textBox12.Location = new System.Drawing.Point(299, 45);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(173, 20);
-            this.textBox12.TabIndex = 1;
+            this.txtBranchTel.Location = new System.Drawing.Point(299, 45);
+            this.txtBranchTel.Name = "txtBranchTel";
+            this.txtBranchTel.Size = new System.Drawing.Size(173, 20);
+            this.txtBranchTel.TabIndex = 1;
             // 
             // label13
             // 
@@ -918,12 +918,12 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Tel.:";
             // 
-            // textBox14
+            // txtBranchID
             // 
-            this.textBox14.Location = new System.Drawing.Point(60, 19);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(192, 20);
-            this.textBox14.TabIndex = 1;
+            this.txtBranchID.Location = new System.Drawing.Point(60, 19);
+            this.txtBranchID.Name = "txtBranchID";
+            this.txtBranchID.Size = new System.Drawing.Size(192, 20);
+            this.txtBranchID.TabIndex = 1;
             // 
             // label23
             // 
@@ -936,9 +936,9 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.button6);
-            this.groupBox10.Controls.Add(this.listBox4);
-            this.groupBox10.Controls.Add(this.maskedTextBox4);
+            this.groupBox10.Controls.Add(this.txtBranchFilter);
+            this.groupBox10.Controls.Add(this.btnNewBranch);
+            this.groupBox10.Controls.Add(this.lstBranches);
             this.groupBox10.Location = new System.Drawing.Point(8, 5);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(148, 414);
@@ -946,29 +946,29 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Branches";
             // 
-            // button6
+            // txtBranchFilter
             // 
-            this.button6.Location = new System.Drawing.Point(34, 380);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "New";
-            this.button6.UseVisualStyleBackColor = true;
+            this.txtBranchFilter.Location = new System.Drawing.Point(9, 19);
+            this.txtBranchFilter.Name = "txtBranchFilter";
+            this.txtBranchFilter.Size = new System.Drawing.Size(132, 20);
+            this.txtBranchFilter.TabIndex = 5;
             // 
-            // listBox4
+            // btnNewBranch
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(8, 45);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(133, 329);
-            this.listBox4.TabIndex = 1;
+            this.btnNewBranch.Location = new System.Drawing.Point(34, 380);
+            this.btnNewBranch.Name = "btnNewBranch";
+            this.btnNewBranch.Size = new System.Drawing.Size(75, 23);
+            this.btnNewBranch.TabIndex = 4;
+            this.btnNewBranch.Text = "New";
+            this.btnNewBranch.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox4
+            // lstBranches
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(8, 19);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox4.TabIndex = 0;
+            this.lstBranches.FormattingEnabled = true;
+            this.lstBranches.Location = new System.Drawing.Point(8, 45);
+            this.lstBranches.Name = "lstBranches";
+            this.lstBranches.Size = new System.Drawing.Size(133, 329);
+            this.lstBranches.TabIndex = 1;
             // 
             // tpgSupplier
             // 
@@ -985,15 +985,15 @@
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.textBox21);
+            this.groupBox14.Controls.Add(this.txtSupplierAddress);
             this.groupBox14.Controls.Add(this.label24);
-            this.groupBox14.Controls.Add(this.textBox22);
-            this.groupBox14.Controls.Add(this.textBox24);
-            this.groupBox14.Controls.Add(this.textBox25);
+            this.groupBox14.Controls.Add(this.txtSupplierEmail);
+            this.groupBox14.Controls.Add(this.txtSupplierTel);
+            this.groupBox14.Controls.Add(this.txtSupplierName);
             this.groupBox14.Controls.Add(this.label26);
             this.groupBox14.Controls.Add(this.label27);
             this.groupBox14.Controls.Add(this.label28);
-            this.groupBox14.Controls.Add(this.textBox26);
+            this.groupBox14.Controls.Add(this.txtSupplierID);
             this.groupBox14.Controls.Add(this.label29);
             this.groupBox14.Location = new System.Drawing.Point(164, 6);
             this.groupBox14.Name = "groupBox14";
@@ -1002,13 +1002,13 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Supplier Information";
             // 
-            // textBox21
+            // txtSupplierAddress
             // 
-            this.textBox21.Location = new System.Drawing.Point(60, 71);
-            this.textBox21.Multiline = true;
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(192, 121);
-            this.textBox21.TabIndex = 1;
+            this.txtSupplierAddress.Location = new System.Drawing.Point(60, 71);
+            this.txtSupplierAddress.Multiline = true;
+            this.txtSupplierAddress.Name = "txtSupplierAddress";
+            this.txtSupplierAddress.Size = new System.Drawing.Size(192, 121);
+            this.txtSupplierAddress.TabIndex = 1;
             // 
             // label24
             // 
@@ -1019,26 +1019,26 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Address:";
             // 
-            // textBox22
+            // txtSupplierEmail
             // 
-            this.textBox22.Location = new System.Drawing.Point(299, 19);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(173, 20);
-            this.textBox22.TabIndex = 1;
+            this.txtSupplierEmail.Location = new System.Drawing.Point(299, 19);
+            this.txtSupplierEmail.Name = "txtSupplierEmail";
+            this.txtSupplierEmail.Size = new System.Drawing.Size(173, 20);
+            this.txtSupplierEmail.TabIndex = 1;
             // 
-            // textBox24
+            // txtSupplierTel
             // 
-            this.textBox24.Location = new System.Drawing.Point(299, 45);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(173, 20);
-            this.textBox24.TabIndex = 1;
+            this.txtSupplierTel.Location = new System.Drawing.Point(299, 45);
+            this.txtSupplierTel.Name = "txtSupplierTel";
+            this.txtSupplierTel.Size = new System.Drawing.Size(173, 20);
+            this.txtSupplierTel.TabIndex = 1;
             // 
-            // textBox25
+            // txtSupplierName
             // 
-            this.textBox25.Location = new System.Drawing.Point(60, 45);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(192, 20);
-            this.textBox25.TabIndex = 1;
+            this.txtSupplierName.Location = new System.Drawing.Point(60, 45);
+            this.txtSupplierName.Name = "txtSupplierName";
+            this.txtSupplierName.Size = new System.Drawing.Size(192, 20);
+            this.txtSupplierName.TabIndex = 1;
             // 
             // label26
             // 
@@ -1067,12 +1067,15 @@
             this.label28.TabIndex = 0;
             this.label28.Text = "Name:";
             // 
-            // textBox26
+            // txtSupplierID
             // 
-            this.textBox26.Location = new System.Drawing.Point(60, 19);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(192, 20);
-            this.textBox26.TabIndex = 1;
+            this.txtSupplierID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtSupplierID.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtSupplierID.Location = new System.Drawing.Point(60, 19);
+            this.txtSupplierID.Name = "txtSupplierID";
+            this.txtSupplierID.ReadOnly = true;
+            this.txtSupplierID.Size = new System.Drawing.Size(192, 20);
+            this.txtSupplierID.TabIndex = 1;
             // 
             // label29
             // 
@@ -1085,7 +1088,7 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.treeView4);
+            this.groupBox11.Controls.Add(this.trvSupplierProducts);
             this.groupBox11.Location = new System.Drawing.Point(162, 204);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(479, 216);
@@ -1093,19 +1096,19 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Products";
             // 
-            // treeView4
+            // trvSupplierProducts
             // 
-            this.treeView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView4.Location = new System.Drawing.Point(3, 16);
-            this.treeView4.Name = "treeView4";
-            this.treeView4.Size = new System.Drawing.Size(473, 197);
-            this.treeView4.TabIndex = 0;
+            this.trvSupplierProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvSupplierProducts.Location = new System.Drawing.Point(3, 16);
+            this.trvSupplierProducts.Name = "trvSupplierProducts";
+            this.trvSupplierProducts.Size = new System.Drawing.Size(473, 197);
+            this.trvSupplierProducts.TabIndex = 0;
             // 
             // groupBox15
             // 
+            this.groupBox15.Controls.Add(this.txtSupplierFilter);
             this.groupBox15.Controls.Add(this.button3);
-            this.groupBox15.Controls.Add(this.listBox5);
-            this.groupBox15.Controls.Add(this.maskedTextBox5);
+            this.groupBox15.Controls.Add(this.lstSuppliers);
             this.groupBox15.Location = new System.Drawing.Point(8, 6);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(148, 414);
@@ -1122,20 +1125,13 @@
             this.button3.Text = "New";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // listBox5
+            // lstSuppliers
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(8, 45);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(133, 329);
-            this.listBox5.TabIndex = 1;
-            // 
-            // maskedTextBox5
-            // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(8, 19);
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox5.TabIndex = 0;
+            this.lstSuppliers.FormattingEnabled = true;
+            this.lstSuppliers.Location = new System.Drawing.Point(8, 45);
+            this.lstSuppliers.Name = "lstSuppliers";
+            this.lstSuppliers.Size = new System.Drawing.Size(133, 329);
+            this.lstSuppliers.TabIndex = 1;
             // 
             // panel1
             // 
@@ -1198,6 +1194,13 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // txtSupplierFilter
+            // 
+            this.txtSupplierFilter.Location = new System.Drawing.Point(10, 19);
+            this.txtSupplierFilter.Name = "txtSupplierFilter";
+            this.txtSupplierFilter.Size = new System.Drawing.Size(132, 20);
+            this.txtSupplierFilter.TabIndex = 5;
             // 
             // frmMain
             // 
@@ -1317,43 +1320,41 @@
         private System.Windows.Forms.TextBox txtStaffPassword;
         private System.Windows.Forms.TreeView trvMemberRentals;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.Button btnNewBranch;
+        private System.Windows.Forms.ListBox lstBranches;
         private System.Windows.Forms.LinkLabel lblSupplierLink;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cboSupplier;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TreeView treeView2;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtBranchAddress;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtBranchEmail;
+        private System.Windows.Forms.TextBox txtBranchTel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtBranchID;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtMemberMob;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TreeView treeView3;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.TreeView treeView4;
+        private System.Windows.Forms.TreeView trvSupplierProducts;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.ListBox lstSuppliers;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox txtSupplierAddress;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox txtSupplierEmail;
+        private System.Windows.Forms.TextBox txtSupplierTel;
+        private System.Windows.Forms.TextBox txtSupplierName;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox txtSupplierID;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button btnMemberCancel;
         private System.Windows.Forms.Button btnMemberApply;
@@ -1362,5 +1363,7 @@
         private System.Windows.Forms.TextBox txtStaffFilter;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox cboStaffBranch;
+        private System.Windows.Forms.TextBox txtBranchFilter;
+        private System.Windows.Forms.TextBox txtSupplierFilter;
     }
 }

@@ -24,6 +24,8 @@ namespace PPSDPart2
             initialiseMemberData();
             initialiseProductData();
             initialiseStaffData();
+            initialiseBranchData();
+            initialiseSupplierData();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
