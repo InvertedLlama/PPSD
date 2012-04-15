@@ -27,6 +27,7 @@ namespace PPSDPart2
             //register the event handler method for a new list item being selected manually.
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstBranches.SelectedValueChanged += lstBranches_SelectedValueChanged;
+            txtBranchFilter.TextChanged += txtBranchFilter_TextChanged;
 
             lstBranches.ClearSelected();
 
@@ -59,6 +60,13 @@ namespace PPSDPart2
             ListBox sndr = (ListBox)sender;
             if (sndr.SelectedValue != null)
                 fillBranchDataFields();
+            else
+            {
+                txtBranchID.Text = string.Empty;
+                txtBranchAddress.Text = string.Empty;
+                txtBranchTel.Text = string.Empty;
+                txtBranchEmail.Text = string.Empty;
+            }
         }
 
         private void txtBranchFilter_TextChanged(object sender, EventArgs e)

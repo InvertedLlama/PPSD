@@ -23,7 +23,7 @@ namespace PPSDPart2
             lstMembers.DataSource = bisMemberListBinding;
                         
             lstMembers.ValueMember = dtbMember.Columns[0].ColumnName;
-            lstMembers.DisplayMember = dtbMember.Columns[0].ColumnName;
+            lstMembers.DisplayMember = "name";
 
             lstMembers.ClearSelected();
 
@@ -31,6 +31,7 @@ namespace PPSDPart2
             //register the event handler method for a new list item being selected manually.
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstMembers.SelectedValueChanged += lstMember_SelectedValueChanged;
+            txtMembersFilter.TextChanged += txtMembersFilter_TextChanged;
         }
 
         private void fillMemberDataFields()
@@ -57,14 +58,23 @@ namespace PPSDPart2
         private void lstMember_SelectedValueChanged(object sender, EventArgs e)
         {
             ListBox sndr = (ListBox)sender;
-            if(sndr.SelectedValue != null)
+            if (sndr.SelectedValue != null)
                 fillMemberDataFields();
+            else
+            {
+                txtMemberID.Text = string.Empty;
+                txtMemberEmail.Text = string.Empty;
+                txtMemberName.Text = string.Empty;
+                txtMemberTel.Text = string.Empty;
+                txtMemberMob.Text = string.Empty;
+                txtMemberAddress.Text = string.Empty;
+            }
         }
 
         private void txtMembersFilter_TextChanged(object sender, EventArgs e)
         {
             TextBox sndr = (TextBox)sender;
-            bisMemberListBinding.Filter = "memberID + '' LIKE '%" + sndr.Text + "%'";    
+            bisMemberListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";    
         }
         
     }

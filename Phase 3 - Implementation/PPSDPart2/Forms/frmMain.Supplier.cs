@@ -58,6 +58,14 @@ namespace PPSDPart2
             ListBox sndr = (ListBox)sender;
             if (sndr.SelectedValue != null)
                 fillSupplierDataFields();
+            else
+            {
+                txtSupplierID.Text = string.Empty;
+                txtSupplierEmail.Text = string.Empty;
+                txtSupplierName.Text = string.Empty;
+                txtSupplierTel.Text = string.Empty;
+                txtSupplierAddress.Text = string.Empty;
+            }
         }
 
         private void txtSupplierFilter_TextChanged(object sender, EventArgs e)

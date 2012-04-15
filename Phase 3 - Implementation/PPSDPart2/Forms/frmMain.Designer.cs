@@ -60,9 +60,11 @@
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.txtProductID = new System.Windows.Forms.TextBox();
             this.txtProductRentalFee = new System.Windows.Forms.TextBox();
+            this.txtProductCost = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -127,6 +129,7 @@
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.trvSupplierProducts = new System.Windows.Forms.TreeView();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.txtSupplierFilter = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.lstSuppliers = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -137,7 +140,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtSupplierFilter = new System.Windows.Forms.TextBox();
             this.tbcContent.SuspendLayout();
             this.tpgMember.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -367,7 +369,6 @@
             this.txtMembersFilter.Name = "txtMembersFilter";
             this.txtMembersFilter.Size = new System.Drawing.Size(133, 20);
             this.txtMembersFilter.TabIndex = 5;
-            this.txtMembersFilter.TextChanged += new System.EventHandler(this.txtMembersFilter_TextChanged);
             // 
             // btnNewMember
             // 
@@ -424,9 +425,11 @@
             this.groupBox5.Controls.Add(this.cboCategory);
             this.groupBox5.Controls.Add(this.txtProductID);
             this.groupBox5.Controls.Add(this.txtProductRentalFee);
+            this.groupBox5.Controls.Add(this.txtProductCost);
             this.groupBox5.Controls.Add(this.txtProductName);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label10);
+            this.groupBox5.Controls.Add(this.label30);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.label7);
@@ -440,7 +443,7 @@
             // lblSupplierLink
             // 
             this.lblSupplierLink.AutoSize = true;
-            this.lblSupplierLink.Location = new System.Drawing.Point(402, 48);
+            this.lblSupplierLink.Location = new System.Drawing.Point(402, 127);
             this.lblSupplierLink.Name = "lblSupplierLink";
             this.lblSupplierLink.Size = new System.Drawing.Size(71, 13);
             this.lblSupplierLink.TabIndex = 4;
@@ -451,9 +454,9 @@
             // 
             this.cboSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSupplier.FormattingEnabled = true;
-            this.cboSupplier.Location = new System.Drawing.Point(314, 19);
+            this.cboSupplier.Location = new System.Drawing.Point(349, 98);
             this.cboSupplier.Name = "cboSupplier";
-            this.cboSupplier.Size = new System.Drawing.Size(159, 21);
+            this.cboSupplier.Size = new System.Drawing.Size(121, 21);
             this.cboSupplier.TabIndex = 3;
             // 
             // cboCategory
@@ -482,6 +485,13 @@
             this.txtProductRentalFee.Size = new System.Drawing.Size(121, 20);
             this.txtProductRentalFee.TabIndex = 1;
             // 
+            // txtProductCost
+            // 
+            this.txtProductCost.Location = new System.Drawing.Point(349, 75);
+            this.txtProductCost.Name = "txtProductCost";
+            this.txtProductCost.Size = new System.Drawing.Size(121, 20);
+            this.txtProductCost.TabIndex = 1;
+            // 
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(78, 72);
@@ -492,7 +502,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(260, 22);
+            this.label11.Location = new System.Drawing.Point(295, 101);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 13);
             this.label11.TabIndex = 0;
@@ -506,6 +516,15 @@
             this.label10.Size = new System.Drawing.Size(62, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "Rental Fee:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(312, 78);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(31, 13);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Cost:";
             // 
             // label8
             // 
@@ -920,8 +939,11 @@
             // 
             // txtBranchID
             // 
+            this.txtBranchID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtBranchID.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtBranchID.Location = new System.Drawing.Point(60, 19);
             this.txtBranchID.Name = "txtBranchID";
+            this.txtBranchID.ReadOnly = true;
             this.txtBranchID.Size = new System.Drawing.Size(192, 20);
             this.txtBranchID.TabIndex = 1;
             // 
@@ -1116,6 +1138,13 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Suppliers";
             // 
+            // txtSupplierFilter
+            // 
+            this.txtSupplierFilter.Location = new System.Drawing.Point(10, 19);
+            this.txtSupplierFilter.Name = "txtSupplierFilter";
+            this.txtSupplierFilter.Size = new System.Drawing.Size(132, 20);
+            this.txtSupplierFilter.TabIndex = 5;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(34, 380);
@@ -1194,13 +1223,6 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // txtSupplierFilter
-            // 
-            this.txtSupplierFilter.Location = new System.Drawing.Point(10, 19);
-            this.txtSupplierFilter.Name = "txtSupplierFilter";
-            this.txtSupplierFilter.Size = new System.Drawing.Size(132, 20);
-            this.txtSupplierFilter.TabIndex = 5;
             // 
             // frmMain
             // 
@@ -1365,5 +1387,7 @@
         private System.Windows.Forms.ComboBox cboStaffBranch;
         private System.Windows.Forms.TextBox txtBranchFilter;
         private System.Windows.Forms.TextBox txtSupplierFilter;
+        private System.Windows.Forms.TextBox txtProductCost;
+        private System.Windows.Forms.Label label30;
     }
 }

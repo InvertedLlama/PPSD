@@ -23,7 +23,7 @@ namespace PPSDPart2
 
             lstProducts.DataSource = bisProductListBinding;
             lstProducts.ValueMember = dtbProduct.Columns[0].ColumnName;
-            lstProducts.DisplayMember = dtbProduct.Columns[0].ColumnName;
+            lstProducts.DisplayMember = "name";
 
             lstProducts.ClearSelected();
 
@@ -43,6 +43,15 @@ namespace PPSDPart2
             ListBox sndr = (ListBox)sender;
             if (sndr.SelectedValue != null)
                 fillProductDataFields();
+            else
+            {
+                txtProductID.Text = string.Empty;
+                txtProductName.Text = string.Empty;
+                txtProductRentalFee.Text = string.Empty;
+                txtProductCost.Text = string.Empty;
+
+                cboCategory.SelectedIndex = -1;
+            }
         }
 
         private void fillProductDataFields()
@@ -51,6 +60,9 @@ namespace PPSDPart2
             DataRow productData = dtbProduct.Select("productID + '' = '" + lstProducts.SelectedValue + "'")[0];
 
             txtProductID.Text = productData["productID"].ToString();
+            txtProductName.Text = productData["name"].ToString();
+            txtProductRentalFee.Text = productData["rentalFee"].ToString();
+            txtProductCost.Text = productData["cost"].ToString();
 
             foreach (DataRowView r in cboCategory.Items)
             {               
@@ -59,15 +71,12 @@ namespace PPSDPart2
                     cboCategory.SelectedIndex = cboCategory.Items.IndexOf(r);
                 }
             }
-
-            txtProductName.Text = productData["name"].ToString();
-            txtProductRentalFee.Text = productData["rentalFee"].ToString();
         }
 
         private void txtProductsFilter_TextChanged(object sender, EventArgs e)
         {
             TextBox sndr = (TextBox)sender;
-            bisProductListBinding.Filter = "productID + '' LIKE '%" + sndr.Text + "%'";
+            bisProductListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";
         }
     }
 }

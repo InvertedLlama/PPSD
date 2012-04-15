@@ -22,11 +22,12 @@ namespace PPSDPart2
             lstStaff.DataSource = bisStaffListBinding;
 
             lstStaff.ValueMember = dtbStaff.Columns[0].ColumnName;
-            lstStaff.DisplayMember = dtbStaff.Columns[0].ColumnName;
+            lstStaff.DisplayMember = "name";
 
             //register the event handler method for a new list item being selected manually.
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstStaff.SelectedValueChanged += lstStaff_SelectedValueChanged;
+            txtStaffFilter.TextChanged += txtStaffFilter_TextChanged;
 
             lstStaff.ClearSelected();
         }
@@ -63,12 +64,24 @@ namespace PPSDPart2
             ListBox sndr = (ListBox)sender;
             if (sndr.SelectedValue != null)
                 fillStaffDataFields();
+            else
+            {
+                txtStaffID.Text = string.Empty;
+                txtStaffName.Text = string.Empty;
+                txtStaffAddress.Text = string.Empty;
+                txtStaffEmail.Text = string.Empty;
+                txtStaffPassword.Text = string.Empty;
+                txtStaffTel.Text = string.Empty;
+                txtStaffUsername.Text = string.Empty;
+                cboStaffBranch.SelectedIndex = -1;
+                cboStaffRole.SelectedIndex = -1;
+            }
         }
 
         private void txtStaffFilter_TextChanged(object sender, EventArgs e)
         {
             TextBox sndr = (TextBox)sender;
-            bisStaffListBinding.Filter = "staffID + '' LIKE '%" + sndr.Text + "%'";
+            bisStaffListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";
         }
     }
 }
