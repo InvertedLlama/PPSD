@@ -35,6 +35,7 @@ namespace PPSDPart2
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstMembers.SelectedValueChanged += lstMember_SelectedValueChanged;
             txtMembersFilter.TextChanged += txtMembersFilter_TextChanged;
+            trvMemberRentals.NodeMouseDoubleClick += trvMemberRentals_NodeMouseDoubleClick;
         }
 
         private void fillMemberDataFields()
@@ -68,7 +69,8 @@ namespace PPSDPart2
                     foreach (DataRow rentalItem in rentalItems)
                     {
                         productInfo = dtbProduct.Select("productID = " + rentalItem["productID"])[0];
-                        crntNode.Nodes.Add(string.Format("Item: {0}, Cost: £{1}", productInfo["name"] , rentalItem["cost"]));
+                        crntNode.Nodes.Add(new VerboseTreeNode(string.Format("Item: {0}, Cost: £{1}", productInfo["name"], rentalItem["cost"]), 
+                                                            productInfo["name"].ToString()));
                     }
 
                     trvMemberRentals.Nodes.Add(crntNode);
@@ -104,6 +106,15 @@ namespace PPSDPart2
         {
             TextBox sndr = (TextBox)sender;
             bisMemberListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";    
+        }
+
+        private void trvMemberRentals_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.GetType() == typeof(VerboseTreeNode))
+            {
+                tbcContent.SelectTab("tpgProduct");
+                txtProductFilter.Text = ((VerboseTreeNode)e.Node).Message;
+            }
         }
         
     }

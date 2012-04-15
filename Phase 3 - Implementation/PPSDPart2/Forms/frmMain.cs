@@ -36,6 +36,5 @@ namespace PPSDPart2
             //this should fix it            
             Owner.Refresh();
         }
-
     }
 }
