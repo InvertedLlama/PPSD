@@ -10,6 +10,7 @@ namespace PPSDPart2
     //Partial section of frmMain for dealing with the Member tab
     public partial class frmMain
     {
+        DataRow memberData;
         BindingSource bisMemberListBinding;
 
         private void initialiseMemberData()
@@ -38,7 +39,7 @@ namespace PPSDPart2
             try
             {
                 //Get the data. MemberIDs are unique so unless something has gone horribly wrong there should only be one row
-                DataRow memberData = dtbMember.Select("memberID + '' = '" + lstMembers.SelectedValue + "'")[0];
+                memberData = dtbMember.Select("memberID + '' = '" + lstMembers.SelectedValue + "'")[0];
                                 
                 txtMemberID.Text = memberData["memberID"].ToString();
                 txtMemberEmail.Text = memberData["email"].ToString();
@@ -110,7 +111,7 @@ namespace PPSDPart2
             }
         }
 
-        /* APPLY BUTTON */
+
         private void btnMemberApply_Click(object sender, EventArgs e)
         {
             //Check all fields for diff changes against the DB
@@ -118,29 +119,28 @@ namespace PPSDPart2
             //If valid, commit
 
             string message = string.Empty;
-            DataTable memberData = mDatabase.selectData("SELECT * FROM Member WHERE memberID = " + txtMemberID.Text);
 
-            if (txtMemberName.Text != (string)memberData.Rows[0]["name"])
+            if (txtMemberName.Text != memberData["name"].ToString())
             {
-                if (!validateInformation(txtMemberName.Text, "^[A-Za-z -]+$"))
+                if (!validateInformation(txtMemberName.Text, RegexPattern.NameString))
                     message += "* Name\n";
             }
 
-            if (txtMemberEmail.Text != (string)memberData.Rows[0]["email"])
+            if (txtMemberEmail.Text != memberData["email"].ToString())
             {
-                if (!validateInformation(txtMemberEmail.Text, "^[0-9A-Za-z]+[@][0-9A-Za-z]+[.][A-Za-z.]+$"))
+                if (!validateInformation(txtMemberEmail.Text, RegexPattern.EmailString))
                     message += "* Email\n";
             }
 
-            if (txtMemberTel.Text != (string)memberData.Rows[0]["phoneNumber"])
+            if (txtMemberTel.Text != memberData["phoneNumber"].ToString())
             {
-                if (!validateInformation(txtMemberTel.Text, "^[0-9]+$"))
+                if (!validateInformation(txtMemberTel.Text, RegexPattern.NumericalString))
                     message += "* Telephone Number\n";
             }
 
-            if (txtMemberMob.Text != (string)memberData.Rows[0]["mobileNumber"].ToString()) //Null attribute, cast to string
+            if (txtMemberMob.Text != memberData["mobileNumber"].ToString())
             {
-                if (!validateInformation(txtMemberMob.Text, "^[0-9]+$"))
+                if (!validateInformation(txtMemberMob.Text, RegexPattern.NumericalString))
                     message += "* Mobile Number\n";
             }
 
@@ -148,6 +148,7 @@ namespace PPSDPart2
                 MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
+                //No errors, apply changes:
                 string insertQuery = String.Format(
                     "UPDATE Member\n" +
                     "SET name=\"{0}\", address=\"{1}\", phoneNumber=\"{2}\", mobileNumber=\"{3}\", email=\"{4}\"" +
@@ -156,6 +157,7 @@ namespace PPSDPart2
 
                 if (mDatabase.runCommandQuery(insertQuery))
                 {
+                    //changes applied! Reload data in GUI:
                     dtbMember = mDatabase.selectData("SELECT * FROM Member");
                     initialiseMemberData();
                     if (lstMembers.Items.Count > 0) //set selected item to first entry:
@@ -163,8 +165,6 @@ namespace PPSDPart2
                         lstMembers.SelectedItem = lstMembers.Items[0];
                         fillMemberDataFields();
                     }
-
-
                     MessageBox.Show("Changes applied successfully");
                 }
                 else
@@ -172,8 +172,11 @@ namespace PPSDPart2
             }
 
         }
-        
-    }
 
-    
+        private void btnMemberCancel_Click(object sender, EventArgs e)
+        {
+            //User cancelled changes, reload current record from last DB pull:
+            fillMemberDataFields();
+        }
+    }
 }

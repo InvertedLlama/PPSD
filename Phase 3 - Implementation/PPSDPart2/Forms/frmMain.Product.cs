@@ -9,6 +9,7 @@ namespace PPSDPart2
 {
     public partial class frmMain
     {
+        DataRow productData;
         BindingSource bisProductListBinding, bisCategoryBoxBinding, bisSupplierBoxBinding;
 
         public void initialiseProductData()
@@ -64,7 +65,7 @@ namespace PPSDPart2
         private void fillProductDataFields()
         {
             //Get the data. IDs are unique so unless something has gone horribly wrong there should only be one row
-            DataRow productData = dtbProduct.Select("productID + '' = '" + lstProducts.SelectedValue + "'")[0];
+            productData = dtbProduct.Select("productID + '' = '" + lstProducts.SelectedValue + "'")[0];
 
             txtProductID.Text = productData["productID"].ToString();
             txtProductName.Text = productData["name"].ToString();
@@ -112,5 +113,53 @@ namespace PPSDPart2
             }
         }
 
+        private void btnProductApply_Click(object sender, EventArgs e)
+        {
+            string message = string.Empty;
+
+            if (txtProductName.Text != productData["name"].ToString())
+            {
+                if (!validateInformation(txtProductName.Text, RegexPattern.NameString))
+                    message += "* Product Name\n";
+            }
+
+            if (txtProductRentalFee.Text != productData["rentalFee"].ToString())
+            {
+                if (!validateInformation(txtProductRentalFee.Text, RegexPattern.PriceString))
+                    message += "* Rental Fee\n";
+            }
+
+            if (txtProductCost.Text != productData["cost"].ToString())
+            {
+                if (!validateInformation(txtProductCost.Text, RegexPattern.PriceString))
+                    message += "* Cost\n";
+            }
+
+            if (message != string.Empty)
+                MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                string insertQuery = String.Format(
+                    "UPDATE Product\n" +
+                    "SET supplierID=\"{0}\", categoryID=\"{1}\", name=\"{2}\", rentalFee=\"{3}\", cost=\"{4}\"" +
+                    "WHERE productID=\"{5}\"", cboSupplier.SelectedValue, cboCategory.SelectedValue,
+                    txtProductName.Text, txtProductRentalFee.Text,txtProductCost.Text, txtProductID.Text);
+
+                if (mDatabase.runCommandQuery(insertQuery))
+                {
+                    //changes applied! Reload data in GUI:
+                    dtbProduct = mDatabase.selectData("SELECT * FROM Product");
+                    initialiseProductData();
+                    if (lstProducts.Items.Count > 0) //set selected item to first entry:
+                    {
+                        lstProducts.SelectedItem = lstProducts.Items[0];
+                        fillProductDataFields();
+                    }
+                    MessageBox.Show("Changes applied successfully");
+                }
+                else
+                    MessageBox.Show("Failed to apply changes");
+            }
+        }
     }
 }

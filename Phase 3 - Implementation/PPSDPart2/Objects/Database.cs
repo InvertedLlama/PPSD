@@ -92,8 +92,9 @@ namespace PPSDPart2
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show(e.Message);
                 return false;
             }
 

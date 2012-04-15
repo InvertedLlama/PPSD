@@ -58,10 +58,34 @@ namespace PPSDPart2
         /// Validates the information given on the form to the DB constraints
         /// </summary>
         /// <remarks>More Info: http://gist.github.com/2391792 </remarks>
-        private bool validateInformation(string data, string regexPattern)
+        private bool validateInformation(string data, RegexPattern regexPattern)
         {
-            return new Regex(regexPattern).IsMatch(data);
-        }
+            string pattern = string.Empty;
+            switch (regexPattern)
+            {
+                case RegexPattern.NameString:
+                    pattern = "^[A-Za-z -]+$";
+                    break;
+                case RegexPattern.NumericalString:
+                    pattern = "^[0-9]+$";
+                    break;
+                case RegexPattern.EmailString:
+                    pattern = "^[0-9A-Za-z]+[@][0-9A-Za-z]+[.][A-Za-z.]+$";
+                    break;
+                case RegexPattern.PriceString:
+                    pattern = @"^[0-9]+\.[0-9]+$";
+                    break;
+            }
 
+            return new Regex(pattern).IsMatch(data);
+        }
     }
+
+    enum RegexPattern
+    {
+        NameString,
+        NumericalString,
+        EmailString,
+        PriceString,
+    };
 }

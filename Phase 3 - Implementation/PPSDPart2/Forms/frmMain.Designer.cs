@@ -54,7 +54,7 @@
             this.lstMembers = new System.Windows.Forms.ListBox();
             this.tpgProduct = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnProductApply = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.trvProductStock = new System.Windows.Forms.TreeView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -218,6 +218,7 @@
             this.btnMemberCancel.TabIndex = 3;
             this.btnMemberCancel.Text = "Cancel";
             this.btnMemberCancel.UseVisualStyleBackColor = true;
+            this.btnMemberCancel.Click += new System.EventHandler(this.btnMemberCancel_Click);
             // 
             // btnMemberApply
             // 
@@ -407,7 +408,7 @@
             // tpgProduct
             // 
             this.tpgProduct.Controls.Add(this.button1);
-            this.tpgProduct.Controls.Add(this.button2);
+            this.tpgProduct.Controls.Add(this.btnProductApply);
             this.tpgProduct.Controls.Add(this.groupBox6);
             this.tpgProduct.Controls.Add(this.groupBox5);
             this.tpgProduct.Controls.Add(this.groupBox4);
@@ -428,14 +429,15 @@
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnProductApply
             // 
-            this.button2.Location = new System.Drawing.Point(162, 386);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Apply";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnProductApply.Location = new System.Drawing.Point(162, 386);
+            this.btnProductApply.Name = "btnProductApply";
+            this.btnProductApply.Size = new System.Drawing.Size(75, 23);
+            this.btnProductApply.TabIndex = 4;
+            this.btnProductApply.Text = "Apply";
+            this.btnProductApply.UseVisualStyleBackColor = true;
+            this.btnProductApply.Click += new System.EventHandler(this.btnProductApply_Click);
             // 
             // groupBox6
             // 
@@ -1456,7 +1458,7 @@
         private System.Windows.Forms.TextBox txtProductCost;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnProductApply;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
