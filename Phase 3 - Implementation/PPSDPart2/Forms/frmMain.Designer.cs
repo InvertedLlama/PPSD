@@ -30,6 +30,7 @@
         {
             this.tbcContent = new System.Windows.Forms.TabControl();
             this.tpgMember = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.btnMemberCancel = new System.Windows.Forms.Button();
             this.btnMemberApply = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -52,8 +53,10 @@
             this.btnNewMember = new System.Windows.Forms.Button();
             this.lstMembers = new System.Windows.Forms.ListBox();
             this.tpgProduct = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.trvProductStock = new System.Windows.Forms.TreeView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblSupplierLink = new System.Windows.Forms.LinkLabel();
             this.cboSupplier = new System.Windows.Forms.ComboBox();
@@ -99,6 +102,9 @@
             this.btnStaffNew = new System.Windows.Forms.Button();
             this.lstStaff = new System.Windows.Forms.ListBox();
             this.tpgBranch = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.treeView3 = new System.Windows.Forms.TreeView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -181,6 +187,7 @@
             // 
             // tpgMember
             // 
+            this.tpgMember.Controls.Add(this.button7);
             this.tpgMember.Controls.Add(this.btnMemberCancel);
             this.tpgMember.Controls.Add(this.btnMemberApply);
             this.tpgMember.Controls.Add(this.groupBox3);
@@ -193,6 +200,15 @@
             this.tpgMember.TabIndex = 0;
             this.tpgMember.Text = "Member";
             this.tpgMember.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(563, 386);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "New Rental";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // btnMemberCancel
             // 
@@ -389,6 +405,8 @@
             // 
             // tpgProduct
             // 
+            this.tpgProduct.Controls.Add(this.button1);
+            this.tpgProduct.Controls.Add(this.button2);
             this.tpgProduct.Controls.Add(this.groupBox6);
             this.tpgProduct.Controls.Add(this.groupBox5);
             this.tpgProduct.Controls.Add(this.groupBox4);
@@ -400,23 +418,41 @@
             this.tpgProduct.Text = "Product";
             this.tpgProduct.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(243, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(162, 386);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Apply";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.treeView2);
+            this.groupBox6.Controls.Add(this.trvProductStock);
             this.groupBox6.Location = new System.Drawing.Point(162, 159);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(473, 260);
+            this.groupBox6.Size = new System.Drawing.Size(473, 221);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Stock";
             // 
-            // treeView2
+            // trvProductStock
             // 
-            this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView2.Location = new System.Drawing.Point(3, 16);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(467, 241);
-            this.treeView2.TabIndex = 0;
+            this.trvProductStock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvProductStock.Location = new System.Drawing.Point(3, 16);
+            this.trvProductStock.Name = "trvProductStock";
+            this.trvProductStock.Size = new System.Drawing.Size(467, 202);
+            this.trvProductStock.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -843,6 +879,9 @@
             // 
             // tpgBranch
             // 
+            this.tpgBranch.Controls.Add(this.button6);
+            this.tpgBranch.Controls.Add(this.button4);
+            this.tpgBranch.Controls.Add(this.button5);
             this.tpgBranch.Controls.Add(this.groupBox13);
             this.tpgBranch.Controls.Add(this.groupBox12);
             this.tpgBranch.Controls.Add(this.groupBox10);
@@ -853,22 +892,48 @@
             this.tpgBranch.Text = "Branch";
             this.tpgBranch.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(563, 385);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Add Stock";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(243, 385);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Cancel";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(162, 385);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Apply";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.treeView3);
             this.groupBox13.Location = new System.Drawing.Point(162, 187);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(479, 232);
+            this.groupBox13.Size = new System.Drawing.Size(479, 192);
             this.groupBox13.TabIndex = 5;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Products";
             // 
             // treeView3
             // 
-            this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView3.Location = new System.Drawing.Point(3, 16);
             this.treeView3.Name = "treeView3";
-            this.treeView3.Size = new System.Drawing.Size(473, 213);
+            this.treeView3.Size = new System.Drawing.Size(473, 173);
             this.treeView3.TabIndex = 0;
             // 
             // groupBox12
@@ -1348,7 +1413,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cboSupplier;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.TreeView trvProductStock;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox txtBranchAddress;
         private System.Windows.Forms.Label label12;
@@ -1389,5 +1454,11 @@
         private System.Windows.Forms.TextBox txtSupplierFilter;
         private System.Windows.Forms.TextBox txtProductCost;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

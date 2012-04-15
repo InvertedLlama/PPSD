@@ -102,7 +102,7 @@
     </Compile>
     <Compile Include="Objects\Database.cs" />
     <Compile Include="Objects\User.cs" />
-    <Compile Include="Objects\VerboseTreeNode.cs" />
+    <Compile Include="Objects\ValueTreeNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmLogin.resx">

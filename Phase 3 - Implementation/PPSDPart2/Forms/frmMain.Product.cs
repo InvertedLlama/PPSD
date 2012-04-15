@@ -9,17 +9,15 @@ namespace PPSDPart2
 {
     public partial class frmMain
     {
-        DataTable dtbProduct, dtbCategory;
-        BindingSource bisProductListBinding, bisCategoryBoxBinding;
+        BindingSource bisProductListBinding, bisCategoryBoxBinding, bisSupplierBoxBinding;
 
         public void initialiseProductData()
         {
             bisProductListBinding = new BindingSource();
             bisCategoryBoxBinding = new BindingSource();
+            bisSupplierBoxBinding = new BindingSource();
 
-            dtbProduct = mDatabase.selectData("SELECT * FROM Product");
             bisProductListBinding.DataSource = dtbProduct;
-
 
             lstProducts.DataSource = bisProductListBinding;
             lstProducts.ValueMember = dtbProduct.Columns[0].ColumnName;
@@ -27,15 +25,21 @@ namespace PPSDPart2
 
             lstProducts.ClearSelected();
 
-            lstProducts.SelectedValueChanged += lstProducts_SelectedValueChanged;
-            txtProductFilter.TextChanged += txtProductsFilter_TextChanged;
-
-
-            dtbCategory = mDatabase.selectData("SELECT * FROM Category");
             bisCategoryBoxBinding.DataSource = dtbCategory;
             cboCategory.DataSource = bisCategoryBoxBinding;
             cboCategory.DisplayMember = "name";
             cboCategory.ValueMember = "categoryID";
+
+            bisSupplierBoxBinding.DataSource = dtbSupplier;
+            cboSupplier.DataSource = bisSupplierBoxBinding;
+            cboSupplier.DisplayMember = "name";
+            cboSupplier.ValueMember = "supplierID";
+
+            //Register event handlers
+            lstProducts.SelectedValueChanged += lstProducts_SelectedValueChanged;
+            txtProductFilter.TextChanged += txtProductsFilter_TextChanged;
+            lblSupplierLink.Click += lblSupplierLink_Click;
+            trvProductStock.NodeMouseDoubleClick += trvProductStock_NodeMouseDoubleClick;
         }
 
         private void lstProducts_SelectedValueChanged(object sender, EventArgs e)
@@ -51,6 +55,9 @@ namespace PPSDPart2
                 txtProductCost.Text = string.Empty;
 
                 cboCategory.SelectedIndex = -1;
+                cboSupplier.SelectedIndex = -1;
+
+                trvProductStock.Nodes.Clear();
             }
         }
 
@@ -64,13 +71,21 @@ namespace PPSDPart2
             txtProductRentalFee.Text = productData["rentalFee"].ToString();
             txtProductCost.Text = productData["cost"].ToString();
 
-            foreach (DataRowView r in cboCategory.Items)
-            {               
-                if (r["categoryID"].ToString() == productData["categoryID"].ToString())
-                {
-                    cboCategory.SelectedIndex = cboCategory.Items.IndexOf(r);
-                }
+            cboSupplier.SelectedValue = productData["supplierID"];
+            cboCategory.SelectedValue = productData["categoryID"];
+
+            //Clear the treeview
+            trvProductStock.Nodes.Clear();
+
+            //Fill the treeview
+            DataRow[] stockData = dtbStock.Select("productID = " + productData["productID"]);
+            foreach (DataRow stockRow in stockData)
+            {
+                trvProductStock.Nodes.Add(new ValueTreeNode(
+                                                string.Format("Branch: {0} Amount: {1}", stockRow["branchID"], stockRow["amount"]),
+                                                stockRow["branchID"]));
             }
+
         }
 
         private void txtProductsFilter_TextChanged(object sender, EventArgs e)
@@ -78,5 +93,24 @@ namespace PPSDPart2
             TextBox sndr = (TextBox)sender;
             bisProductListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";
         }
+
+        private void lblSupplierLink_Click(object sender, EventArgs e)
+        {
+            if (lstProducts.SelectedValue != null)
+            {
+                tbcContent.SelectTab(tpgSupplier);
+                lstSuppliers.SelectedValue = cboSupplier.SelectedValue;
+            }
+        }
+
+        private void trvProductStock_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.GetType() == typeof(ValueTreeNode))
+            {
+                tbcContent.SelectTab(tpgBranch);
+                lstBranches.SelectedValue = ((ValueTreeNode)e.Node).Value;
+            }
+        }
+
     }
 }

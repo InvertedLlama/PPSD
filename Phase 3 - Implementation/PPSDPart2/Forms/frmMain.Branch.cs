@@ -9,14 +9,12 @@ namespace PPSDPart2
 {
     public partial class frmMain
     {
-        DataTable dtbBranch;
         BindingSource bisBranchListBinding;
 
         private void initialiseBranchData()
         {
             bisBranchListBinding = new BindingSource();
 
-            dtbBranch = mDatabase.selectData("SELECT * FROM Branch");
             bisBranchListBinding.DataSource = dtbBranch;
 
             lstBranches.DataSource = bisBranchListBinding;

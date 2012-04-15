@@ -8,15 +8,12 @@ using System.Windows.Forms;
 namespace PPSDPart2
 {
     public partial class frmMain
-    {
-        DataTable dtbSupplier;
+    {        
         BindingSource bisSupplierListBinding;
 
         private void initialiseSupplierData()
         {
             bisSupplierListBinding = new BindingSource();
-
-            dtbSupplier = mDatabase.selectData("SELECT * FROM Supplier");
             bisSupplierListBinding.DataSource = dtbSupplier;
 
             lstSuppliers.DataSource = bisSupplierListBinding;

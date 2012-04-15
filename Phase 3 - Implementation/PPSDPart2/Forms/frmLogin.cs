@@ -24,6 +24,8 @@ namespace PPSDPart2
             InitializeComponent();
             this.programDatabase = programDatabase;
 
+            FormClosed += frmLogin_Closed;
+
             //Set for debug purposes, quicker login:
             txtUsername.Text = "admin01";
             txtPassword.Text = "password";
@@ -109,6 +111,11 @@ namespace PPSDPart2
         {  
             contentForm.Show(this);
             loadingScreen.Dispose();
+        }
+
+        private void frmLogin_Closed(object sender, EventArgs e)
+        {
+            programDatabase.Dispose();
         }
        
     }

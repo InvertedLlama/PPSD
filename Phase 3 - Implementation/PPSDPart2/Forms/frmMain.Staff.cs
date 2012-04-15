@@ -8,15 +8,13 @@ using System.Data;
 namespace PPSDPart2
 {
     public partial class frmMain
-    {
-        DataTable dtbStaff;
+    {       
         BindingSource bisStaffListBinding;
 
         private void initialiseStaffData()
         {
             bisStaffListBinding = new BindingSource();
 
-            dtbStaff = mDatabase.selectData("SELECT * FROM Staff");
             bisStaffListBinding.DataSource = dtbStaff;
 
             lstStaff.DataSource = bisStaffListBinding;

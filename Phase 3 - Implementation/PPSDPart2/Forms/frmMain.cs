@@ -13,6 +13,7 @@ namespace PPSDPart2
     {
         Database mDatabase;
         User muser;
+        DataTable dtbMember, dtbRental, dtbRentalItem, dtbBranch, dtbProduct, dtbCategory, dtbStaff, dtbSupplier, dtbStock;
 
         public frmMain(Database programDatabase, User currentuser)
         {
@@ -20,12 +21,27 @@ namespace PPSDPart2
             this.mDatabase = programDatabase;
             this.muser = currentuser;
 
+            pullData();
+
             //Prepare the tabs
             initialiseMemberData();
             initialiseProductData();
             initialiseStaffData();
             initialiseBranchData();
             initialiseSupplierData();
+        }
+
+        private void pullData()
+        {
+            dtbMember = mDatabase.selectData("SELECT * FROM Member");
+            dtbRental = mDatabase.selectData("SELECT * FROM Rental");
+            dtbRentalItem = mDatabase.selectData("SELECT * FROM RentalItem");
+            dtbBranch = mDatabase.selectData("SELECT * FROM Branch");
+            dtbProduct = mDatabase.selectData("SELECT * FROM Product");
+            dtbCategory = mDatabase.selectData("SELECT * FROM Category");
+            dtbStaff = mDatabase.selectData("SELECT * FROM Staff");
+            dtbSupplier = mDatabase.selectData("SELECT * FROM Supplier");
+            dtbStock = mDatabase.selectData("SELECT * FROM Stock");
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)

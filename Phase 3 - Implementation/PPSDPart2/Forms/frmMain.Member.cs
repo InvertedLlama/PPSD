@@ -10,16 +10,13 @@ namespace PPSDPart2
     //Partial section of frmMain for dealing with the Member tab
     public partial class frmMain
     {
-        DataTable dtbMember, dtbRental, dtbRentalItem;
         BindingSource bisMemberListBinding;
 
         private void initialiseMemberData()
         {
             bisMemberListBinding = new BindingSource();
 
-            dtbMember = mDatabase.selectData("SELECT * FROM Member");
-            dtbRental = mDatabase.selectData("SELECT * FROM Rental");
-            dtbRentalItem = mDatabase.selectData("SELECT * FROM RentalItem");
+
 
             bisMemberListBinding.DataSource = dtbMember;
 
@@ -69,8 +66,8 @@ namespace PPSDPart2
                     foreach (DataRow rentalItem in rentalItems)
                     {
                         productInfo = dtbProduct.Select("productID = " + rentalItem["productID"])[0];
-                        crntNode.Nodes.Add(new VerboseTreeNode(string.Format("Item: {0}, Cost: £{1}", productInfo["name"], rentalItem["cost"]), 
-                                                            productInfo["name"].ToString()));
+                        crntNode.Nodes.Add(new ValueTreeNode(string.Format("Item: {0}, Cost: £{1}", productInfo["name"], rentalItem["cost"]), 
+                                                            productInfo["productID"]));
                     }
 
                     trvMemberRentals.Nodes.Add(crntNode);
@@ -110,10 +107,11 @@ namespace PPSDPart2
 
         private void trvMemberRentals_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if (e.Node.GetType() == typeof(VerboseTreeNode))
+            if (e.Node.GetType() == typeof(ValueTreeNode))
             {
-                tbcContent.SelectTab("tpgProduct");
-                txtProductFilter.Text = ((VerboseTreeNode)e.Node).Message;
+                tbcContent.SelectTab(tpgProduct);
+                
+                lstProducts.SelectedValue = ((ValueTreeNode)e.Node).Value;
             }
         }
         
