@@ -10,6 +10,7 @@ namespace PPSDPart2
     public partial class frmMain
     {       
         BindingSource bisStaffListBinding;
+        DataRow staffData;
 
         private void initialiseStaffData()
         {
@@ -35,7 +36,7 @@ namespace PPSDPart2
             try
             {
                 //Get the data. IDs are unique so unless something has gone horribly wrong there should only be one row
-                DataRow staffData = dtbStaff.Select("staffID + '' = '" + lstStaff.SelectedValue + "'")[0];
+                staffData = dtbStaff.Select("staffID + '' = '" + lstStaff.SelectedValue + "'")[0];
 
                 txtStaffID.Text = staffData["staffID"].ToString();
                 txtStaffEmail.Text = staffData["email"].ToString();
@@ -81,5 +82,36 @@ namespace PPSDPart2
             TextBox sndr = (TextBox)sender;
             bisStaffListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";
         }
+
+        private void btnStaffPasswordSet_Click(object sender, EventArgs e)
+        {
+            if (lstStaff.SelectedIndex < 0)
+            {
+                MessageBox.Show(this, "Please select a member of staff", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (MessageBox.Show(this, "Are you sure you want to change this users password?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                int selectedValue = (int)lstStaff.SelectedValue;
+
+                string insertQuery = String.Format(
+                    "UPDATE Staff\n" +
+                    "SET password=\"{0}\"\n" +
+                    "WHERE staffID = {1}",
+                    txtStaffPassword.Text, staffData["staffID"]);
+
+                if (mDatabase.runCommandQuery(insertQuery))
+                {
+                    dtbStaff = mDatabase.selectData("SELECT * FROM Staff");
+                    initialiseStaffData();
+                    MessageBox.Show(this, "Changes applied Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lstStaff.SelectedValue = selectedValue;
+                }
+                else
+                    MessageBox.Show(this, "Failed to apply changes", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+        }
+
     }
 }

@@ -663,6 +663,7 @@
             this.btnStaffPasswordSet.TabIndex = 3;
             this.btnStaffPasswordSet.Text = "Set";
             this.btnStaffPasswordSet.UseVisualStyleBackColor = true;
+            this.btnStaffPasswordSet.Click += new System.EventHandler(this.btnStaffPasswordSet_Click);
             // 
             // label22
             // 

@@ -178,5 +178,6 @@ namespace PPSDPart2
             //User cancelled changes, reload current record from last DB pull:
             fillMemberDataFields();
         }
+
     }
 }
