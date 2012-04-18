@@ -28,6 +28,7 @@ namespace PPSDPart2
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstSuppliers.SelectedValueChanged += lstSuppliers_SelectedValueChanged;
             txtSupplierFilter.TextChanged += txtSupplierFilter_TextChanged;
+            trvSupplierProducts.NodeMouseDoubleClick += trvSupplierProducts_NodeMouseDoubleClick;
         }
 
         private void fillSupplierDataFields()
@@ -42,6 +43,16 @@ namespace PPSDPart2
                 txtSupplierName.Text = supplierData["name"].ToString();
                 txtSupplierTel.Text = supplierData["phoneNumber"].ToString();                
                 txtSupplierAddress.Text = supplierData["address"].ToString();
+
+                trvSupplierProducts.Nodes.Clear();
+
+                DataRow[] supplierProducts = dtbProduct.Select("supplierID = " + supplierData["supplierID"]);
+                foreach (DataRow supplierProduct in supplierProducts)
+                {
+                    trvSupplierProducts.Nodes.Add(new ValueTreeNode(string.Format("Name: {0} Cost: {1}", supplierProduct["name"], supplierProduct["cost"]),
+                                                                    supplierProduct["productID"])
+                                                 );
+                }
             }
             catch (Exception e)
             {
@@ -62,6 +73,7 @@ namespace PPSDPart2
                 txtSupplierName.Text = string.Empty;
                 txtSupplierTel.Text = string.Empty;
                 txtSupplierAddress.Text = string.Empty;
+                trvSupplierProducts.Nodes.Clear();
             }
         }
 
@@ -69,6 +81,15 @@ namespace PPSDPart2
         {
             TextBox sndr = (TextBox)sender;
             bisSupplierListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";
+        }
+
+        private void trvSupplierProducts_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.GetType() == typeof(ValueTreeNode))
+            {
+                tbcContent.SelectedTab = tpgProduct;
+                lstProducts.SelectedValue = ((ValueTreeNode)e.Node).Value;
+            }
         }
     }
 }

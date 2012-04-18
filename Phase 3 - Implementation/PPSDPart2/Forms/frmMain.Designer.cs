@@ -1197,6 +1197,7 @@
             this.trvSupplierProducts.Name = "trvSupplierProducts";
             this.trvSupplierProducts.Size = new System.Drawing.Size(473, 197);
             this.trvSupplierProducts.TabIndex = 0;
+            this.trvSupplierProducts.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvSupplierProducts_NodeMouseDoubleClick);
             // 
             // groupBox15
             // 

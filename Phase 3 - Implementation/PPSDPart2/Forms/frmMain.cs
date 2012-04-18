@@ -79,6 +79,7 @@ namespace PPSDPart2
 
             return new Regex(pattern).IsMatch(data);
         }
+
     }
 
     enum RegexPattern
