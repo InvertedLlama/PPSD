@@ -106,7 +106,7 @@
             this.btnBranchCancel = new System.Windows.Forms.Button();
             this.btnBranchApply = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.treeView3 = new System.Windows.Forms.TreeView();
+            this.trvBranchProducts = new System.Windows.Forms.TreeView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.txtBranchAddress = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -927,7 +927,7 @@
             // 
             // groupBox13
             // 
-            this.groupBox13.Controls.Add(this.treeView3);
+            this.groupBox13.Controls.Add(this.trvBranchProducts);
             this.groupBox13.Location = new System.Drawing.Point(162, 187);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(479, 192);
@@ -935,12 +935,13 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Products";
             // 
-            // treeView3
+            // trvBranchProducts
             // 
-            this.treeView3.Location = new System.Drawing.Point(3, 16);
-            this.treeView3.Name = "treeView3";
-            this.treeView3.Size = new System.Drawing.Size(473, 173);
-            this.treeView3.TabIndex = 0;
+            this.trvBranchProducts.Location = new System.Drawing.Point(3, 16);
+            this.trvBranchProducts.Name = "trvBranchProducts";
+            this.trvBranchProducts.Size = new System.Drawing.Size(473, 173);
+            this.trvBranchProducts.TabIndex = 0;
+            this.trvBranchProducts.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvBranchProducts_NodeMouseDoubleClick);
             // 
             // groupBox12
             // 
@@ -1432,7 +1433,7 @@
         private System.Windows.Forms.TextBox txtMemberMob;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.TreeView treeView3;
+        private System.Windows.Forms.TreeView trvBranchProducts;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TreeView trvSupplierProducts;
         private System.Windows.Forms.GroupBox groupBox15;

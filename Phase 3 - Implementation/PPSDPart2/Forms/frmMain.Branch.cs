@@ -27,6 +27,7 @@ namespace PPSDPart2
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstBranches.SelectedValueChanged += lstBranches_SelectedValueChanged;
             txtBranchFilter.TextChanged += txtBranchFilter_TextChanged;
+            trvBranchProducts.NodeMouseDoubleClick += trvBranchProducts_NodeMouseDoubleClick;
 
             lstBranches.ClearSelected();
         }
@@ -36,13 +37,22 @@ namespace PPSDPart2
             try
             {
                 //Get the data. IDs are unique so unless something has gone horribly wrong there should only be one row
-                branchData = dtbBranch.Select("branchID + '' = '" + lstBranches.SelectedValue + "'")[0];
-               
+                branchData = dtbBranch.Select("branchID + '' = '" + lstBranches.SelectedValue + "'")[0];               
                 txtBranchID.Text = branchData["branchID"].ToString();
                 txtBranchAddress.Text = branchData["address"] as string;
                 txtBranchTel.Text = branchData["phoneNumber"] as string;
                 txtBranchEmail.Text = branchData["email"] as string;
-                
+
+                trvBranchProducts.Nodes.Clear();
+
+                DataRow[] branchStock = dtbStock.Select("branchID = " + branchData["branchID"]);
+                DataRow productInformation;                
+                foreach (DataRow stockItem in branchStock)
+                {
+                    productInformation = dtbProduct.Select("productID = " + stockItem["productID"])[0];
+                    trvBranchProducts.Nodes.Add(new ValueTreeNode(string.Format("Product: {0} Amount: {1}", productInformation["name"], stockItem["amount"]),
+                                                                productInformation["productID"]));
+                }
             }
             catch (Exception e)
             {
@@ -115,6 +125,15 @@ namespace PPSDPart2
         private void btnBranchCancel_Click(object sender, EventArgs e)
         {
             fillBranchDataFields();
+        }
+
+        private void trvBranchProducts_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.GetType() == typeof(ValueTreeNode))
+            {
+                tbcContent.SelectedTab = tpgProduct;
+                lstProducts.SelectedValue = ((ValueTreeNode)e.Node).Value;
+            }
         }
 
     }
