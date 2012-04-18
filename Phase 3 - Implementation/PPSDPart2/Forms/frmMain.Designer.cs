@@ -76,6 +76,8 @@
             this.btnNewProduct = new System.Windows.Forms.Button();
             this.lstProducts = new System.Windows.Forms.ListBox();
             this.tpgStaff = new System.Windows.Forms.TabPage();
+            this.btnStaffCancel = new System.Windows.Forms.Button();
+            this.btnStaffApply = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnStaffPasswordSet = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -631,6 +633,8 @@
             // 
             // tpgStaff
             // 
+            this.tpgStaff.Controls.Add(this.btnStaffCancel);
+            this.tpgStaff.Controls.Add(this.btnStaffApply);
             this.tpgStaff.Controls.Add(this.groupBox9);
             this.tpgStaff.Controls.Add(this.groupBox7);
             this.tpgStaff.Controls.Add(this.groupBox8);
@@ -641,6 +645,26 @@
             this.tpgStaff.Text = "Staff";
             this.tpgStaff.UseVisualStyleBackColor = true;
             // 
+            // btnStaffCancel
+            // 
+            this.btnStaffCancel.Location = new System.Drawing.Point(243, 386);
+            this.btnStaffCancel.Name = "btnStaffCancel";
+            this.btnStaffCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnStaffCancel.TabIndex = 7;
+            this.btnStaffCancel.Text = "Cancel";
+            this.btnStaffCancel.UseVisualStyleBackColor = true;
+            this.btnStaffCancel.Click += new System.EventHandler(this.btnStaffCancel_Click);
+            // 
+            // btnStaffApply
+            // 
+            this.btnStaffApply.Location = new System.Drawing.Point(162, 386);
+            this.btnStaffApply.Name = "btnStaffApply";
+            this.btnStaffApply.Size = new System.Drawing.Size(75, 23);
+            this.btnStaffApply.TabIndex = 6;
+            this.btnStaffApply.Text = "Apply";
+            this.btnStaffApply.UseVisualStyleBackColor = true;
+            this.btnStaffApply.Click += new System.EventHandler(this.btnStaffApply_Click);
+            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.btnStaffPasswordSet);
@@ -650,7 +674,7 @@
             this.groupBox9.Controls.Add(this.label20);
             this.groupBox9.Location = new System.Drawing.Point(162, 210);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(479, 210);
+            this.groupBox9.Size = new System.Drawing.Size(479, 170);
             this.groupBox9.TabIndex = 4;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "User Details";
@@ -1469,5 +1493,7 @@
         private System.Windows.Forms.Button btnBranchApply;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnStaffCancel;
+        private System.Windows.Forms.Button btnStaffApply;
     }
 }

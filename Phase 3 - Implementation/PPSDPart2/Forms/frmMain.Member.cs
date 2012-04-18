@@ -120,34 +120,31 @@ namespace PPSDPart2
 
             string message = string.Empty;
 
-            if (txtMemberName.Text != memberData["name"].ToString())
-            {
+            if (txtMemberName.Text != memberData["name"].ToString())            
                 if (!validateInformation(txtMemberName.Text, RegexPattern.NameString))
                     message += "* Name\n";
-            }
+            
 
-            if (txtMemberEmail.Text != memberData["email"].ToString())
-            {
+            if (txtMemberEmail.Text != memberData["email"].ToString())            
                 if (!validateInformation(txtMemberEmail.Text, RegexPattern.EmailString))
                     message += "* Email\n";
-            }
+            
 
-            if (txtMemberTel.Text != memberData["phoneNumber"].ToString())
-            {
+            if (txtMemberTel.Text != memberData["phoneNumber"].ToString())            
                 if (!validateInformation(txtMemberTel.Text, RegexPattern.NumericalString))
                     message += "* Telephone Number\n";
-            }
+            
 
-            if (txtMemberMob.Text != memberData["mobileNumber"].ToString())
-            {
+            if (txtMemberMob.Text != memberData["mobileNumber"].ToString())            
                 if (!validateInformation(txtMemberMob.Text, RegexPattern.NumericalString))
                     message += "* Mobile Number\n";
-            }
+            
 
             if (message != string.Empty)
                 MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
+                int selectedValue = (int)memberData["memberID"];
                 //No errors, apply changes:
                 string insertQuery = String.Format(
                     "UPDATE Member\n" +
@@ -160,11 +157,10 @@ namespace PPSDPart2
                     //changes applied! Reload data in GUI:
                     dtbMember = mDatabase.selectData("SELECT * FROM Member");
                     initialiseMemberData();
-                    if (lstMembers.Items.Count > 0) //set selected item to first entry:
-                    {
-                        lstMembers.SelectedItem = lstMembers.Items[0];
-                        fillMemberDataFields();
-                    }
+
+                    //Restore previous item selection
+                    lstMembers.SelectedValue = selectedValue;
+
                     MessageBox.Show("Changes applied successfully");
                 }
                 else
