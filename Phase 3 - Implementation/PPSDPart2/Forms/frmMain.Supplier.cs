@@ -10,6 +10,7 @@ namespace PPSDPart2
     public partial class frmMain
     {        
         BindingSource bisSupplierListBinding;
+        DataRow supplierData;
 
         private void initialiseSupplierData()
         {
@@ -36,7 +37,7 @@ namespace PPSDPart2
             try
             {
                 //Get the data. IDs are unique so unless something has gone horribly wrong there should only be one row
-                DataRow supplierData = dtbSupplier.Select("supplierID + '' = '" + lstSuppliers.SelectedValue + "'")[0];
+                supplierData = dtbSupplier.Select("supplierID + '' = '" + lstSuppliers.SelectedValue + "'")[0];
 
                 txtSupplierID.Text = supplierData["supplierID"].ToString();
                 txtSupplierEmail.Text = supplierData["email"].ToString();
@@ -65,7 +66,11 @@ namespace PPSDPart2
         {
             ListBox sndr = (ListBox)sender;
             if (sndr.SelectedValue != null)
+            {
                 fillSupplierDataFields();
+                btnSupplierApply.Enabled = true;
+                btnSupplierCancel.Enabled = true;
+            }
             else
             {
                 txtSupplierID.Text = string.Empty;
@@ -74,6 +79,8 @@ namespace PPSDPart2
                 txtSupplierTel.Text = string.Empty;
                 txtSupplierAddress.Text = string.Empty;
                 trvSupplierProducts.Nodes.Clear();
+                btnSupplierApply.Enabled = false;
+                btnSupplierCancel.Enabled = false;
             }
         }
 
@@ -90,6 +97,61 @@ namespace PPSDPart2
                 tbcContent.SelectedTab = tpgProduct;
                 lstProducts.SelectedValue = ((ValueTreeNode)e.Node).Value;
             }
+        }
+
+        private void btnSupplierApply_Click(object sender, EventArgs e)
+        {
+            string message = string.Empty;
+
+            if(txtSupplierName.Text != supplierData["name"].ToString())
+                if(!validateInformation(txtSupplierName.Text, RegexPattern.NameString))
+                    message += "* Name\n";
+
+            if (txtSupplierEmail.Text != supplierData["email"].ToString() && txtSupplierEmail.Text != string.Empty)
+                if(!validateInformation(txtSupplierEmail.Text, RegexPattern.EmailString))
+                    message += "* Email\n";
+
+            if (txtSupplierTel.Text != supplierData["phoneNumber"].ToString())
+                if(!validateInformation(txtSupplierTel.Text, RegexPattern.NumericalString))
+                    message += "* Phone\n";
+
+            if(txtSupplierAddress.Text == string.Empty)
+                message += "* Address\n";
+
+            if(message != string.Empty)
+                MessageBox.Show(this, "Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (MessageBox.Show(this, "Are you sure you want to apply these changes?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                //No errors so push the data to the database
+                
+                //Store the current listbox value for restoring after data refresh
+                int selectedValue = (int)lstSuppliers.SelectedValue;
+
+                string selectQuery = string.Format(
+                    "UPDATE Supplier\n" +
+                    "SET name=\"{0}\", address=\"{1}\", email=\"{2}\", phoneNumber=\"{3}\"\n" +
+                    "WHERE supplierID = {4}", txtSupplierName.Text, txtSupplierAddress.Text, txtSupplierEmail.Text,
+                    txtSupplierTel.Text, supplierData["supplierID"]);
+
+                if(mDatabase.runCommandQuery(selectQuery))
+                {
+                    dtbSupplier = mDatabase.selectData("SELECT * FROM Supplier");
+                    bisSupplierListBinding.DataSource = dtbSupplier;
+
+                    lstSuppliers.SelectedValue = selectedValue;
+
+                    MessageBox.Show(this,"Changes applied successfully");
+                }
+                else
+                    MessageBox.Show(this,"Failed to apply changes");
+
+            }
+            
+        }
+
+        private void btnSupplierCancel_Click(object sender, EventArgs e)
+        {
+            fillSupplierDataFields();
         }
     }
 }

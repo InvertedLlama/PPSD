@@ -123,6 +123,8 @@
             this.btnNewBranch = new System.Windows.Forms.Button();
             this.lstBranches = new System.Windows.Forms.ListBox();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
+            this.btnSupplierCancel = new System.Windows.Forms.Button();
+            this.btnSupplierApply = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.txtSupplierAddress = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -205,6 +207,7 @@
             // 
             // button7
             // 
+            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(563, 386);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
@@ -214,6 +217,7 @@
             // 
             // btnMemberCancel
             // 
+            this.btnMemberCancel.Enabled = false;
             this.btnMemberCancel.Location = new System.Drawing.Point(246, 386);
             this.btnMemberCancel.Name = "btnMemberCancel";
             this.btnMemberCancel.Size = new System.Drawing.Size(75, 23);
@@ -224,6 +228,7 @@
             // 
             // btnMemberApply
             // 
+            this.btnMemberApply.Enabled = false;
             this.btnMemberApply.Location = new System.Drawing.Point(165, 386);
             this.btnMemberApply.Name = "btnMemberApply";
             this.btnMemberApply.Size = new System.Drawing.Size(75, 23);
@@ -424,6 +429,7 @@
             // 
             // btnProductCancel
             // 
+            this.btnProductCancel.Enabled = false;
             this.btnProductCancel.Location = new System.Drawing.Point(243, 386);
             this.btnProductCancel.Name = "btnProductCancel";
             this.btnProductCancel.Size = new System.Drawing.Size(75, 23);
@@ -434,6 +440,7 @@
             // 
             // btnProductApply
             // 
+            this.btnProductApply.Enabled = false;
             this.btnProductApply.Location = new System.Drawing.Point(162, 386);
             this.btnProductApply.Name = "btnProductApply";
             this.btnProductApply.Size = new System.Drawing.Size(75, 23);
@@ -495,6 +502,7 @@
             // cboSupplier
             // 
             this.cboSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSupplier.Enabled = false;
             this.cboSupplier.FormattingEnabled = true;
             this.cboSupplier.Location = new System.Drawing.Point(349, 98);
             this.cboSupplier.Name = "cboSupplier";
@@ -504,6 +512,7 @@
             // cboCategory
             // 
             this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategory.Enabled = false;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(78, 45);
             this.cboCategory.Name = "cboCategory";
@@ -647,6 +656,7 @@
             // 
             // btnStaffCancel
             // 
+            this.btnStaffCancel.Enabled = false;
             this.btnStaffCancel.Location = new System.Drawing.Point(243, 386);
             this.btnStaffCancel.Name = "btnStaffCancel";
             this.btnStaffCancel.Size = new System.Drawing.Size(75, 23);
@@ -657,6 +667,7 @@
             // 
             // btnStaffApply
             // 
+            this.btnStaffApply.Enabled = false;
             this.btnStaffApply.Location = new System.Drawing.Point(162, 386);
             this.btnStaffApply.Name = "btnStaffApply";
             this.btnStaffApply.Size = new System.Drawing.Size(75, 23);
@@ -681,6 +692,7 @@
             // 
             // btnStaffPasswordSet
             // 
+            this.btnStaffPasswordSet.Enabled = false;
             this.btnStaffPasswordSet.Location = new System.Drawing.Point(299, 79);
             this.btnStaffPasswordSet.Name = "btnStaffPasswordSet";
             this.btnStaffPasswordSet.Size = new System.Drawing.Size(75, 23);
@@ -748,6 +760,7 @@
             // cboStaffBranch
             // 
             this.cboStaffBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStaffBranch.Enabled = false;
             this.cboStaffBranch.FormattingEnabled = true;
             this.cboStaffBranch.Location = new System.Drawing.Point(300, 19);
             this.cboStaffBranch.Name = "cboStaffBranch";
@@ -757,6 +770,7 @@
             // cboStaffRole
             // 
             this.cboStaffRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStaffRole.Enabled = false;
             this.cboStaffRole.FormattingEnabled = true;
             this.cboStaffRole.Items.AddRange(new object[] {
             "Admin",
@@ -923,6 +937,7 @@
             // 
             // button6
             // 
+            this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(563, 385);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
@@ -932,6 +947,7 @@
             // 
             // btnBranchCancel
             // 
+            this.btnBranchCancel.Enabled = false;
             this.btnBranchCancel.Location = new System.Drawing.Point(243, 385);
             this.btnBranchCancel.Name = "btnBranchCancel";
             this.btnBranchCancel.Size = new System.Drawing.Size(75, 23);
@@ -942,6 +958,7 @@
             // 
             // btnBranchApply
             // 
+            this.btnBranchApply.Enabled = false;
             this.btnBranchApply.Location = new System.Drawing.Point(162, 385);
             this.btnBranchApply.Name = "btnBranchApply";
             this.btnBranchApply.Size = new System.Drawing.Size(75, 23);
@@ -1091,6 +1108,8 @@
             // 
             // tpgSupplier
             // 
+            this.tpgSupplier.Controls.Add(this.btnSupplierCancel);
+            this.tpgSupplier.Controls.Add(this.btnSupplierApply);
             this.tpgSupplier.Controls.Add(this.groupBox14);
             this.tpgSupplier.Controls.Add(this.groupBox11);
             this.tpgSupplier.Controls.Add(this.groupBox15);
@@ -1101,6 +1120,28 @@
             this.tpgSupplier.TabIndex = 4;
             this.tpgSupplier.Text = "Supplier";
             this.tpgSupplier.UseVisualStyleBackColor = true;
+            // 
+            // btnSupplierCancel
+            // 
+            this.btnSupplierCancel.Enabled = false;
+            this.btnSupplierCancel.Location = new System.Drawing.Point(246, 386);
+            this.btnSupplierCancel.Name = "btnSupplierCancel";
+            this.btnSupplierCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnSupplierCancel.TabIndex = 11;
+            this.btnSupplierCancel.Text = "Cancel";
+            this.btnSupplierCancel.UseVisualStyleBackColor = true;
+            this.btnSupplierCancel.Click += new System.EventHandler(this.btnSupplierCancel_Click);
+            // 
+            // btnSupplierApply
+            // 
+            this.btnSupplierApply.Enabled = false;
+            this.btnSupplierApply.Location = new System.Drawing.Point(165, 386);
+            this.btnSupplierApply.Name = "btnSupplierApply";
+            this.btnSupplierApply.Size = new System.Drawing.Size(75, 23);
+            this.btnSupplierApply.TabIndex = 10;
+            this.btnSupplierApply.Text = "Apply";
+            this.btnSupplierApply.UseVisualStyleBackColor = true;
+            this.btnSupplierApply.Click += new System.EventHandler(this.btnSupplierApply_Click);
             // 
             // groupBox14
             // 
@@ -1210,7 +1251,7 @@
             this.groupBox11.Controls.Add(this.trvSupplierProducts);
             this.groupBox11.Location = new System.Drawing.Point(162, 204);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(479, 216);
+            this.groupBox11.Size = new System.Drawing.Size(479, 176);
             this.groupBox11.TabIndex = 8;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Products";
@@ -1220,7 +1261,7 @@
             this.trvSupplierProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvSupplierProducts.Location = new System.Drawing.Point(3, 16);
             this.trvSupplierProducts.Name = "trvSupplierProducts";
-            this.trvSupplierProducts.Size = new System.Drawing.Size(473, 197);
+            this.trvSupplierProducts.Size = new System.Drawing.Size(473, 157);
             this.trvSupplierProducts.TabIndex = 0;
             this.trvSupplierProducts.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvSupplierProducts_NodeMouseDoubleClick);
             // 
@@ -1495,5 +1536,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnStaffCancel;
         private System.Windows.Forms.Button btnStaffApply;
+        private System.Windows.Forms.Button btnSupplierCancel;
+        private System.Windows.Forms.Button btnSupplierApply;
     }
 }

@@ -65,13 +65,21 @@ namespace PPSDPart2
         {
             ListBox sndr = (ListBox)sender;
             if (sndr.SelectedValue != null)
+            {
                 fillBranchDataFields();
+                btnBranchApply.Enabled = true;
+                btnBranchCancel.Enabled = true;
+            }
             else
             {
                 txtBranchID.Text = string.Empty;
                 txtBranchAddress.Text = string.Empty;
                 txtBranchTel.Text = string.Empty;
                 txtBranchEmail.Text = string.Empty;
+                trvBranchProducts.Nodes.Clear();
+
+                btnBranchApply.Enabled = false;
+                btnBranchCancel.Enabled = false;
             }
         }
 
@@ -84,22 +92,23 @@ namespace PPSDPart2
         private void btnBranchApply_Click(object sender, EventArgs e)
         {
             string message = string.Empty;
-            if (txtBranchEmail.Text != branchData["email"].ToString())
-            {
+            if (txtBranchEmail.Text != branchData["email"].ToString() && txtBranchEmail.Text != string.Empty)            
                 if (!validateInformation(txtBranchEmail.Text, RegexPattern.EmailString))
-                    message += "* Email\n";
-            }
+                    message += "* Email\n";            
 
-            if (txtBranchTel.Text != branchData["phoneNumber"].ToString())
-            {
+            if (txtBranchTel.Text != branchData["phoneNumber"].ToString())            
                 if (!validateInformation(txtBranchTel.Text, RegexPattern.NumericalString))
                     message += "* Telephone Number\n";
-            }
+
+            if (txtBranchAddress.Text == string.Empty)
+                message += "* Address\n";
 
             if (message != string.Empty)
                 MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            else if (MessageBox.Show(this, "Are you sure you want to apply these changes?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
+                int selectedValue = (int)lstBranches.SelectedValue;
+
                 string insertQuery = String.Format(
                     "UPDATE Branch\n"+
                     "SET address=\"{0}\", email=\"{1}\", phoneNumber=\"{2}\""+
@@ -109,16 +118,14 @@ namespace PPSDPart2
                 {
                     //changes applied! Reload data in GUI:
                     dtbBranch = mDatabase.selectData("SELECT * FROM Branch");
-                    initialiseBranchData();
-                    if (lstBranches.Items.Count > 0) //set selected item to first entry:
-                    {
-                        lstBranches.SelectedItem = lstBranches.Items[0];
-                        fillBranchDataFields();
-                    }
-                    MessageBox.Show("Changes applied successfully");
+                    bisBranchListBinding.DataSource = dtbBranch;
+                    bisStaffBranchBinding.DataSource = dtbBranch;
+
+                    lstBranches.SelectedValue = selectedValue;
+                    MessageBox.Show(this,"Changes applied successfully");
                 }
                 else
-                    MessageBox.Show("Failed to apply changes");
+                    MessageBox.Show(this,"Failed to apply changes");
             }
         }
 

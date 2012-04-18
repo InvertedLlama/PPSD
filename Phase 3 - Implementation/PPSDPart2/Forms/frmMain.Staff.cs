@@ -123,9 +123,15 @@ namespace PPSDPart2
                 if (!validateInformation(txtStaffTel.Text, RegexPattern.NumericalString))
                     message += "* Phone Number\n";
 
+            if (txtStaffAddress.Text == string.Empty)
+                message += "* Address\n";
+
+            if (txtStaffUsername.Text == string.Empty)
+                message += "* Username\n";
+
             if (message != string.Empty)
                 MessageBox.Show(this, "Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            else if (MessageBox.Show(this, "Are you sure you want to apply these changes?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 int selectedValue = (int)staffData["staffID"];
 
@@ -139,7 +145,7 @@ namespace PPSDPart2
                 if (mDatabase.runCommandQuery(insertQuery))
                 {
                     dtbStaff = mDatabase.selectData("SELECT * FROM Staff");
-                    initialiseStaffData();
+                    bisStaffListBinding.DataSource = dtbStaff;
 
                     //Restore previous item selection
                     lstStaff.SelectedValue = selectedValue;

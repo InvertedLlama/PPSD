@@ -82,7 +82,11 @@ namespace PPSDPart2
         {
             ListBox sndr = (ListBox)sender;
             if (sndr.SelectedValue != null)
+            {
                 fillMemberDataFields();
+                btnMemberApply.Enabled = true;
+                btnMemberCancel.Enabled = true;
+            }
             else
             {
                 txtMemberID.Text = string.Empty;
@@ -92,6 +96,8 @@ namespace PPSDPart2
                 txtMemberMob.Text = string.Empty;
                 txtMemberAddress.Text = string.Empty;
                 trvMemberRentals.Nodes.Clear();
+                btnMemberApply.Enabled = false;
+                btnMemberCancel.Enabled = false;
             }
         }
 
@@ -125,7 +131,7 @@ namespace PPSDPart2
                     message += "* Name\n";
             
 
-            if (txtMemberEmail.Text != memberData["email"].ToString())            
+            if (txtMemberEmail.Text != memberData["email"].ToString() && txtMemberEmail.Text != string.Empty)            
                 if (!validateInformation(txtMemberEmail.Text, RegexPattern.EmailString))
                     message += "* Email\n";
             
@@ -138,11 +144,13 @@ namespace PPSDPart2
             if (txtMemberMob.Text != memberData["mobileNumber"].ToString())            
                 if (!validateInformation(txtMemberMob.Text, RegexPattern.NumericalString))
                     message += "* Mobile Number\n";
-            
+
+            if (txtMemberAddress.Text == string.Empty)
+                message += "* Address\n";
 
             if (message != string.Empty)
                 MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            else if (MessageBox.Show(this, "Are you sure you want to apply these changes?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 int selectedValue = (int)memberData["memberID"];
                 //No errors, apply changes:
@@ -156,15 +164,15 @@ namespace PPSDPart2
                 {
                     //changes applied! Reload data in GUI:
                     dtbMember = mDatabase.selectData("SELECT * FROM Member");
-                    initialiseMemberData();
+                    bisMemberListBinding.DataSource = dtbMember;
 
                     //Restore previous item selection
                     lstMembers.SelectedValue = selectedValue;
 
-                    MessageBox.Show("Changes applied successfully");
+                    MessageBox.Show(this,"Changes applied successfully");
                 }
                 else
-                    MessageBox.Show("Failed to apply changes");
+                    MessageBox.Show(this,"Failed to apply changes");
             }
 
         }

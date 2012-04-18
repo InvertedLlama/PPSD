@@ -47,7 +47,13 @@ namespace PPSDPart2
         {
             ListBox sndr = (ListBox)sender;
             if (sndr.SelectedValue != null)
+            {
                 fillProductDataFields();
+                btnProductApply.Enabled = true;
+                btnProductCancel.Enabled = true;
+                cboCategory.Enabled = true;
+                cboSupplier.Enabled = true;
+            }
             else
             {
                 txtProductID.Text = string.Empty;
@@ -57,8 +63,12 @@ namespace PPSDPart2
 
                 cboCategory.SelectedIndex = -1;
                 cboSupplier.SelectedIndex = -1;
-
                 trvProductStock.Nodes.Clear();
+
+                btnProductApply.Enabled = false;
+                btnProductCancel.Enabled = false;
+                cboCategory.Enabled = false;
+                cboSupplier.Enabled = false;
             }
         }
 
@@ -137,8 +147,9 @@ namespace PPSDPart2
 
             if (message != string.Empty)
                 MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            else if (MessageBox.Show(this, "Are you sure you want to apply these changes?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
+                int selectedValue = (int)lstProducts.SelectedValue;
                 string insertQuery = String.Format(
                     "UPDATE Product\n" +
                     "SET supplierID=\"{0}\", categoryID=\"{1}\", name=\"{2}\", rentalFee=\"{3}\", cost=\"{4}\"" +
@@ -149,12 +160,9 @@ namespace PPSDPart2
                 {
                     //changes applied! Reload data in GUI:
                     dtbProduct = mDatabase.selectData("SELECT * FROM Product");
-                    initialiseProductData();
-                    if (lstProducts.Items.Count > 0) //set selected item to first entry:
-                    {
-                        lstProducts.SelectedItem = lstProducts.Items[0];
-                        fillProductDataFields();
-                    }
+                    bisProductListBinding.DataSource = dtbProduct;
+                    lstProducts.SelectedValue = selectedValue;                       
+                    
                     MessageBox.Show("Changes applied successfully");
                 }
                 else
