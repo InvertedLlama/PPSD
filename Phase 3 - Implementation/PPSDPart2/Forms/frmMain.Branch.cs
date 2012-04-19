@@ -93,11 +93,11 @@ namespace PPSDPart2
         {
             string message = string.Empty;
             if (txtBranchEmail.Text != branchData["email"].ToString() && txtBranchEmail.Text != string.Empty)            
-                if (!validateInformation(txtBranchEmail.Text, RegexPattern.EmailString))
+                if (!DataValidation.validateInformation(txtBranchEmail.Text, RegexPattern.EmailString))
                     message += "* Email\n";            
 
-            if (txtBranchTel.Text != branchData["phoneNumber"].ToString())            
-                if (!validateInformation(txtBranchTel.Text, RegexPattern.NumericalString))
+            if (txtBranchTel.Text != branchData["phoneNumber"].ToString())
+                if (!DataValidation.validateInformation(txtBranchTel.Text, RegexPattern.NumericalString))
                     message += "* Telephone Number\n";
 
             if (txtBranchAddress.Text == string.Empty)

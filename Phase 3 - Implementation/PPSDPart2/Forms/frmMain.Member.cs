@@ -12,9 +12,10 @@ namespace PPSDPart2
     {
         DataRow memberData;
         BindingSource bisMemberListBinding;
+        frmAddMember addMemberDialogue;
 
         private void initialiseMemberData()
-        {
+        {            
             bisMemberListBinding = new BindingSource();
 
             bisMemberListBinding.DataSource = dtbMember;
@@ -26,6 +27,8 @@ namespace PPSDPart2
 
             lstMembers.ClearSelected();
 
+            //Create the add form once and reuse
+            addMemberDialogue = new frmAddMember();
 
             //register the event handler method for a new list item being selected manually.
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
@@ -127,22 +130,22 @@ namespace PPSDPart2
             string message = string.Empty;
 
             if (txtMemberName.Text != memberData["name"].ToString())            
-                if (!validateInformation(txtMemberName.Text, RegexPattern.NameString))
+                if (!DataValidation.validateInformation(txtMemberName.Text, RegexPattern.NameString))
                     message += "* Name\n";
             
 
             if (txtMemberEmail.Text != memberData["email"].ToString() && txtMemberEmail.Text != string.Empty)            
-                if (!validateInformation(txtMemberEmail.Text, RegexPattern.EmailString))
+                if (!DataValidation.validateInformation(txtMemberEmail.Text, RegexPattern.EmailString))
                     message += "* Email\n";
             
 
             if (txtMemberTel.Text != memberData["phoneNumber"].ToString())            
-                if (!validateInformation(txtMemberTel.Text, RegexPattern.NumericalString))
+                if (!DataValidation.validateInformation(txtMemberTel.Text, RegexPattern.NumericalString))
                     message += "* Telephone Number\n";
             
 
             if (txtMemberMob.Text != memberData["mobileNumber"].ToString())            
-                if (!validateInformation(txtMemberMob.Text, RegexPattern.NumericalString))
+                if (!DataValidation.validateInformation(txtMemberMob.Text, RegexPattern.NumericalString))
                     message += "* Mobile Number\n";
 
             if (txtMemberAddress.Text == string.Empty)
@@ -175,6 +178,11 @@ namespace PPSDPart2
                     MessageBox.Show(this,"Failed to apply changes");
             }
 
+        }
+
+        private void btnNewMember_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnMemberCancel_Click(object sender, EventArgs e)

@@ -129,19 +129,19 @@ namespace PPSDPart2
 
             if (txtProductName.Text != productData["name"].ToString())
             {
-                if (!validateInformation(txtProductName.Text, RegexPattern.NameString))
+                if (!DataValidation.validateInformation(txtProductName.Text, RegexPattern.NameString))
                     message += "* Product Name\n";
             }
 
             if (txtProductRentalFee.Text != productData["rentalFee"].ToString())
             {
-                if (!validateInformation(txtProductRentalFee.Text, RegexPattern.PriceString))
+                if (!DataValidation.validateInformation(txtProductRentalFee.Text, RegexPattern.PriceString))
                     message += "* Rental Fee\n";
             }
 
             if (txtProductCost.Text != productData["cost"].ToString())
             {
-                if (!validateInformation(txtProductCost.Text, RegexPattern.PriceString))
+                if (!DataValidation.validateInformation(txtProductCost.Text, RegexPattern.PriceString))
                     message += "* Cost\n";
             }
 

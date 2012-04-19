@@ -111,16 +111,16 @@ namespace PPSDPart2
             string message = string.Empty;
 
             if (txtStaffName.Text != staffData["name"].ToString())            
-                if (!validateInformation(txtStaffName.Text, RegexPattern.NameString))
+                if (!DataValidation.validateInformation(txtStaffName.Text, RegexPattern.NameString))
                     message += "* Name\n";
             
 
             if (txtStaffEmail.Text != staffData["email"].ToString())            
-                if (!validateInformation(txtStaffEmail.Text, RegexPattern.EmailString))
+                if (!DataValidation.validateInformation(txtStaffEmail.Text, RegexPattern.EmailString))
                     message += "* Email\n";
 
             if (txtStaffTel.Text != staffData["phoneNumber"].ToString())
-                if (!validateInformation(txtStaffTel.Text, RegexPattern.NumericalString))
+                if (!DataValidation.validateInformation(txtStaffTel.Text, RegexPattern.NumericalString))
                     message += "* Phone Number\n";
 
             if (txtStaffAddress.Text == string.Empty)

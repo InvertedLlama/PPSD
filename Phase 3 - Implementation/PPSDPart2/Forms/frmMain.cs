@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
+
 
 namespace PPSDPart2
 {
@@ -53,41 +53,5 @@ namespace PPSDPart2
             //this should fix it            
             Owner.Refresh();
         }
-
-        /// <summary>
-        /// Validates the information given on the form to the DB constraints
-        /// </summary>
-        /// <remarks>More Info: http://gist.github.com/2391792 </remarks>
-        //Note: I've edited the regex pattern for email address to allow the . character before the @ and to allow numbers at the end for domains like 6x.to ~Pete
-        private bool validateInformation(string data, RegexPattern regexPattern)
-        {
-            string pattern = string.Empty;
-            switch (regexPattern)
-            {
-                case RegexPattern.NameString:
-                    pattern = "^[A-Za-z -]+$";
-                    break;
-                case RegexPattern.NumericalString:
-                    pattern = "^[0-9]+$";
-                    break;
-                case RegexPattern.EmailString:
-                    pattern = "^[0-9A-Za-z.]+[@][0-9A-Za-z]+[.][A-Za-z0-9.]+$";
-                    break;
-                case RegexPattern.PriceString:
-                    pattern = @"^[0-9]+\.[0-9]+$";
-                    break;
-            }
-
-            return new Regex(pattern).IsMatch(data);
-        }
-
     }
-
-    enum RegexPattern
-    {
-        NameString,
-        NumericalString,
-        EmailString,
-        PriceString,
-    };
 }

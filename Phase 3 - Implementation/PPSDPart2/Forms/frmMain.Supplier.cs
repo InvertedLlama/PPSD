@@ -104,15 +104,15 @@ namespace PPSDPart2
             string message = string.Empty;
 
             if(txtSupplierName.Text != supplierData["name"].ToString())
-                if(!validateInformation(txtSupplierName.Text, RegexPattern.NameString))
+                if (!DataValidation.validateInformation(txtSupplierName.Text, RegexPattern.NameString))
                     message += "* Name\n";
 
             if (txtSupplierEmail.Text != supplierData["email"].ToString() && txtSupplierEmail.Text != string.Empty)
-                if(!validateInformation(txtSupplierEmail.Text, RegexPattern.EmailString))
+                if (!DataValidation.validateInformation(txtSupplierEmail.Text, RegexPattern.EmailString))
                     message += "* Email\n";
 
             if (txtSupplierTel.Text != supplierData["phoneNumber"].ToString())
-                if(!validateInformation(txtSupplierTel.Text, RegexPattern.NumericalString))
+                if (!DataValidation.validateInformation(txtSupplierTel.Text, RegexPattern.NumericalString))
                     message += "* Phone\n";
 
             if(txtSupplierAddress.Text == string.Empty)

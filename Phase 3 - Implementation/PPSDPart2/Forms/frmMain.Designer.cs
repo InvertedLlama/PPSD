@@ -403,6 +403,7 @@
             this.btnNewMember.TabIndex = 4;
             this.btnNewMember.Text = "New";
             this.btnNewMember.UseVisualStyleBackColor = true;
+            this.btnNewMember.Click += new System.EventHandler(this.btnNewMember_Click);
             // 
             // lstMembers
             // 
