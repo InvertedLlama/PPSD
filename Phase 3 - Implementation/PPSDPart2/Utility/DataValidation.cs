@@ -32,6 +32,9 @@ namespace PPSDPart2
                 case RegexPattern.PriceString:
                     pattern = @"^[0-9]+\.[0-9]+$";
                     break;
+                case RegexPattern.PhoneString:
+                    pattern = "[+]?[0-9]{5,6} ?[0-9]{3} ?[0-9]{3}";
+                    break;
             }
 
             return new Regex(pattern).IsMatch(data);
@@ -45,6 +48,7 @@ namespace PPSDPart2
         NumericalString,
         EmailString,
         PriceString,
+        PhoneString
     };
     
 }

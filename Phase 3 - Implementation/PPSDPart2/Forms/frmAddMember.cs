@@ -29,5 +29,10 @@ namespace PPSDPart2
             txtName.Text = string.Empty;
             txtTel.Text = string.Empty;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
     }
 }
