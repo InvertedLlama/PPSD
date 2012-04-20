@@ -11,9 +11,12 @@ namespace PPSDPart2
     {
         DataRow productData;
         BindingSource bisProductListBinding, bisCategoryBoxBinding, bisSupplierBoxBinding;
+        frmAddCategory addCategoryDialogue;
 
         public void initialiseProductData()
         {
+            addCategoryDialogue = new frmAddCategory(mDatabase);
+
             bisProductListBinding = new BindingSource();
             bisCategoryBoxBinding = new BindingSource();
             bisSupplierBoxBinding = new BindingSource();
@@ -126,7 +129,7 @@ namespace PPSDPart2
         private void btnProductApply_Click(object sender, EventArgs e)
         {
             string message = string.Empty;
-
+            
             if (txtProductName.Text != productData["name"].ToString())
             {
                 if (!DataValidation.validateInformation(txtProductName.Text, RegexPattern.NameString))
@@ -174,6 +177,5 @@ namespace PPSDPart2
         {
             fillProductDataFields();
         }
-
     }
 }
