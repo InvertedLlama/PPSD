@@ -11,12 +11,11 @@ namespace PPSDPart2
     {
         DataRow productData;
         BindingSource bisProductListBinding, bisCategoryBoxBinding, bisSupplierBoxBinding;
-        frmAddCategory addCategoryDialogue;
+
+        frmAddProduct addProductDialogue;
 
         public void initialiseProductData()
-        {
-            addCategoryDialogue = new frmAddCategory(mDatabase);
-
+        {      
             bisProductListBinding = new BindingSource();
             bisCategoryBoxBinding = new BindingSource();
             bisSupplierBoxBinding = new BindingSource();
@@ -171,6 +170,20 @@ namespace PPSDPart2
                 else
                     MessageBox.Show("Failed to apply changes");
             }
+        }
+
+        private void btnNewProduct_Click(object sender, EventArgs e)
+        {
+            addProductDialogue = new frmAddProduct(mDatabase, ref dtbCategory, ref dtbSupplier);
+            addProductDialogue.RecordAdded += addProductDialogue_RecordAdded;
+            addProductDialogue.Show();
+        }
+
+        private void addProductDialogue_RecordAdded(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Record added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mDatabase.selectData("SELECT * FROM Product", ref dtbProduct);
+            addProductDialogue.Close();
         }
 
         private void btnProductCancel_Click(object sender, EventArgs e)

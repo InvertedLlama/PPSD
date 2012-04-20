@@ -632,6 +632,7 @@
             this.btnNewProduct.TabIndex = 4;
             this.btnNewProduct.Text = "New";
             this.btnNewProduct.UseVisualStyleBackColor = true;
+            this.btnNewProduct.Click += new System.EventHandler(this.btnNewProduct_Click);
             // 
             // lstProducts
             // 

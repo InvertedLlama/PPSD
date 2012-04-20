@@ -30,7 +30,7 @@ namespace PPSDPart2
             initialiseStaffData();
             initialiseBranchData();
             initialiseSupplierData();
-        }
+        }       
 
         private void pullData()
         {
