@@ -101,7 +101,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.txtStaffFilter = new System.Windows.Forms.TextBox();
-            this.btnStaffNew = new System.Windows.Forms.Button();
+            this.btnNewStaff = new System.Windows.Forms.Button();
             this.lstStaff = new System.Windows.Forms.ListBox();
             this.tpgBranch = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
@@ -889,7 +889,7 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.txtStaffFilter);
-            this.groupBox8.Controls.Add(this.btnStaffNew);
+            this.groupBox8.Controls.Add(this.btnNewStaff);
             this.groupBox8.Controls.Add(this.lstStaff);
             this.groupBox8.Location = new System.Drawing.Point(8, 6);
             this.groupBox8.Name = "groupBox8";
@@ -905,14 +905,14 @@
             this.txtStaffFilter.Size = new System.Drawing.Size(132, 20);
             this.txtStaffFilter.TabIndex = 6;
             // 
-            // btnStaffNew
+            // btnNewStaff
             // 
-            this.btnStaffNew.Location = new System.Drawing.Point(34, 380);
-            this.btnStaffNew.Name = "btnStaffNew";
-            this.btnStaffNew.Size = new System.Drawing.Size(75, 23);
-            this.btnStaffNew.TabIndex = 4;
-            this.btnStaffNew.Text = "New";
-            this.btnStaffNew.UseVisualStyleBackColor = true;
+            this.btnNewStaff.Location = new System.Drawing.Point(34, 380);
+            this.btnNewStaff.Name = "btnNewStaff";
+            this.btnNewStaff.Size = new System.Drawing.Size(75, 23);
+            this.btnNewStaff.TabIndex = 4;
+            this.btnNewStaff.Text = "New";
+            this.btnNewStaff.UseVisualStyleBackColor = true;
             // 
             // lstStaff
             // 
@@ -1476,7 +1476,7 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button btnStaffNew;
+        private System.Windows.Forms.Button btnNewStaff;
         private System.Windows.Forms.ListBox lstStaff;
         private System.Windows.Forms.Button btnStaffPasswordSet;
         private System.Windows.Forms.Label label22;

@@ -68,17 +68,6 @@ namespace PPSDPart2
 
         }
 
-        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                //Run the login fuction
-                login(txtUsername.Text, txtPassword.Text);
-                txtUsername.Clear();
-                txtPassword.Clear();
-            }
-        }
-
         private void bgwInit_DoWork(object sender, DoWorkEventArgs e)
         {
             UserAccessLevel accessLvl = UserAccessLevel.None;

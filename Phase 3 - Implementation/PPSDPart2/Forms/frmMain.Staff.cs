@@ -12,6 +12,8 @@ namespace PPSDPart2
         BindingSource bisStaffListBinding, bisStaffBranchBinding;
         DataRow staffData;
 
+        frmAddStaff addStaffDialogue;
+
         private void initialiseStaffData()
         {
             bisStaffListBinding = new BindingSource();
@@ -33,6 +35,7 @@ namespace PPSDPart2
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstStaff.SelectedValueChanged += lstStaff_SelectedValueChanged;
             txtStaffFilter.TextChanged += txtStaffFilter_TextChanged;
+            btnNewStaff.Click += btnNewStaff_Click;
 
             lstStaff.ClearSelected();
         }
@@ -63,6 +66,20 @@ namespace PPSDPart2
                 MessageBox.Show(this, e.Message);
             }
 
+        }
+
+        private void btnNewStaff_Click(object sender, EventArgs e)
+        {
+            addStaffDialogue = new frmAddStaff(mDatabase, dtbStaff);
+            addStaffDialogue.RecordAdded += addStaffDialogue_RecordAdded;
+            addStaffDialogue.ShowDialog(this);
+        }
+
+        private void addStaffDialogue_RecordAdded(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Staff member added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mDatabase.selectData("SELECT * FROM Staff", ref dtbStaff);
+            addStaffDialogue.Close();
         }
 
         private void lstStaff_SelectedValueChanged(object sender, EventArgs e)
