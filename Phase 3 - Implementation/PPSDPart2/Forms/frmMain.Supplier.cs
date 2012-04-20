@@ -135,9 +135,7 @@ namespace PPSDPart2
 
                 if(mDatabase.runCommandQuery(selectQuery))
                 {
-                    dtbSupplier = mDatabase.selectData("SELECT * FROM Supplier");
-                    bisSupplierListBinding.DataSource = dtbSupplier;
-
+                    mDatabase.selectData("SELECT * FROM Supplier", ref dtbSupplier);
                     lstSuppliers.SelectedValue = selectedValue;
 
                     MessageBox.Show(this,"Changes applied successfully");

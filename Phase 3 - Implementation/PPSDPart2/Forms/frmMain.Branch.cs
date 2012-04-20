@@ -117,9 +117,7 @@ namespace PPSDPart2
                 if (mDatabase.runCommandQuery(insertQuery))
                 {
                     //changes applied! Reload data in GUI:
-                    dtbBranch = mDatabase.selectData("SELECT * FROM Branch");
-                    bisBranchListBinding.DataSource = dtbBranch;
-                    bisStaffBranchBinding.DataSource = dtbBranch;
+                    mDatabase.selectData("SELECT * FROM Branch", ref dtbBranch);
 
                     lstBranches.SelectedValue = selectedValue;
                     MessageBox.Show(this,"Changes applied successfully");

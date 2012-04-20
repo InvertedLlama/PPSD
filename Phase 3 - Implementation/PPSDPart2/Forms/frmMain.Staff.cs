@@ -178,10 +178,10 @@ namespace PPSDPart2
 
                 if (mDatabase.runCommandQuery(insertQuery))
                 {
-                    dtbStaff = mDatabase.selectData("SELECT * FROM Staff");
-                    initialiseStaffData();
-                    MessageBox.Show(this, "Changes applied Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mDatabase.selectData("SELECT * FROM Staff", ref dtbStaff);
                     lstStaff.SelectedValue = selectedValue;
+                    
+                    MessageBox.Show(this, "Changes applied Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
                 }
                 else
                     MessageBox.Show(this, "Failed to apply changes", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);

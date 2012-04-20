@@ -162,8 +162,8 @@ namespace PPSDPart2
                 if (mDatabase.runCommandQuery(insertQuery))
                 {
                     //changes applied! Reload data in GUI:
-                    dtbProduct = mDatabase.selectData("SELECT * FROM Product");
-                    bisProductListBinding.DataSource = dtbProduct;
+                    mDatabase.selectData("SELECT * FROM Product", ref dtbProduct);
+                    
                     lstProducts.SelectedValue = selectedValue;                       
                     
                     MessageBox.Show("Changes applied successfully");

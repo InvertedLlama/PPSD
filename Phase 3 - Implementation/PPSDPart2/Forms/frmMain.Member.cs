@@ -85,9 +85,7 @@ namespace PPSDPart2
         private void addMemberDialogue_RecordAdded(object sender, EventArgs e)
         {
             addMemberDialogue.Visible = false;
-
-            dtbMember = mDatabase.selectData("SELECT * FROM Member");
-            bisMemberListBinding.DataSource = dtbMember;
+            mDatabase.selectData("SELECT * FROM Member", ref dtbMember);         
 
             MessageBox.Show(this, "Record added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -177,8 +175,7 @@ namespace PPSDPart2
                 if (mDatabase.runCommandQuery(insertQuery))
                 {
                     //changes applied! Reload data in GUI:
-                    dtbMember = mDatabase.selectData("SELECT * FROM Member");
-                    bisMemberListBinding.DataSource = dtbMember;
+                    mDatabase.selectData("SELECT * FROM Member", ref dtbMember);
 
                     //Restore previous item selection
                     lstMembers.SelectedValue = selectedValue;

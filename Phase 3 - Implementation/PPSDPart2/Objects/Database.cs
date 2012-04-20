@@ -68,19 +68,37 @@ namespace PPSDPart2
 
         public DataTable selectData(string query)
         {
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, sqlConnection);
             DataTable table = new DataTable();
-            try
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, sqlConnection))
             {                
-                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                adapter.Fill(table);
+                try
+                {
+                    adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    adapter.Fill(table);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            adapter.Dispose();            
             return table;
+        }
+
+        public void selectData(string query, ref DataTable table)
+        {
+            table.Clear();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, sqlConnection))
+            {
+                try
+                {
+                    adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    adapter.Fill(table);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
         }
 
         public bool runCommandQuery(string query)
