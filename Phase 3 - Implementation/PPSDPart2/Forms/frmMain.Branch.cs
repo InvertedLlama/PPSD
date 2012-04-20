@@ -97,7 +97,7 @@ namespace PPSDPart2
                     message += "* Email\n";            
 
             if (txtBranchTel.Text != branchData["phoneNumber"].ToString())
-                if (!DataValidation.validateInformation(txtBranchTel.Text, RegexPattern.NumericalString))
+                if (!DataValidation.validateInformation(txtBranchTel.Text, RegexPattern.PhoneString))
                     message += "* Telephone Number\n";
 
             if (txtBranchAddress.Text == string.Empty)

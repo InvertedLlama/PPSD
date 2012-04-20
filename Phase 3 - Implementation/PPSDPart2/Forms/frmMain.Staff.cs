@@ -120,7 +120,7 @@ namespace PPSDPart2
                     message += "* Email\n";
 
             if (txtStaffTel.Text != staffData["phoneNumber"].ToString())
-                if (!DataValidation.validateInformation(txtStaffTel.Text, RegexPattern.NumericalString))
+                if (!DataValidation.validateInformation(txtStaffTel.Text, RegexPattern.PhoneString))
                     message += "* Phone Number\n";
 
             if (txtStaffAddress.Text == string.Empty)

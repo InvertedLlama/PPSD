@@ -47,17 +47,18 @@
             this.btnSumbit.Location = new System.Drawing.Point(160, 227);
             this.btnSumbit.Name = "btnSumbit";
             this.btnSumbit.Size = new System.Drawing.Size(75, 23);
-            this.btnSumbit.TabIndex = 0;
+            this.btnSumbit.TabIndex = 6;
             this.btnSumbit.Text = "Submit";
             this.btnSumbit.UseVisualStyleBackColor = true;
             this.btnSumbit.Click += new System.EventHandler(this.btnSumbit_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(79, 227);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -83,7 +84,7 @@
             this.txtTel.Location = new System.Drawing.Point(63, 38);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(172, 20);
-            this.txtTel.TabIndex = 1;
+            this.txtTel.TabIndex = 2;
             // 
             // label2
             // 
@@ -99,7 +100,7 @@
             this.txtMobile.Location = new System.Drawing.Point(63, 67);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(172, 20);
-            this.txtMobile.TabIndex = 1;
+            this.txtMobile.TabIndex = 3;
             // 
             // label3
             // 
@@ -115,7 +116,7 @@
             this.txtEmail.Location = new System.Drawing.Point(63, 93);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(172, 20);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 4;
             // 
             // label4
             // 
@@ -132,7 +133,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(172, 105);
-            this.txtAddress.TabIndex = 1;
+            this.txtAddress.TabIndex = 5;
             // 
             // label5
             // 
@@ -147,7 +148,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(243, 262);
+            this.ControlBox = false;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

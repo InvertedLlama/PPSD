@@ -28,13 +28,14 @@ namespace PPSDPart2
             lstMembers.ClearSelected();
 
             //Create the add form once and reuse
-            addMemberDialogue = new frmAddMember();
+            addMemberDialogue = new frmAddMember(mDatabase);
 
             //register the event handler method for a new list item being selected manually.
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstMembers.SelectedValueChanged += lstMember_SelectedValueChanged;
             txtMembersFilter.TextChanged += txtMembersFilter_TextChanged;
             trvMemberRentals.NodeMouseDoubleClick += trvMemberRentals_NodeMouseDoubleClick;
+            addMemberDialogue.RecordAdded += addMemberDialogue_RecordAdded;
         }
 
         private void fillMemberDataFields()
@@ -79,6 +80,16 @@ namespace PPSDPart2
                 MessageBox.Show(this, e.Message);
             }
             
+        }
+
+        private void addMemberDialogue_RecordAdded(object sender, EventArgs e)
+        {
+            addMemberDialogue.Visible = false;
+
+            dtbMember = mDatabase.selectData("SELECT * FROM Member");
+            bisMemberListBinding.DataSource = dtbMember;
+
+            MessageBox.Show(this, "Record added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void lstMember_SelectedValueChanged(object sender, EventArgs e)
@@ -140,7 +151,7 @@ namespace PPSDPart2
             
 
             if (txtMemberTel.Text != memberData["phoneNumber"].ToString())            
-                if (!DataValidation.validateInformation(txtMemberTel.Text, RegexPattern.NumericalString))
+                if (!DataValidation.validateInformation(txtMemberTel.Text, RegexPattern.PhoneString))
                     message += "* Telephone Number\n";
             
 
@@ -182,7 +193,7 @@ namespace PPSDPart2
 
         private void btnNewMember_Click(object sender, EventArgs e)
         {
-            
+            addMemberDialogue.ShowDialog(this);
         }
 
         private void btnMemberCancel_Click(object sender, EventArgs e)

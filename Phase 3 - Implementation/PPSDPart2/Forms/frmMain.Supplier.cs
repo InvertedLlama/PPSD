@@ -112,7 +112,7 @@ namespace PPSDPart2
                     message += "* Email\n";
 
             if (txtSupplierTel.Text != supplierData["phoneNumber"].ToString())
-                if (!DataValidation.validateInformation(txtSupplierTel.Text, RegexPattern.NumericalString))
+                if (!DataValidation.validateInformation(txtSupplierTel.Text, RegexPattern.PhoneString))
                     message += "* Phone\n";
 
             if(txtSupplierAddress.Text == string.Empty)
