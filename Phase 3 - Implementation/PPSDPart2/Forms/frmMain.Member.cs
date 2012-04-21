@@ -13,6 +13,7 @@ namespace PPSDPart2
         DataRow memberData;
         BindingSource bisMemberListBinding;
         frmAddMember addMemberDialogue;
+        frmAddRental addRentalDialogue;
 
         private void initialiseMemberData()
         {            
@@ -59,7 +60,7 @@ namespace PPSDPart2
                 foreach (DataRow rental in memberRentals)
                 {                    
                     crntNode = new ValueTreeNode(string.Format("Rental: {0}, Cost: £{1}, Return: {2}", rental["rentalID"], rental["totalCost"], ((bool)rental["returned"] ? "Complete" : ((DateTime)rental["returnDate"]).ToShortDateString())),
-                        ((bool)rental["returned"] ? 1 : 0));
+                        ((bool)rental["returned"] ? -1 : (int)rental["rentalID"]));
                     rentalItems = dtbRentalItem.Select("rentalID = " + rental["rentalID"]);
 
                     foreach (DataRow rentalItem in rentalItems)
@@ -135,7 +136,7 @@ namespace PPSDPart2
         private void trvMemberRentals_AfterSelect(object sender, TreeViewEventArgs e)
         {
             //Only enable the return button on root nodes
-            btnReturn.Enabled = (e.Node.Parent == null && (int)((ValueTreeNode)e.Node).Value == 0);
+            btnReturn.Enabled = (e.Node.Parent == null && (int)((ValueTreeNode)e.Node).Value > -1);
         }
 
         private void btnMemberApply_Click(object sender, EventArgs e)
@@ -200,6 +201,69 @@ namespace PPSDPart2
         {
             //User cancelled changes, reload current record from last DB pull:
             fillMemberDataFields();
+        }
+
+        private void btnNewRental_Click(object sender, EventArgs e)
+        {
+            addRentalDialogue = new frmAddRental(mDatabase, dtbProduct, dtbStock, dtbBranch, (int)lstMembers.SelectedValue);
+            addRentalDialogue.RecordAdded += addRentalDialogue_RecordAdded;
+            addRentalDialogue.ShowDialog(this);
+        }
+
+        private void addRentalDialogue_RecordAdded(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Rental Successfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mDatabase.selectData("SELECT * FROM Rental", ref dtbRental);
+            mDatabase.selectData("SELECT * FROM RentalItem", ref dtbRentalItem);
+            mDatabase.selectData("SELECT * FROM Stock", ref dtbStock);
+            addRentalDialogue.Close();
+            fillMemberDataFields();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            //Only return whole rentals. not individual items
+            if (trvMemberRentals.SelectedNode.Parent == null)
+            {
+                int rentalID = ((ValueTreeNode)trvMemberRentals.SelectedNode).Value;
+
+                string updateQuery = "UPDATE Rental SET returned=true WHERE rentalID=" + rentalID;
+                mDatabase.runCommandQuery(updateQuery);
+
+                //Restore the items to the available stock                
+
+                Dictionary<int, int> amounts = new Dictionary<int,int>();
+                int stockID = -1;
+                foreach (DataRow stockitem in dtbRentalItem.Select("rentalID = " + rentalID))
+                {
+                    stockID = (int)stockitem["stockID"];
+                    if (amounts.ContainsKey(stockID))
+                        amounts[stockID]++;
+                    else
+                        amounts.Add(stockID, 1);                        
+                }
+
+                updateQuery = string.Empty;
+                foreach (KeyValuePair<int, int> pair in amounts)
+                {
+                    updateQuery += string.Format("UPDATE Stock SET available=available+{0} WHERE stockID = {1};",
+                        pair.Value, pair.Key
+                        );
+                }
+
+                if (mDatabase.runCommandQuery(updateQuery))
+                {
+                    MessageBox.Show(this, "Item returned successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mDatabase.selectData("SELECT * FROM Rental", ref dtbRental);
+                    mDatabase.selectData("SELECT * FROM RentalItem", ref dtbRentalItem);
+                    mDatabase.selectData("SELECT * FROM Stock", ref dtbStock);
+                    fillMemberDataFields();
+                    if (lstBranches.SelectedIndex > -1)
+                        fillBranchDataFields();
+                }
+                else
+                    MessageBox.Show(this, "Failed to apply changes to database", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
     }

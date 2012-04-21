@@ -216,6 +216,7 @@
             this.btnReturn.TabIndex = 3;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnNewRental
             // 
@@ -226,6 +227,7 @@
             this.btnNewRental.TabIndex = 3;
             this.btnNewRental.Text = "New Rental";
             this.btnNewRental.UseVisualStyleBackColor = true;
+            this.btnNewRental.Click += new System.EventHandler(this.btnNewRental_Click);
             // 
             // btnMemberCancel
             // 

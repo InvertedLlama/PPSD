@@ -143,6 +143,7 @@
       <DependentUpon>frmWorking.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\Database.cs" />
+    <Compile Include="Objects\RentalItem.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="Objects\ValueTreeNode.cs" />
     <Compile Include="Program.cs" />
