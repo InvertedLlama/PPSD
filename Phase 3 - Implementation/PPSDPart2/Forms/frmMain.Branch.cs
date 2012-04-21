@@ -12,6 +12,8 @@ namespace PPSDPart2
         DataRow branchData;
         BindingSource bisBranchListBinding;
 
+        frmAddBranch addBranchDialogue;
+
         private void initialiseBranchData()
         {
             bisBranchListBinding = new BindingSource();
@@ -59,6 +61,20 @@ namespace PPSDPart2
                 MessageBox.Show(this, e.Message);
             }
 
+        }
+
+        private void btnNewBranch_Click(object sender, EventArgs e)
+        {
+            addBranchDialogue = new frmAddBranch(mDatabase);
+            addBranchDialogue.RecordAdded += addBranchDialogue_RecordAdded;
+            addBranchDialogue.ShowDialog(this);
+        }
+
+        private void addBranchDialogue_RecordAdded(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Branch added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mDatabase.selectData("SELECT * FROM Branch", ref dtbBranch);
+            addBranchDialogue.Close();
         }
 
         private void lstBranches_SelectedValueChanged(object sender, EventArgs e)

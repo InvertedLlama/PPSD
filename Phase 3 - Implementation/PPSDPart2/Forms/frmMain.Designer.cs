@@ -1099,6 +1099,7 @@
             this.btnNewBranch.TabIndex = 4;
             this.btnNewBranch.Text = "New";
             this.btnNewBranch.UseVisualStyleBackColor = true;
+            this.btnNewBranch.Click += new System.EventHandler(this.btnNewBranch_Click);
             // 
             // lstBranches
             // 

@@ -27,9 +27,6 @@ namespace PPSDPart2
 
             lstMembers.ClearSelected();
 
-            //Create the add form once and reuse
-            addMemberDialogue = new frmAddMember(mDatabase);
-
             //register the event handler method for a new list item being selected manually.
             //if this is done in the designer it doesn't apply the Value and Display member settings early enough and it causes issues
             lstMembers.SelectedValueChanged += lstMember_SelectedValueChanged;
@@ -84,9 +81,8 @@ namespace PPSDPart2
 
         private void addMemberDialogue_RecordAdded(object sender, EventArgs e)
         {
-            addMemberDialogue.Visible = false;
-            mDatabase.selectData("SELECT * FROM Member", ref dtbMember);         
-
+            addMemberDialogue.Close();
+            mDatabase.selectData("SELECT * FROM Member", ref dtbMember);            
             MessageBox.Show(this, "Record added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -189,7 +185,9 @@ namespace PPSDPart2
         }
 
         private void btnNewMember_Click(object sender, EventArgs e)
-        {
+        {            
+            addMemberDialogue = new frmAddMember(mDatabase);
+            addMemberDialogue.RecordAdded += addMemberDialogue_RecordAdded;
             addMemberDialogue.ShowDialog(this);
         }
 
