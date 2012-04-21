@@ -21,8 +21,8 @@ namespace PPSDPart2
             bisMemberListBinding.DataSource = dtbMember;
 
             lstMembers.DataSource = bisMemberListBinding;
-                        
-            lstMembers.ValueMember = dtbMember.Columns[0].ColumnName;
+
+            lstMembers.ValueMember = "memberID";
             lstMembers.DisplayMember = "name";
 
             lstMembers.ClearSelected();
@@ -32,7 +32,6 @@ namespace PPSDPart2
             lstMembers.SelectedValueChanged += lstMember_SelectedValueChanged;
             txtMembersFilter.TextChanged += txtMembersFilter_TextChanged;
             trvMemberRentals.NodeMouseDoubleClick += trvMemberRentals_NodeMouseDoubleClick;
-            addMemberDialogue.RecordAdded += addMemberDialogue_RecordAdded;
         }
 
         private void fillMemberDataFields()
@@ -58,15 +57,16 @@ namespace PPSDPart2
                 trvMemberRentals.Nodes.Clear();
 
                 foreach (DataRow rental in memberRentals)
-                {
-                    crntNode = new TreeNode(string.Format("Rental: {0}, Cost: £{1}", rental["rentalID"], rental["totalCost"]));
+                {                    
+                    crntNode = new TreeNode(string.Format("Rental: {0}, Cost: £{1}, Return: {2}", rental["rentalID"], rental["totalCost"], ((bool)rental["returned"] ? "Complete" : ((DateTime)rental["returnDate"]).ToShortDateString())));
                     rentalItems = dtbRentalItem.Select("rentalID = " + rental["rentalID"]);
 
                     foreach (DataRow rentalItem in rentalItems)
                     {
                         productInfo = dtbProduct.Select("productID = " + rentalItem["productID"])[0];
-                        crntNode.Nodes.Add(new ValueTreeNode(string.Format("Item: {0}, Cost: £{1}", productInfo["name"], rentalItem["cost"]), 
-                                                            productInfo["productID"]));
+                        crntNode.Nodes.Add(new ValueTreeNode(string.Format("Item: {0}, Cost: £{1}",
+                            productInfo["name"], rentalItem["cost"]),
+                            productInfo["productID"]));
                     }
 
                     trvMemberRentals.Nodes.Add(crntNode);
