@@ -140,7 +140,7 @@
             this.trvSupplierProducts = new System.Windows.Forms.TreeView();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.txtSupplierFilter = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnNewSupplier = new System.Windows.Forms.Button();
             this.lstSuppliers = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -1271,7 +1271,7 @@
             // groupBox15
             // 
             this.groupBox15.Controls.Add(this.txtSupplierFilter);
-            this.groupBox15.Controls.Add(this.button3);
+            this.groupBox15.Controls.Add(this.btnNewSupplier);
             this.groupBox15.Controls.Add(this.lstSuppliers);
             this.groupBox15.Location = new System.Drawing.Point(8, 6);
             this.groupBox15.Name = "groupBox15";
@@ -1287,14 +1287,15 @@
             this.txtSupplierFilter.Size = new System.Drawing.Size(132, 20);
             this.txtSupplierFilter.TabIndex = 5;
             // 
-            // button3
+            // btnNewSupplier
             // 
-            this.button3.Location = new System.Drawing.Point(34, 380);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "New";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnNewSupplier.Location = new System.Drawing.Point(34, 380);
+            this.btnNewSupplier.Name = "btnNewSupplier";
+            this.btnNewSupplier.Size = new System.Drawing.Size(75, 23);
+            this.btnNewSupplier.TabIndex = 4;
+            this.btnNewSupplier.Text = "New";
+            this.btnNewSupplier.UseVisualStyleBackColor = true;
+            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
             // 
             // lstSuppliers
             // 
@@ -1507,7 +1508,7 @@
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TreeView trvSupplierProducts;
         private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnNewSupplier;
         private System.Windows.Forms.ListBox lstSuppliers;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.TextBox txtSupplierAddress;

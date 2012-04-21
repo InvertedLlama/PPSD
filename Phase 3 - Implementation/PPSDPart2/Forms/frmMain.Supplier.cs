@@ -12,6 +12,8 @@ namespace PPSDPart2
         BindingSource bisSupplierListBinding;
         DataRow supplierData;
 
+        frmAddSupplier addSupplierDialogue;
+
         private void initialiseSupplierData()
         {
             bisSupplierListBinding = new BindingSource();
@@ -60,6 +62,20 @@ namespace PPSDPart2
                 MessageBox.Show(this, e.Message);
             }
 
+        }
+
+        private void btnNewSupplier_Click(object sender, EventArgs e)
+        {
+            addSupplierDialogue = new frmAddSupplier(mDatabase);
+            addSupplierDialogue.RecordAdded += addSupplierDialogue_RecordAdded;
+            addSupplierDialogue.ShowDialog(this);
+        }
+
+        private void addSupplierDialogue_RecordAdded(object sender, EventArgs e)
+        {
+            addSupplierDialogue.Close();
+            mDatabase.selectData("SELECT * FROM Supplier", ref dtbSupplier);
+            MessageBox.Show(this, "Supplier added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void lstSuppliers_SelectedValueChanged(object sender, EventArgs e)
