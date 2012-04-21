@@ -8,14 +8,14 @@ namespace PPSDPart2
 {
     public class ValueTreeNode : TreeNode
     {
-        object mValue;        
+        int mValue;        
 
-        public ValueTreeNode(string nodeText, object value) : base(nodeText)
+        public ValueTreeNode(string nodeText, int value) : base(nodeText)
         {
             mValue = value;
         }
 
-        public object Value
+        public int Value
         {
             get { return mValue; }
             set { mValue = value; }

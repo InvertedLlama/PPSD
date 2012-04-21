@@ -96,7 +96,7 @@ namespace PPSDPart2
             {
                 trvProductStock.Nodes.Add(new ValueTreeNode(
                                                 string.Format("Branch: {0} Amount: {1}", stockRow["branchID"], stockRow["amount"]),
-                                                stockRow["branchID"]));
+                                                (int)stockRow["branchID"]));
             }
 
         }

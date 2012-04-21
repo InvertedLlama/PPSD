@@ -53,7 +53,7 @@ namespace PPSDPart2
                 {
                     productInformation = dtbProduct.Select("productID = " + stockItem["productID"])[0];
                     trvBranchProducts.Nodes.Add(new ValueTreeNode(string.Format("Product: {0}, Amount: {1} | Available: {2}", productInformation["name"], stockItem["amount"], stockItem["available"]),
-                                                                productInformation["productID"]));
+                                                                (int)productInformation["productID"]));
                 }
             }
             catch (Exception e)

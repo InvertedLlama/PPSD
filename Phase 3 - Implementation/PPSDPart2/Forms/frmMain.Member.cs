@@ -58,15 +58,16 @@ namespace PPSDPart2
 
                 foreach (DataRow rental in memberRentals)
                 {                    
-                    crntNode = new TreeNode(string.Format("Rental: {0}, Cost: £{1}, Return: {2}", rental["rentalID"], rental["totalCost"], ((bool)rental["returned"] ? "Complete" : ((DateTime)rental["returnDate"]).ToShortDateString())));
+                    crntNode = new ValueTreeNode(string.Format("Rental: {0}, Cost: £{1}, Return: {2}", rental["rentalID"], rental["totalCost"], ((bool)rental["returned"] ? "Complete" : ((DateTime)rental["returnDate"]).ToShortDateString())),
+                        ((bool)rental["returned"] ? 1 : 0));
                     rentalItems = dtbRentalItem.Select("rentalID = " + rental["rentalID"]);
 
                     foreach (DataRow rentalItem in rentalItems)
-                    {
-                        productInfo = dtbProduct.Select("productID = " + rentalItem["productID"])[0];
+                    {                        
+                        productInfo = dtbProduct.Select("productID = " + dtbStock.Select("stockID = " + rentalItem["stockID"])[0]["productID"])[0];
                         crntNode.Nodes.Add(new ValueTreeNode(string.Format("Item: {0}, Cost: £{1}",
                             productInfo["name"], rentalItem["cost"]),
-                            productInfo["productID"]));
+                            (int)productInfo["productID"]));
                     }
 
                     trvMemberRentals.Nodes.Add(crntNode);
@@ -96,6 +97,7 @@ namespace PPSDPart2
                 btnMemberCancel.Enabled = true;
 
                 btnNewRental.Enabled = true;
+                btnReturn.Enabled = false;
             }
             else
             {
@@ -121,7 +123,8 @@ namespace PPSDPart2
 
         private void trvMemberRentals_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if (e.Node.GetType() == typeof(ValueTreeNode))
+            //Only allow double click functionality on child nodes
+            if (e.Node.GetType() == typeof(ValueTreeNode) && e.Node.Parent != null)
             {
                 tbcContent.SelectTab(tpgProduct);
                 
@@ -132,7 +135,7 @@ namespace PPSDPart2
         private void trvMemberRentals_AfterSelect(object sender, TreeViewEventArgs e)
         {
             //Only enable the return button on root nodes
-            btnReturn.Enabled = (e.Node.Parent == null);
+            btnReturn.Enabled = (e.Node.Parent == null && (int)((ValueTreeNode)e.Node).Value == 0);
         }
 
         private void btnMemberApply_Click(object sender, EventArgs e)

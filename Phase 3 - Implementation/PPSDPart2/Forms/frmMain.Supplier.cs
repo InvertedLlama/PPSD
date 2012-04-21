@@ -53,7 +53,7 @@ namespace PPSDPart2
                 foreach (DataRow supplierProduct in supplierProducts)
                 {
                     trvSupplierProducts.Nodes.Add(new ValueTreeNode(string.Format("Name: {0} Cost: {1}", supplierProduct["name"], supplierProduct["cost"]),
-                                                                    supplierProduct["productID"])
+                                                                    (int)supplierProduct["productID"])
                                                  );
                 }
             }
