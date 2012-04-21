@@ -40,7 +40,8 @@ namespace PPSDPart2
             {               
                 return false;
             }
-           
+
+            Console.WriteLine(db.insertRecord("INSERT INTO Category (name) VALUES ('test')"));
             return true;
         }
     }
