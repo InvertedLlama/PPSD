@@ -128,27 +128,19 @@ namespace PPSDPart2
         private void btnProductApply_Click(object sender, EventArgs e)
         {
             string message = string.Empty;
-            
-            if (txtProductName.Text != productData["name"].ToString())
-            {
-                if (!DataValidation.validateInformation(txtProductName.Text, RegexPattern.NameString))
+                                    
+            if (!DataValidation.validateInformation(txtProductName.Text, RegexPattern.NameString))
                     message += "* Product Name\n";
-            }
-
-            if (txtProductRentalFee.Text != productData["rentalFee"].ToString())
-            {
-                if (!DataValidation.validateInformation(txtProductRentalFee.Text, RegexPattern.PriceString))
+                        
+            if (!DataValidation.validateInformation(txtProductRentalFee.Text, RegexPattern.PriceString))
                     message += "* Rental Fee\n";
-            }
-
-            if (txtProductCost.Text != productData["cost"].ToString())
-            {
-                if (!DataValidation.validateInformation(txtProductCost.Text, RegexPattern.PriceString))
+                                   
+            if (!DataValidation.validateInformation(txtProductCost.Text, RegexPattern.PriceString))
                     message += "* Cost\n";
-            }
+            
 
             if (message != string.Empty)
-                MessageBox.Show("Please verify the following:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please verify the following fields:\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (MessageBox.Show(this, "Are you sure you want to apply these changes?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 int selectedValue = (int)lstProducts.SelectedValue;

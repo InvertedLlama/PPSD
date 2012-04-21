@@ -126,18 +126,14 @@ namespace PPSDPart2
         private void btnStaffApply_Click(object sender, EventArgs e)
         {
             string message = string.Empty;
-
-            if (txtStaffName.Text != staffData["name"].ToString())            
-                if (!DataValidation.validateInformation(txtStaffName.Text, RegexPattern.NameString))
-                    message += "* Name\n";
             
-
-            if (txtStaffEmail.Text != staffData["email"].ToString())            
-                if (!DataValidation.validateInformation(txtStaffEmail.Text, RegexPattern.EmailString))
+            if (!DataValidation.validateInformation(txtStaffName.Text, RegexPattern.NameString))
+                    message += "* Name\n";
+                        
+            if (!DataValidation.validateInformation(txtStaffEmail.Text, RegexPattern.EmailString) && txtStaffEmail.Text != string.Empty)
                     message += "* Email\n";
-
-            if (txtStaffTel.Text != staffData["phoneNumber"].ToString())
-                if (!DataValidation.validateInformation(txtStaffTel.Text, RegexPattern.PhoneString))
+                        
+            if (!DataValidation.validateInformation(txtStaffTel.Text, RegexPattern.PhoneString))
                     message += "* Phone Number\n";
 
             if (txtStaffAddress.Text == string.Empty)

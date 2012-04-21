@@ -52,7 +52,7 @@ namespace PPSDPart2
                 foreach (DataRow stockItem in branchStock)
                 {
                     productInformation = dtbProduct.Select("productID = " + stockItem["productID"])[0];
-                    trvBranchProducts.Nodes.Add(new ValueTreeNode(string.Format("Product: {0} Amount: {1}", productInformation["name"], stockItem["amount"]),
+                    trvBranchProducts.Nodes.Add(new ValueTreeNode(string.Format("Product: {0}, Amount: {1} | Available: {2}", productInformation["name"], stockItem["amount"], stockItem["available"]),
                                                                 productInformation["productID"]));
                 }
             }
@@ -108,12 +108,11 @@ namespace PPSDPart2
         private void btnBranchApply_Click(object sender, EventArgs e)
         {
             string message = string.Empty;
-            if (txtBranchEmail.Text != branchData["email"].ToString() && txtBranchEmail.Text != string.Empty)            
-                if (!DataValidation.validateInformation(txtBranchEmail.Text, RegexPattern.EmailString))
+            
+            if (!DataValidation.validateInformation(txtBranchEmail.Text, RegexPattern.EmailString) && txtBranchEmail.Text != string.Empty)
                     message += "* Email\n";            
-
-            if (txtBranchTel.Text != branchData["phoneNumber"].ToString())
-                if (!DataValidation.validateInformation(txtBranchTel.Text, RegexPattern.PhoneString))
+                        
+            if (!DataValidation.validateInformation(txtBranchTel.Text, RegexPattern.PhoneString))
                     message += "* Telephone Number\n";
 
             if (txtBranchAddress.Text == string.Empty)
@@ -156,6 +155,5 @@ namespace PPSDPart2
                 lstProducts.SelectedValue = ((ValueTreeNode)e.Node).Value;
             }
         }
-
     }
 }

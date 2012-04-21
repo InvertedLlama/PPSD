@@ -94,6 +94,8 @@ namespace PPSDPart2
                 fillMemberDataFields();
                 btnMemberApply.Enabled = true;
                 btnMemberCancel.Enabled = true;
+
+                btnNewRental.Enabled = true;
             }
             else
             {
@@ -106,6 +108,8 @@ namespace PPSDPart2
                 trvMemberRentals.Nodes.Clear();
                 btnMemberApply.Enabled = false;
                 btnMemberCancel.Enabled = false;
+                btnNewRental.Enabled = false;
+                btnReturn.Enabled = false;
             }
         }
 
@@ -125,32 +129,30 @@ namespace PPSDPart2
             }
         }
 
+        private void trvMemberRentals_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //Only enable the return button on root nodes
+            btnReturn.Enabled = (e.Node.Parent == null);
+        }
 
         private void btnMemberApply_Click(object sender, EventArgs e)
         {
-            //Check all fields for diff changes against the DB
+            //Note: Removed Check against DB. It's kind of pointless to check for changes when you're just committing the entire record again regardless. ~Pete
             //If any fields are changed, validate
             //If valid, commit
 
             string message = string.Empty;
-
-            if (txtMemberName.Text != memberData["name"].ToString())            
-                if (!DataValidation.validateInformation(txtMemberName.Text, RegexPattern.NameString))
+                        
+            if (!DataValidation.validateInformation(txtMemberName.Text, RegexPattern.NameString))
                     message += "* Name\n";
+                        
+            if (!DataValidation.validateInformation(txtMemberEmail.Text, RegexPattern.EmailString))
+                    message += "* Email\n";           
             
-
-            if (txtMemberEmail.Text != memberData["email"].ToString() && txtMemberEmail.Text != string.Empty)            
-                if (!DataValidation.validateInformation(txtMemberEmail.Text, RegexPattern.EmailString))
-                    message += "* Email\n";
-            
-
-            if (txtMemberTel.Text != memberData["phoneNumber"].ToString())            
-                if (!DataValidation.validateInformation(txtMemberTel.Text, RegexPattern.PhoneString))
+            if (!DataValidation.validateInformation(txtMemberTel.Text, RegexPattern.PhoneString))
                     message += "* Telephone Number\n";
-            
-
-            if (txtMemberMob.Text != memberData["mobileNumber"].ToString())            
-                if (!DataValidation.validateInformation(txtMemberMob.Text, RegexPattern.NumericalString))
+                        
+            if (!DataValidation.validateInformation(txtMemberMob.Text, RegexPattern.NumericalString))
                     message += "* Mobile Number\n";
 
             if (txtMemberAddress.Text == string.Empty)

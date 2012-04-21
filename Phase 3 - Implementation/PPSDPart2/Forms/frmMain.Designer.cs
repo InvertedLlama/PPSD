@@ -30,7 +30,8 @@
         {
             this.tbcContent = new System.Windows.Forms.TabControl();
             this.tpgMember = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnNewRental = new System.Windows.Forms.Button();
             this.btnMemberCancel = new System.Windows.Forms.Button();
             this.btnMemberApply = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -191,7 +192,8 @@
             // 
             // tpgMember
             // 
-            this.tpgMember.Controls.Add(this.button7);
+            this.tpgMember.Controls.Add(this.btnReturn);
+            this.tpgMember.Controls.Add(this.btnNewRental);
             this.tpgMember.Controls.Add(this.btnMemberCancel);
             this.tpgMember.Controls.Add(this.btnMemberApply);
             this.tpgMember.Controls.Add(this.groupBox3);
@@ -205,15 +207,25 @@
             this.tpgMember.Text = "Member";
             this.tpgMember.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnReturn
             // 
-            this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(563, 386);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "New Rental";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnReturn.Enabled = false;
+            this.btnReturn.Location = new System.Drawing.Point(482, 386);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 3;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            // 
+            // btnNewRental
+            // 
+            this.btnNewRental.Enabled = false;
+            this.btnNewRental.Location = new System.Drawing.Point(563, 386);
+            this.btnNewRental.Name = "btnNewRental";
+            this.btnNewRental.Size = new System.Drawing.Size(75, 23);
+            this.btnNewRental.TabIndex = 3;
+            this.btnNewRental.Text = "New Rental";
+            this.btnNewRental.UseVisualStyleBackColor = true;
             // 
             // btnMemberCancel
             // 
@@ -254,6 +266,7 @@
             this.trvMemberRentals.Name = "trvMemberRentals";
             this.trvMemberRentals.Size = new System.Drawing.Size(473, 151);
             this.trvMemberRentals.TabIndex = 0;
+            this.trvMemberRentals.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvMemberRentals_AfterSelect);
             // 
             // groupBox2
             // 
@@ -1537,10 +1550,11 @@
         private System.Windows.Forms.Button btnBranchCancel;
         private System.Windows.Forms.Button btnBranchApply;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnNewRental;
         private System.Windows.Forms.Button btnStaffCancel;
         private System.Windows.Forms.Button btnStaffApply;
         private System.Windows.Forms.Button btnSupplierCancel;
         private System.Windows.Forms.Button btnSupplierApply;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
