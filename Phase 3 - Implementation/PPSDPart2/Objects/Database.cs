@@ -103,7 +103,7 @@ namespace PPSDPart2
 
         /// <summary>
         /// Inserts a new record and returns the ID used.
-        /// NOTE: Only use if you require the last inserted ID. Othewise use the safer runCommandQuery function
+        /// NOTE: Only use if you require the last inserted ID. Othewise use the runCommandQuery function
         /// </summary>
         /// <param name="query">Query to execute</param>
         /// <returns>Returns the ID the new record was inserted into the database with. -1 if failed</returns>
@@ -125,20 +125,19 @@ namespace PPSDPart2
 
         public bool runCommandQuery(string query)
         {
-            try
+            using (MySqlCommand cmd = new MySqlCommand(query, sqlConnection))
             {
-                using (MySqlCommand cmd = new MySqlCommand(query, sqlConnection))
+                try
                 {
                     cmd.ExecuteNonQuery();
+                    return true;
                 }
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.Message);
-                return false;
-            }
-
-            return true;
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }                                    
         }
 
         /// <summary>
