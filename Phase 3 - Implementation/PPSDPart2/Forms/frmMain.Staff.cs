@@ -70,9 +70,14 @@ namespace PPSDPart2
 
         private void btnNewStaff_Click(object sender, EventArgs e)
         {
-            addStaffDialogue = new frmAddStaff(mDatabase, dtbStaff);
-            addStaffDialogue.RecordAdded += addStaffDialogue_RecordAdded;
-            addStaffDialogue.ShowDialog(this);
+            if (muser.canCreate)
+            {
+                addStaffDialogue = new frmAddStaff(mDatabase, dtbStaff);
+                addStaffDialogue.RecordAdded += addStaffDialogue_RecordAdded;
+                addStaffDialogue.ShowDialog(this);
+            }
+            else
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
 
         private void addStaffDialogue_RecordAdded(object sender, EventArgs e)
@@ -125,6 +130,12 @@ namespace PPSDPart2
 
         private void btnStaffApply_Click(object sender, EventArgs e)
         {
+            if (!muser.canModify)
+            {
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             string message = string.Empty;
             
             if (!DataValidation.validateInformation(txtStaffName.Text, RegexPattern.NameString))
@@ -179,6 +190,12 @@ namespace PPSDPart2
 
         private void btnStaffPasswordSet_Click(object sender, EventArgs e)
         {
+            if (!muser.canModify)
+            {
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             if (MessageBox.Show(this, "Are you sure you want to change this users password?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 int selectedValue = (int)lstStaff.SelectedValue;

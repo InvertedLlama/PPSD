@@ -145,6 +145,12 @@ namespace PPSDPart2
             //If any fields are changed, validate
             //If valid, commit
 
+            if (!muser.canModify)
+            {
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             string message = string.Empty;
                         
             if (!DataValidation.validateInformation(txtMemberName.Text, RegexPattern.NameString))
@@ -191,10 +197,15 @@ namespace PPSDPart2
         }
 
         private void btnNewMember_Click(object sender, EventArgs e)
-        {            
-            addMemberDialogue = new frmAddMember(mDatabase);
-            addMemberDialogue.RecordAdded += addMemberDialogue_RecordAdded;
-            addMemberDialogue.ShowDialog(this);
+        {
+            if (muser.canCreate)
+            {
+                addMemberDialogue = new frmAddMember(mDatabase);
+                addMemberDialogue.RecordAdded += addMemberDialogue_RecordAdded;
+                addMemberDialogue.ShowDialog(this);
+            }
+            else
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);            
         }
 
         private void btnMemberCancel_Click(object sender, EventArgs e)
@@ -205,9 +216,14 @@ namespace PPSDPart2
 
         private void btnNewRental_Click(object sender, EventArgs e)
         {
-            addRentalDialogue = new frmAddRental(mDatabase, dtbProduct, dtbStock, dtbBranch, (int)lstMembers.SelectedValue);
-            addRentalDialogue.RecordAdded += addRentalDialogue_RecordAdded;
-            addRentalDialogue.ShowDialog(this);
+            if (muser.canCreate)
+            {
+                addRentalDialogue = new frmAddRental(mDatabase, dtbProduct, dtbStock, dtbBranch, (int)lstMembers.SelectedValue);
+                addRentalDialogue.RecordAdded += addRentalDialogue_RecordAdded;
+                addRentalDialogue.ShowDialog(this);
+            }
+            MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            return;
         }
 
         private void addRentalDialogue_RecordAdded(object sender, EventArgs e)
@@ -222,6 +238,13 @@ namespace PPSDPart2
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
+
+            if (!muser.canModify)
+            {
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             //Only return whole rentals. not individual items
             if (trvMemberRentals.SelectedNode.Parent == null)
             {

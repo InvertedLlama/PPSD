@@ -66,9 +66,12 @@ namespace PPSDPart2
 
         private void btnNewBranch_Click(object sender, EventArgs e)
         {
-            addBranchDialogue = new frmAddBranch(mDatabase);
-            addBranchDialogue.RecordAdded += addBranchDialogue_RecordAdded;
-            addBranchDialogue.ShowDialog(this);
+            if (muser.canCreate)
+            {
+                addBranchDialogue = new frmAddBranch(mDatabase);
+                addBranchDialogue.RecordAdded += addBranchDialogue_RecordAdded;
+                addBranchDialogue.ShowDialog(this);
+            }
         }
 
         private void addBranchDialogue_RecordAdded(object sender, EventArgs e)
@@ -111,7 +114,13 @@ namespace PPSDPart2
         private void btnBranchApply_Click(object sender, EventArgs e)
         {
             string message = string.Empty;
-            
+
+            if (!muser.canModify)
+            {
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+                        
             if (!DataValidation.validateInformation(txtBranchEmail.Text, RegexPattern.EmailString) && txtBranchEmail.Text != string.Empty)
                     message += "* Email\n";            
                         
@@ -152,9 +161,14 @@ namespace PPSDPart2
 
         private void btnAddStock_Click(object sender, EventArgs e)
         {
-            addStockDialogue = new frmAddStock(mDatabase, dtbStock, dtbProduct, (int)lstBranches.SelectedValue);
-            addStockDialogue.RecordAdded += addStockDialogue_RecordAdded;
-            addStockDialogue.ShowDialog(this);
+            if (muser.canCreate)
+            {
+                addStockDialogue = new frmAddStock(mDatabase, dtbStock, dtbProduct, (int)lstBranches.SelectedValue);
+                addStockDialogue.RecordAdded += addStockDialogue_RecordAdded;
+                addStockDialogue.ShowDialog(this);
+            }
+            else
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);            
         }
 
         private void addStockDialogue_RecordAdded(object sender, EventArgs e)

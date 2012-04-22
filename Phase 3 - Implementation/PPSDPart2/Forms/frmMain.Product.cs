@@ -127,6 +127,12 @@ namespace PPSDPart2
 
         private void btnProductApply_Click(object sender, EventArgs e)
         {
+            if (!muser.canModify)
+            {
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             string message = string.Empty;
                                     
             if (!DataValidation.validateInformation(txtProductName.Text, RegexPattern.NameString))
@@ -166,9 +172,14 @@ namespace PPSDPart2
 
         private void btnNewProduct_Click(object sender, EventArgs e)
         {
-            addProductDialogue = new frmAddProduct(mDatabase, ref dtbCategory, ref dtbSupplier);
-            addProductDialogue.RecordAdded += addProductDialogue_RecordAdded;
-            addProductDialogue.Show();
+            if (muser.canCreate)
+            {
+                addProductDialogue = new frmAddProduct(mDatabase, ref dtbCategory, ref dtbSupplier);
+                addProductDialogue.RecordAdded += addProductDialogue_RecordAdded;
+                addProductDialogue.Show();
+            }
+            else
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);            
         }
 
         private void addProductDialogue_RecordAdded(object sender, EventArgs e)

@@ -66,9 +66,12 @@ namespace PPSDPart2
 
         private void btnNewSupplier_Click(object sender, EventArgs e)
         {
-            addSupplierDialogue = new frmAddSupplier(mDatabase);
-            addSupplierDialogue.RecordAdded += addSupplierDialogue_RecordAdded;
-            addSupplierDialogue.ShowDialog(this);
+            if (muser.canCreate)
+            {
+                addSupplierDialogue = new frmAddSupplier(mDatabase);
+                addSupplierDialogue.RecordAdded += addSupplierDialogue_RecordAdded;
+                addSupplierDialogue.ShowDialog(this);
+            }
         }
 
         private void addSupplierDialogue_RecordAdded(object sender, EventArgs e)
@@ -117,6 +120,12 @@ namespace PPSDPart2
 
         private void btnSupplierApply_Click(object sender, EventArgs e)
         {
+            if (!muser.canModify)
+            {
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             string message = string.Empty;
 
             if (!DataValidation.validateInformation(txtSupplierName.Text, RegexPattern.NameString))
