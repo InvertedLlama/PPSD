@@ -27,8 +27,8 @@ namespace PPSDPart2
             FormClosed += frmLogin_Closed;
 
             //Set for debug purposes, quicker login:
-            txtUsername.Text = "admin01";
-            txtPassword.Text = "password";
+            /*txtUsername.Text = "admin01";
+            txtPassword.Text = "password";*/
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

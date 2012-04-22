@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PPSDPart2")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Segfault Rental System")]
+[assembly: AssemblyDescription("A system used for managing members, staff, products, stock, branches and rentals of a small company")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PPSDPart2")]
+[assembly: AssemblyCompany("Segfault Software")]
+[assembly: AssemblyProduct("Segfault Rental System")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
