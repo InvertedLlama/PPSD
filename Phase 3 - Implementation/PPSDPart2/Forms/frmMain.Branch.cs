@@ -13,6 +13,7 @@ namespace PPSDPart2
         BindingSource bisBranchListBinding;
 
         frmAddBranch addBranchDialogue;
+        frmAddStock addStockDialogue;
 
         private void initialiseBranchData()
         {
@@ -85,6 +86,7 @@ namespace PPSDPart2
                 fillBranchDataFields();
                 btnBranchApply.Enabled = true;
                 btnBranchCancel.Enabled = true;
+                btnAddStock.Enabled = true;
             }
             else
             {
@@ -96,6 +98,7 @@ namespace PPSDPart2
 
                 btnBranchApply.Enabled = false;
                 btnBranchCancel.Enabled = false;
+                btnAddStock.Enabled = false;
             }
         }
 
@@ -145,6 +148,20 @@ namespace PPSDPart2
         private void btnBranchCancel_Click(object sender, EventArgs e)
         {
             fillBranchDataFields();
+        }
+
+        private void btnAddStock_Click(object sender, EventArgs e)
+        {
+            addStockDialogue = new frmAddStock(mDatabase, dtbStock, dtbProduct, (int)lstBranches.SelectedValue);
+            addStockDialogue.RecordAdded += addStockDialogue_RecordAdded;
+            addStockDialogue.ShowDialog(this);
+        }
+
+        private void addStockDialogue_RecordAdded(object sender, EventArgs e)
+        {
+            mDatabase.selectData("SELECT * FROM Stock", ref dtbStock);
+            MessageBox.Show(this, "Stock added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            addStockDialogue.Close();
         }
 
         private void trvBranchProducts_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)

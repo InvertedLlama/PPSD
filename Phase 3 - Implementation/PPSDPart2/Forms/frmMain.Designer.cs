@@ -105,7 +105,7 @@
             this.btnNewStaff = new System.Windows.Forms.Button();
             this.lstStaff = new System.Windows.Forms.ListBox();
             this.tpgBranch = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnAddStock = new System.Windows.Forms.Button();
             this.btnBranchCancel = new System.Windows.Forms.Button();
             this.btnBranchApply = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
@@ -146,8 +146,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -939,7 +938,7 @@
             // 
             // tpgBranch
             // 
-            this.tpgBranch.Controls.Add(this.button6);
+            this.tpgBranch.Controls.Add(this.btnAddStock);
             this.tpgBranch.Controls.Add(this.btnBranchCancel);
             this.tpgBranch.Controls.Add(this.btnBranchApply);
             this.tpgBranch.Controls.Add(this.groupBox13);
@@ -952,15 +951,16 @@
             this.tpgBranch.Text = "Branch";
             this.tpgBranch.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnAddStock
             // 
-            this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(563, 385);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Add Stock";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnAddStock.Enabled = false;
+            this.btnAddStock.Location = new System.Drawing.Point(563, 385);
+            this.btnAddStock.Name = "btnAddStock";
+            this.btnAddStock.Size = new System.Drawing.Size(75, 23);
+            this.btnAddStock.TabIndex = 7;
+            this.btnAddStock.Text = "Add Stock";
+            this.btnAddStock.UseVisualStyleBackColor = true;
+            this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
             // btnBranchCancel
             // 
@@ -1343,29 +1343,22 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.saveToolStripMenuItem,
+            this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.fileToolStripMenuItem.Text = "System";
             // 
-            // newToolStripMenuItem
+            // logoutToolStripMenuItem
             // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.newToolStripMenuItem.Text = "New";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.saveToolStripMenuItem.Text = "Save";
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
@@ -1458,8 +1451,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
@@ -1551,12 +1542,13 @@
         private System.Windows.Forms.Button btnProductApply;
         private System.Windows.Forms.Button btnBranchCancel;
         private System.Windows.Forms.Button btnBranchApply;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.Button btnNewRental;
         private System.Windows.Forms.Button btnStaffCancel;
         private System.Windows.Forms.Button btnStaffApply;
         private System.Windows.Forms.Button btnSupplierCancel;
         private System.Windows.Forms.Button btnSupplierApply;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
