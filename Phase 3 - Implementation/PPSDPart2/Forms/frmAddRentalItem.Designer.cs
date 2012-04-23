@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.cboProduct = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblProduct = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.numAmount = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,14 +46,15 @@
             this.cboProduct.Size = new System.Drawing.Size(121, 21);
             this.cboProduct.TabIndex = 0;
             // 
-            // label2
+            // lblProduct
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Product:";
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Location = new System.Drawing.Point(2, 15);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(46, 17);
+            this.lblProduct.TabIndex = 1;
+            this.lblProduct.Text = "Product:";
+            this.lblProduct.UseCompatibleTextRendering = true;
             // 
             // btnSubmit
             // 
@@ -62,6 +63,7 @@
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseCompatibleTextRendering = true;
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -72,6 +74,7 @@
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseCompatibleTextRendering = true;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -83,14 +86,15 @@
             this.numAmount.TabIndex = 3;
             this.numAmount.ValueChanged += new System.EventHandler(this.numAmount_ValueChanged);
             // 
-            // label3
+            // lblAmount
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Amount:";
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Location = new System.Drawing.Point(3, 41);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(46, 17);
+            this.lblAmount.TabIndex = 4;
+            this.lblAmount.Text = "Amount:";
+            this.lblAmount.UseCompatibleTextRendering = true;
             // 
             // frmAddRentalItem
             // 
@@ -98,11 +102,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(188, 107);
             this.ControlBox = false;
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.numAmount);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.cboProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmAddRentalItem";
@@ -116,10 +120,10 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cboProduct;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.NumericUpDown numAmount;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAmount;
     }
 }

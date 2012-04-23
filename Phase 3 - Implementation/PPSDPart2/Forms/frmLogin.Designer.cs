@@ -47,9 +47,10 @@
             this.lblUsername.Location = new System.Drawing.Point(38, 155);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(59, 14);
+            this.lblUsername.Size = new System.Drawing.Size(60, 17);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username:";
+            this.lblUsername.UseCompatibleTextRendering = true;
             // 
             // txtUsername
             // 
@@ -58,7 +59,7 @@
             this.txtUsername.Location = new System.Drawing.Point(102, 152);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.Size = new System.Drawing.Size(116, 20);
             this.txtUsername.TabIndex = 1;
             // 
             // picLogoImage
@@ -68,10 +69,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogoImage.BackgroundImage = global::PPSDPart2.Properties.Resources.Segfault_software_logo;
             this.picLogoImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogoImage.Location = new System.Drawing.Point(12, 3);
+            this.picLogoImage.Location = new System.Drawing.Point(38, 3);
             this.picLogoImage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.picLogoImage.Name = "picLogoImage";
-            this.picLogoImage.Size = new System.Drawing.Size(260, 129);
+            this.picLogoImage.Size = new System.Drawing.Size(180, 143);
+            this.picLogoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogoImage.TabIndex = 2;
             this.picLogoImage.TabStop = false;
             // 
@@ -83,7 +85,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(116, 20);
             this.txtPassword.TabIndex = 4;
             // 
             // lblPassword
@@ -95,20 +97,22 @@
             this.lblPassword.Location = new System.Drawing.Point(38, 183);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(60, 14);
+            this.lblPassword.Size = new System.Drawing.Size(57, 17);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password:";
+            this.lblPassword.UseCompatibleTextRendering = true;
             // 
             // btnLogin
             // 
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.Location = new System.Drawing.Point(127, 208);
+            this.btnLogin.Location = new System.Drawing.Point(144, 206);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(74, 25);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
+            this.btnLogin.UseCompatibleTextRendering = true;
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 

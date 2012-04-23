@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblSupplier = new System.Windows.Forms.Label();
             this.cboSupplier = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCost = new System.Windows.Forms.Label();
             this.txtCost = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblRentalFee = new System.Windows.Forms.Label();
             this.txtRentalFee = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lblCategory
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Category:";
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(22, 12);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(53, 17);
+            this.lblCategory.TabIndex = 0;
+            this.lblCategory.Text = "Category:";
+            this.lblCategory.UseCompatibleTextRendering = true;
             // 
             // cboCategory
             // 
@@ -66,6 +67,7 @@
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseCompatibleTextRendering = true;
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -76,23 +78,25 @@
             this.txtName.Size = new System.Drawing.Size(155, 20);
             this.txtName.TabIndex = 3;
             // 
-            // label2
+            // lblName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name:";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(36, 36);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(38, 17);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name:";
+            this.lblName.UseCompatibleTextRendering = true;
             // 
-            // label5
+            // lblSupplier
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(238, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Supplier:";
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Location = new System.Drawing.Point(238, 9);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(49, 17);
+            this.lblSupplier.TabIndex = 0;
+            this.lblSupplier.Text = "Supplier:";
+            this.lblSupplier.UseCompatibleTextRendering = true;
             // 
             // cboSupplier
             // 
@@ -110,17 +114,19 @@
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseCompatibleTextRendering = true;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label8
+            // lblCost
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(250, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Cost:";
+            this.lblCost.AutoSize = true;
+            this.lblCost.Location = new System.Drawing.Point(250, 36);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(31, 17);
+            this.lblCost.TabIndex = 0;
+            this.lblCost.Text = "Cost:";
+            this.lblCost.UseCompatibleTextRendering = true;
             // 
             // txtCost
             // 
@@ -129,14 +135,15 @@
             this.txtCost.Size = new System.Drawing.Size(155, 20);
             this.txtCost.TabIndex = 3;
             // 
-            // label9
+            // lblRentalFee
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 63);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Rental Fee:";
+            this.lblRentalFee.AutoSize = true;
+            this.lblRentalFee.Location = new System.Drawing.Point(12, 63);
+            this.lblRentalFee.Name = "lblRentalFee";
+            this.lblRentalFee.Size = new System.Drawing.Size(63, 17);
+            this.lblRentalFee.TabIndex = 0;
+            this.lblRentalFee.Text = "Rental Fee:";
+            this.lblRentalFee.UseCompatibleTextRendering = true;
             // 
             // txtRentalFee
             // 
@@ -153,16 +160,16 @@
             this.ControlBox = false;
             this.Controls.Add(this.txtRentalFee);
             this.Controls.Add(this.txtCost);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblRentalFee);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblCost);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.cboSupplier);
             this.Controls.Add(this.cboCategory);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSupplier);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblCategory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmAddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -174,17 +181,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.ComboBox cboSupplier;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCost;
         private System.Windows.Forms.TextBox txtCost;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblRentalFee;
         private System.Windows.Forms.TextBox txtRentalFee;
     }
 }

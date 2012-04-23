@@ -34,31 +34,31 @@
             this.btnNewRental = new System.Windows.Forms.Button();
             this.btnMemberCancel = new System.Windows.Forms.Button();
             this.btnMemberApply = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbRentals = new System.Windows.Forms.GroupBox();
             this.trvMemberRentals = new System.Windows.Forms.TreeView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbMemberInfo = new System.Windows.Forms.GroupBox();
             this.txtMemberAddress = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMemberAddress = new System.Windows.Forms.Label();
             this.txtMemberEmail = new System.Windows.Forms.TextBox();
             this.txtMemberMob = new System.Windows.Forms.TextBox();
             this.txtMemberTel = new System.Windows.Forms.TextBox();
             this.txtMemberName = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMemberMob = new System.Windows.Forms.Label();
+            this.lblMemberEmail = new System.Windows.Forms.Label();
+            this.lblMemberTel = new System.Windows.Forms.Label();
+            this.lblMemberName = new System.Windows.Forms.Label();
             this.txtMemberID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMemberID = new System.Windows.Forms.Label();
+            this.gbMembers = new System.Windows.Forms.GroupBox();
             this.txtMembersFilter = new System.Windows.Forms.TextBox();
             this.btnNewMember = new System.Windows.Forms.Button();
             this.lstMembers = new System.Windows.Forms.ListBox();
             this.tpgProduct = new System.Windows.Forms.TabPage();
             this.btnProductCancel = new System.Windows.Forms.Button();
             this.btnProductApply = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.gbStock = new System.Windows.Forms.GroupBox();
             this.trvProductStock = new System.Windows.Forms.TreeView();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.gbProductInformation = new System.Windows.Forms.GroupBox();
             this.lblSupplierLink = new System.Windows.Forms.LinkLabel();
             this.cboSupplier = new System.Windows.Forms.ComboBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
@@ -66,41 +66,41 @@
             this.txtProductRentalFee = new System.Windows.Forms.TextBox();
             this.txtProductCost = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblProductSupplier = new System.Windows.Forms.Label();
+            this.lblProductRentalFee = new System.Windows.Forms.Label();
+            this.lblProductCost = new System.Windows.Forms.Label();
+            this.lblProductID = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblProductCategory = new System.Windows.Forms.Label();
+            this.gbProductProducts = new System.Windows.Forms.GroupBox();
             this.txtProductFilter = new System.Windows.Forms.TextBox();
             this.btnNewProduct = new System.Windows.Forms.Button();
             this.lstProducts = new System.Windows.Forms.ListBox();
             this.tpgStaff = new System.Windows.Forms.TabPage();
             this.btnStaffCancel = new System.Windows.Forms.Button();
             this.btnStaffApply = new System.Windows.Forms.Button();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.gbUserDetails = new System.Windows.Forms.GroupBox();
             this.btnStaffPasswordSet = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblStaffPassword = new System.Windows.Forms.Label();
             this.txtStaffPassword = new System.Windows.Forms.TextBox();
             this.txtStaffUsername = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblStaffUsername = new System.Windows.Forms.Label();
+            this.gbStaffInfo = new System.Windows.Forms.GroupBox();
             this.cboStaffBranch = new System.Windows.Forms.ComboBox();
             this.cboStaffRole = new System.Windows.Forms.ComboBox();
             this.txtStaffAddress = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblStaffRole = new System.Windows.Forms.Label();
+            this.lblStaffAddress = new System.Windows.Forms.Label();
             this.txtStaffEmail = new System.Windows.Forms.TextBox();
             this.txtStaffTel = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lblStaffBranch = new System.Windows.Forms.Label();
             this.txtStaffName = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblStaffEmail = new System.Windows.Forms.Label();
+            this.lblStaffTel = new System.Windows.Forms.Label();
+            this.lblStaffName = new System.Windows.Forms.Label();
             this.txtStaffID = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblStaffID = new System.Windows.Forms.Label();
+            this.gbStaff = new System.Windows.Forms.GroupBox();
             this.txtStaffFilter = new System.Windows.Forms.TextBox();
             this.btnNewStaff = new System.Windows.Forms.Button();
             this.lstStaff = new System.Windows.Forms.ListBox();
@@ -108,38 +108,38 @@
             this.btnAddStock = new System.Windows.Forms.Button();
             this.btnBranchCancel = new System.Windows.Forms.Button();
             this.btnBranchApply = new System.Windows.Forms.Button();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.gbBranchProducts = new System.Windows.Forms.GroupBox();
             this.trvBranchProducts = new System.Windows.Forms.TreeView();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.gbBranchInformation = new System.Windows.Forms.GroupBox();
             this.txtBranchAddress = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblBranchAddress = new System.Windows.Forms.Label();
             this.txtBranchEmail = new System.Windows.Forms.TextBox();
             this.txtBranchTel = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblBranchEmail = new System.Windows.Forms.Label();
+            this.lblBranchTel = new System.Windows.Forms.Label();
             this.txtBranchID = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.lblBranchID = new System.Windows.Forms.Label();
+            this.gbBranches = new System.Windows.Forms.GroupBox();
             this.txtBranchFilter = new System.Windows.Forms.TextBox();
             this.btnNewBranch = new System.Windows.Forms.Button();
             this.lstBranches = new System.Windows.Forms.ListBox();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.btnSupplierCancel = new System.Windows.Forms.Button();
             this.btnSupplierApply = new System.Windows.Forms.Button();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.gbSupplierInformation = new System.Windows.Forms.GroupBox();
             this.txtSupplierAddress = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lblSupplierAddress = new System.Windows.Forms.Label();
             this.txtSupplierEmail = new System.Windows.Forms.TextBox();
             this.txtSupplierTel = new System.Windows.Forms.TextBox();
             this.txtSupplierName = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblSupplierEmail = new System.Windows.Forms.Label();
+            this.lblSupplierTel = new System.Windows.Forms.Label();
+            this.lblSupplierName = new System.Windows.Forms.Label();
             this.txtSupplierID = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.lblSupplierID = new System.Windows.Forms.Label();
+            this.gbSupplierProducts = new System.Windows.Forms.GroupBox();
             this.trvSupplierProducts = new System.Windows.Forms.TreeView();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.gbSuppliers = new System.Windows.Forms.GroupBox();
             this.txtSupplierFilter = new System.Windows.Forms.TextBox();
             this.btnNewSupplier = new System.Windows.Forms.Button();
             this.lstSuppliers = new System.Windows.Forms.ListBox();
@@ -152,25 +152,25 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbcContent.SuspendLayout();
             this.tpgMember.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbRentals.SuspendLayout();
+            this.gbMemberInfo.SuspendLayout();
+            this.gbMembers.SuspendLayout();
             this.tpgProduct.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbStock.SuspendLayout();
+            this.gbProductInformation.SuspendLayout();
+            this.gbProductProducts.SuspendLayout();
             this.tpgStaff.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.gbUserDetails.SuspendLayout();
+            this.gbStaffInfo.SuspendLayout();
+            this.gbStaff.SuspendLayout();
             this.tpgBranch.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox10.SuspendLayout();
+            this.gbBranchProducts.SuspendLayout();
+            this.gbBranchInformation.SuspendLayout();
+            this.gbBranches.SuspendLayout();
             this.tpgSupplier.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox15.SuspendLayout();
+            this.gbSupplierInformation.SuspendLayout();
+            this.gbSupplierProducts.SuspendLayout();
+            this.gbSuppliers.SuspendLayout();
             this.panel1.SuspendLayout();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
@@ -195,9 +195,9 @@
             this.tpgMember.Controls.Add(this.btnNewRental);
             this.tpgMember.Controls.Add(this.btnMemberCancel);
             this.tpgMember.Controls.Add(this.btnMemberApply);
-            this.tpgMember.Controls.Add(this.groupBox3);
-            this.tpgMember.Controls.Add(this.groupBox2);
-            this.tpgMember.Controls.Add(this.groupBox1);
+            this.tpgMember.Controls.Add(this.gbRentals);
+            this.tpgMember.Controls.Add(this.gbMemberInfo);
+            this.tpgMember.Controls.Add(this.gbMembers);
             this.tpgMember.Location = new System.Drawing.Point(4, 22);
             this.tpgMember.Name = "tpgMember";
             this.tpgMember.Padding = new System.Windows.Forms.Padding(3);
@@ -214,6 +214,7 @@
             this.btnReturn.Size = new System.Drawing.Size(75, 23);
             this.btnReturn.TabIndex = 3;
             this.btnReturn.Text = "Return";
+            this.btnReturn.UseCompatibleTextRendering = true;
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -225,6 +226,7 @@
             this.btnNewRental.Size = new System.Drawing.Size(75, 23);
             this.btnNewRental.TabIndex = 3;
             this.btnNewRental.Text = "New Rental";
+            this.btnNewRental.UseCompatibleTextRendering = true;
             this.btnNewRental.UseVisualStyleBackColor = true;
             this.btnNewRental.Click += new System.EventHandler(this.btnNewRental_Click);
             // 
@@ -236,6 +238,7 @@
             this.btnMemberCancel.Size = new System.Drawing.Size(75, 23);
             this.btnMemberCancel.TabIndex = 3;
             this.btnMemberCancel.Text = "Cancel";
+            this.btnMemberCancel.UseCompatibleTextRendering = true;
             this.btnMemberCancel.UseVisualStyleBackColor = true;
             this.btnMemberCancel.Click += new System.EventHandler(this.btnMemberCancel_Click);
             // 
@@ -247,18 +250,20 @@
             this.btnMemberApply.Size = new System.Drawing.Size(75, 23);
             this.btnMemberApply.TabIndex = 3;
             this.btnMemberApply.Text = "Apply";
+            this.btnMemberApply.UseCompatibleTextRendering = true;
             this.btnMemberApply.UseVisualStyleBackColor = true;
             this.btnMemberApply.Click += new System.EventHandler(this.btnMemberApply_Click);
             // 
-            // groupBox3
+            // gbRentals
             // 
-            this.groupBox3.Controls.Add(this.trvMemberRentals);
-            this.groupBox3.Location = new System.Drawing.Point(162, 210);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(479, 170);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Rentals";
+            this.gbRentals.Controls.Add(this.trvMemberRentals);
+            this.gbRentals.Location = new System.Drawing.Point(162, 210);
+            this.gbRentals.Name = "gbRentals";
+            this.gbRentals.Size = new System.Drawing.Size(479, 170);
+            this.gbRentals.TabIndex = 2;
+            this.gbRentals.TabStop = false;
+            this.gbRentals.Text = "Rentals";
+            this.gbRentals.UseCompatibleTextRendering = true;
             // 
             // trvMemberRentals
             // 
@@ -269,26 +274,27 @@
             this.trvMemberRentals.TabIndex = 0;
             this.trvMemberRentals.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvMemberRentals_AfterSelect);
             // 
-            // groupBox2
+            // gbMemberInfo
             // 
-            this.groupBox2.Controls.Add(this.txtMemberAddress);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtMemberEmail);
-            this.groupBox2.Controls.Add(this.txtMemberMob);
-            this.groupBox2.Controls.Add(this.txtMemberTel);
-            this.groupBox2.Controls.Add(this.txtMemberName);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtMemberID);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(162, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(479, 198);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Personal Information";
+            this.gbMemberInfo.Controls.Add(this.txtMemberAddress);
+            this.gbMemberInfo.Controls.Add(this.lblMemberAddress);
+            this.gbMemberInfo.Controls.Add(this.txtMemberEmail);
+            this.gbMemberInfo.Controls.Add(this.txtMemberMob);
+            this.gbMemberInfo.Controls.Add(this.txtMemberTel);
+            this.gbMemberInfo.Controls.Add(this.txtMemberName);
+            this.gbMemberInfo.Controls.Add(this.lblMemberMob);
+            this.gbMemberInfo.Controls.Add(this.lblMemberEmail);
+            this.gbMemberInfo.Controls.Add(this.lblMemberTel);
+            this.gbMemberInfo.Controls.Add(this.lblMemberName);
+            this.gbMemberInfo.Controls.Add(this.txtMemberID);
+            this.gbMemberInfo.Controls.Add(this.lblMemberID);
+            this.gbMemberInfo.Location = new System.Drawing.Point(162, 6);
+            this.gbMemberInfo.Name = "gbMemberInfo";
+            this.gbMemberInfo.Size = new System.Drawing.Size(479, 198);
+            this.gbMemberInfo.TabIndex = 1;
+            this.gbMemberInfo.TabStop = false;
+            this.gbMemberInfo.Text = "Personal Information";
+            this.gbMemberInfo.UseCompatibleTextRendering = true;
             // 
             // txtMemberAddress
             // 
@@ -298,14 +304,15 @@
             this.txtMemberAddress.Size = new System.Drawing.Size(192, 121);
             this.txtMemberAddress.TabIndex = 1;
             // 
-            // label3
+            // lblMemberAddress
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Address:";
+            this.lblMemberAddress.AutoSize = true;
+            this.lblMemberAddress.Location = new System.Drawing.Point(6, 74);
+            this.lblMemberAddress.Name = "lblMemberAddress";
+            this.lblMemberAddress.Size = new System.Drawing.Size(49, 17);
+            this.lblMemberAddress.TabIndex = 0;
+            this.lblMemberAddress.Text = "Address:";
+            this.lblMemberAddress.UseCompatibleTextRendering = true;
             // 
             // txtMemberEmail
             // 
@@ -335,41 +342,45 @@
             this.txtMemberName.Size = new System.Drawing.Size(192, 20);
             this.txtMemberName.TabIndex = 1;
             // 
-            // label15
+            // lblMemberMob
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(262, 71);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(31, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Mob:";
+            this.lblMemberMob.AutoSize = true;
+            this.lblMemberMob.Location = new System.Drawing.Point(262, 71);
+            this.lblMemberMob.Name = "lblMemberMob";
+            this.lblMemberMob.Size = new System.Drawing.Size(29, 17);
+            this.lblMemberMob.TabIndex = 0;
+            this.lblMemberMob.Text = "Mob:";
+            this.lblMemberMob.UseCompatibleTextRendering = true;
             // 
-            // label5
+            // lblMemberEmail
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(258, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Email:";
+            this.lblMemberEmail.AutoSize = true;
+            this.lblMemberEmail.Location = new System.Drawing.Point(258, 22);
+            this.lblMemberEmail.Name = "lblMemberEmail";
+            this.lblMemberEmail.Size = new System.Drawing.Size(36, 17);
+            this.lblMemberEmail.TabIndex = 0;
+            this.lblMemberEmail.Text = "Email:";
+            this.lblMemberEmail.UseCompatibleTextRendering = true;
             // 
-            // label4
+            // lblMemberTel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(265, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tel.:";
+            this.lblMemberTel.AutoSize = true;
+            this.lblMemberTel.Location = new System.Drawing.Point(265, 48);
+            this.lblMemberTel.Name = "lblMemberTel";
+            this.lblMemberTel.Size = new System.Drawing.Size(26, 17);
+            this.lblMemberTel.TabIndex = 0;
+            this.lblMemberTel.Text = "Tel.:";
+            this.lblMemberTel.UseCompatibleTextRendering = true;
             // 
-            // label2
+            // lblMemberName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name:";
+            this.lblMemberName.AutoSize = true;
+            this.lblMemberName.Location = new System.Drawing.Point(16, 48);
+            this.lblMemberName.Name = "lblMemberName";
+            this.lblMemberName.Size = new System.Drawing.Size(38, 17);
+            this.lblMemberName.TabIndex = 0;
+            this.lblMemberName.Text = "Name:";
+            this.lblMemberName.UseCompatibleTextRendering = true;
             // 
             // txtMemberID
             // 
@@ -381,26 +392,28 @@
             this.txtMemberID.Size = new System.Drawing.Size(192, 20);
             this.txtMemberID.TabIndex = 1;
             // 
-            // label1
+            // lblMemberID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID :";
+            this.lblMemberID.AutoSize = true;
+            this.lblMemberID.Location = new System.Drawing.Point(30, 22);
+            this.lblMemberID.Name = "lblMemberID";
+            this.lblMemberID.Size = new System.Drawing.Size(22, 17);
+            this.lblMemberID.TabIndex = 0;
+            this.lblMemberID.Text = "ID :";
+            this.lblMemberID.UseCompatibleTextRendering = true;
             // 
-            // groupBox1
+            // gbMembers
             // 
-            this.groupBox1.Controls.Add(this.txtMembersFilter);
-            this.groupBox1.Controls.Add(this.btnNewMember);
-            this.groupBox1.Controls.Add(this.lstMembers);
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(148, 414);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Members";
+            this.gbMembers.Controls.Add(this.txtMembersFilter);
+            this.gbMembers.Controls.Add(this.btnNewMember);
+            this.gbMembers.Controls.Add(this.lstMembers);
+            this.gbMembers.Location = new System.Drawing.Point(8, 6);
+            this.gbMembers.Name = "gbMembers";
+            this.gbMembers.Size = new System.Drawing.Size(148, 414);
+            this.gbMembers.TabIndex = 0;
+            this.gbMembers.TabStop = false;
+            this.gbMembers.Text = "Members";
+            this.gbMembers.UseCompatibleTextRendering = true;
             // 
             // txtMembersFilter
             // 
@@ -416,6 +429,7 @@
             this.btnNewMember.Size = new System.Drawing.Size(75, 23);
             this.btnNewMember.TabIndex = 4;
             this.btnNewMember.Text = "New";
+            this.btnNewMember.UseCompatibleTextRendering = true;
             this.btnNewMember.UseVisualStyleBackColor = true;
             this.btnNewMember.Click += new System.EventHandler(this.btnNewMember_Click);
             // 
@@ -431,9 +445,9 @@
             // 
             this.tpgProduct.Controls.Add(this.btnProductCancel);
             this.tpgProduct.Controls.Add(this.btnProductApply);
-            this.tpgProduct.Controls.Add(this.groupBox6);
-            this.tpgProduct.Controls.Add(this.groupBox5);
-            this.tpgProduct.Controls.Add(this.groupBox4);
+            this.tpgProduct.Controls.Add(this.gbStock);
+            this.tpgProduct.Controls.Add(this.gbProductInformation);
+            this.tpgProduct.Controls.Add(this.gbProductProducts);
             this.tpgProduct.Location = new System.Drawing.Point(4, 22);
             this.tpgProduct.Name = "tpgProduct";
             this.tpgProduct.Padding = new System.Windows.Forms.Padding(3);
@@ -450,6 +464,7 @@
             this.btnProductCancel.Size = new System.Drawing.Size(75, 23);
             this.btnProductCancel.TabIndex = 5;
             this.btnProductCancel.Text = "Cancel";
+            this.btnProductCancel.UseCompatibleTextRendering = true;
             this.btnProductCancel.UseVisualStyleBackColor = true;
             this.btnProductCancel.Click += new System.EventHandler(this.btnProductCancel_Click);
             // 
@@ -461,18 +476,20 @@
             this.btnProductApply.Size = new System.Drawing.Size(75, 23);
             this.btnProductApply.TabIndex = 4;
             this.btnProductApply.Text = "Apply";
+            this.btnProductApply.UseCompatibleTextRendering = true;
             this.btnProductApply.UseVisualStyleBackColor = true;
             this.btnProductApply.Click += new System.EventHandler(this.btnProductApply_Click);
             // 
-            // groupBox6
+            // gbStock
             // 
-            this.groupBox6.Controls.Add(this.trvProductStock);
-            this.groupBox6.Location = new System.Drawing.Point(162, 159);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(473, 221);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Stock";
+            this.gbStock.Controls.Add(this.trvProductStock);
+            this.gbStock.Location = new System.Drawing.Point(162, 159);
+            this.gbStock.Name = "gbStock";
+            this.gbStock.Size = new System.Drawing.Size(473, 221);
+            this.gbStock.TabIndex = 3;
+            this.gbStock.TabStop = false;
+            this.gbStock.Text = "Stock";
+            this.gbStock.UseCompatibleTextRendering = true;
             // 
             // trvProductStock
             // 
@@ -482,37 +499,39 @@
             this.trvProductStock.Size = new System.Drawing.Size(467, 202);
             this.trvProductStock.TabIndex = 0;
             // 
-            // groupBox5
+            // gbProductInformation
             // 
-            this.groupBox5.Controls.Add(this.lblSupplierLink);
-            this.groupBox5.Controls.Add(this.cboSupplier);
-            this.groupBox5.Controls.Add(this.cboCategory);
-            this.groupBox5.Controls.Add(this.txtProductID);
-            this.groupBox5.Controls.Add(this.txtProductRentalFee);
-            this.groupBox5.Controls.Add(this.txtProductCost);
-            this.groupBox5.Controls.Add(this.txtProductName);
-            this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Controls.Add(this.label30);
-            this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Location = new System.Drawing.Point(162, 6);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(479, 147);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Product Information";
+            this.gbProductInformation.Controls.Add(this.lblSupplierLink);
+            this.gbProductInformation.Controls.Add(this.cboSupplier);
+            this.gbProductInformation.Controls.Add(this.cboCategory);
+            this.gbProductInformation.Controls.Add(this.txtProductID);
+            this.gbProductInformation.Controls.Add(this.txtProductRentalFee);
+            this.gbProductInformation.Controls.Add(this.txtProductCost);
+            this.gbProductInformation.Controls.Add(this.txtProductName);
+            this.gbProductInformation.Controls.Add(this.lblProductSupplier);
+            this.gbProductInformation.Controls.Add(this.lblProductRentalFee);
+            this.gbProductInformation.Controls.Add(this.lblProductCost);
+            this.gbProductInformation.Controls.Add(this.lblProductID);
+            this.gbProductInformation.Controls.Add(this.lblProductName);
+            this.gbProductInformation.Controls.Add(this.lblProductCategory);
+            this.gbProductInformation.Location = new System.Drawing.Point(162, 6);
+            this.gbProductInformation.Name = "gbProductInformation";
+            this.gbProductInformation.Size = new System.Drawing.Size(479, 147);
+            this.gbProductInformation.TabIndex = 2;
+            this.gbProductInformation.TabStop = false;
+            this.gbProductInformation.Text = "Product Information";
+            this.gbProductInformation.UseCompatibleTextRendering = true;
             // 
             // lblSupplierLink
             // 
             this.lblSupplierLink.AutoSize = true;
             this.lblSupplierLink.Location = new System.Drawing.Point(402, 127);
             this.lblSupplierLink.Name = "lblSupplierLink";
-            this.lblSupplierLink.Size = new System.Drawing.Size(71, 13);
+            this.lblSupplierLink.Size = new System.Drawing.Size(73, 17);
             this.lblSupplierLink.TabIndex = 4;
             this.lblSupplierLink.TabStop = true;
             this.lblSupplierLink.Text = "View Supplier";
+            this.lblSupplierLink.UseCompatibleTextRendering = true;
             // 
             // cboSupplier
             // 
@@ -565,71 +584,78 @@
             this.txtProductName.Size = new System.Drawing.Size(121, 20);
             this.txtProductName.TabIndex = 1;
             // 
-            // label11
+            // lblProductSupplier
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(295, 101);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Supplier:";
+            this.lblProductSupplier.AutoSize = true;
+            this.lblProductSupplier.Location = new System.Drawing.Point(295, 101);
+            this.lblProductSupplier.Name = "lblProductSupplier";
+            this.lblProductSupplier.Size = new System.Drawing.Size(49, 17);
+            this.lblProductSupplier.TabIndex = 0;
+            this.lblProductSupplier.Text = "Supplier:";
+            this.lblProductSupplier.UseCompatibleTextRendering = true;
             // 
-            // label10
+            // lblProductRentalFee
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 101);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Rental Fee:";
+            this.lblProductRentalFee.AutoSize = true;
+            this.lblProductRentalFee.Location = new System.Drawing.Point(10, 101);
+            this.lblProductRentalFee.Name = "lblProductRentalFee";
+            this.lblProductRentalFee.Size = new System.Drawing.Size(63, 17);
+            this.lblProductRentalFee.TabIndex = 0;
+            this.lblProductRentalFee.Text = "Rental Fee:";
+            this.lblProductRentalFee.UseCompatibleTextRendering = true;
             // 
-            // label30
+            // lblProductCost
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(312, 78);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(31, 13);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Cost:";
+            this.lblProductCost.AutoSize = true;
+            this.lblProductCost.Location = new System.Drawing.Point(312, 78);
+            this.lblProductCost.Name = "lblProductCost";
+            this.lblProductCost.Size = new System.Drawing.Size(31, 17);
+            this.lblProductCost.TabIndex = 0;
+            this.lblProductCost.Text = "Cost:";
+            this.lblProductCost.UseCompatibleTextRendering = true;
             // 
-            // label8
+            // lblProductID
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "ID:";
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(51, 22);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(19, 17);
+            this.lblProductID.TabIndex = 0;
+            this.lblProductID.Text = "ID:";
+            this.lblProductID.UseCompatibleTextRendering = true;
             // 
-            // label9
+            // lblProductName
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(34, 75);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Name:";
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(34, 75);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(38, 17);
+            this.lblProductName.TabIndex = 0;
+            this.lblProductName.Text = "Name:";
+            this.lblProductName.UseCompatibleTextRendering = true;
             // 
-            // label7
+            // lblProductCategory
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Category:";
+            this.lblProductCategory.AutoSize = true;
+            this.lblProductCategory.Location = new System.Drawing.Point(20, 48);
+            this.lblProductCategory.Name = "lblProductCategory";
+            this.lblProductCategory.Size = new System.Drawing.Size(53, 17);
+            this.lblProductCategory.TabIndex = 0;
+            this.lblProductCategory.Text = "Category:";
+            this.lblProductCategory.UseCompatibleTextRendering = true;
             // 
-            // groupBox4
+            // gbProductProducts
             // 
-            this.groupBox4.Controls.Add(this.txtProductFilter);
-            this.groupBox4.Controls.Add(this.btnNewProduct);
-            this.groupBox4.Controls.Add(this.lstProducts);
-            this.groupBox4.Location = new System.Drawing.Point(8, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(148, 414);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Products";
+            this.gbProductProducts.Controls.Add(this.txtProductFilter);
+            this.gbProductProducts.Controls.Add(this.btnNewProduct);
+            this.gbProductProducts.Controls.Add(this.lstProducts);
+            this.gbProductProducts.Location = new System.Drawing.Point(8, 6);
+            this.gbProductProducts.Name = "gbProductProducts";
+            this.gbProductProducts.Size = new System.Drawing.Size(148, 414);
+            this.gbProductProducts.TabIndex = 1;
+            this.gbProductProducts.TabStop = false;
+            this.gbProductProducts.Text = "Products";
+            this.gbProductProducts.UseCompatibleTextRendering = true;
             // 
             // txtProductFilter
             // 
@@ -645,6 +671,7 @@
             this.btnNewProduct.Size = new System.Drawing.Size(75, 23);
             this.btnNewProduct.TabIndex = 4;
             this.btnNewProduct.Text = "New";
+            this.btnNewProduct.UseCompatibleTextRendering = true;
             this.btnNewProduct.UseVisualStyleBackColor = true;
             this.btnNewProduct.Click += new System.EventHandler(this.btnNewProduct_Click);
             // 
@@ -660,9 +687,9 @@
             // 
             this.tpgStaff.Controls.Add(this.btnStaffCancel);
             this.tpgStaff.Controls.Add(this.btnStaffApply);
-            this.tpgStaff.Controls.Add(this.groupBox9);
-            this.tpgStaff.Controls.Add(this.groupBox7);
-            this.tpgStaff.Controls.Add(this.groupBox8);
+            this.tpgStaff.Controls.Add(this.gbUserDetails);
+            this.tpgStaff.Controls.Add(this.gbStaffInfo);
+            this.tpgStaff.Controls.Add(this.gbStaff);
             this.tpgStaff.Location = new System.Drawing.Point(4, 22);
             this.tpgStaff.Name = "tpgStaff";
             this.tpgStaff.Size = new System.Drawing.Size(649, 427);
@@ -678,6 +705,7 @@
             this.btnStaffCancel.Size = new System.Drawing.Size(75, 23);
             this.btnStaffCancel.TabIndex = 7;
             this.btnStaffCancel.Text = "Cancel";
+            this.btnStaffCancel.UseCompatibleTextRendering = true;
             this.btnStaffCancel.UseVisualStyleBackColor = true;
             this.btnStaffCancel.Click += new System.EventHandler(this.btnStaffCancel_Click);
             // 
@@ -689,22 +717,24 @@
             this.btnStaffApply.Size = new System.Drawing.Size(75, 23);
             this.btnStaffApply.TabIndex = 6;
             this.btnStaffApply.Text = "Apply";
+            this.btnStaffApply.UseCompatibleTextRendering = true;
             this.btnStaffApply.UseVisualStyleBackColor = true;
             this.btnStaffApply.Click += new System.EventHandler(this.btnStaffApply_Click);
             // 
-            // groupBox9
+            // gbUserDetails
             // 
-            this.groupBox9.Controls.Add(this.btnStaffPasswordSet);
-            this.groupBox9.Controls.Add(this.label22);
-            this.groupBox9.Controls.Add(this.txtStaffPassword);
-            this.groupBox9.Controls.Add(this.txtStaffUsername);
-            this.groupBox9.Controls.Add(this.label20);
-            this.groupBox9.Location = new System.Drawing.Point(162, 210);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(479, 170);
-            this.groupBox9.TabIndex = 4;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "User Details";
+            this.gbUserDetails.Controls.Add(this.btnStaffPasswordSet);
+            this.gbUserDetails.Controls.Add(this.lblStaffPassword);
+            this.gbUserDetails.Controls.Add(this.txtStaffPassword);
+            this.gbUserDetails.Controls.Add(this.txtStaffUsername);
+            this.gbUserDetails.Controls.Add(this.lblStaffUsername);
+            this.gbUserDetails.Location = new System.Drawing.Point(162, 210);
+            this.gbUserDetails.Name = "gbUserDetails";
+            this.gbUserDetails.Size = new System.Drawing.Size(479, 170);
+            this.gbUserDetails.TabIndex = 4;
+            this.gbUserDetails.TabStop = false;
+            this.gbUserDetails.Text = "User Details";
+            this.gbUserDetails.UseCompatibleTextRendering = true;
             // 
             // btnStaffPasswordSet
             // 
@@ -714,17 +744,19 @@
             this.btnStaffPasswordSet.Size = new System.Drawing.Size(75, 23);
             this.btnStaffPasswordSet.TabIndex = 3;
             this.btnStaffPasswordSet.Text = "Set";
+            this.btnStaffPasswordSet.UseCompatibleTextRendering = true;
             this.btnStaffPasswordSet.UseVisualStyleBackColor = true;
             this.btnStaffPasswordSet.Click += new System.EventHandler(this.btnStaffPasswordSet_Click);
             // 
-            // label22
+            // lblStaffPassword
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(30, 84);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(56, 13);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Password:";
+            this.lblStaffPassword.AutoSize = true;
+            this.lblStaffPassword.Location = new System.Drawing.Point(30, 84);
+            this.lblStaffPassword.Name = "lblStaffPassword";
+            this.lblStaffPassword.Size = new System.Drawing.Size(57, 17);
+            this.lblStaffPassword.TabIndex = 0;
+            this.lblStaffPassword.Text = "Password:";
+            this.lblStaffPassword.UseCompatibleTextRendering = true;
             // 
             // txtStaffPassword
             // 
@@ -741,37 +773,39 @@
             this.txtStaffUsername.Size = new System.Drawing.Size(192, 20);
             this.txtStaffUsername.TabIndex = 1;
             // 
-            // label20
+            // lblStaffUsername
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(28, 58);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 13);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Username:";
+            this.lblStaffUsername.AutoSize = true;
+            this.lblStaffUsername.Location = new System.Drawing.Point(28, 58);
+            this.lblStaffUsername.Name = "lblStaffUsername";
+            this.lblStaffUsername.Size = new System.Drawing.Size(60, 17);
+            this.lblStaffUsername.TabIndex = 0;
+            this.lblStaffUsername.Text = "Username:";
+            this.lblStaffUsername.UseCompatibleTextRendering = true;
             // 
-            // groupBox7
+            // gbStaffInfo
             // 
-            this.groupBox7.Controls.Add(this.cboStaffBranch);
-            this.groupBox7.Controls.Add(this.cboStaffRole);
-            this.groupBox7.Controls.Add(this.txtStaffAddress);
-            this.groupBox7.Controls.Add(this.label21);
-            this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Controls.Add(this.txtStaffEmail);
-            this.groupBox7.Controls.Add(this.txtStaffTel);
-            this.groupBox7.Controls.Add(this.label25);
-            this.groupBox7.Controls.Add(this.txtStaffName);
-            this.groupBox7.Controls.Add(this.label16);
-            this.groupBox7.Controls.Add(this.label17);
-            this.groupBox7.Controls.Add(this.label18);
-            this.groupBox7.Controls.Add(this.txtStaffID);
-            this.groupBox7.Controls.Add(this.label19);
-            this.groupBox7.Location = new System.Drawing.Point(162, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(479, 198);
-            this.groupBox7.TabIndex = 3;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Personal Information";
+            this.gbStaffInfo.Controls.Add(this.cboStaffBranch);
+            this.gbStaffInfo.Controls.Add(this.cboStaffRole);
+            this.gbStaffInfo.Controls.Add(this.txtStaffAddress);
+            this.gbStaffInfo.Controls.Add(this.lblStaffRole);
+            this.gbStaffInfo.Controls.Add(this.lblStaffAddress);
+            this.gbStaffInfo.Controls.Add(this.txtStaffEmail);
+            this.gbStaffInfo.Controls.Add(this.txtStaffTel);
+            this.gbStaffInfo.Controls.Add(this.lblStaffBranch);
+            this.gbStaffInfo.Controls.Add(this.txtStaffName);
+            this.gbStaffInfo.Controls.Add(this.lblStaffEmail);
+            this.gbStaffInfo.Controls.Add(this.lblStaffTel);
+            this.gbStaffInfo.Controls.Add(this.lblStaffName);
+            this.gbStaffInfo.Controls.Add(this.txtStaffID);
+            this.gbStaffInfo.Controls.Add(this.lblStaffID);
+            this.gbStaffInfo.Location = new System.Drawing.Point(162, 6);
+            this.gbStaffInfo.Name = "gbStaffInfo";
+            this.gbStaffInfo.Size = new System.Drawing.Size(479, 198);
+            this.gbStaffInfo.TabIndex = 3;
+            this.gbStaffInfo.TabStop = false;
+            this.gbStaffInfo.Text = "Personal Information";
+            this.gbStaffInfo.UseCompatibleTextRendering = true;
             // 
             // cboStaffBranch
             // 
@@ -806,23 +840,25 @@
             this.txtStaffAddress.Size = new System.Drawing.Size(184, 121);
             this.txtStaffAddress.TabIndex = 1;
             // 
-            // label21
+            // lblStaffRole
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(262, 49);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(32, 13);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Role:";
+            this.lblStaffRole.AutoSize = true;
+            this.lblStaffRole.Location = new System.Drawing.Point(262, 49);
+            this.lblStaffRole.Name = "lblStaffRole";
+            this.lblStaffRole.Size = new System.Drawing.Size(31, 17);
+            this.lblStaffRole.TabIndex = 0;
+            this.lblStaffRole.Text = "Role:";
+            this.lblStaffRole.UseCompatibleTextRendering = true;
             // 
-            // label6
+            // lblStaffAddress
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Address:";
+            this.lblStaffAddress.AutoSize = true;
+            this.lblStaffAddress.Location = new System.Drawing.Point(6, 74);
+            this.lblStaffAddress.Name = "lblStaffAddress";
+            this.lblStaffAddress.Size = new System.Drawing.Size(49, 17);
+            this.lblStaffAddress.TabIndex = 0;
+            this.lblStaffAddress.Text = "Address:";
+            this.lblStaffAddress.UseCompatibleTextRendering = true;
             // 
             // txtStaffEmail
             // 
@@ -838,14 +874,15 @@
             this.txtStaffTel.Size = new System.Drawing.Size(173, 20);
             this.txtStaffTel.TabIndex = 1;
             // 
-            // label25
+            // lblStaffBranch
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(250, 22);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(44, 13);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Branch:";
+            this.lblStaffBranch.AutoSize = true;
+            this.lblStaffBranch.Location = new System.Drawing.Point(250, 22);
+            this.lblStaffBranch.Name = "lblStaffBranch";
+            this.lblStaffBranch.Size = new System.Drawing.Size(43, 17);
+            this.lblStaffBranch.TabIndex = 0;
+            this.lblStaffBranch.Text = "Branch:";
+            this.lblStaffBranch.UseCompatibleTextRendering = true;
             // 
             // txtStaffName
             // 
@@ -854,32 +891,35 @@
             this.txtStaffName.Size = new System.Drawing.Size(184, 20);
             this.txtStaffName.TabIndex = 1;
             // 
-            // label16
+            // lblStaffEmail
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(257, 76);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(35, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Email:";
+            this.lblStaffEmail.AutoSize = true;
+            this.lblStaffEmail.Location = new System.Drawing.Point(257, 76);
+            this.lblStaffEmail.Name = "lblStaffEmail";
+            this.lblStaffEmail.Size = new System.Drawing.Size(36, 17);
+            this.lblStaffEmail.TabIndex = 0;
+            this.lblStaffEmail.Text = "Email:";
+            this.lblStaffEmail.UseCompatibleTextRendering = true;
             // 
-            // label17
+            // lblStaffTel
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(265, 102);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(28, 13);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Tel.:";
+            this.lblStaffTel.AutoSize = true;
+            this.lblStaffTel.Location = new System.Drawing.Point(265, 102);
+            this.lblStaffTel.Name = "lblStaffTel";
+            this.lblStaffTel.Size = new System.Drawing.Size(26, 17);
+            this.lblStaffTel.TabIndex = 0;
+            this.lblStaffTel.Text = "Tel.:";
+            this.lblStaffTel.UseCompatibleTextRendering = true;
             // 
-            // label18
+            // lblStaffName
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(16, 48);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Name:";
+            this.lblStaffName.AutoSize = true;
+            this.lblStaffName.Location = new System.Drawing.Point(16, 48);
+            this.lblStaffName.Name = "lblStaffName";
+            this.lblStaffName.Size = new System.Drawing.Size(38, 17);
+            this.lblStaffName.TabIndex = 0;
+            this.lblStaffName.Text = "Name:";
+            this.lblStaffName.UseCompatibleTextRendering = true;
             // 
             // txtStaffID
             // 
@@ -891,26 +931,28 @@
             this.txtStaffID.Size = new System.Drawing.Size(184, 20);
             this.txtStaffID.TabIndex = 1;
             // 
-            // label19
+            // lblStaffID
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(30, 22);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(24, 13);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "ID :";
+            this.lblStaffID.AutoSize = true;
+            this.lblStaffID.Location = new System.Drawing.Point(30, 22);
+            this.lblStaffID.Name = "lblStaffID";
+            this.lblStaffID.Size = new System.Drawing.Size(22, 17);
+            this.lblStaffID.TabIndex = 0;
+            this.lblStaffID.Text = "ID :";
+            this.lblStaffID.UseCompatibleTextRendering = true;
             // 
-            // groupBox8
+            // gbStaff
             // 
-            this.groupBox8.Controls.Add(this.txtStaffFilter);
-            this.groupBox8.Controls.Add(this.btnNewStaff);
-            this.groupBox8.Controls.Add(this.lstStaff);
-            this.groupBox8.Location = new System.Drawing.Point(8, 6);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(148, 414);
-            this.groupBox8.TabIndex = 2;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Staff";
+            this.gbStaff.Controls.Add(this.txtStaffFilter);
+            this.gbStaff.Controls.Add(this.btnNewStaff);
+            this.gbStaff.Controls.Add(this.lstStaff);
+            this.gbStaff.Location = new System.Drawing.Point(8, 6);
+            this.gbStaff.Name = "gbStaff";
+            this.gbStaff.Size = new System.Drawing.Size(148, 414);
+            this.gbStaff.TabIndex = 2;
+            this.gbStaff.TabStop = false;
+            this.gbStaff.Text = "Staff";
+            this.gbStaff.UseCompatibleTextRendering = true;
             // 
             // txtStaffFilter
             // 
@@ -926,6 +968,7 @@
             this.btnNewStaff.Size = new System.Drawing.Size(75, 23);
             this.btnNewStaff.TabIndex = 4;
             this.btnNewStaff.Text = "New";
+            this.btnNewStaff.UseCompatibleTextRendering = true;
             this.btnNewStaff.UseVisualStyleBackColor = true;
             // 
             // lstStaff
@@ -941,9 +984,9 @@
             this.tpgBranch.Controls.Add(this.btnAddStock);
             this.tpgBranch.Controls.Add(this.btnBranchCancel);
             this.tpgBranch.Controls.Add(this.btnBranchApply);
-            this.tpgBranch.Controls.Add(this.groupBox13);
-            this.tpgBranch.Controls.Add(this.groupBox12);
-            this.tpgBranch.Controls.Add(this.groupBox10);
+            this.tpgBranch.Controls.Add(this.gbBranchProducts);
+            this.tpgBranch.Controls.Add(this.gbBranchInformation);
+            this.tpgBranch.Controls.Add(this.gbBranches);
             this.tpgBranch.Location = new System.Drawing.Point(4, 22);
             this.tpgBranch.Name = "tpgBranch";
             this.tpgBranch.Size = new System.Drawing.Size(649, 427);
@@ -959,6 +1002,7 @@
             this.btnAddStock.Size = new System.Drawing.Size(75, 23);
             this.btnAddStock.TabIndex = 7;
             this.btnAddStock.Text = "Add Stock";
+            this.btnAddStock.UseCompatibleTextRendering = true;
             this.btnAddStock.UseVisualStyleBackColor = true;
             this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
@@ -970,6 +1014,7 @@
             this.btnBranchCancel.Size = new System.Drawing.Size(75, 23);
             this.btnBranchCancel.TabIndex = 7;
             this.btnBranchCancel.Text = "Cancel";
+            this.btnBranchCancel.UseCompatibleTextRendering = true;
             this.btnBranchCancel.UseVisualStyleBackColor = true;
             this.btnBranchCancel.Click += new System.EventHandler(this.btnBranchCancel_Click);
             // 
@@ -981,18 +1026,20 @@
             this.btnBranchApply.Size = new System.Drawing.Size(75, 23);
             this.btnBranchApply.TabIndex = 6;
             this.btnBranchApply.Text = "Apply";
+            this.btnBranchApply.UseCompatibleTextRendering = true;
             this.btnBranchApply.UseVisualStyleBackColor = true;
             this.btnBranchApply.Click += new System.EventHandler(this.btnBranchApply_Click);
             // 
-            // groupBox13
+            // gbBranchProducts
             // 
-            this.groupBox13.Controls.Add(this.trvBranchProducts);
-            this.groupBox13.Location = new System.Drawing.Point(162, 187);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(479, 192);
-            this.groupBox13.TabIndex = 5;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Products";
+            this.gbBranchProducts.Controls.Add(this.trvBranchProducts);
+            this.gbBranchProducts.Location = new System.Drawing.Point(162, 187);
+            this.gbBranchProducts.Name = "gbBranchProducts";
+            this.gbBranchProducts.Size = new System.Drawing.Size(479, 192);
+            this.gbBranchProducts.TabIndex = 5;
+            this.gbBranchProducts.TabStop = false;
+            this.gbBranchProducts.Text = "Products";
+            this.gbBranchProducts.UseCompatibleTextRendering = true;
             // 
             // trvBranchProducts
             // 
@@ -1002,22 +1049,23 @@
             this.trvBranchProducts.TabIndex = 0;
             this.trvBranchProducts.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvBranchProducts_NodeMouseDoubleClick);
             // 
-            // groupBox12
+            // gbBranchInformation
             // 
-            this.groupBox12.Controls.Add(this.txtBranchAddress);
-            this.groupBox12.Controls.Add(this.label12);
-            this.groupBox12.Controls.Add(this.txtBranchEmail);
-            this.groupBox12.Controls.Add(this.txtBranchTel);
-            this.groupBox12.Controls.Add(this.label13);
-            this.groupBox12.Controls.Add(this.label14);
-            this.groupBox12.Controls.Add(this.txtBranchID);
-            this.groupBox12.Controls.Add(this.label23);
-            this.groupBox12.Location = new System.Drawing.Point(162, 5);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(479, 176);
-            this.groupBox12.TabIndex = 4;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Branch Information";
+            this.gbBranchInformation.Controls.Add(this.txtBranchAddress);
+            this.gbBranchInformation.Controls.Add(this.lblBranchAddress);
+            this.gbBranchInformation.Controls.Add(this.txtBranchEmail);
+            this.gbBranchInformation.Controls.Add(this.txtBranchTel);
+            this.gbBranchInformation.Controls.Add(this.lblBranchEmail);
+            this.gbBranchInformation.Controls.Add(this.lblBranchTel);
+            this.gbBranchInformation.Controls.Add(this.txtBranchID);
+            this.gbBranchInformation.Controls.Add(this.lblBranchID);
+            this.gbBranchInformation.Location = new System.Drawing.Point(162, 5);
+            this.gbBranchInformation.Name = "gbBranchInformation";
+            this.gbBranchInformation.Size = new System.Drawing.Size(479, 176);
+            this.gbBranchInformation.TabIndex = 4;
+            this.gbBranchInformation.TabStop = false;
+            this.gbBranchInformation.Text = "Branch Information";
+            this.gbBranchInformation.UseCompatibleTextRendering = true;
             // 
             // txtBranchAddress
             // 
@@ -1027,14 +1075,15 @@
             this.txtBranchAddress.Size = new System.Drawing.Size(192, 121);
             this.txtBranchAddress.TabIndex = 1;
             // 
-            // label12
+            // lblBranchAddress
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 48);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Address:";
+            this.lblBranchAddress.AutoSize = true;
+            this.lblBranchAddress.Location = new System.Drawing.Point(6, 48);
+            this.lblBranchAddress.Name = "lblBranchAddress";
+            this.lblBranchAddress.Size = new System.Drawing.Size(49, 17);
+            this.lblBranchAddress.TabIndex = 0;
+            this.lblBranchAddress.Text = "Address:";
+            this.lblBranchAddress.UseCompatibleTextRendering = true;
             // 
             // txtBranchEmail
             // 
@@ -1050,23 +1099,25 @@
             this.txtBranchTel.Size = new System.Drawing.Size(173, 20);
             this.txtBranchTel.TabIndex = 1;
             // 
-            // label13
+            // lblBranchEmail
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(258, 22);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Email:";
+            this.lblBranchEmail.AutoSize = true;
+            this.lblBranchEmail.Location = new System.Drawing.Point(258, 22);
+            this.lblBranchEmail.Name = "lblBranchEmail";
+            this.lblBranchEmail.Size = new System.Drawing.Size(36, 17);
+            this.lblBranchEmail.TabIndex = 0;
+            this.lblBranchEmail.Text = "Email:";
+            this.lblBranchEmail.UseCompatibleTextRendering = true;
             // 
-            // label14
+            // lblBranchTel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(265, 48);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(28, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Tel.:";
+            this.lblBranchTel.AutoSize = true;
+            this.lblBranchTel.Location = new System.Drawing.Point(265, 48);
+            this.lblBranchTel.Name = "lblBranchTel";
+            this.lblBranchTel.Size = new System.Drawing.Size(26, 17);
+            this.lblBranchTel.TabIndex = 0;
+            this.lblBranchTel.Text = "Tel.:";
+            this.lblBranchTel.UseCompatibleTextRendering = true;
             // 
             // txtBranchID
             // 
@@ -1078,26 +1129,28 @@
             this.txtBranchID.Size = new System.Drawing.Size(192, 20);
             this.txtBranchID.TabIndex = 1;
             // 
-            // label23
+            // lblBranchID
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(30, 22);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(24, 13);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "ID :";
+            this.lblBranchID.AutoSize = true;
+            this.lblBranchID.Location = new System.Drawing.Point(30, 22);
+            this.lblBranchID.Name = "lblBranchID";
+            this.lblBranchID.Size = new System.Drawing.Size(22, 17);
+            this.lblBranchID.TabIndex = 0;
+            this.lblBranchID.Text = "ID :";
+            this.lblBranchID.UseCompatibleTextRendering = true;
             // 
-            // groupBox10
+            // gbBranches
             // 
-            this.groupBox10.Controls.Add(this.txtBranchFilter);
-            this.groupBox10.Controls.Add(this.btnNewBranch);
-            this.groupBox10.Controls.Add(this.lstBranches);
-            this.groupBox10.Location = new System.Drawing.Point(8, 5);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(148, 414);
-            this.groupBox10.TabIndex = 3;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Branches";
+            this.gbBranches.Controls.Add(this.txtBranchFilter);
+            this.gbBranches.Controls.Add(this.btnNewBranch);
+            this.gbBranches.Controls.Add(this.lstBranches);
+            this.gbBranches.Location = new System.Drawing.Point(8, 5);
+            this.gbBranches.Name = "gbBranches";
+            this.gbBranches.Size = new System.Drawing.Size(148, 414);
+            this.gbBranches.TabIndex = 3;
+            this.gbBranches.TabStop = false;
+            this.gbBranches.Text = "Branches";
+            this.gbBranches.UseCompatibleTextRendering = true;
             // 
             // txtBranchFilter
             // 
@@ -1113,6 +1166,7 @@
             this.btnNewBranch.Size = new System.Drawing.Size(75, 23);
             this.btnNewBranch.TabIndex = 4;
             this.btnNewBranch.Text = "New";
+            this.btnNewBranch.UseCompatibleTextRendering = true;
             this.btnNewBranch.UseVisualStyleBackColor = true;
             this.btnNewBranch.Click += new System.EventHandler(this.btnNewBranch_Click);
             // 
@@ -1128,9 +1182,9 @@
             // 
             this.tpgSupplier.Controls.Add(this.btnSupplierCancel);
             this.tpgSupplier.Controls.Add(this.btnSupplierApply);
-            this.tpgSupplier.Controls.Add(this.groupBox14);
-            this.tpgSupplier.Controls.Add(this.groupBox11);
-            this.tpgSupplier.Controls.Add(this.groupBox15);
+            this.tpgSupplier.Controls.Add(this.gbSupplierInformation);
+            this.tpgSupplier.Controls.Add(this.gbSupplierProducts);
+            this.tpgSupplier.Controls.Add(this.gbSuppliers);
             this.tpgSupplier.Location = new System.Drawing.Point(4, 22);
             this.tpgSupplier.Name = "tpgSupplier";
             this.tpgSupplier.Padding = new System.Windows.Forms.Padding(3);
@@ -1147,6 +1201,7 @@
             this.btnSupplierCancel.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierCancel.TabIndex = 11;
             this.btnSupplierCancel.Text = "Cancel";
+            this.btnSupplierCancel.UseCompatibleTextRendering = true;
             this.btnSupplierCancel.UseVisualStyleBackColor = true;
             this.btnSupplierCancel.Click += new System.EventHandler(this.btnSupplierCancel_Click);
             // 
@@ -1158,27 +1213,29 @@
             this.btnSupplierApply.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierApply.TabIndex = 10;
             this.btnSupplierApply.Text = "Apply";
+            this.btnSupplierApply.UseCompatibleTextRendering = true;
             this.btnSupplierApply.UseVisualStyleBackColor = true;
             this.btnSupplierApply.Click += new System.EventHandler(this.btnSupplierApply_Click);
             // 
-            // groupBox14
+            // gbSupplierInformation
             // 
-            this.groupBox14.Controls.Add(this.txtSupplierAddress);
-            this.groupBox14.Controls.Add(this.label24);
-            this.groupBox14.Controls.Add(this.txtSupplierEmail);
-            this.groupBox14.Controls.Add(this.txtSupplierTel);
-            this.groupBox14.Controls.Add(this.txtSupplierName);
-            this.groupBox14.Controls.Add(this.label26);
-            this.groupBox14.Controls.Add(this.label27);
-            this.groupBox14.Controls.Add(this.label28);
-            this.groupBox14.Controls.Add(this.txtSupplierID);
-            this.groupBox14.Controls.Add(this.label29);
-            this.groupBox14.Location = new System.Drawing.Point(164, 6);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(479, 198);
-            this.groupBox14.TabIndex = 9;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Supplier Information";
+            this.gbSupplierInformation.Controls.Add(this.txtSupplierAddress);
+            this.gbSupplierInformation.Controls.Add(this.lblSupplierAddress);
+            this.gbSupplierInformation.Controls.Add(this.txtSupplierEmail);
+            this.gbSupplierInformation.Controls.Add(this.txtSupplierTel);
+            this.gbSupplierInformation.Controls.Add(this.txtSupplierName);
+            this.gbSupplierInformation.Controls.Add(this.lblSupplierEmail);
+            this.gbSupplierInformation.Controls.Add(this.lblSupplierTel);
+            this.gbSupplierInformation.Controls.Add(this.lblSupplierName);
+            this.gbSupplierInformation.Controls.Add(this.txtSupplierID);
+            this.gbSupplierInformation.Controls.Add(this.lblSupplierID);
+            this.gbSupplierInformation.Location = new System.Drawing.Point(164, 6);
+            this.gbSupplierInformation.Name = "gbSupplierInformation";
+            this.gbSupplierInformation.Size = new System.Drawing.Size(479, 198);
+            this.gbSupplierInformation.TabIndex = 9;
+            this.gbSupplierInformation.TabStop = false;
+            this.gbSupplierInformation.Text = "Supplier Information";
+            this.gbSupplierInformation.UseCompatibleTextRendering = true;
             // 
             // txtSupplierAddress
             // 
@@ -1188,14 +1245,15 @@
             this.txtSupplierAddress.Size = new System.Drawing.Size(192, 121);
             this.txtSupplierAddress.TabIndex = 1;
             // 
-            // label24
+            // lblSupplierAddress
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 74);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(48, 13);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Address:";
+            this.lblSupplierAddress.AutoSize = true;
+            this.lblSupplierAddress.Location = new System.Drawing.Point(6, 74);
+            this.lblSupplierAddress.Name = "lblSupplierAddress";
+            this.lblSupplierAddress.Size = new System.Drawing.Size(49, 17);
+            this.lblSupplierAddress.TabIndex = 0;
+            this.lblSupplierAddress.Text = "Address:";
+            this.lblSupplierAddress.UseCompatibleTextRendering = true;
             // 
             // txtSupplierEmail
             // 
@@ -1218,32 +1276,35 @@
             this.txtSupplierName.Size = new System.Drawing.Size(192, 20);
             this.txtSupplierName.TabIndex = 1;
             // 
-            // label26
+            // lblSupplierEmail
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(258, 22);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(35, 13);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Email:";
+            this.lblSupplierEmail.AutoSize = true;
+            this.lblSupplierEmail.Location = new System.Drawing.Point(258, 22);
+            this.lblSupplierEmail.Name = "lblSupplierEmail";
+            this.lblSupplierEmail.Size = new System.Drawing.Size(36, 17);
+            this.lblSupplierEmail.TabIndex = 0;
+            this.lblSupplierEmail.Text = "Email:";
+            this.lblSupplierEmail.UseCompatibleTextRendering = true;
             // 
-            // label27
+            // lblSupplierTel
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(265, 48);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(28, 13);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Tel.:";
+            this.lblSupplierTel.AutoSize = true;
+            this.lblSupplierTel.Location = new System.Drawing.Point(265, 48);
+            this.lblSupplierTel.Name = "lblSupplierTel";
+            this.lblSupplierTel.Size = new System.Drawing.Size(26, 17);
+            this.lblSupplierTel.TabIndex = 0;
+            this.lblSupplierTel.Text = "Tel.:";
+            this.lblSupplierTel.UseCompatibleTextRendering = true;
             // 
-            // label28
+            // lblSupplierName
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(16, 48);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(38, 13);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Name:";
+            this.lblSupplierName.AutoSize = true;
+            this.lblSupplierName.Location = new System.Drawing.Point(16, 48);
+            this.lblSupplierName.Name = "lblSupplierName";
+            this.lblSupplierName.Size = new System.Drawing.Size(38, 17);
+            this.lblSupplierName.TabIndex = 0;
+            this.lblSupplierName.Text = "Name:";
+            this.lblSupplierName.UseCompatibleTextRendering = true;
             // 
             // txtSupplierID
             // 
@@ -1255,24 +1316,26 @@
             this.txtSupplierID.Size = new System.Drawing.Size(192, 20);
             this.txtSupplierID.TabIndex = 1;
             // 
-            // label29
+            // lblSupplierID
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(30, 22);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(24, 13);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "ID :";
+            this.lblSupplierID.AutoSize = true;
+            this.lblSupplierID.Location = new System.Drawing.Point(30, 22);
+            this.lblSupplierID.Name = "lblSupplierID";
+            this.lblSupplierID.Size = new System.Drawing.Size(22, 17);
+            this.lblSupplierID.TabIndex = 0;
+            this.lblSupplierID.Text = "ID :";
+            this.lblSupplierID.UseCompatibleTextRendering = true;
             // 
-            // groupBox11
+            // gbSupplierProducts
             // 
-            this.groupBox11.Controls.Add(this.trvSupplierProducts);
-            this.groupBox11.Location = new System.Drawing.Point(162, 204);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(479, 176);
-            this.groupBox11.TabIndex = 8;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Products";
+            this.gbSupplierProducts.Controls.Add(this.trvSupplierProducts);
+            this.gbSupplierProducts.Location = new System.Drawing.Point(162, 204);
+            this.gbSupplierProducts.Name = "gbSupplierProducts";
+            this.gbSupplierProducts.Size = new System.Drawing.Size(479, 176);
+            this.gbSupplierProducts.TabIndex = 8;
+            this.gbSupplierProducts.TabStop = false;
+            this.gbSupplierProducts.Text = "Products";
+            this.gbSupplierProducts.UseCompatibleTextRendering = true;
             // 
             // trvSupplierProducts
             // 
@@ -1283,17 +1346,18 @@
             this.trvSupplierProducts.TabIndex = 0;
             this.trvSupplierProducts.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvSupplierProducts_NodeMouseDoubleClick);
             // 
-            // groupBox15
+            // gbSuppliers
             // 
-            this.groupBox15.Controls.Add(this.txtSupplierFilter);
-            this.groupBox15.Controls.Add(this.btnNewSupplier);
-            this.groupBox15.Controls.Add(this.lstSuppliers);
-            this.groupBox15.Location = new System.Drawing.Point(8, 6);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(148, 414);
-            this.groupBox15.TabIndex = 6;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Suppliers";
+            this.gbSuppliers.Controls.Add(this.txtSupplierFilter);
+            this.gbSuppliers.Controls.Add(this.btnNewSupplier);
+            this.gbSuppliers.Controls.Add(this.lstSuppliers);
+            this.gbSuppliers.Location = new System.Drawing.Point(8, 6);
+            this.gbSuppliers.Name = "gbSuppliers";
+            this.gbSuppliers.Size = new System.Drawing.Size(148, 414);
+            this.gbSuppliers.TabIndex = 6;
+            this.gbSuppliers.TabStop = false;
+            this.gbSuppliers.Text = "Suppliers";
+            this.gbSuppliers.UseCompatibleTextRendering = true;
             // 
             // txtSupplierFilter
             // 
@@ -1309,6 +1373,7 @@
             this.btnNewSupplier.Size = new System.Drawing.Size(75, 23);
             this.btnNewSupplier.TabIndex = 4;
             this.btnNewSupplier.Text = "New";
+            this.btnNewSupplier.UseCompatibleTextRendering = true;
             this.btnNewSupplier.UseVisualStyleBackColor = true;
             this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
             // 
@@ -1352,14 +1417,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1391,36 +1456,36 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.tbcContent.ResumeLayout(false);
             this.tpgMember.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbRentals.ResumeLayout(false);
+            this.gbMemberInfo.ResumeLayout(false);
+            this.gbMemberInfo.PerformLayout();
+            this.gbMembers.ResumeLayout(false);
+            this.gbMembers.PerformLayout();
             this.tpgProduct.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gbStock.ResumeLayout(false);
+            this.gbProductInformation.ResumeLayout(false);
+            this.gbProductInformation.PerformLayout();
+            this.gbProductProducts.ResumeLayout(false);
+            this.gbProductProducts.PerformLayout();
             this.tpgStaff.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            this.gbUserDetails.ResumeLayout(false);
+            this.gbUserDetails.PerformLayout();
+            this.gbStaffInfo.ResumeLayout(false);
+            this.gbStaffInfo.PerformLayout();
+            this.gbStaff.ResumeLayout(false);
+            this.gbStaff.PerformLayout();
             this.tpgBranch.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
+            this.gbBranchProducts.ResumeLayout(false);
+            this.gbBranchInformation.ResumeLayout(false);
+            this.gbBranchInformation.PerformLayout();
+            this.gbBranches.ResumeLayout(false);
+            this.gbBranches.PerformLayout();
             this.tpgSupplier.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
+            this.gbSupplierInformation.ResumeLayout(false);
+            this.gbSupplierInformation.PerformLayout();
+            this.gbSupplierProducts.ResumeLayout(false);
+            this.gbSuppliers.ResumeLayout(false);
+            this.gbSuppliers.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
@@ -1436,20 +1501,20 @@
         private System.Windows.Forms.TabPage tpgProduct;
         private System.Windows.Forms.TabPage tpgStaff;
         private System.Windows.Forms.TabPage tpgBranch;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbMembers;
         private System.Windows.Forms.ListBox lstMembers;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbRentals;
+        private System.Windows.Forms.GroupBox gbMemberInfo;
         private System.Windows.Forms.TextBox txtMemberName;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMemberName;
         private System.Windows.Forms.TextBox txtMemberID;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMemberID;
         private System.Windows.Forms.TextBox txtMemberAddress;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMemberAddress;
         private System.Windows.Forms.TextBox txtMemberEmail;
         private System.Windows.Forms.TextBox txtMemberTel;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblMemberEmail;
+        private System.Windows.Forms.Label lblMemberTel;
         private System.Windows.Forms.Button btnNewMember;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip mnuMain;
@@ -1457,90 +1522,90 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbProductProducts;
         private System.Windows.Forms.Button btnNewProduct;
         private System.Windows.Forms.ListBox lstProducts;
         private System.Windows.Forms.TabPage tpgSupplier;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox gbProductInformation;
         private System.Windows.Forms.TextBox txtProductID;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblProductID;
         private System.Windows.Forms.ComboBox cboCategory;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblProductCategory;
         private System.Windows.Forms.TextBox txtProductRentalFee;
         private System.Windows.Forms.TextBox txtProductName;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Label lblProductRentalFee;
+        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.GroupBox gbUserDetails;
         private System.Windows.Forms.ComboBox cboStaffRole;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblStaffRole;
         private System.Windows.Forms.TextBox txtStaffUsername;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label lblStaffUsername;
+        private System.Windows.Forms.GroupBox gbStaffInfo;
         private System.Windows.Forms.TextBox txtStaffAddress;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblStaffAddress;
         private System.Windows.Forms.TextBox txtStaffEmail;
         private System.Windows.Forms.TextBox txtStaffTel;
         private System.Windows.Forms.TextBox txtStaffName;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblStaffEmail;
+        private System.Windows.Forms.Label lblStaffTel;
+        private System.Windows.Forms.Label lblStaffName;
         private System.Windows.Forms.TextBox txtStaffID;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label lblStaffID;
+        private System.Windows.Forms.GroupBox gbStaff;
         private System.Windows.Forms.Button btnNewStaff;
         private System.Windows.Forms.ListBox lstStaff;
         private System.Windows.Forms.Button btnStaffPasswordSet;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblStaffPassword;
         private System.Windows.Forms.TextBox txtStaffPassword;
         private System.Windows.Forms.TreeView trvMemberRentals;
-        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.GroupBox gbBranches;
         private System.Windows.Forms.Button btnNewBranch;
         private System.Windows.Forms.ListBox lstBranches;
         private System.Windows.Forms.LinkLabel lblSupplierLink;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblProductSupplier;
         private System.Windows.Forms.ComboBox cboSupplier;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox gbStock;
         private System.Windows.Forms.TreeView trvProductStock;
-        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.GroupBox gbBranchInformation;
         private System.Windows.Forms.TextBox txtBranchAddress;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblBranchAddress;
         private System.Windows.Forms.TextBox txtBranchEmail;
         private System.Windows.Forms.TextBox txtBranchTel;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblBranchEmail;
+        private System.Windows.Forms.Label lblBranchTel;
         private System.Windows.Forms.TextBox txtBranchID;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblBranchID;
         private System.Windows.Forms.TextBox txtMemberMob;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Label lblMemberMob;
+        private System.Windows.Forms.GroupBox gbBranchProducts;
         private System.Windows.Forms.TreeView trvBranchProducts;
-        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.GroupBox gbSupplierProducts;
         private System.Windows.Forms.TreeView trvSupplierProducts;
-        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox gbSuppliers;
         private System.Windows.Forms.Button btnNewSupplier;
         private System.Windows.Forms.ListBox lstSuppliers;
-        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox gbSupplierInformation;
         private System.Windows.Forms.TextBox txtSupplierAddress;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lblSupplierAddress;
         private System.Windows.Forms.TextBox txtSupplierEmail;
         private System.Windows.Forms.TextBox txtSupplierTel;
         private System.Windows.Forms.TextBox txtSupplierName;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblSupplierEmail;
+        private System.Windows.Forms.Label lblSupplierTel;
+        private System.Windows.Forms.Label lblSupplierName;
         private System.Windows.Forms.TextBox txtSupplierID;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblSupplierID;
         private System.Windows.Forms.Button btnMemberCancel;
         private System.Windows.Forms.Button btnMemberApply;
         private System.Windows.Forms.TextBox txtMembersFilter;
         private System.Windows.Forms.TextBox txtProductFilter;
         private System.Windows.Forms.TextBox txtStaffFilter;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblStaffBranch;
         private System.Windows.Forms.ComboBox cboStaffBranch;
         private System.Windows.Forms.TextBox txtBranchFilter;
         private System.Windows.Forms.TextBox txtSupplierFilter;
         private System.Windows.Forms.TextBox txtProductCost;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblProductCost;
         private System.Windows.Forms.Button btnProductCancel;
         private System.Windows.Forms.Button btnProductApply;
         private System.Windows.Forms.Button btnBranchCancel;
