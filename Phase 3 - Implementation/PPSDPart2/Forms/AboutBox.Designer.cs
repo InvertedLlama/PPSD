@@ -28,11 +28,11 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
-            this.lblCompanyName = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
@@ -63,6 +63,19 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(417, 265);
             this.tableLayoutPanel.TabIndex = 0;
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCompanyName.Location = new System.Drawing.Point(143, 78);
+            this.lblCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.lblCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(271, 17);
+            this.lblCompanyName.TabIndex = 22;
+            this.lblCompanyName.Text = "Company Name";
+            this.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCompanyName.UseCompatibleTextRendering = true;
             // 
             // pbLogo
             // 
@@ -115,19 +128,6 @@
             this.lblCopyright.Text = "Copyright";
             this.lblCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblCopyright.UseCompatibleTextRendering = true;
-            // 
-            // lblCompanyName
-            // 
-            this.lblCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCompanyName.Location = new System.Drawing.Point(143, 78);
-            this.lblCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.lblCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(271, 17);
-            this.lblCompanyName.TabIndex = 22;
-            this.lblCompanyName.Text = "Company Name";
-            this.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCompanyName.UseCompatibleTextRendering = true;
             // 
             // txtDescription
             // 

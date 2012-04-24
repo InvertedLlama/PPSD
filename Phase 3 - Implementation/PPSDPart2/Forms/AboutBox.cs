@@ -53,7 +53,7 @@ namespace PPSDPart2
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-                if (attributes.Length == 0)
+                if (0 == attributes.Length)
                 {
                     return "";
                 }
@@ -66,7 +66,7 @@ namespace PPSDPart2
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-                if (attributes.Length == 0)
+                if (0 == attributes.Length)
                 {
                     return "";
                 }
@@ -79,7 +79,7 @@ namespace PPSDPart2
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-                if (attributes.Length == 0)
+                if (0 == attributes.Length)
                 {
                     return "";
                 }
@@ -92,7 +92,7 @@ namespace PPSDPart2
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-                if (attributes.Length == 0)
+                if (0 == attributes.Length)
                 {
                     return "";
                 }
