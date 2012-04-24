@@ -13,15 +13,20 @@ namespace PPSDPart2
     {
         Database mDatabase;
         DataTable dtbStaff;
+        DataTable dtbBranch;
 
         public event RecordAddedHandler RecordAdded;
         public delegate void RecordAddedHandler(object sender, EventArgs e);
 
-        public frmAddStaff(Database database, DataTable staffTable)
+        public frmAddStaff(Database database, DataTable staffTable, DataTable branchTable)
         {
             InitializeComponent();
             mDatabase = database;
             dtbStaff = staffTable;
+            dtbBranch = branchTable;
+            cboStaffBranch.DataSource=dtbBranch;
+            cboStaffBranch.DisplayMember = "branchID";
+            cboStaffBranch.BindingContext = this.BindingContext;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -66,9 +71,9 @@ namespace PPSDPart2
             {
                 //Data is valid, push it to the database
                 string insertQuery = string.Format(
-                    "INSERT INTO Staff (name, phoneNumber, email, address, role, username, password)\n" +
-                    "VALUES (\"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\")",
-                    txtName.Text, txtTel.Text, txtEmail.Text, txtAddress.Text, cboRole.Text, txtUsername.Text, txtPassword.Text
+                    "INSERT INTO Staff (name, phoneNumber, email, address, role, username, password, branchID)\n" +
+                    "VALUES (\"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", \"{7}\")",
+                    txtName.Text, txtTel.Text, txtEmail.Text, txtAddress.Text, cboRole.Text, txtUsername.Text, txtPassword.Text, cboStaffBranch.Text
                     );
 
                 if (mDatabase.runCommandQuery(insertQuery))

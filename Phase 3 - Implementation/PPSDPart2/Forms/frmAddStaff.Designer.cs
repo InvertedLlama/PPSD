@@ -44,6 +44,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.cboRole = new System.Windows.Forms.ComboBox();
+            this.cboStaffBranch = new System.Windows.Forms.ComboBox();
+            this.lblStaffBranch = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblAddress
@@ -150,7 +152,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(327, 37);
+            this.txtUsername.Location = new System.Drawing.Point(327, 64);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(172, 20);
             this.txtUsername.TabIndex = 6;
@@ -158,7 +160,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(263, 40);
+            this.lblUsername.Location = new System.Drawing.Point(263, 67);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(60, 17);
             this.lblUsername.TabIndex = 9;
@@ -167,7 +169,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(327, 63);
+            this.txtPassword.Location = new System.Drawing.Point(327, 90);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(172, 20);
             this.txtPassword.TabIndex = 7;
@@ -176,7 +178,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(265, 66);
+            this.lblPassword.Location = new System.Drawing.Point(265, 93);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(57, 17);
             this.lblPassword.TabIndex = 9;
@@ -197,12 +199,33 @@
             this.cboRole.Size = new System.Drawing.Size(172, 21);
             this.cboRole.TabIndex = 5;
             // 
+            // cboStaffBranch
+            // 
+            this.cboStaffBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStaffBranch.FormattingEnabled = true;
+            this.cboStaffBranch.Location = new System.Drawing.Point(327, 37);
+            this.cboStaffBranch.Name = "cboStaffBranch";
+            this.cboStaffBranch.Size = new System.Drawing.Size(172, 21);
+            this.cboStaffBranch.TabIndex = 15;
+            // 
+            // lblStaffBranch
+            // 
+            this.lblStaffBranch.AutoSize = true;
+            this.lblStaffBranch.Location = new System.Drawing.Point(277, 40);
+            this.lblStaffBranch.Name = "lblStaffBranch";
+            this.lblStaffBranch.Size = new System.Drawing.Size(43, 17);
+            this.lblStaffBranch.TabIndex = 14;
+            this.lblStaffBranch.Text = "Branch:";
+            this.lblStaffBranch.UseCompatibleTextRendering = true;
+            // 
             // frmAddStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 193);
             this.ControlBox = false;
+            this.Controls.Add(this.cboStaffBranch);
+            this.Controls.Add(this.lblStaffBranch);
             this.Controls.Add(this.cboRole);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblEmail);
@@ -245,5 +268,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.ComboBox cboRole;
+        private System.Windows.Forms.ComboBox cboStaffBranch;
+        private System.Windows.Forms.Label lblStaffBranch;
     }
 }

@@ -72,7 +72,7 @@ namespace PPSDPart2
         {
             if (muser.canCreate)
             {
-                addStaffDialogue = new frmAddStaff(mDatabase, dtbStaff);
+                addStaffDialogue = new frmAddStaff(mDatabase, dtbStaff, dtbBranch);
                 addStaffDialogue.RecordAdded += addStaffDialogue_RecordAdded;
                 addStaffDialogue.ShowDialog(this);
             }
