@@ -168,7 +168,8 @@ namespace PPSDPart2
                 addStockDialogue.ShowDialog(this);
             }
             else
-                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);            
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            btnBranchApply_Click(sender, e);
         }
 
         private void addStockDialogue_RecordAdded(object sender, EventArgs e)
