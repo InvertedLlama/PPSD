@@ -222,8 +222,11 @@ namespace PPSDPart2
                 addRentalDialogue.RecordAdded += addRentalDialogue_RecordAdded;
                 addRentalDialogue.ShowDialog(this);
             }
-            MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            return;
+            else
+            {
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
         }
 
         private void addRentalDialogue_RecordAdded(object sender, EventArgs e)

@@ -20,3 +20,5 @@ C:\Users\mr martin\PPSD\Phase 3 - Implementation\PPSDPart2\obj\x86\Debug\Generat
 C:\Users\mr martin\PPSD\Phase 3 - Implementation\PPSDPart2\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\mr martin\PPSD\Phase 3 - Implementation\PPSDPart2\obj\x86\Debug\PPSDPart2.exe
 C:\Users\mr martin\PPSD\Phase 3 - Implementation\PPSDPart2\obj\x86\Debug\PPSDPart2.pdb
+C:\Users\Matt\Github\PPSD\Phase 3 - Implementation\PPSDPart2\obj\x86\Debug\PPSDPart2.exe
+C:\Users\Matt\Github\PPSD\Phase 3 - Implementation\PPSDPart2\obj\x86\Debug\PPSDPart2.pdb
