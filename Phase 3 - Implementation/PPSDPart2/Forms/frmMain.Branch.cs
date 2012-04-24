@@ -108,6 +108,7 @@ namespace PPSDPart2
         private void txtBranchFilter_TextChanged(object sender, EventArgs e)
         {
             TextBox sndr = (TextBox)sender;
+            sndr.Text=sndr.Text.Replace("'", "");
             bisBranchListBinding.Filter = "branchID + '' LIKE '%" + sndr.Text + "%'";
         }
 

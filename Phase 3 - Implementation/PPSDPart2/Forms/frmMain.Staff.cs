@@ -125,6 +125,7 @@ namespace PPSDPart2
         private void txtStaffFilter_TextChanged(object sender, EventArgs e)
         {
             TextBox sndr = (TextBox)sender;
+            sndr.Text = sndr.Text.Replace("'", "");
             bisStaffListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";
         }
 

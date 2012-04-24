@@ -106,6 +106,7 @@ namespace PPSDPart2
         private void txtSupplierFilter_TextChanged(object sender, EventArgs e)
         {
             TextBox sndr = (TextBox)sender;
+            sndr.Text = sndr.Text.Replace("'", "");
             bisSupplierListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";
         }
 

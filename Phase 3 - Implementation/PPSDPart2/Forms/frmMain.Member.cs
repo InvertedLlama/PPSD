@@ -119,6 +119,7 @@ namespace PPSDPart2
         private void txtMembersFilter_TextChanged(object sender, EventArgs e)
         {
             TextBox sndr = (TextBox)sender;
+            sndr.Text = sndr.Text.Replace("'", "");
             bisMemberListBinding.Filter = "name + '' LIKE '%" + sndr.Text + "%'";    
         }
 
