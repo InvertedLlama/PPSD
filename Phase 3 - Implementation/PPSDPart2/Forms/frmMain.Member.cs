@@ -162,7 +162,7 @@ namespace PPSDPart2
             if (!DataValidation.validateInformation(txtMemberTel.Text, RegexPattern.PhoneString))
                     message += "* Telephone Number\n";
                         
-            if (!DataValidation.validateInformation(txtMemberMob.Text, RegexPattern.NumericalString))
+            if (!DataValidation.validateInformation(txtMemberMob.Text, RegexPattern.PhoneString))
                     message += "* Mobile Number\n";
 
             if (txtMemberAddress.Text == string.Empty)
