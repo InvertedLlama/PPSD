@@ -168,8 +168,7 @@ namespace PPSDPart2
                 addStockDialogue.ShowDialog(this);
             }
             else
-                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            btnBranchApply_Click(sender, e);
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);            
         }
 
         private void addStockDialogue_RecordAdded(object sender, EventArgs e)
@@ -177,6 +176,8 @@ namespace PPSDPart2
             mDatabase.selectData("SELECT * FROM Stock", ref dtbStock);
             MessageBox.Show(this, "Stock added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             addStockDialogue.Close();
+
+            fillBranchDataFields();
         }
 
         private void trvBranchProducts_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
