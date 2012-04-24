@@ -74,22 +74,35 @@ namespace PPSDPart2
                     cboProduct.SelectedValue, branchID
                     );
 
-                string updateQuery = string.Empty;
+                string updateAmountQuery = string.Empty;
+                string updateAvailableQuery = string.Empty;
                 if (dtbStock.Select(selectQuery).Count() > 0)
-                    updateQuery = string.Format("UPDATE Stock SET amount = amount + {0} WHERE productID = {1} AND branchID = {2}",
-                        numAmount.Value, cboProduct.SelectedValue, branchID                            
+                {
+                    updateAmountQuery = string.Format("UPDATE Stock SET amount = amount + {0} WHERE productID = {1} AND branchID = {2}",
+                        numAmount.Value, cboProduct.SelectedValue, branchID
                         );
+                    updateAvailableQuery = string.Format("UPDATE Stock SET available = available + {0} WHERE productID = {1} AND branchID = {2}",
+                        numAmount.Value, cboProduct.SelectedValue, branchID
+                        );
+                }
                 else
-                    updateQuery = string.Format("INSERT INTO Stock (productID, branchID, amount)\n"+
-                        "VALUES ({0}, {1}, {2})", cboProduct.SelectedValue, branchID, numAmount.Value
+                    updateAmountQuery = string.Format("INSERT INTO Stock (productID, branchID, amount, available)\n" +
+                        "VALUES ({0}, {1}, {2}, {3})", cboProduct.SelectedValue, branchID, numAmount.Value, numAmount.Value
                         );
 
-                if (!mDatabase.runCommandQuery(updateQuery))
+
+
+                if (!mDatabase.runCommandQuery(updateAmountQuery))
                     MessageBox.Show(this, "Failed to update stock in database", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
+                {
+                    if (!mDatabase.runCommandQuery(updateAvailableQuery))
+                        MessageBox.Show(this, "Failed to update stock in database", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    else
                     //Data was updated successfully. Notify the event listeners
                     if (RecordAdded != null)
                         RecordAdded(this, EventArgs.Empty);
+                }
                 
             }
         }
