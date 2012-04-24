@@ -150,6 +150,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblStaffRepeatPassword = new System.Windows.Forms.Label();
+            this.txtStaffRepeatPassword = new System.Windows.Forms.TextBox();
             this.tbcContent.SuspendLayout();
             this.tpgMember.SuspendLayout();
             this.gbRentals.SuspendLayout();
@@ -723,6 +725,8 @@
             // 
             // gbUserDetails
             // 
+            this.gbUserDetails.Controls.Add(this.lblStaffRepeatPassword);
+            this.gbUserDetails.Controls.Add(this.txtStaffRepeatPassword);
             this.gbUserDetails.Controls.Add(this.btnStaffPasswordSet);
             this.gbUserDetails.Controls.Add(this.lblStaffPassword);
             this.gbUserDetails.Controls.Add(this.txtStaffPassword);
@@ -739,7 +743,7 @@
             // btnStaffPasswordSet
             // 
             this.btnStaffPasswordSet.Enabled = false;
-            this.btnStaffPasswordSet.Location = new System.Drawing.Point(299, 79);
+            this.btnStaffPasswordSet.Location = new System.Drawing.Point(226, 91);
             this.btnStaffPasswordSet.Name = "btnStaffPasswordSet";
             this.btnStaffPasswordSet.Size = new System.Drawing.Size(75, 23);
             this.btnStaffPasswordSet.TabIndex = 3;
@@ -751,7 +755,7 @@
             // lblStaffPassword
             // 
             this.lblStaffPassword.AutoSize = true;
-            this.lblStaffPassword.Location = new System.Drawing.Point(30, 84);
+            this.lblStaffPassword.Location = new System.Drawing.Point(46, 42);
             this.lblStaffPassword.Name = "lblStaffPassword";
             this.lblStaffPassword.Size = new System.Drawing.Size(57, 17);
             this.lblStaffPassword.TabIndex = 0;
@@ -760,7 +764,7 @@
             // 
             // txtStaffPassword
             // 
-            this.txtStaffPassword.Location = new System.Drawing.Point(92, 81);
+            this.txtStaffPassword.Location = new System.Drawing.Point(109, 39);
             this.txtStaffPassword.Name = "txtStaffPassword";
             this.txtStaffPassword.Size = new System.Drawing.Size(192, 20);
             this.txtStaffPassword.TabIndex = 1;
@@ -768,7 +772,7 @@
             // 
             // txtStaffUsername
             // 
-            this.txtStaffUsername.Location = new System.Drawing.Point(92, 55);
+            this.txtStaffUsername.Location = new System.Drawing.Point(109, 13);
             this.txtStaffUsername.Name = "txtStaffUsername";
             this.txtStaffUsername.Size = new System.Drawing.Size(192, 20);
             this.txtStaffUsername.TabIndex = 1;
@@ -776,7 +780,7 @@
             // lblStaffUsername
             // 
             this.lblStaffUsername.AutoSize = true;
-            this.lblStaffUsername.Location = new System.Drawing.Point(28, 58);
+            this.lblStaffUsername.Location = new System.Drawing.Point(43, 16);
             this.lblStaffUsername.Name = "lblStaffUsername";
             this.lblStaffUsername.Size = new System.Drawing.Size(60, 17);
             this.lblStaffUsername.TabIndex = 0;
@@ -1443,6 +1447,24 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // lblStaffRepeatPassword
+            // 
+            this.lblStaffRepeatPassword.AutoSize = true;
+            this.lblStaffRepeatPassword.Location = new System.Drawing.Point(6, 68);
+            this.lblStaffRepeatPassword.Name = "lblStaffRepeatPassword";
+            this.lblStaffRepeatPassword.Size = new System.Drawing.Size(97, 17);
+            this.lblStaffRepeatPassword.TabIndex = 4;
+            this.lblStaffRepeatPassword.Text = "Repeat Password:";
+            this.lblStaffRepeatPassword.UseCompatibleTextRendering = true;
+            // 
+            // txtStaffRepeatPassword
+            // 
+            this.txtStaffRepeatPassword.Location = new System.Drawing.Point(109, 65);
+            this.txtStaffRepeatPassword.Name = "txtStaffRepeatPassword";
+            this.txtStaffRepeatPassword.Size = new System.Drawing.Size(192, 20);
+            this.txtStaffRepeatPassword.TabIndex = 5;
+            this.txtStaffRepeatPassword.UseSystemPasswordChar = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1618,5 +1640,7 @@
         private System.Windows.Forms.Button btnSupplierApply;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.Label lblStaffRepeatPassword;
+        private System.Windows.Forms.TextBox txtStaffRepeatPassword;
     }
 }

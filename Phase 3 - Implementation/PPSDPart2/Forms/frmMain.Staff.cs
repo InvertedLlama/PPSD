@@ -190,6 +190,11 @@ namespace PPSDPart2
 
         private void btnStaffPasswordSet_Click(object sender, EventArgs e)
         {
+            if (!txtStaffPassword.Text.Equals(txtStaffRepeatPassword.Text))
+            {
+                MessageBox.Show(this, "Passwords do not match", "Password mismatch", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
             if (!muser.canModify)
             {
                 MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -210,14 +215,12 @@ namespace PPSDPart2
                 {
                     mDatabase.selectData("SELECT * FROM Staff", ref dtbStaff);
                     lstStaff.SelectedValue = selectedValue;
-                    
-                    MessageBox.Show(this, "Changes applied Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
+
+                    MessageBox.Show(this, "Changes applied Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                     MessageBox.Show(this, "Failed to apply changes", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
             }
         }
-
     }
 }
