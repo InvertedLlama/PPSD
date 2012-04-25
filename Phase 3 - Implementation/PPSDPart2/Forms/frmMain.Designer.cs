@@ -80,6 +80,8 @@
             this.btnStaffCancel = new System.Windows.Forms.Button();
             this.btnStaffApply = new System.Windows.Forms.Button();
             this.gbUserDetails = new System.Windows.Forms.GroupBox();
+            this.lblStaffRepeatPassword = new System.Windows.Forms.Label();
+            this.txtStaffRepeatPassword = new System.Windows.Forms.TextBox();
             this.btnStaffPasswordSet = new System.Windows.Forms.Button();
             this.lblStaffPassword = new System.Windows.Forms.Label();
             this.txtStaffPassword = new System.Windows.Forms.TextBox();
@@ -150,8 +152,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblStaffRepeatPassword = new System.Windows.Forms.Label();
-            this.txtStaffRepeatPassword = new System.Windows.Forms.TextBox();
             this.tbcContent.SuspendLayout();
             this.tpgMember.SuspendLayout();
             this.gbRentals.SuspendLayout();
@@ -740,6 +740,24 @@
             this.gbUserDetails.Text = "User Details";
             this.gbUserDetails.UseCompatibleTextRendering = true;
             // 
+            // lblStaffRepeatPassword
+            // 
+            this.lblStaffRepeatPassword.AutoSize = true;
+            this.lblStaffRepeatPassword.Location = new System.Drawing.Point(6, 68);
+            this.lblStaffRepeatPassword.Name = "lblStaffRepeatPassword";
+            this.lblStaffRepeatPassword.Size = new System.Drawing.Size(97, 17);
+            this.lblStaffRepeatPassword.TabIndex = 4;
+            this.lblStaffRepeatPassword.Text = "Repeat Password:";
+            this.lblStaffRepeatPassword.UseCompatibleTextRendering = true;
+            // 
+            // txtStaffRepeatPassword
+            // 
+            this.txtStaffRepeatPassword.Location = new System.Drawing.Point(109, 65);
+            this.txtStaffRepeatPassword.Name = "txtStaffRepeatPassword";
+            this.txtStaffRepeatPassword.Size = new System.Drawing.Size(192, 20);
+            this.txtStaffRepeatPassword.TabIndex = 5;
+            this.txtStaffRepeatPassword.UseSystemPasswordChar = true;
+            // 
             // btnStaffPasswordSet
             // 
             this.btnStaffPasswordSet.Enabled = false;
@@ -772,6 +790,7 @@
             // 
             // txtStaffUsername
             // 
+            this.txtStaffUsername.Enabled = false;
             this.txtStaffUsername.Location = new System.Drawing.Point(109, 13);
             this.txtStaffUsername.Name = "txtStaffUsername";
             this.txtStaffUsername.Size = new System.Drawing.Size(192, 20);
@@ -1446,24 +1465,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // lblStaffRepeatPassword
-            // 
-            this.lblStaffRepeatPassword.AutoSize = true;
-            this.lblStaffRepeatPassword.Location = new System.Drawing.Point(6, 68);
-            this.lblStaffRepeatPassword.Name = "lblStaffRepeatPassword";
-            this.lblStaffRepeatPassword.Size = new System.Drawing.Size(97, 17);
-            this.lblStaffRepeatPassword.TabIndex = 4;
-            this.lblStaffRepeatPassword.Text = "Repeat Password:";
-            this.lblStaffRepeatPassword.UseCompatibleTextRendering = true;
-            // 
-            // txtStaffRepeatPassword
-            // 
-            this.txtStaffRepeatPassword.Location = new System.Drawing.Point(109, 65);
-            this.txtStaffRepeatPassword.Name = "txtStaffRepeatPassword";
-            this.txtStaffRepeatPassword.Size = new System.Drawing.Size(192, 20);
-            this.txtStaffRepeatPassword.TabIndex = 5;
-            this.txtStaffRepeatPassword.UseSystemPasswordChar = true;
             // 
             // frmMain
             // 

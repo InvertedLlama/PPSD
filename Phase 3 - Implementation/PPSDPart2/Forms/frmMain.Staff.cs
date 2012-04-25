@@ -194,6 +194,8 @@ namespace PPSDPart2
             if (!txtStaffPassword.Text.Equals(txtStaffRepeatPassword.Text))
             {
                 MessageBox.Show(this, "Passwords do not match", "Password mismatch", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txtStaffPassword.Text = "";
+                txtStaffRepeatPassword.Text = "";
                 return;
             }
             if (!muser.canModify)
@@ -211,7 +213,8 @@ namespace PPSDPart2
                     "SET password=\"{0}\"\n" +
                     "WHERE staffID = {1}",
                     txtStaffPassword.Text, staffData["staffID"]);
-
+                txtStaffPassword.Text = "";
+                txtStaffRepeatPassword.Text = "";
                 if (mDatabase.runCommandQuery(insertQuery))
                 {
                     mDatabase.selectData("SELECT * FROM Staff", ref dtbStaff);
@@ -221,7 +224,7 @@ namespace PPSDPart2
                 }
                 else
                     MessageBox.Show(this, "Failed to apply changes", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }           
         }
     }
 }
