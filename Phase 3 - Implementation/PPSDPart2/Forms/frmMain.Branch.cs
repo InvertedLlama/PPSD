@@ -72,6 +72,8 @@ namespace PPSDPart2
                 addBranchDialogue.RecordAdded += addBranchDialogue_RecordAdded;
                 addBranchDialogue.ShowDialog(this);
             }
+            else
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
 
         private void addBranchDialogue_RecordAdded(object sender, EventArgs e)

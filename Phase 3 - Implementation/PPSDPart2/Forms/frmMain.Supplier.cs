@@ -72,6 +72,8 @@ namespace PPSDPart2
                 addSupplierDialogue.RecordAdded += addSupplierDialogue_RecordAdded;
                 addSupplierDialogue.ShowDialog(this);
             }
+            else
+                MessageBox.Show(this, "Insufficient User Permissions", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
 
         private void addSupplierDialogue_RecordAdded(object sender, EventArgs e)
