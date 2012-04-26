@@ -81,7 +81,7 @@ namespace PPSDPart2
                 case "Instructor":
                     accessLvl = UserAccessLevel.Instructor;
                     break;
-                case "CounterStaff":
+                case "Counter Staff":
                     accessLvl = UserAccessLevel.CounterStaff;
                     break;
                 case "Owner":
